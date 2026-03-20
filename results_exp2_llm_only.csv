@@ -1,0 +1,33 @@
+config,df1_idx,attribute,ground_truth,predicted,correct,unknown
+LLM-only,14,model_number,GV-R56XTGAMING OC-6GD,GV-R56XTOC-6GD,False,False
+LLM-only,52,bus_type,SATA III,M.2,False,False
+LLM-only,52,interface_type,SATA,M.2,False,False
+LLM-only,72,model_number,CT1000P1SSD8,P1 CT1000MX300SSD1,False,False
+LLM-only,127,model_number,NEAT7100HD46H,GT-710-PAS-2G6DF-A,False,False
+LLM-only,130,model_number,DC450R/3840G,DC450R3/96P4,False,False
+LLM-only,132,model_number,CZ73,SDFL-064G-G46,False,False
+LLM-only,136,form_factor,3.5”,3.5-inch,False,False
+LLM-only,136,storage_connection_type,3.5” SATA,SATA,True,False
+LLM-only,214,model_number,WD20EURX,AV-GP-2000,False,False
+LLM-only,216,model_number,AS40G-1TT-C,XPG_S40G_1TB,False,False
+LLM-only,216,bus_type,PCIe 3.0 x4,M.2,False,False
+LLM-only,235,interface_type,USB tipo A,USB_3_1,False,False
+LLM-only,235,storage_connection_type,USB tipo A,USB,True,False
+LLM-only,262,model_number,GP-ASM2NE2512GTTDR,AORUS RGB (no specific number provided),False,False
+LLM-only,289,model_number,MU-PC2T0S/WW,MU-A42T0T/EG,False,False
+LLM-only,368,bus_type,PCIe 2.0,PCIe,True,False
+LLM-only,368,form_factor,Low profile,Half Mini-PCB,False,False
+LLM-only,453,model_number,WD40EFAX,WD40EFRX,False,False
+LLM-only,467,model_number,WDS200T1R0A,WD20EZRX,False,False
+LLM-only,526,model_number,SDCZ71-032G-B35,CUF320,False,False
+LLM-only,532,model_number,3813430,120GB,False,False
+LLM-only,713,model_number,ST14000NE0008,ST14000NE0008,True,False
+LLM-only,713,interface_type,SATA,SATA III,True,False
+LLM-only,719,model_number,ST1800MM0129,ST15000VE001,False,False
+LLM-only,730,model_number,HDWQ140UZSVA,N300-4.0TB,False,False
+LLM-only,734,model_number,SKC2000M8 / 500G,KC2000-500G,False,False
+LLM-only,739,bus_type,PCIe 4.0,PCIe,True,False
+LLM-only,754,form_factor,"1""",External,False,False
+LLM-only,806,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,806,form_factor,Full-height,Reference Board,False,False
+LLM-only,810,model_number,MZ-V7S250BW,MZ-V7E250BW,False,False

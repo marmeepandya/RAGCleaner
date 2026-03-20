@@ -1,0 +1,6 @@
+attribute,LLM_wins,RAG_helps,both_correct,both_fail,other,total,both_correct_%,RAG_helps_%,LLM_wins_%,both_fail_%
+bus_type,19,21,100,6,8,154,64.9,13.6,12.3,3.9
+form_factor,2,21,5,26,7,61,8.2,34.4,3.3,42.6
+interface_type,3,13,25,19,4,64,39.1,20.3,4.7,29.7
+model_number,11,84,9,157,41,302,3.0,27.8,3.6,52.0
+storage_connection_type,5,12,19,10,0,46,41.3,26.1,10.9,21.7

@@ -1,0 +1,628 @@
+config,df1_idx,attribute,ground_truth,predicted,correct,unknown
+RAG-full-k1,0,model_number,GV-N3080GAMING OC-10GD,NVIDIA-RTX-3080-Gaming-OC,False,False
+RAG-full-k1,2,model_number,CSSD-F960GBMP510,MP510,True,False
+RAG-full-k1,5,model_number,90YV0CV2-M0NA00,GTX1650DUALOC,False,False
+RAG-full-k1,5,bus_type,PCIe 3.0 x16,PCIe 3.0,True,False
+RAG-full-k1,6,bus_type,USB 3.0,USB,True,False
+RAG-full-k1,8,model_number,GV-N166SOC-6GD,GV-N166SOC-6GD,True,False
+RAG-full-k1,9,model_number,V375-040R,V6G,False,False
+RAG-full-k1,9,bus_type,PCIe 3.0 x16,PCIe,True,False
+RAG-full-k1,11,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,12,model_number,90YV0DQ0-M0NA00,RTCO8G6MF4N9W0C,False,False
+RAG-full-k1,12,bus_type,PCIe 4.0,PCIe,True,False
+RAG-full-k1,13,model_number,AGAMMIXS11P-1TT-C,XPG GAMMIX S11 Pro M1,False,False
+RAG-full-k1,14,model_number,GV-R56XTGAMING OC-6GD,GV-R56XTWF3OC-6GD,False,False
+RAG-full-k1,15,model_number,100-506008,100-506008,True,False
+RAG-full-k1,15,bus_type,PCIe 3.0 x16,PCIe,True,False
+RAG-full-k1,16,model_number,NE6166SS18J9-161F,GTX1660S-6GB-SXP,False,False
+RAG-full-k1,17,model_number,843266-B21,HDD-1TB-SATA,False,False
+RAG-full-k1,19,model_number,ROG-STRIX-RTX2080TI-O11G-GAMING,RTX2026-16G-SAS,False,False
+RAG-full-k1,19,bus_type,PCIe 3.0 x16,PCIe,True,False
+RAG-full-k1,21,model_number,PBU240GS25SSDR,P240GB,False,False
+RAG-full-k1,23,model_number,SDCZ50-128G-B35,CBL128G2A1SA3,False,False
+RAG-full-k1,25,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,26,bus_type,SATA III,M.2,False,False
+RAG-full-k1,27,model_number,WDBWLG0040HBK-EESN,WDBF4D0040HBK-EESN,False,False
+RAG-full-k1,30,model_number,WDBMCG5000ABT-WESN,G9P6E,False,False
+RAG-full-k1,30,bus_type,USB 3.0,SATA,False,False
+RAG-full-k1,31,model_number,DT100G3/256GB,DT100G3,True,False
+RAG-full-k1,32,model_number,ST4000NE001,ST4000NE001,True,False
+RAG-full-k1,33,interface_type,Micro B,USB 3.2 Gen 1,False,False
+RAG-full-k1,39,model_number,PH-GTX1650-O4G,GTX1650OCPHN4G,False,False
+RAG-full-k1,39,bus_type,PCIe 3.0,PCIe 3.0,True,False
+RAG-full-k1,42,bus_type,SATA III,"M.2, PCIe",False,False
+RAG-full-k1,42,interface_type,SATA,SATA/M.2/PCIe,True,False
+RAG-full-k1,42,form_factor,"2.5""",M.2,False,False
+RAG-full-k1,42,storage_connection_type,"2.5"" SATA","M.2, PCIe",False,False
+RAG-full-k1,43,model_number,GP-ASM2NE6100TTTD,AORUS-1TB-M2-P4-NVME,False,False
+RAG-full-k1,45,model_number,912-V372-257,GEFORCE RTX 2070 SUPER GAMING X TRIO,False,False
+RAG-full-k1,45,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,46,model_number,DT100G3/128GB,DT100G3,True,False
+RAG-full-k1,49,bus_type,USB 3.0,USB,True,False
+RAG-full-k1,49,interface_type,USB,USB,True,False
+RAG-full-k1,49,form_factor,2.5,Portable,False,False
+RAG-full-k1,49,storage_connection_type,USB 3.0,USB,True,False
+RAG-full-k1,51,model_number,PH-RTX2060-6G,RTX 2060 Phoenix,False,False
+RAG-full-k1,52,bus_type,SATA III,SATA III,True,False
+RAG-full-k1,52,interface_type,SATA,M.2,False,False
+RAG-full-k1,54,model_number,N20702-08D6-1710VA23,Twin X2,False,False
+RAG-full-k1,54,bus_type,PCIe 3.0 x16,PCIe,True,False
+RAG-full-k1,57,model_number,MZ-76P2T0B,MZ-76P1T0,False,False
+RAG-full-k1,58,model_number,CT2000P5SSD8,P5CT2000SSD8,False,False
+RAG-full-k1,59,form_factor,Low Profile,Low Profile,True,False
+RAG-full-k1,61,model_number,ZT-A30900D-10P,RTX 3090-24GB-T,False,False
+RAG-full-k1,61,bus_type,PCIe 4.0,PCIe,True,False
+RAG-full-k1,63,model_number,CSSD-F500GBMP600,MP600 500GB,False,False
+RAG-full-k1,66,bus_type,PCIe 4.0,PCIe,True,False
+RAG-full-k1,71,interface_type,USB-C,VALUE: None,False,False
+RAG-full-k1,72,model_number,CT1000P1SSD8,P1-1000GB,False,False
+RAG-full-k1,74,model_number,MU-PC2T0H,T7 Portable SSD 2TB,False,False
+RAG-full-k1,74,bus_type,USB 3.2 Gen 2,NVMe,False,False
+RAG-full-k1,75,form_factor,"2.5""",External,False,False
+RAG-full-k1,78,model_number,ST300MP0106,ST300GM0344,False,False
+RAG-full-k1,78,interface_type,SAS,SAS,True,False
+RAG-full-k1,79,model_number,GT 710 1GD3H LP,GT-710-1GD3H-LP,False,False
+RAG-full-k1,81,model_number,02G-P3-2717-KR,NV18A5R,False,False
+RAG-full-k1,81,form_factor,Single Slot,Half Height Single Slot,True,False
+RAG-full-k1,82,model_number,CT2000P1SSD8,P1_2000GB,False,False
+RAG-full-k1,84,bus_type,PCIe x16,PCIe,True,False
+RAG-full-k1,85,model_number,MZ-76E500BW,MZ-N6E1T0BW,False,False
+RAG-full-k1,88,model_number,MU-PC1T0S/WW,model Portable SSD T7 Touch (1TB),False,False
+RAG-full-k1,89,model_number,STHH1000400,STHH1000400,True,False
+RAG-full-k1,89,interface_type,USB 3.0 & USB-C,USB 3.0,True,False
+RAG-full-k1,89,form_factor,"2.5""",2.5,True,False
+RAG-full-k1,89,storage_connection_type,USB,USB,True,False
+RAG-full-k1,90,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,92,model_number,SDCZ48-032G-U46,C90-032-GN6,False,False
+RAG-full-k1,94,model_number,MZ-76E2T0BW,MZ-76K2T0CW,False,False
+RAG-full-k1,95,model_number,801882-B21,801882-B21,True,False
+RAG-full-k1,97,model_number,WDS250G3X0C,WDS250G3B0A,False,False
+RAG-full-k1,98,model_number,AGAMMIXS50-1TT-C,XPG GAMMIX S50,False,False
+RAG-full-k1,99,model_number,GV-N165SOC-4GD,GV-N16SGAMING-6GD,False,False
+RAG-full-k1,99,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,100,model_number,CT1000P5SSD8,P5CT1000MX30026,False,False
+RAG-full-k1,102,storage_connection_type,USB,USB,True,False
+RAG-full-k1,103,bus_type,PCIe x16,GPU,False,False
+RAG-full-k1,107,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,108,model_number,GV-N105TOC-4GD,GV-N105TICO-4GD,False,False
+RAG-full-k1,108,bus_type,PCIe 3.0 x16,PCIe,True,False
+RAG-full-k1,109,form_factor,Low Profile,PCIe,False,False
+RAG-full-k1,112,model_number,LAC301558,STKF1000400,False,False
+RAG-full-k1,112,form_factor,"2.5""",2.5,True,False
+RAG-full-k1,114,model_number,AGAMMIXS5-1TT-C,XPG GAMMIX S5,False,False
+RAG-full-k1,115,model_number,WD40PURX,PST416R,False,False
+RAG-full-k1,117,model_number,GP-ASM2NE6500GTTD,GP-ASM2NE6500GTTD,True,False
+RAG-full-k1,119,model_number,WDS200T2B0A,WDS200T3B0A,False,False
+RAG-full-k1,121,interface_type,NVMe,USB,False,False
+RAG-full-k1,121,storage_connection_type,Type-C,NAND Flash,False,False
+RAG-full-k1,122,model_number,GP-GSTFS31480GNTD,GB-SU480GTTN6M,False,False
+RAG-full-k1,123,model_number,GV-N208SAORUS-8GC,GV-N208SWF3-8GB,False,False
+RAG-full-k1,124,bus_type,USB 3.0,USB_3.2,False,False
+RAG-full-k1,124,interface_type,Lightning,USB,False,False
+RAG-full-k1,126,model_number,XA1920ME10063,XN1920ME10063,False,False
+RAG-full-k1,127,model_number,NEAT7100HD46H,NEAT7100HD46H,True,False
+RAG-full-k1,129,model_number,MTFDHBE3T8TDF-1AW1ZABYY,MTFDK480GFD3,False,False
+RAG-full-k1,130,model_number,DC450R/3840G,DC450R/3840G,True,False
+RAG-full-k1,131,model_number,WDS120G2G0A,WD Green 120 GB,False,False
+RAG-full-k1,132,model_number,CZ73,SDCZ63-064G-A37,False,False
+RAG-full-k1,136,form_factor,3.5”,3.5inch,False,False
+RAG-full-k1,136,storage_connection_type,3.5” SATA,SATA,True,False
+RAG-full-k1,139,model_number,HDWD105UZSVA,P300-500VSK,False,False
+RAG-full-k1,140,bus_type,USB 3.0,USB 3.0,True,False
+RAG-full-k1,140,interface_type,iOS,USB_3.0,False,False
+RAG-full-k1,142,bus_type,PCIe 3.0,PCIe 4.0,False,False
+RAG-full-k1,143,interface_type,SATA,SATA,True,False
+RAG-full-k1,146,model_number,GV-N2070WF2-8GD,GV-N2070WF2OC-8GD,False,False
+RAG-full-k1,146,bus_type,PCIe,PCIe,True,False
+RAG-full-k1,149,bus_type,PCIe,PCIe,True,False
+RAG-full-k1,150,bus_type,PCIe x16,GDDR5,False,False
+RAG-full-k1,151,model_number,MZ-V7S1T0B/AM,MZ-V7S1T0B/AM,True,False
+RAG-full-k1,152,model_number,MZ-76P1T0B/EU,MZ-76P1T0,True,False
+RAG-full-k1,153,model_number,ZP480NM30011,M2A8301,False,False
+RAG-full-k1,157,model_number,MZ-V7E250BW,MZ-V7E250BW,True,False
+RAG-full-k1,159,model_number,GV-RXVEGA56GAMING OC-8GD,RX VEGA 56 Gaming OC,False,False
+RAG-full-k1,163,model_number,HDWE140EZSTA,HDWE140EZSTA,True,False
+RAG-full-k1,164,bus_type,PCIe 3.0 x16,Xp PCIe,False,False
+RAG-full-k1,164,form_factor,ATX,Graphics Card,False,False
+RAG-full-k1,165,model_number,AXRX5700XT-8GBD6-3DHDR/OC,AXRX 5700 XT 8GBG5-3SDH,False,False
+RAG-full-k1,168,model_number,GV-N166TOC-6GD,GV-N166TC6GC-OC,False,False
+RAG-full-k1,168,bus_type,PCIe 3.0,PCIe 3.0 x8,True,False
+RAG-full-k1,169,model_number,ZA500GM1A001,ST500LT012-1A8,False,False
+RAG-full-k1,170,model_number,VPN100-512GM28H,VPN100-512GB,False,False
+RAG-full-k1,174,bus_type,PCIe,PCIe,True,False
+RAG-full-k1,175,model_number,CT500P2SSD8,P2-500GB,False,False
+RAG-full-k1,180,model_number,DTEG2/64GB,DTG2-64GB,False,False
+RAG-full-k1,180,interface_type,USB Type-A,USB_Type-C,False,False
+RAG-full-k1,180,storage_connection_type,USB Type-A,USB Type-A,True,False
+RAG-full-k1,182,bus_type,PCIe 3.0,PCIe 3.0,True,False
+RAG-full-k1,183,model_number,DT70/32GB,DT70,True,False
+RAG-full-k1,184,bus_type,PCIe 3.0,PCIe 3.0,True,False
+RAG-full-k1,186,model_number,100-505957,WX-9100-16GB,False,False
+RAG-full-k1,186,form_factor,PCIe Add-in Card,Graphics Card,False,False
+RAG-full-k1,187,bus_type,USB 3.0,USB 3.0,True,False
+RAG-full-k1,187,interface_type,Micro-USB 3.0 (Micro-B 10-pin),USB,True,False
+RAG-full-k1,189,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,192,bus_type,PCIe,PCIe,True,False
+RAG-full-k1,194,model_number,V809-2404R,GP102-410-A1,False,False
+RAG-full-k1,194,bus_type,PCIe 3.0 x16,PCIe,True,False
+RAG-full-k1,198,model_number,SKC600/512G,KC600-512GB,False,False
+RAG-full-k1,202,bus_type,PCIe 3.0,PCIe 4.0,False,False
+RAG-full-k1,203,model_number,STEA2000403,STAM8000200,False,False
+RAG-full-k1,203,interface_type,USB,USB,True,False
+RAG-full-k1,206,model_number,SP512GBP34A80M28,A80,True,False
+RAG-full-k1,207,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,208,model_number,MZ-76E250BW,MZ-75E250BW,False,False
+RAG-full-k1,211,model_number,WDS240G2G0B,MZ-76E240NW,False,False
+RAG-full-k1,213,form_factor,"2.5""",2.5,True,False
+RAG-full-k1,213,storage_connection_type,"2.5""",2.5,True,False
+RAG-full-k1,214,model_number,WD20EURX,WD2003FYYS,False,False
+RAG-full-k1,216,model_number,AS40G-1TT-C,XPG S40G-1TJ10,False,False
+RAG-full-k1,216,bus_type,PCIe 3.0 x4,M.2,False,False
+RAG-full-k1,218,model_number,06G-P4-1161-KR,GV-NX1660XC-6GD5,False,False
+RAG-full-k1,218,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,219,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,226,interface_type,NVMe,M.2,False,False
+RAG-full-k1,231,model_number,AHD830-5TU31-CBK,AHD830-5TU31-CBK,True,False
+RAG-full-k1,231,interface_type,USB,USB,True,False
+RAG-full-k1,231,form_factor,"2.5""",2.5,True,False
+RAG-full-k1,233,model_number,GP-ASM2NE6200TTTD,AORUS NVMe Gen4 SSD-2TB,False,False
+RAG-full-k1,234,model_number,STHN2000400,STHN2000400,True,False
+RAG-full-k1,234,form_factor,"2.5""",2.5,True,False
+RAG-full-k1,235,interface_type,USB tipo A,USB_3.1,False,False
+RAG-full-k1,235,storage_connection_type,USB tipo A,USB,True,False
+RAG-full-k1,237,model_number,WDS250G2B0C,WDS250G2B0A,False,False
+RAG-full-k1,238,model_number,DTDUO3/64GB,DTMIU512GB,False,False
+RAG-full-k1,240,interface_type,USB,USB3.0,True,False
+RAG-full-k1,240,form_factor,Portable,Portable,True,False
+RAG-full-k1,240,storage_connection_type,USB,USB,True,False
+RAG-full-k1,241,model_number,02G-P4-6333-KR,04G-P4-6359,False,False
+RAG-full-k1,244,bus_type,PCIe 3.0 x16,PCIe,True,False
+RAG-full-k1,246,model_number,ZT-T20610E-10M,RTX 2060 Super MINI,False,False
+RAG-full-k1,248,bus_type,PCIe 3.0,PCIe 3.0,True,False
+RAG-full-k1,249,bus_type,SATA,SATA III,True,False
+RAG-full-k1,249,interface_type,SATA,SATA III,True,False
+RAG-full-k1,249,form_factor,"3.5""",3.5-inch,False,False
+RAG-full-k1,249,storage_connection_type,3.5-inch SATA,3.5-inch SATA,True,False
+RAG-full-k1,251,model_number,HDWD120UZSVA,HDWD120UZSVA,True,False
+RAG-full-k1,253,model_number,652611-B21,300GB-15K-SC-ENT,False,False
+RAG-full-k1,255,model_number,785067-B21,HP300GB15KSFFSC,False,False
+RAG-full-k1,256,model_number,WD20EZRZ,WD20EFRX,False,False
+RAG-full-k1,262,model_number,GP-ASM2NE2512GTTDR,AORUS RGB M.2 512GB,False,False
+RAG-full-k1,266,model_number,ST10000NM001G,ST16TJ3160,False,False
+RAG-full-k1,267,bus_type,USB 3.1 Gen 2,USB 3.1 Gen 2,True,False
+RAG-full-k1,267,interface_type,Type C & Type A Compatible,NVMe,False,False
+RAG-full-k1,268,model_number,CT500X8SSD9,X8-500GB,False,False
+RAG-full-k1,268,bus_type,USB 3.1 Gen 2,USB 3.2 Gen 2,False,False
+RAG-full-k1,268,interface_type,USB-C,USB-C,True,False
+RAG-full-k1,268,form_factor,External,External,True,False
+RAG-full-k1,268,storage_connection_type,USB-C,USB-C,True,False
+RAG-full-k1,269,bus_type,PCIe 4.0,PCIe,True,False
+RAG-full-k1,271,form_factor,"2.5""",Portable Drive,False,False
+RAG-full-k1,273,model_number,GV-N208SGAMING-OC-8GC,GV-N208SGAMINGOC-8GD6H,False,False
+RAG-full-k1,274,model_number,11G-P4-2589-KR,RTX-2080-Ti-KNGPINF1,False,False
+RAG-full-k1,274,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,276,model_number,XA960LE10063,Nytr1351-960G,False,False
+RAG-full-k1,276,form_factor,"2.5""",2.5,True,False
+RAG-full-k1,276,storage_connection_type,"2.5"" SATA","2.5"" SATA",True,False
+RAG-full-k1,279,bus_type,PCIe 3.0 x16,PCIe,True,False
+RAG-full-k1,279,form_factor,ATX,Desktop/Graphics Card,False,False
+RAG-full-k1,280,model_number,ST10000VX0004,ST10000VN0006,False,False
+RAG-full-k1,282,model_number,100-505826,WX7100-8GB,False,False
+RAG-full-k1,282,form_factor,Single-Slot,PCIe 3.0 16x,False,False
+RAG-full-k1,284,model_number,MZ-76E1T0B,MZ-76E1T0BW,True,False
+RAG-full-k1,286,model_number,MZ-76P512B/EU,MZ-76P512BW,False,False
+RAG-full-k1,288,model_number,WDS100T2X0C,WDS100T2X0C,True,False
+RAG-full-k1,289,model_number,MU-PC2T0S/WW,MU-AU800T,False,False
+RAG-full-k1,290,form_factor,ATX,GPU,False,False
+RAG-full-k1,294,model_number,90YV0CU1-M0NA00,T-B06c1qgGz,False,False
+RAG-full-k1,294,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,295,model_number,ASX8200PNP-2TT-C,XPG SX8200 Pro M.2 SSD - 2TB,False,False
+RAG-full-k1,297,model_number,ZA480CV1A001,ST4800DM000,False,False
+RAG-full-k1,298,model_number,TUF-RTX2060-6G-GAMING,RTX2060-TUF-GAMING-6G,False,False
+RAG-full-k1,298,bus_type,PCIe 3.0 x16,NVLink,False,False
+RAG-full-k1,301,interface_type,USB,USB_2.0,True,False
+RAG-full-k1,302,model_number,GV-N208SAORUS-WB-8GC,Aorus-RTX2080-Super-Waterforce-WB,False,False
+RAG-full-k1,302,bus_type,PCIe 3.0 x16,PCIe,True,False
+RAG-full-k1,302,form_factor,ATX Form,Desktop,False,False
+RAG-full-k1,303,model_number,ST4000NM0025,ST4000NM0007,False,False
+RAG-full-k1,305,interface_type,USB,USB_3.0,True,False
+RAG-full-k1,307,model_number,SDCZ73-256G-G46,C35,False,False
+RAG-full-k1,309,model_number,SSDSC2KB019T7,DC S4500 1TB,False,False
+RAG-full-k1,310,bus_type,PCIe 4.0,PCIe,True,False
+RAG-full-k1,312,interface_type,NVMe,USB 3.1 Gen 1,False,False
+RAG-full-k1,313,model_number,GV-N730D5-2GL,GT 730,False,False
+RAG-full-k1,313,form_factor,Low-profile,Half Height Half Length (HHHL),False,False
+RAG-full-k1,314,model_number,DUAL-RX580-O8G,RX-580-O8G-G5-DH-8GD5-V2-HW,False,False
+RAG-full-k1,315,model_number,MZ-V7S250B/AM,MZ-V7E250CW,False,False
+RAG-full-k1,316,bus_type,SATA III,SATA,True,False
+RAG-full-k1,316,interface_type,SATA,SATA,True,False
+RAG-full-k1,316,form_factor,"2.5""",2.5-inch,False,False
+RAG-full-k1,316,storage_connection_type,2.5-inch SATA,2.5-inch SATA,True,False
+RAG-full-k1,317,bus_type,PCIe 4.0,PCIe,True,False
+RAG-full-k1,318,model_number,ZA500CM1A003,SB3C01H0A00T,False,False
+RAG-full-k1,319,bus_type,PCIe 3.0 x16,PCIe,True,False
+RAG-full-k1,320,model_number,CMFVY3A-128GB,CVM128GV2,False,False
+RAG-full-k1,321,model_number,MU-PA500,MT-B5050B/AM,False,False
+RAG-full-k1,322,model_number,STGG8000400,STGG8000400,True,False
+RAG-full-k1,322,form_factor,"3.5""",External,False,False
+RAG-full-k1,322,storage_connection_type,USB 3.0,USB 3.0,True,False
+RAG-full-k1,324,model_number,ZA3840NM10011,ST11000620SSD,False,False
+RAG-full-k1,326,model_number,SDCZ48-06G-U46,SD2TPW-016G-G46,False,False
+RAG-full-k1,328,interface_type,USB-C,USB3,False,False
+RAG-full-k1,328,storage_connection_type,USB-C,USB,True,False
+RAG-full-k1,329,model_number,ZT-T20810D-10P,ZT-T30810E-10M,False,False
+RAG-full-k1,330,bus_type,PCIe x16,PCIe 3.0 x8,False,False
+RAG-full-k1,331,model_number,ASD700-256GU31-CBK,SD700-256GB,False,False
+RAG-full-k1,331,storage_connection_type,USB,"USB3.0 (or, alternatively, VALUE:USB 3.1 Gen 1)",True,False
+RAG-full-k1,332,model_number,SSDPE21D480GAX1,Optane_905P_480GB,False,False
+RAG-full-k1,334,model_number,DC450R/1920G,Data Center DC450R,False,False
+RAG-full-k1,334,form_factor,"2.5""",2.5,True,False
+RAG-full-k1,334,storage_connection_type,"2.5"" SATA","2.5"" SATA",True,False
+RAG-full-k1,336,model_number,MG04ACA600E,HDWD120SZK4A,False,False
+RAG-full-k1,338,interface_type,SAS,SAS,True,False
+RAG-full-k1,338,storage_connection_type,"2.5"" SFF",SAS,False,False
+RAG-full-k1,347,model_number,Turbo -RTX2070S-8G-EVO,RTX2070S-8G-GAMING,False,False
+RAG-full-k1,347,bus_type,PCIe,PCIe,True,False
+RAG-full-k1,348,model_number,DT100G3/ 16GBCR,DT100G3,True,False
+RAG-full-k1,349,model_number,90YV0DV1-M0NA00,Dual Radeon RX 5500 XT EVO,False,False
+RAG-full-k1,351,model_number,WDBWLG0030HBK,WDBH2D0030HBK,False,False
+RAG-full-k1,352,model_number,GT1030-2G-BRK,GT1030-2G-BRK,True,False
+RAG-full-k1,353,model_number,ST8000VN004,ST8000VN001,False,False
+RAG-full-k1,356,bus_type,PCIe 3.0,GPU,False,False
+RAG-full-k1,357,model_number,WDS200T1R0B,SA500-1000,False,False
+RAG-full-k1,357,form_factor,M.2,M.2,True,False
+RAG-full-k1,359,storage_connection_type,"2.5"" SFF",3.5,False,False
+RAG-full-k1,360,model_number,XA480ME10063,Nytro 1551.480GB,False,False
+RAG-full-k1,363,model_number,TUF-GTX1650S-4G-GAMING,GV-N165S-4G,False,False
+RAG-full-k1,363,bus_type,PCIe 3.0,PCIe 4.0,False,False
+RAG-full-k1,366,model_number,MU-PC1T0H/WW,T7P001,False,False
+RAG-full-k1,366,bus_type,USB 3.2 Gen 2,"M.2, SATA III",False,False
+RAG-full-k1,366,interface_type,Type-C,NVMe,False,False
+RAG-full-k1,368,bus_type,PCIe 2.0,PCIe,True,False
+RAG-full-k1,368,form_factor,Low profile,PCIe,False,False
+RAG-full-k1,369,model_number,ROG-STRIX-RX5700XT-O8G-GAMING,RX90SXT8GD6M,False,False
+RAG-full-k1,374,model_number,WDBYNN0010BRD-WESN,WDBY8L0020BCH-EESN,False,False
+RAG-full-k1,378,interface_type,USB Type-C,USB 3.0,False,False
+RAG-full-k1,379,model_number,WDBYVG0010BBK-WESN,WDBY8L0010BKE-HESN,False,False
+RAG-full-k1,381,model_number,SSDSC2KB240G801,D3-S4510-240GB,False,False
+RAG-full-k1,382,model_number,VGAGT1030-2G-BRK,GT1030-2G-BRK,True,False
+RAG-full-k1,384,model_number,ST1000NM001A,ST1000NM001A,True,False
+RAG-full-k1,386,model_number,ZA240NM10011,M2AAB24F0TCH,False,False
+RAG-full-k1,388,model_number,WD100PURZ,WD10PUR1000,False,False
+RAG-full-k1,389,bus_type,PCIe 3.0 x16,PCIe,True,False
+RAG-full-k1,390,bus_type,PCIe 3.0 x16,PCIe 3.0 x16,True,False
+RAG-full-k1,392,model_number,STHH2000400,STDM1000400,False,False
+RAG-full-k1,392,interface_type,Type-C,USB 3.0,False,False
+RAG-full-k1,394,model_number,MU-PC500S/WW,T7TO500G,False,False
+RAG-full-k1,396,model_number,GV-N208STURBO-8GC,GV-N208SWF2-8GC6H,False,False
+RAG-full-k1,397,model_number,WDS100T2G0A,WDS250G3B0A,False,False
+RAG-full-k1,398,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,400,bus_type,USB 3.1 Gen 1,USB 3.1 Gen 1,True,False
+RAG-full-k1,402,model_number,N208TAORUSX W-11GC,A11GC3M7W9BFAZ,False,False
+RAG-full-k1,402,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,403,model_number,SE9 G2,model_DTSE92G2A,False,False
+RAG-full-k1,405,model_number,WDS250G2B0B,WDS250G2B0B,True,False
+RAG-full-k1,405,bus_type,SATA III,M.2,False,False
+RAG-full-k1,405,interface_type,SATA,M.2,False,False
+RAG-full-k1,407,model_number,ZP500GM3A002,ST2000NE013,False,False
+RAG-full-k1,409,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,413,interface_type,SATA,SATA,True,False
+RAG-full-k1,416,model_number,STJM2000400,Barracuda 1TB SSD,False,False
+RAG-full-k1,418,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,421,bus_type,PCIe,PCIe 3.0 x16,True,False
+RAG-full-k1,422,interface_type,OTG,USB 2.0,False,False
+RAG-full-k1,425,model_number,TURBO-RTX2060S-8G-EVO,RTCO-86G6MHR2NAF1,False,False
+RAG-full-k1,425,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,426,model_number,SSDPED1K750GA01,P4800X Series 750GB,False,False
+RAG-full-k1,426,form_factor,HHHL,1/2 Height SingPack,False,False
+RAG-full-k1,427,model_number,WD10PURZ,PDTM10101001,False,False
+RAG-full-k1,429,model_number,ST8000NM000A,ST8000NM000A,True,False
+RAG-full-k1,432,bus_type,PCIe 3.0 x16,PCIe 3.0 x16,True,False
+RAG-full-k1,435,interface_type,Micro USB,USB_2.0,False,False
+RAG-full-k1,436,bus_type,USB 3.0,USB 3.0,True,False
+RAG-full-k1,436,form_factor,2.5,Portable Drive,False,False
+RAG-full-k1,437,model_number,CZ73,SDCZ43-016G-A37,False,False
+RAG-full-k1,445,model_number,D3-S4610,SSD D3-S4610,True,False
+RAG-full-k1,447,model_number,DTVP30/32GB,DTVP32GB,False,False
+RAG-full-k1,452,model_number,MG07ACA12TE,Enterprise 12TB HD,False,False
+RAG-full-k1,453,model_number,WD40EFAX,WD40EFRX,False,False
+RAG-full-k1,454,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,456,model_number,GV-N2060WF2OC-6GD,GV-N2060WF2OC-6GD,True,False
+RAG-full-k1,456,bus_type,PCIe 3.0 x16,GPU,False,False
+RAG-full-k1,457,storage_connection_type,Type C,Type-C,False,False
+RAG-full-k1,458,model_number,STEA4000402,STGD4000100,False,False
+RAG-full-k1,460,model_number,GVN166TGO6-00-G,GV-N166TGAMING-6G,False,False
+RAG-full-k1,460,bus_type,PCIe 3.0 x16,PCIe,True,False
+RAG-full-k1,461,model_number,652583-B21,HPE 600GB 6G SAS 10K rpm SFF (2.5-inch) SC Enterprise 3yr Warranty Hard Drive,False,False
+RAG-full-k1,465,model_number,SDCZ50-008G,CBL-032-GN6NA,False,False
+RAG-full-k1,465,bus_type,USB 2.0,USB2,False,False
+RAG-full-k1,466,model_number,ZT-T16610F-10L,GTX1660TWFAN6G,False,False
+RAG-full-k1,466,bus_type,PCIe 3.0,PCIe 3.0,True,False
+RAG-full-k1,467,model_number,WDS200T1R0A,WD2001J2323,False,False
+RAG-full-k1,469,model_number,SDIX30C-016G-GN6NN,iXpand16G,False,False
+RAG-full-k1,471,model_number,870757-B21,HPE600GB6K15KSFFSC3YRWDFW,False,False
+RAG-full-k1,473,model_number,SDCZ48-128G-U46,SDFNTL-128,False,False
+RAG-full-k1,474,model_number,SA2000M8/1000G,A20001TB,False,False
+RAG-full-k1,476,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,478,storage_connection_type,USB,USB,True,False
+RAG-full-k1,481,bus_type,PCIe 4.0,PCIe 3.0,False,False
+RAG-full-k1,482,model_number,RX-580P8DFD6,RX-580B6SFE9,False,False
+RAG-full-k1,485,model_number,STHP4000403,STDR4000100,False,False
+RAG-full-k1,487,model_number,MZ-76P256B/EU,MZ-76P256BW,False,False
+RAG-full-k1,488,model_number,652564-B21,HPE 300GB 6G SAS 10K rpm SFF (2.5-inch) SC Enterprise 3yr Warranty HDD,False,False
+RAG-full-k1,489,model_number,CSSD-F240GBMP510,MP510,True,False
+RAG-full-k1,490,model_number,GV-N207SAORUS-8GC,AORUS GeForce RTX 2070 SUPER 8G,False,False
+RAG-full-k1,490,interface_type,ATX,PCIe,False,False
+RAG-full-k1,490,form_factor,ATX,NVIDIA,False,False
+RAG-full-k1,494,model_number,ROG -STRIX-RTX2070S-O8G-GAMING,RTCO-8GD6-S$,False,False
+RAG-full-k1,494,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,497,bus_type,PCIe 3.0 x16,PCIe 3.0 x8,False,False
+RAG-full-k1,498,interface_type,USB Type-A,USB_3.0,False,False
+RAG-full-k1,498,storage_connection_type,USB Type-A,USB,True,False
+RAG-full-k1,499,model_number,DTIG4/128GB,DTIG4,True,False
+RAG-full-k1,501,model_number,SSDPEKNW010T8X1,SSDPEKNW010T8X1,True,False
+RAG-full-k1,502,form_factor,"2.5""",Portable,False,False
+RAG-full-k1,503,bus_type,PCIe 3.0 x16,PCIe 3.0,True,False
+RAG-full-k1,503,interface_type,USB Type-C,PCIe,False,False
+RAG-full-k1,506,bus_type,SATA III,M.2 PCIe,False,False
+RAG-full-k1,506,interface_type,SATA,M.2/SATA III,True,False
+RAG-full-k1,506,form_factor,"2.5""",M.2,False,False
+RAG-full-k1,506,storage_connection_type,"2.5"" SATA","SATA, PCIe",False,False
+RAG-full-k1,509,model_number,DT01ACA200,Toshiba DT01ACA200,True,False
+RAG-full-k1,512,model_number,ST10000VN0004,ST10000VN0004,True,False
+RAG-full-k1,513,model_number,WDS500G3X0C,SN750-500G6C-110TSB,False,False
+RAG-full-k1,514,model_number,WD30PURZ,WD20PUR4000,False,False
+RAG-full-k1,514,storage_connection_type,3.5-inch SATA,3.5-inch SATA,True,False
+RAG-full-k1,516,model_number,DUAL-RTX2070S-8G-EVO,DUAL-EVO-RTX-2070-SUPER-8G,False,False
+RAG-full-k1,516,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,517,model_number,ST16000NE000,ST16000VN000,False,False
+RAG-full-k1,518,interface_type,USB Type C,USB 3.1 Gen 2,False,False
+RAG-full-k1,519,model_number,WD5003AZEX,WD5003AZEX,True,False
+RAG-full-k1,521,model_number,ST3000VX010,ST10000VN0006,False,False
+RAG-full-k1,524,bus_type,PCIe 3.0 x16,PCIe,True,False
+RAG-full-k1,526,model_number,SDCZ71-032G-B35,C64G,False,False
+RAG-full-k1,530,model_number,MZ-V6E500BW,MZ-V6E500BW,True,False
+RAG-full-k1,531,model_number,ST600MP0006,"SAS Enterprise Hard Drive 600GB (Does not have a separate ""model"" and ""model_number"" attribute, assuming it's the same as the product type)",False,False
+RAG-full-k1,532,model_number,3813430,Intenso SSD SATA III High Performance - 120GB,False,False
+RAG-full-k1,533,model_number,GV-N166SGAMING OC-6GD,GV-N166SGAMING-OC-6G,False,False
+RAG-full-k1,533,bus_type,PCIe 3.0 x16,PCIe,True,False
+RAG-full-k1,533,form_factor,ATX,GPU,False,False
+RAG-full-k1,534,model_number,GT710-4H-SL-2GD5,NVIDIA GeForce GT 710-2GD3-P,False,False
+RAG-full-k1,535,model_number,GV-R55XTGAMING OC-8GD,GV-R55XTWF3GC-8HDH,False,False
+RAG-full-k1,537,bus_type,PCIe 3.0,PCIe 3.0,True,False
+RAG-full-k1,543,model_number,DUAL-RTX3070-8G,DUAL-RTX3070-8G,True,False
+RAG-full-k1,543,bus_type,PCIe,PCIe,True,False
+RAG-full-k1,545,bus_type,USB 3.1,USB 3.1 Gen 2,True,False
+RAG-full-k1,545,interface_type,USB Type C,USB 3.1 Gen 2,False,False
+RAG-full-k1,545,form_factor,2.5,External,False,False
+RAG-full-k1,547,model_number,DTDUO3C/32GB,DTMD032G2U1C,False,False
+RAG-full-k1,547,bus_type,USB 3.1,USB 3.1,True,False
+RAG-full-k1,547,storage_connection_type,USB-C,USB,True,False
+RAG-full-k1,548,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,550,model_number,PH-GTX1050TI-4G,Phoenix GeForce GTX 1050 Ti,False,False
+RAG-full-k1,553,model_number,VCG20708STFMPB-O,VCG20708STFMPB-O,True,False
+RAG-full-k1,553,bus_type,PCIe 3.0 x16,PCIe,True,False
+RAG-full-k1,553,form_factor,Dual-Slot,GPU,False,False
+RAG-full-k1,556,model_number,MZ-76P256E,MZ-76P256BW,False,False
+RAG-full-k1,558,model_number,DUAL-RTX2070S-A8G-EVO,RTX2070SUPERDUALEVOADVO,False,False
+RAG-full-k1,558,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,559,model_number,ZA1000GM1A001,ST120VF020,False,False
+RAG-full-k1,560,model_number,ROG-STRIX-RTX2060-A6G-GAMING,RTX2060A-6GD6,False,False
+RAG-full-k1,560,bus_type,PCIe x16,PCIe,True,False
+RAG-full-k1,561,model_number,ST2000NX0273,ST2000NM0074,False,False
+RAG-full-k1,561,bus_type,SAS 12G,SATA,False,False
+RAG-full-k1,561,interface_type,SAS,SATA,False,False
+RAG-full-k1,563,model_number,ST2000NX0253,ST10000NM0006,False,False
+RAG-full-k1,563,bus_type,SATA III,SATA,True,False
+RAG-full-k1,570,interface_type,USB Type-C,USB 3.0,False,False
+RAG-full-k1,572,form_factor,"2.5""",M.2,False,False
+RAG-full-k1,572,storage_connection_type,2.5-inch SATA,SATA,True,False
+RAG-full-k1,573,model_number,ST1000NX0313,ST1000NM0006,False,False
+RAG-full-k1,574,model_number,11293-05-40G,11267-03-20G,False,False
+RAG-full-k1,576,bus_type,PCIe 4.0,PCIe,True,False
+RAG-full-k1,578,model_number,WDS500G1B0A,WDBH8F0020JHC,False,False
+RAG-full-k1,578,form_factor,"2,5''",M.2 2280,False,False
+RAG-full-k1,578,storage_connection_type,2.5-inch SATA,SATA,True,False
+RAG-full-k1,580,model_number,11293-01-20G,11293-01-20G,True,False
+RAG-full-k1,580,bus_type,PCIe 4.0,PCIe,True,False
+RAG-full-k1,581,model_number,GV-N166TWF2OC-6GD,GV-N166TWF2C-6G,False,False
+RAG-full-k1,581,bus_type,PCIe 3.0 x16,GDDR6,False,False
+RAG-full-k1,585,model_number,MZ-N6E500BW,MZ-N5E500AWS,False,False
+RAG-full-k1,586,model_number,ST6000VN0033,IronWolf 6TB,False,False
+RAG-full-k1,587,model_number,GP-GSM2NE3100TNTD,M.2 PCIe NVMe SSD 1TB V2,False,False
+RAG-full-k1,589,model_number,TUF-GTX1660S-6G-GAMING,TUFGTX1660SUPER6GT,False,False
+RAG-full-k1,589,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,590,model_number,WDS100T1R0B,WD1001TX012,False,False
+RAG-full-k1,593,model_number,GV-R56XTWF2OC-6GD,GV-R56XTWF2OC-6GD,True,False
+RAG-full-k1,593,bus_type,PCIe 4.0,PCIe,True,False
+RAG-full-k1,595,model_number,NED3090019SB-132BA,RTX 3090-24G,False,False
+RAG-full-k1,595,bus_type,PCIe,PCIe 3.0,True,False
+RAG-full-k1,596,bus_type,SATA III,M.2,False,False
+RAG-full-k1,596,interface_type,Serial ATA III,M.2,False,False
+RAG-full-k1,600,model_number,AS102P-32G-RGY,S102PRO32G-001,False,False
+RAG-full-k1,601,form_factor,"1""",M.2,False,False
+RAG-full-k1,601,storage_connection_type,USB Type C,NAND,False,False
+RAG-full-k1,602,bus_type,USB 3.1,NVMe,False,False
+RAG-full-k1,603,storage_connection_type,USB,USB,True,False
+RAG-full-k1,604,model_number,ASX6000LNP-512GT-C,XPG SX6000 Lite,False,False
+RAG-full-k1,605,interface_type,USB 3.0,USB 3.0,True,False
+RAG-full-k1,605,form_factor,Portable External,Portable External,True,False
+RAG-full-k1,608,model_number,WDBYNN0010BYL-WESN,WDBY9C0010BKE-RS,False,False
+RAG-full-k1,608,form_factor,"2,5""",Portable,False,False
+RAG-full-k1,608,storage_connection_type,USB 3.0,USB,True,False
+RAG-full-k1,609,model_number,759208-B21,HPE 300GB 12G SAS 15K rpm SFF (2.5-inch) SC Enterprise 3yr Warranty Hard Drive,False,False
+RAG-full-k1,613,model_number,TUF-GTX1660-6G-GAMING,TUF-GTX-1660-O6G-GAMING,False,False
+RAG-full-k1,613,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,614,model_number,718037782898,WD10J5000,False,False
+RAG-full-k1,614,interface_type,SATA,SATA,True,False
+RAG-full-k1,614,form_factor,3.5 col,3.5,True,False
+RAG-full-k1,614,storage_connection_type,3.5 col,3.5-inch SATA,False,False
+RAG-full-k1,615,model_number,08G-P4-3071-KR,18G-P4-1276-KR,False,False
+RAG-full-k1,615,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,616,interface_type,Type-C,USB 3.1 Type-C,True,False
+RAG-full-k1,616,form_factor,"2.5""",External Portable,False,False
+RAG-full-k1,616,storage_connection_type,Type-C,Type-C,True,False
+RAG-full-k1,617,model_number,GV-N105TOC-4GL,GV-N105TD5-1GI,False,False
+RAG-full-k1,617,bus_type,PCIe 3.0 x16,PCIe,True,False
+RAG-full-k1,617,form_factor,Low Profile,Low Profile,True,False
+RAG-full-k1,618,bus_type,USB 2.0,USB,True,False
+RAG-full-k1,622,model_number,WDBYVG0010BBK-WESN,WDBYNN0010BKK,False,False
+RAG-full-k1,625,model_number,ZT-T20710D-10P,ZT-X20700C-10M,False,False
+RAG-full-k1,626,model_number,ST1200MM0129,ST1000NM0026,False,False
+RAG-full-k1,629,model_number,90YV0DQ2-M0NA00,RTCO-SAS-8G,False,False
+RAG-full-k1,629,bus_type,PCIe 4.0,PCIe,True,False
+RAG-full-k1,631,storage_connection_type,"2.5"" SFF","2.5"" SFF",True,False
+RAG-full-k1,632,model_number,CT500P5SSD8,CT500P5SSD8,True,False
+RAG-full-k1,633,bus_type,PCIe 3.0 x16,PCIe 3.0,True,False
+RAG-full-k1,635,bus_type,PCIe 4.0,PCIe,True,False
+RAG-full-k1,636,bus_type,USB 3.2 Gen 2,USB 3.2 Gen 2,True,False
+RAG-full-k1,636,interface_type,Type-C,Type-C,True,False
+RAG-full-k1,637,bus_type,PCIe 3.0,PCIe 3.0,True,False
+RAG-full-k1,639,model_number,GVN166TA-00-G,Aorus_GFX_Ti_6GB,False,False
+RAG-full-k1,639,bus_type,PCIe 3.0 x16,PCIe 3.0 x16,True,False
+RAG-full-k1,640,model_number,WDS480G2G0A,WDS480G6B0A,False,False
+RAG-full-k1,641,model_number,ST2000DM006,BarracudaDesktopHDDST2000.2T,False,False
+RAG-full-k1,642,model_number,AUV128-16G-RBE,UV128,True,False
+RAG-full-k1,644,model_number,WDBS4B0020BBK-WESN,WDBYNN0020BBK-WESN,False,False
+RAG-full-k1,644,bus_type,USB 3.0,SATA,False,False
+RAG-full-k1,644,interface_type,USB,USB,True,False
+RAG-full-k1,644,form_factor,PORTABLE,External,False,False
+RAG-full-k1,644,storage_connection_type,USB,USB,True,False
+RAG-full-k1,645,bus_type,USB,NAND,False,False
+RAG-full-k1,645,interface_type,USB,USB-C,True,False
+RAG-full-k1,645,storage_connection_type,USB,USB,True,False
+RAG-full-k1,650,storage_connection_type,"2.5""",2.5 Inches SFF,False,False
+RAG-full-k1,651,model_number,ZT-T16620D-10M,ZT-T20610A-30,False,False
+RAG-full-k1,652,model_number,832514-b21,VALUE:None,False,False
+RAG-full-k1,653,model_number,912-V373-283,RTX2070SX-8G,False,False
+RAG-full-k1,653,bus_type,PCIe 3.0 x16,PCIe,True,False
+RAG-full-k1,654,model_number,ROG -STRIX-RTX2060-O6G-EVO-GAMING,ROG-STRIX-RTX2060-O6G-EVO-GAMING,False,False
+RAG-full-k1,655,storage_connection_type,2.5-inch SAS,2.5 Inches,False,False
+RAG-full-k1,656,interface_type,SATA,SATA,True,False
+RAG-full-k1,656,form_factor,2.5,2.5 Inch,True,False
+RAG-full-k1,656,storage_connection_type,2.5-inch SATA,2.5 Inch,False,False
+RAG-full-k1,659,form_factor,"2.5""",External,False,False
+RAG-full-k1,660,bus_type,PCIe 4.0,NVLink/PCIe,False,False
+RAG-full-k1,663,model_number,TUF 3-RX5700XT-O8G-GAMING,RX-97XT8G-GAMING-X,False,False
+RAG-full-k1,664,model_number,01G-P3-1313-KR,01G-P3-1313-KR,True,False
+RAG-full-k1,664,bus_type,PCIe,PCIe,True,False
+RAG-full-k1,664,form_factor,Low Profile,Low Profile,True,False
+RAG-full-k1,665,form_factor,"2,5",Portable,False,False
+RAG-full-k1,666,form_factor,2.5in,M.2,False,False
+RAG-full-k1,666,storage_connection_type,2.5-inch SATA,SATA,True,False
+RAG-full-k1,667,model_number,SSDPEKNW010T9X1,665p,False,False
+RAG-full-k1,668,model_number,VCQP400DVI-PB,P400,True,False
+RAG-full-k1,668,bus_type,PCIe 3.0 x16,PCIe,True,False
+RAG-full-k1,669,bus_type,PCIe,PCIe,True,False
+RAG-full-k1,670,model_number,2240,GGB1200DSS-120,False,False
+RAG-full-k1,673,interface_type,USB3.0,USB 3.0/USB 2.0,False,False
+RAG-full-k1,673,form_factor,2.5,External,False,False
+RAG-full-k1,676,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,677,interface_type,Micro USB,USB_2.0,False,False
+RAG-full-k1,680,model_number,MZ-76Q4T0BW,860 QVO,False,False
+RAG-full-k1,683,model_number,11295-05-20G,RX-56XTX3SD6-8G,False,False
+RAG-full-k1,685,model_number,MU-PC1T0T,MU-PC1T0T,True,False
+RAG-full-k1,685,interface_type,Type C / A,Type C / A,True,False
+RAG-full-k1,688,bus_type,PCIe 3.0,NVLink,False,False
+RAG-full-k1,689,model_number,DUAL-RTX2060-O6G-EVO,DUAL-GF-RTX2060-OC-EVO,False,False
+RAG-full-k1,689,bus_type,PCIe 3.0,XMP,False,False
+RAG-full-k1,690,bus_type,SATA III,SATA,True,False
+RAG-full-k1,690,interface_type,SATA,SATA,True,False
+RAG-full-k1,690,form_factor,"3.5""",3.5-inch,False,False
+RAG-full-k1,690,storage_connection_type,"3.5"" SATA",3.5-inch SATA,False,False
+RAG-full-k1,691,model_number,TUF-RTX3090-24G-GAMING,RTX-3090-TUF-GAMING,False,False
+RAG-full-k1,691,bus_type,PCIe,PCIe,True,False
+RAG-full-k1,693,model_number,WDS500G1R0A,A1000,False,False
+RAG-full-k1,695,interface_type,ATX,PCIe 3.0 x16,False,False
+RAG-full-k1,696,model_number,DTDUO3/16GB,DTMDO16G/3GB,False,False
+RAG-full-k1,696,interface_type,OTG,OTG,True,False
+RAG-full-k1,697,model_number,GV-R57XTGAMING OC-8GD,model RX-57XTD6-8GD,False,False
+RAG-full-k1,697,bus_type,PCIe 4.0,PCIe,True,False
+RAG-full-k1,700,form_factor,2.5-Inch,2.5,True,False
+RAG-full-k1,700,storage_connection_type,2.5-inch SATA,"2.5"" Sata III",False,False
+RAG-full-k1,701,model_number,DUAL-RTX2070S-O8G-EVO,RTX2070SUPER-DUAL-EVO-OC,False,False
+RAG-full-k1,701,bus_type,PCIe 3.0 x16,PCIe,True,False
+RAG-full-k1,704,model_number,V375-032R,GP102_8G,False,False
+RAG-full-k1,704,bus_type,PCIe 3.0 x16,PCIe,True,False
+RAG-full-k1,705,model_number,781518-B21,765466-B21,False,False
+RAG-full-k1,706,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,707,model_number,STEA500400,STEA500400,True,False
+RAG-full-k1,707,interface_type,USB 3.0,USB 3.0,True,False
+RAG-full-k1,711,interface_type,USB 3.0,USB 3.0,True,False
+RAG-full-k1,711,form_factor,"2.5""",External,False,False
+RAG-full-k1,711,storage_connection_type,"2.5""",USB 3.0,False,False
+RAG-full-k1,712,model_number,MU-PC500T,T7P500G,False,False
+RAG-full-k1,712,bus_type,USB 3.2 Gen 2,NAND,False,False
+RAG-full-k1,712,interface_type,Type-C,USB-C,False,False
+RAG-full-k1,713,model_number,ST14000NE0008,ST14000VN001,False,False
+RAG-full-k1,713,interface_type,SATA,SATA,True,False
+RAG-full-k1,714,model_number,861691-B21,HDD72K3.5,False,False
+RAG-full-k1,715,model_number,WDS200T2B0B,MNU101T0BCH0,False,False
+RAG-full-k1,716,model_number,SDCZ60-064G-B35,C6MG3C,False,False
+RAG-full-k1,717,model_number,WD82PURZ,WD Purple 8TB,False,False
+RAG-full-k1,719,model_number,ST1800MM0129,ST1800MM0006,False,False
+RAG-full-k1,720,model_number,GV-N1650OC-4GD,GV-N165OC-4GR,False,False
+RAG-full-k1,721,model_number,100-505940,WX-5100-8GBG5,False,False
+RAG-full-k1,721,bus_type,PCIe 3.0 x16,PCIe,True,False
+RAG-full-k1,724,model_number,ZA250CM1A003,ST250LT012,False,False
+RAG-full-k1,726,bus_type,USB 2.0,USB,True,False
+RAG-full-k1,728,bus_type,USB 2.0,USB,True,False
+RAG-full-k1,730,model_number,HDWQ140UZSVA,TOSHIB-N300-4TB,False,False
+RAG-full-k1,733,bus_type,PCIe 3.0 x16,PCIe,True,False
+RAG-full-k1,734,model_number,SKC2000M8 / 500G,KC2000-500G,False,False
+RAG-full-k1,735,model_number,WDS100T1R0A,WD1001PR015,False,False
+RAG-full-k1,739,bus_type,PCIe 4.0,PCIe 3.0,False,False
+RAG-full-k1,741,bus_type,PCIe 3.0,PCIe 3.0,True,False
+RAG-full-k1,742,model_number,652572-B21,652572-B21,True,False
+RAG-full-k1,745,model_number,SDIX30C-032G-GN6NN,IXPAND32GB,False,False
+RAG-full-k1,745,interface_type,Lightning,Lightning connector and USB 3.0,True,False
+RAG-full-k1,748,model_number,STEB4000100,STEB4000100,True,False
+RAG-full-k1,748,bus_type,USB 3.0,USB 2.0,False,False
+RAG-full-k1,749,model_number,ST12000NE0008,IronWolf Pro 12TB,False,False
+RAG-full-k1,751,interface_type,USB Type-A,USB_3.0,False,False
+RAG-full-k1,751,storage_connection_type,USB Type-A,USB_3.0,False,False
+RAG-full-k1,753,model_number,SSDSC2KG960G801,SSD/S4610-960GB,False,False
+RAG-full-k1,754,form_factor,"1""",External,False,False
+RAG-full-k1,755,model_number,WDS500G2B0B,WDS500G3B0A,False,False
+RAG-full-k1,756,form_factor,"2,5Zoll",m2,False,False
+RAG-full-k1,756,storage_connection_type,2.5-inch SATA,SATA,True,False
+RAG-full-k1,757,model_number,90YV0DU0-M0NA00,90YV0DV1-M0NA00,False,False
+RAG-full-k1,759,model_number,ST8000VX004,ST8000VN001,False,False
+RAG-full-k1,761,model_number,DTLPG3,DTLPG3120G3,True,False
+RAG-full-k1,762,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,765,model_number,ST3000LM024,ST3000DM001,False,False
+RAG-full-k1,767,form_factor,"2.5""",2.5,True,False
+RAG-full-k1,768,model_number,STJP1000400,FIRECUDA GAMING-1TB,False,False
+RAG-full-k1,768,form_factor,external SSD,M.2,False,False
+RAG-full-k1,769,model_number,SSDPEKNW512G8X1,SSDPEKNW016T8X1,False,False
+RAG-full-k1,769,interface_type,NVMe,NVMe,True,False
+RAG-full-k1,772,model_number,MU-PA1T0B/WW,"T5 External Portable SSD, T5 Series",False,False
+RAG-full-k1,773,model_number,ASX6000LNP-1TT-C,XPG SX6000 Lite,False,False
+RAG-full-k1,776,model_number,90YV0AL0-M0NA00,GT710-SL-1GD5,False,False
+RAG-full-k1,781,model_number,WDBYNN0010BWT-WESN,WDBYNN0010HBK,False,False
+RAG-full-k1,781,bus_type,USB 3.0,USB 3.0,True,False
+RAG-full-k1,783,bus_type,PCIe 4.0,PCIe,True,False
+RAG-full-k1,784,model_number,WDBYFT0040BOR-WESN,WD04F001,False,False
+RAG-full-k1,784,interface_type,USB,USB 3.0,True,False
+RAG-full-k1,785,model_number,AUV128-32G-RBE,DASHDRIVEUV128-64GB,False,False
+RAG-full-k1,786,bus_type,PCIe,PCIe,True,False
+RAG-full-k1,788,form_factor,"1""",M.2,False,False
+RAG-full-k1,788,storage_connection_type,USB Type C,USB Type C,True,False
+RAG-full-k1,789,model_number,ROG-STRIX-RTX3080-10G-GAMING,RTX 3080-10GB-ROG-STRIX,False,False
+RAG-full-k1,789,bus_type,PCIe,PCIe,True,False
+RAG-full-k1,790,model_number,AXRX 5700XT 8GBD6-3DHR/OC,RX-57XOC-8DHDG6-2DF,False,False
+RAG-full-k1,792,model_number,ROG -STRIX-RTX2070S-A8G-GAMING,RTCOG7-8GD6MF,False,False
+RAG-full-k1,794,model_number,NE51660018J9-165F,GP176,False,False
+RAG-full-k1,795,model_number,GV-N207SWF3OC-8GD,GV-N207SWF2OC-8HDMI,False,False
+RAG-full-k1,797,bus_type,PCIe 3.0 x16,PCIe,True,False
+RAG-full-k1,798,model_number,ST16000NM001G,ST15000VN001,False,False
+RAG-full-k1,802,bus_type,PCIe 3.0 x16,PCIe,True,False
+RAG-full-k1,803,model_number,ROG-STRIX-RTX3090-O24G-GAMING,RTX309024ROGOCSTRIX,False,False
+RAG-full-k1,803,bus_type,PCIe,PCIe,True,False
+RAG-full-k1,804,model_number,WDS500G1B0C,M.2 NVMe SSD/Solid State Drive,False,False
+RAG-full-k1,806,bus_type,PCIe 3.0 x16,GDDR5,False,False
+RAG-full-k1,806,form_factor,Full-height,"Full Height, Double Width (HHDL)",False,False
+RAG-full-k1,807,model_number,PBU120GS25SSDR,PBM2-120G,False,False
+RAG-full-k1,809,bus_type,PCIe 3.0,PCIe,True,False
+RAG-full-k1,810,model_number,MZ-V7S250BW,MZ-V7E250BW,False,False
+RAG-full-k1,811,model_number,SUV500MS-480GB,UV500480MS6A,False,False

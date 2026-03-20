@@ -1,0 +1,155 @@
+config,attribute,ground_truth,predicted,correct,unknown
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,USB 3.0,USB_A,False,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe 4.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,SATA III,M.2,False,False
+LLM-only,bus_type,USB 3.0,SATA,False,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,SATA III,SATA,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,USB 3.0,SATA,False,False
+LLM-only,bus_type,SATA III,M.2,False,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe 4.0,PCIe,True,False
+LLM-only,bus_type,PCIe 4.0,PCIe,True,False
+LLM-only,bus_type,USB 3.2 Gen 2,SATA III,False,False
+LLM-only,bus_type,PCIe x16,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe x16,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,USB 3.0,USB,True,False
+LLM-only,bus_type,USB 3.0,SATA,False,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe,PCIe,True,False
+LLM-only,bus_type,PCIe,PCIe,True,False
+LLM-only,bus_type,PCIe x16,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,NVIDIA,False,False
+LLM-only,bus_type,PCIe 3.0,192 bit,False,False
+LLM-only,bus_type,PCIe,SATA,False,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,USB 3.0,SATA,False,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x4,M.2,False,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,SATA,SATA,True,False
+LLM-only,bus_type,USB 3.1 Gen 2,SATA,False,False
+LLM-only,bus_type,USB 3.1 Gen 2,SATA III,False,False
+LLM-only,bus_type,PCIe 4.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe 4.0,PCIe,True,False
+LLM-only,bus_type,SATA III,SATA,True,False
+LLM-only,bus_type,PCIe 4.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe x16,PCIe,True,False
+LLM-only,bus_type,PCIe,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,USB 3.2 Gen 2,SATA,False,False
+LLM-only,bus_type,PCIe 2.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,USB 3.1 Gen 1,USB,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,SATA III,M.2,False,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe,PCIe x16,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe 3.0,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,USB 3.0,SATA,False,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,USB 2.0,USB,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe 4.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,SATA III,SATA,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe,PCIe,True,False
+LLM-only,bus_type,USB 3.1,SATA,False,False
+LLM-only,bus_type,USB 3.1,USB-C,False,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe x16,PCIe,True,False
+LLM-only,bus_type,SAS 12G,SATA,False,False
+LLM-only,bus_type,SATA III,SATA,True,False
+LLM-only,bus_type,PCIe 4.0,PCIe,True,False
+LLM-only,bus_type,PCIe 4.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,X16 PCIe,False,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe 4.0,PCIe,True,False
+LLM-only,bus_type,PCIe,PCIe,True,False
+LLM-only,bus_type,SATA III,M.2,False,False
+LLM-only,bus_type,USB 3.1,USB-C,False,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,USB 2.0,USB-A,False,False
+LLM-only,bus_type,PCIe 4.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe 4.0,PCIe,True,False
+LLM-only,bus_type,USB 3.2 Gen 2,SATA,False,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,USB 3.0,USB,True,False
+LLM-only,bus_type,USB,SATA,False,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIeX16,False,False
+LLM-only,bus_type,PCIe 4.0,PCIe,True,False
+LLM-only,bus_type,PCIe,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,SATA III,SATA,True,False
+LLM-only,bus_type,PCIe,PCIe,True,False
+LLM-only,bus_type,PCIe 4.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,USB 3.2 Gen 2,SATA,False,False
+LLM-only,bus_type,PCIe 3.0 x16,SLOT,False,False
+LLM-only,bus_type,USB 2.0,USB,True,False
+LLM-only,bus_type,USB 2.0,USB-A,False,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe 4.0,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,USB 3.0,SATA,False,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
+LLM-only,bus_type,USB 3.0,SATA,False,False
+LLM-only,bus_type,PCIe 4.0,PCIe,True,False
+LLM-only,bus_type,PCIe,PCIe,True,False
+LLM-only,bus_type,PCIe,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0 x16,PCIe,True,False
+LLM-only,bus_type,PCIe 3.0,PCIe,True,False
