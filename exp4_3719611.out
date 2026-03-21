@@ -1,0 +1,15 @@
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n904
+Job ID: 3719611
+Cluster: uc3
+User/Group: ma_mpandya/ma_ma
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 00:09:36 core-walltime
+Job Wall-clock time: 00:00:36
+Memory Utilized: 34.71 MB
+Memory Efficiency: 0.03% of 124.51 GB (124.51 GB/node)
