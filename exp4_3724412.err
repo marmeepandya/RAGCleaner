@@ -1,12 +1,0 @@
-Error: listen tcp 127.0.0.1:11434: bind: address already in use
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights:   1%|          | 1/103 [00:00<00:14,  7.21it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 726.77it/s]
-[1mBertModel LOAD REPORT[0m from: /home/ma/ma_ma/ma_mpandya/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/c9745ed1d9f207416be6d2e6f8de32d1f16199bf
-Key                     | Status     |  | 
-------------------------+------------+--+-
-embeddings.position_ids | UNEXPECTED |  | 
-
-[3mNotes:
-- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.[0m
-Batches:   0%|          | 0/35 [00:00<?, ?it/s]Batches:   3%|▎         | 1/35 [00:02<01:19,  2.35s/it]Batches:  31%|███▏      | 11/35 [00:02<00:03,  6.12it/s]Batches:  66%|██████▌   | 23/35 [00:02<00:00, 14.70it/s]Batches: 100%|██████████| 35/35 [00:02<00:00, 13.24it/s]
-Batches:   0%|          | 0/35 [00:00<?, ?it/s]Batches:  29%|██▊       | 10/35 [00:00<00:00, 98.16it/s]Batches:  66%|██████▌   | 23/35 [00:00<00:00, 111.91it/s]Batches: 100%|██████████| 35/35 [00:00<00:00, 121.42it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 131.09it/s]

@@ -1,0 +1,842 @@
+[
+  {
+    "timestamp": "2026-03-24T14:05:49.619943Z",
+    "row_index": 0,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 211700.74701309204,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 520,
+      "output_tokens": 49,
+      "total_tokens": 569
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "Gigabyte NVIDIA GeForce RTX 3080 Gaming OC 10GB Ampere Graphics Card. Description: CUDA Cores: 8704, Boost Clock: 1800MHz, GDDR6X, 320-bit Memory, Memory Clock: 19.0 Gbps, Ray Tracing, 3x Display Port, 2x HDMI, 3 Yr Warranty."
+      }
+    ],
+    "response_text_preview": "{\n    \"bus_type\": null,\n    \"model_number\": null,\n    \"model\": \"NVIDIA GeForce RTX 3080 Gaming OC\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:07:15.530368Z",
+    "row_index": 1,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 85903.24211120605,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 490,
+      "output_tokens": 48,
+      "total_tokens": 538
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "Corsair Force MP510 M.2 SSD - 960GB. Description: Solid State Drive, 960 GB, intern, M.2 2280, PCI Express 3.0 x4 (NVMe), 256-bit AES"
+      }
+    ],
+    "response_text_preview": "{\n    \"bus_type\": \"PCIe 3.0\",\n    \"model_number\": null,\n    \"model\": \"Force MP510\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:09:26.520313Z",
+    "row_index": 2,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 130985.29124259949,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 515,
+      "output_tokens": 59,
+      "total_tokens": 574
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "Seagate EXOS 4TB 3.5\\\" SATA HDD/Hard Drive. Description: 4TB Seagate EXOS ST4000NM0115, 3.5\\\" Enterprise HDD, SATA III - 6GB/s, 7200rpm, 128MB Cache, 512E, 4.16ms, NCQ, OEM"
+      }
+    ],
+    "response_text_preview": "{\n    \"bus_type\": \"SATA III\",\n    \"model_number\": \"ST4000NM0115\",\n    \"model\": \"Seagate EXOS ST4000NM0115\",\n    \"read_speed_mb_s\": 600,\n    \"height_mm\": null\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:12:03.520535Z",
+    "row_index": 0,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 92676.96952819824,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 520,
+      "output_tokens": 49,
+      "total_tokens": 569
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "Gigabyte NVIDIA GeForce RTX 3080 Gaming OC 10GB Ampere Graphics Card. Description: CUDA Cores: 8704, Boost Clock: 1800MHz, GDDR6X, 320-bit Memory, Memory Clock: 19.0 Gbps, Ray Tracing, 3x Display Port, 2x HDMI, 3 Yr Warranty."
+      }
+    ],
+    "response_text_preview": "{\n    \"bus_type\": null,\n    \"model_number\": null,\n    \"model\": \"NVIDIA GeForce RTX 3080 Gaming OC\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:13:44.723485Z",
+    "row_index": 1,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 101182.68013000488,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 490,
+      "output_tokens": 48,
+      "total_tokens": 538
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "Corsair Force MP510 M.2 SSD - 960GB. Description: Solid State Drive, 960 GB, intern, M.2 2280, PCI Express 3.0 x4 (NVMe), 256-bit AES"
+      }
+    ],
+    "response_text_preview": "{\n    \"bus_type\": \"PCIe 3.0\",\n    \"model_number\": null,\n    \"model\": \"Force MP510\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:15:16.521020Z",
+    "row_index": 2,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 91768.95666122437,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 515,
+      "output_tokens": 59,
+      "total_tokens": 574
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "Seagate EXOS 4TB 3.5\\\" SATA HDD/Hard Drive. Description: 4TB Seagate EXOS ST4000NM0115, 3.5\\\" Enterprise HDD, SATA III - 6GB/s, 7200rpm, 128MB Cache, 512E, 4.16ms, NCQ, OEM"
+      }
+    ],
+    "response_text_preview": "{\n    \"bus_type\": \"SATA III\",\n    \"model_number\": \"ST4000NM0115\",\n    \"model\": \"Seagate EXOS ST4000NM0115\",\n    \"read_speed_mb_s\": 600,\n    \"height_mm\": null\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:16:47.921157Z",
+    "row_index": 3,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 91396.65365219116,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 474,
+      "output_tokens": 44,
+      "total_tokens": 518
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "Asus GeForce GTX 1650 DUAL OC 4GB GDDR5 Graphics Card. Description: GTX 1650, 4GB, GDDR5"
+      }
+    ],
+    "response_text_preview": "{\n    \"bus_type\": null,\n    \"model_number\": null,\n    \"model\": \"GTX 1650\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:17:54.021307Z",
+    "row_index": 4,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 66070.15442848206,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 482,
+      "output_tokens": 43,
+      "total_tokens": 525
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "Kingston 16GB DataTraveler Vault Flash Drive. Description: Kingston 16GB DataTraveler Vault Flash Drive - this product is manufactured by Kingston in United States (and maybe in other countries)"
+      }
+    ],
+    "response_text_preview": "{\n    \"bus_type\": null,\n    \"model_number\": null,\n    \"model\": \"DataTraveler Vault\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:20:42.624049Z",
+    "row_index": 5,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 168592.5567150116,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 1088,
+      "output_tokens": 59,
+      "total_tokens": 1147
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "Gigabyte GeForce GTX 1660 SUPER OC 6GB Dual Fan Graphics Card. Description: Powered by GeForce GTX 1660 SUPERIntegrated with 6GB GDDR6 192-bit memory interfaceWINDFORCE 2X Cooling System with alternate spinning fans90 mm unique blade fansProtection Back PlateCore Clock1830 MHz (Reference Card: 1785 MHz)WINDFORCE 2X COOLING SYSTEMWINDFORCE 2X cooling system features 2x 90mm unique blade fans, alternate spinning fan, a composite copper heat pipe direct touch GPU and 3D active fan functionality, together delivering an effective heat dissipation capacity for higher performance at lower temperatures.ALTERNATE SPINNINGThe GIGABYTE ?Alternate Spinning? is the only solution that can solve the turbulent airflow of adjacent fans. Since the adjacent fans rotate in the same direction, the airflow direction is opposite between the fans, which will cause turbulent airflow and reduce heat dissipation efficiency. GIGABYTE turns the adjacent fans in the opposite direction, so that the airflow direction between the two fans is the same, reducing the turbulence and enhancing the airflow pressure.UNIQUE BLADE FANThe airflow is spilt by the triangular fan edge, and guided smoothly through the 3D stripe curve on the fan surface, effectively enhancing the airflow.3D ACTIVE FANThe 3D Active Fan provides semi-passive cooling, and the fans will remain off when the GPU is in a low load or low power game. It allows gamers to enjoy gameplay in complete silence when the system is running light or idle.HEAT PIPE DIRECT TOUCHThe shape of the pure copper heat pipe maximizes the direct contact area with the GPU, enhancing heat transfer. The heat pipe also covers the VRAM through a large metal plate contact to ensure proper cooling.COMPOSITE HEAT-PIPEThe composite heat-pipe combines thermal conductivity and phase transition to efficiently manage the heat transfer between two solid interfaces which increases cooling capacity.EXTREME DURABILITY AND OVERCLOCKINGThe graphics card uses the better power phases design to allow the MOSFET to operate at lower temperature, and over-temperature protection design and load balancing for each MOSFET, plus the Ultra Durable certified chokes and capacitors, to provide excellent performance and longer system life.PROTECTION BACK PLATEThe back plate not only provides an aesthetical shape, but also enhances the structure of the graphics card to provide complete protection.SpecificationsGraphics ProcessingGeForce GTX 1660 SUPERCore Clock1830 MHz (Reference Card: 1785 MHz)CUDA Cores1408Memory Clock14000 MHzMemory Size6 GBMemory TypeGDDR6Memory Bus192 bitMemory Bandwidth (GB/sec)336 GB/sCard BusPCI-E 3.0 x 16Digital Maximum Resolution7680x4320@60HzMulti-View4Card SizeL=225.65 W=122.02 H=40.5 mmPCB FormATXDirectX12OpenGL4.6Recommended PSU450WPower Connectors8 pin x 1OutputDisplayPort 1.4 *3HDMI 2.0b *1AccessoriesQuick guideDriver CD"
+      }
+    ],
+    "response_text_preview": "{\n    \"bus_type\": null,\n    \"model_number\": null,\n    \"model\": \"Gigabyte GeForce GTX 1660 SUPER OC 6GB Dual Fan Graphics Card\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": 40.5\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:21:49.331339Z",
+    "row_index": 6,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 66698.85206222534,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 485,
+      "output_tokens": 49,
+      "total_tokens": 534
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "MSI GeForce GTX 1660 Ti GAMING X 6GB GDDR6 Graphics Card. Description: GTX 1660 TI, 6GB GDDR6, Boost: 1875 MHz, RGB Lighting"
+      }
+    ],
+    "response_text_preview": "{\n    \"bus_type\": null,\n    \"model_number\": null,\n    \"model\": \"GeForce GTX 1660 Ti GAMING X\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:23:23.620983Z",
+    "row_index": 7,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 94285.88342666626,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 527,
+      "output_tokens": 55,
+      "total_tokens": 582
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "GeForce\u00ae RTX 2080 SUPER\u2122 Advanced ROG-STRIX-RTX2080S-A8G-GAMING, 1650 - 1860MHz, 8GB GDDR6, Graphics Card. Description: ASUS ROG Strix GeForce\u00ae RTX 2080 SUPER\u2122 Advanced edition 8GB GDDR6 with powerful cooling and a super performance boost for high refresh rates and VR gaming"
+      }
+    ],
+    "response_text_preview": "{\n    \"bus_type\": null,\n    \"model_number\": null,\n    \"model\": \"ROG-STRIX-RTX2080S-A8G-GAMING\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:24:38.620231Z",
+    "row_index": 8,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 74988.44289779663,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 524,
+      "output_tokens": 54,
+      "total_tokens": 578
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "Asus Strix GeForce RTX 2060 Super EVO OC Gaming 8GB Graphics Card. Description: Cuda Cores: 2176, Boost Clock: 1860MHz, GDDR6, 256-bit Memory, Memory Clock: 14Ghz, Ray Tracing, 2 x DisplayPort, 2 x HDMI, 1 x Type-C, 3 Yr Warranty"
+      }
+    ],
+    "response_text_preview": "{\n    \"bus_type\": null,\n    \"model_number\": null,\n    \"model\": \"Asus Strix GeForce RTX 2060 Super EVO OC Gaming\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:27:02.428345Z",
+    "row_index": 9,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 143793.12586784363,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 873,
+      "output_tokens": 62,
+      "total_tokens": 935
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "ADATA SSD 1TB XPG GAMMIX S11 Pro, PCIe Gen3x4 M.2 2280 (R:3500/W:3000 MB/s). Description: XPG GAMMIX S11 Pro PCIe Gen3x4 M.2 2280 Solid State Drive Employing the extra-fast PCIe Gen3x4 interface and supporting NVMe 1.3, the GAMMIX S11 Pro delivers blazing fast read/write speeds of up to 3500/3000MB per second. What\u2019s more, the S11 Pro is encased in a heatsink that reduces the SSD's temperatures by up to 10\u00b0C. Equipped with 3D NAND Flash along with SLC Caching, a DRAM Cache Buffer, End-to-End Data Protection, and LDPC ECC technology, it maintains high speeds and data integrity even during intense gaming, rendering, overclocking, and other high-demand applications.Ultra-fast PCIe Gen3x4 interface: R/W speed up to 3500/3000MB/s NVMe 1.3 support 3D NAND Flash for higher capacity and durability Unique heatsink design \u2013 makes SSD 10\u00b0C cooler Advanced LDPC ECC Technology SLC Caching and DRAM cache buffer E2E Data Protection and RAID Engine Compact M.2 2280 form factor \u2013 ideal for gaming and high-end desktopsTECHNICAL SPECIFICATIONSCapacity 1 TBNAND Flash 3D TLCInterface PCIe Gen3x4Form Factor M.2 2280MTBF 2,000,000 hoursDimensions (L x W x T) 22 x 80 x 6.1mmWeight 11g / 0.38ozPower Consumption 0.33W Active (Typical), 0.14W Slumber (Typical) (*measured by power meter)Operating Temperature 0\u00b0C~70\u00b0CStorage Temperature -40\u00b0C~85\u00b0CShock Resistance 1500G/0.5msCertifications RoHS, CE, FCC, BSMI, VCCI, KCWarranty 5 years."
+      }
+    ],
+    "response_text_preview": "```json\n{\n    \"bus_type\": \"PCIe Gen3x4\",\n    \"model_number\": null,\n    \"model\": \"XPG GAMMIX S11 Pro\",\n    \"read_speed_mb_s\": 3500,\n    \"height_mm\": 6.1\n}\n```"
+  },
+  {
+    "timestamp": "2026-03-24T14:28:52.324239Z",
+    "row_index": 10,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 109880.45763969421,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 518,
+      "output_tokens": 55,
+      "total_tokens": 573
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "Gigabyte AMD Radeon RX 5600 XT GAMING OC 6GB GDDR6 RDNA PCIe 4.0 Graphics Card. Description: Gigabyte Radeon RX 5600 XT GAMING OC 6GB GDDR6 PCIe 4.0 Graphics Card, 7nm RDNA, 2304 Streams, 1560MHz, 1620MHz Boost"
+      }
+    ],
+    "response_text_preview": "{\n    \"bus_type\": \"PCIe 4.0\",\n    \"model_number\": null,\n    \"model\": \"Radeon RX 5600 XT GAMING OC\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:30:55.623171Z",
+    "row_index": 11,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 123281.64315223694,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 767,
+      "output_tokens": 46,
+      "total_tokens": 813
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "AMD RADEON PRO WX 4100 4 GB GDDR5. Description: World\u2019s Fastest Low-Profile Workstation Graphics Card1Content creation has evolved over the past ten years, and so have the demands of the designers and creators. CAD professionals want flexible, sleek, and quiet small form-factor workstations. Radeon\u2122 Pro WX 4100 delivers the performance and reliability workstation users need to get their job done.Great Performance in a Small Form FactorPurpose-built for CAD professionals, the Radeon\u2122 Pro WX 4100 graphics card is the world\u2019s fastest low-profile workstation graphics solution available today1, delivering up to 2.4 TFLOPS of compute performance. Based on 14nm FinFET technology, the Radeon Pro WX 4100 GPU contains the latest innovations found in the state-of-the-art Polaris GPU architecture.Planned ISV CertificationsThe Radeon Pro certification team is working diligently with our ISV partners to ensure certification on many of the popular applications that are being used in the Design and Manufacturing spaces, making certain that the Radeon\u2122 Pro WX 4100 graphics card is properly supported on key applications so you can have a hassle-free experience.Quality You Can TrustRadeon\u2122 Pro WX is the embodiment of innovation and design within the Radeon Technologies Group. Great care is taken into crafting each product to ensure quality and reliability are at the highest of standards. We are proud to stand behind our three year limited warranty (see details at www.amd.com/Warranty) and optional seven year extended limited warranty also available (see details and requirements at www.amd.com/ExtendedWarranty)."
+      }
+    ],
+    "response_text_preview": "{\n  \"bus_type\": null,\n  \"model_number\": null,\n  \"model\": \"Radeon Pro WX 4100\",\n  \"read_speed_mb_s\": null,\n  \"height_mm\": null\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:32:43.320240Z",
+    "row_index": 12,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 107664.89601135254,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 497,
+      "output_tokens": 46,
+      "total_tokens": 543
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "Palit GeForce GTX 1660 SUPER 6GB StormX Boost Graphics Card. Description: Available @ CCL, this Palit GeForce GTX 1660 SUPER StormX 6GB Overclocked Graphics Card is VR Ready and has HDMI, DVI and DisplayPort outputs"
+      }
+    ],
+    "response_text_preview": "{\n    \"bus_type\": null,\n    \"model_number\": null,\n    \"model\": \"GeForce GTX 1660 SUPER\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:34:44.920625Z",
+    "row_index": 13,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 121597.21660614014,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 871,
+      "output_tokens": 48,
+      "total_tokens": 919
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "HPE 1TB 6G SATA 7.2K 3.5IN NHP ETY HDD. Description: OverviewHPE Entry - Hard drive - 1 TB - internal - 3.5\\\" LFF - SATA 6Gb/s - 7200 rpmTech SpecsGENERALDevice TypeHard drive - internalCapacity1 TBForm Factor3.5\\\" LFFInterfaceSATA 6Gb/sBytes per Sector512FeaturesNative Command Queuing (NCQ)Width7.22 cmDepth13.66 cmHeight1.6 cmPERFORMANCEDrive Transfer Rate600 MBps (external)Seek Time8.5 ms (average) / 18 ms (max)Track-to-Track Seek Time1 msSpindle Speed7200 rpmEXPANSION & CONNECTIVITYInterfaces1 x SATA 6 Gb/sCompatible Bay3.5\\\" LFFMANUFACTURER WARRANTYService & SupportLimited warranty - 1 yearENVIRONMENTAL PARAMETERSMin Operating Temperature5 CMax Operating Temperature60 CCOMPATIBILITY INFORMATIONDesigned ForHPE ProLiant DL20 Gen9 (3.5\\\"), DL20 Gen9 Entry (3.5\\\"), DL20 Gen9 Performance (3.5\\\"), DL20 Gen9 Solution (3.5\\\"), MicroServer Gen10 (3.5\\\"), MicroServer Gen10 Entry, MicroServer Gen10 Performance, MicroServer Gen8 Performance, ML10 Gen9 (3.5\\\"), ML10 Gen9 Entry (3.5\\\"), ML10 Gen9 Performance (3.5\\\"), ML10 v2 (3.5\\\"), ML10 v2 Base (3.5\\\"), ML10 v2 Entry (3.5\\\"), ML10 v2 Performance (3.5\\\"), ML350 Gen10 (3.5\\\"), ML350 Gen10 Base (3.5\\\"), ML350 Gen10 Entry (3.5\\\"), ML350 Gen10 Performance (3.5\\\"), ML350 Gen10 Solution (3.5\\\"), ML350 Gen10 Sub-Entry (3.5\\\")"
+      }
+    ],
+    "response_text_preview": "```\n{\n  \"bus_type\": \"SATA\",\n  \"model_number\": null,\n  \"model\": null,\n  \"read_speed_mb_s\": 600,\n  \"height_mm\": 1.6\n}\n```"
+  },
+  {
+    "timestamp": "2026-03-24T14:36:12.120238Z",
+    "row_index": 14,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 87190.98019599915,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 516,
+      "output_tokens": 59,
+      "total_tokens": 575
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "Samsung 860 EVO Series SSD 4TB. Description: Samsung 860 EVO MZ-76E4T0B - Solid state drive - gecodeerd - 4 TB - intern - 2.5'' - SATA 6Gb/s -buffer: 4 GB - 256-bits AES - TCG Opal Encryption 2.0"
+      }
+    ],
+    "response_text_preview": "{\n    \"bus_type\": \"SATA\",\n    \"model_number\": \"MZ-76E4T0B\",\n    \"model\": \"Samsung 860 EVO Series SSD 4TB\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:37:40.922842Z",
+    "row_index": 15,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 88799.83520507812,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 502,
+      "output_tokens": 50,
+      "total_tokens": 552
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "ASUS GeForce RTX 2080 Ti 11GB Strix Edition Boost Graphics Card. Description: Available @ CCL: ASUS GeForce RTX 2080 Ti Strix Edition 11GB Overclocked Graphics Card. HDMI and DisplayPort inputs. Direct X 12 Support. VR Ready."
+      }
+    ],
+    "response_text_preview": "{\n    \"bus_type\": null,\n    \"model_number\": null,\n    \"model\": \"GeForce RTX 2080 Ti Strix Edition\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:38:55.625274Z",
+    "row_index": 16,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 74685.05668640137,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 478,
+      "output_tokens": 55,
+      "total_tokens": 533
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "Ssd 2.5in 120gb Sata3 Tlc. Description: Ssd 2.5in 120gb Sata3 Tlc ALUMINIUM"
+      }
+    ],
+    "response_text_preview": "{\n    \"bus_type\": \"SATA III\",\n    \"model_number\": null,\n    \"model\": \"SSD 2.5in 120GB SATA3 TLC\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:40:39.525453Z",
+    "row_index": 17,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 103880.61428070068,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 526,
+      "output_tokens": 48,
+      "total_tokens": 574
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "Patriot Burst 240GB 2.5\\\\. Description: The Patriot Burst Solid-State Drive (SSD) is the perfect way to enhance computer performance. Burst offers transfer speeds at up ot 560MB/s read and 540MB/s write to eliminate bottlenecks. With a SATA III interface, this SSD provides greater performance over traditional HDDs.At only 7mm high in a 2.5\\\\"
+      }
+    ],
+    "response_text_preview": "{\n    \"bus_type\": \"SATA III\",\n    \"model_number\": null,\n    \"model\": \"Patriot Burst\",\n    \"read_speed_mb_s\": 560,\n    \"height_mm\": 7\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:42:28.129395Z",
+    "row_index": 18,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 108600.97050666809,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 708,
+      "output_tokens": 48,
+      "total_tokens": 756
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "SanDisk Cruzer Blade 128GB USB 2.0 Pen Drive. Description: ENJOY AMPLE CAPACITIES AND MAXIMUM PORTABILITYWith its stylish, compact design and generous capacity, the Cruzer Blade USB Flash Drive makes it easy to back up, transfer, and share your files. Available in capacities up to 128GB , this USB drive lets you carry your photos, movies, music, and personal data wherever you go.COMPACT DESIGN FOR MAXIMUM PORTABILITYThe Cruzer Blade USB Flash Drive features a compact design that fits easily into a pocket or computer bag. This USB drive has a sleek black and red design that coordinates with many electronic devices.HIGH-CAPACITY DRIVE ACCOMMODATES YOUR FAVORITE MEDIA FILESDesigned by SanDisk, a leader in flash memory innovation, the Cruzer Blade USB Flash Drive packs generous capacity into a compact form. Available in sizes up to 128GB, this USB drive can hold all your must-have files.SIMPLE DRAG-AND-DROP FILE BACKUPTransferring data onto the Cruzer Blade USB Flash Drive is easy: simply plug it into your computer's USB port and drag files into the drive's folder. After a fast, first-time driver download, this USB drive lets you start storing, transporting, and sharing your data immediately."
+      }
+    ],
+    "response_text_preview": "{\n  \"bus_type\": \"USB 2.0\",\n  \"model_number\": null,\n  \"model\": \"Cruzer Blade\",\n  \"read_speed_mb_s\": null,\n  \"height_mm\": null\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:43:45.320996Z",
+    "row_index": 19,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 77141.8936252594,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 506,
+      "output_tokens": 48,
+      "total_tokens": 554
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "Zotac NVIDIA GeForce RTX 2070 SUPER 8GB MINI Turing Graphics Card (2019 Edition). Description: Zotac GeForce RTX 2070 SUPER MINI 8GB GDDR6 Ray-Tracing Graphics Card, 2560 Core, 1605MHz GPU, 1770MHz Boost"
+      }
+    ],
+    "response_text_preview": "{\n    \"bus_type\": null,\n    \"model_number\": null,\n    \"model\": \"NVIDIA GeForce RTX 2070 SUPER\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:44:52.322896Z",
+    "row_index": 20,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 66998.76379966736,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 489,
+      "output_tokens": 42,
+      "total_tokens": 531
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "HD SSD M.2 480GB Western Digital WDS480G2G0B Green 3D (2280). Description: Western Digital WD Green, 480 GB, M.2, 545 MB/s, 6"
+      }
+    ],
+    "response_text_preview": "{\n    \"bus_type\": null,\n    \"model_number\": null,\n    \"model\": \"WD Green\",\n    \"read_speed_mb_s\": 545,\n    \"height_mm\": null\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:45:55.323789Z",
+    "row_index": 21,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 62997.55597114563,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 481,
+      "output_tokens": 47,
+      "total_tokens": 528
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "Hard disk extern WD Elements Desktop 4TB USB 3.0 Black. Description: HDD extern WD, 4TB, Elements, 3.5\", USB3.0, negru"
+      }
+    ],
+    "response_text_preview": "{\n    \"bus_type\": \"USB 3.0\",\n    \"model_number\": null,\n    \"model\": \"WD Elements Desktop\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:47:44.122238Z",
+    "row_index": 22,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 108795.1111793518,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 532,
+      "output_tokens": 52,
+      "total_tokens": 584
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "ASRock Phantom Gaming Radeon RX 550 DirectX 12 RX550 2G 2GB 128-Bit GDDR5 PCI Express 3.0 x16 (Uses x8) HDCP Ready Video Card. Description: ASRock Phantom Gaming Radeon RX 550 DirectX 12 RX550 2G 2GB 128-Bit GDDR5 PCI Express 3.0 x16 (Uses x8) HDCP Ready Video Card"
+      }
+    ],
+    "response_text_preview": "{\n    \"bus_type\": \"PCI Express 3.0\",\n    \"model_number\": null,\n    \"model\": \"Phantom Gaming Radeon RX 550\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:48:53.123576Z",
+    "row_index": 23,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 68986.04345321655,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 510,
+      "output_tokens": 44,
+      "total_tokens": 554
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "My Passport GO Portable SSD 500GB Colbolt. Description: My Passport Go is the tough SSD drive built to travel. With a rubber protective bumper on the outside, a solid state drive on the inside, and a built-in cable for convenience; this is no ordinary drive. My Passport Go is the perfect drive to take anywhere with confidence."
+      }
+    ],
+    "response_text_preview": "{\n  \"bus_type\": null,\n  \"model_number\": null,\n  \"model\": \"My Passport GO Portable SSD\",\n  \"read_speed_mb_s\": null,\n  \"height_mm\": null\n}"
+  },
+  {
+    "timestamp": "2026-03-24T14:49:54.723440Z",
+    "row_index": 24,
+    "attempt": 0,
+    "provider_class": "ChatOllama",
+    "model": "llama3.1:8b",
+    "duration_ms": 61584.66958999634,
+    "temperature": 0.0,
+    "max_tokens": null,
+    "usage": {
+      "input_tokens": 490,
+      "output_tokens": 51,
+      "total_tokens": 541
+    },
+    "request_messages": [
+      {
+        "type": "system",
+        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
+      },
+      {
+        "type": "system",
+        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
+      },
+      {
+        "type": "human",
+        "content": "Kingston Technology DataTraveler 100 G3 USB flash drive 256 GB USB Type-A 3.2 Gen 1 (3.1 Gen 1) Zwart. Description: DataTraveler 100 G3 256GB"
+      }
+    ],
+    "response_text_preview": "{\n    \"bus_type\": \"USB 3.0\",\n    \"model_number\": null,\n    \"model\": \"DataTraveler 100 G3\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
+  }
+]

@@ -1,0 +1,36 @@
+df1_idx,attribute,is_numeric,ground_truth,predicted,correct_standard,unknown,llm_judgment
+0,model_number,False,GV-N3080GAMING OC-10GD,GV-N3080GAMING OC-10GD,True,False,correct
+2,model_number,False,CSSD-F960GBMP510,UNKNOWN,False,True,wrong
+2,read_speed_mb_s,True,3480.0,UNKNOWN,False,True,wrong
+3,read_speed_mb_s,True,226.0,UNKNOWN,False,True,wrong
+5,bus_type,False,PCIe 3.0 x16,PCIe,True,False,acceptable
+5,model_number,False,90YV0CV2-M0NA00,Asus GeForce GTX 1650 DUAL OC 4GB GDDR5,False,False,correct
+6,bus_type,False,USB 3.0,UNKNOWN,False,True,wrong
+8,model_number,False,GV-N166SOC-6GD,Gigabyte GeForce GTX 1660 SUPER OC 6GB Dual Fan Graphics Card,False,False,acceptable
+9,bus_type,False,PCIe 3.0 x16,PCIe,True,False,acceptable
+9,model_number,False,V375-040R,UNKNOWN,False,True,wrong
+9,height_mm,True,46.0,UNKNOWN,False,True,wrong
+11,bus_type,False,PCIe 3.0,PCIe,True,False,acceptable
+12,bus_type,False,PCIe 4.0,UNKNOWN,False,True,wrong
+12,model_number,False,90YV0DQ0-M0NA00,GV-N206SGAMING OC-8GD,False,False,wrong
+13,model_number,False,AGAMMIXS11P-1TT-C,R:3500/W:3000 MB/s,False,False,wrong
+14,model_number,False,GV-R56XTGAMING OC-6GD,GV-R56XTGAMING OC-6GD,True,False,correct
+15,bus_type,False,PCIe 3.0 x16,PCIe,True,False,acceptable
+15,model_number,False,100-506008,AMD RADEON PRO WX 4100 4 GB GDDR5,False,False,acceptable
+16,model_number,False,NE6166SS18J9-161F,UNKNOWN,False,True,wrong
+17,model_number,False,843266-B21,HPE 1TB 6G SATA 7.2K 3.5IN NHP ETY HDD,False,False,acceptable
+18,read_speed_mb_s,True,550.0,UNKNOWN,False,True,wrong
+18,height_mm,True,7.0,UNKNOWN,False,True,wrong
+19,bus_type,False,PCIe 3.0 x16,UNKNOWN,False,True,wrong
+19,model_number,False,ROG-STRIX-RTX2080TI-O11G-GAMING,ASUS GeForce RTX 2080 Ti Strix Edition Boost,False,False,acceptable
+20,model,False,220S,Ssd 2.5in,False,False,acceptable
+20,read_speed_mb_s,True,550.0,UNKNOWN,False,True,wrong
+21,model_number,False,PBU240GS25SSDR,UNKNOWN,False,True,wrong
+23,model_number,False,SDCZ50-128G-B35,SanDisk Cruzer Blade 128GB,False,False,acceptable
+25,bus_type,False,PCIe 3.0,PCIe,True,False,acceptable
+26,bus_type,False,SATA III,M.2,False,False,acceptable
+27,model_number,False,WDBWLG0040HBK-EESN,UNKNOWN,False,True,wrong
+28,height_mm,True,42.0,UNKNOWN,False,True,wrong
+30,bus_type,False,USB 3.0,UNKNOWN,False,True,wrong
+30,model_number,False,WDBMCG5000ABT-WESN,Colbolt,False,False,acceptable
+31,model_number,False,DT100G3/256GB,Zwart,False,False,wrong

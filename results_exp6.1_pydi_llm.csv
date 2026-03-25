@@ -1,0 +1,36 @@
+config,df1_idx,attribute,is_numeric,ground_truth,predicted,correct,unknown
+PyDI-LLMExtractor,0,model_number,False,GV-N3080GAMING OC-10GD,UNKNOWN,False,True
+PyDI-LLMExtractor,2,model_number,False,CSSD-F960GBMP510,ST4000NM0115,False,False
+PyDI-LLMExtractor,2,read_speed_mb_s,True,3480.0,600.0,False,False
+PyDI-LLMExtractor,3,read_speed_mb_s,True,226.0,UNKNOWN,False,True
+PyDI-LLMExtractor,5,bus_type,False,PCIe 3.0 x16,UNKNOWN,False,True
+PyDI-LLMExtractor,5,model_number,False,90YV0CV2-M0NA00,UNKNOWN,False,True
+PyDI-LLMExtractor,6,bus_type,False,USB 3.0,UNKNOWN,False,True
+PyDI-LLMExtractor,8,model_number,False,GV-N166SOC-6GD,UNKNOWN,False,True
+PyDI-LLMExtractor,9,bus_type,False,PCIe 3.0 x16,PCIe Gen3x4,False,False
+PyDI-LLMExtractor,9,model_number,False,V375-040R,UNKNOWN,False,True
+PyDI-LLMExtractor,9,height_mm,True,46.0,6.1,False,False
+PyDI-LLMExtractor,11,bus_type,False,PCIe 3.0,UNKNOWN,False,True
+PyDI-LLMExtractor,12,bus_type,False,PCIe 4.0,UNKNOWN,False,True
+PyDI-LLMExtractor,12,model_number,False,90YV0DQ0-M0NA00,UNKNOWN,False,True
+PyDI-LLMExtractor,13,model_number,False,AGAMMIXS11P-1TT-C,UNKNOWN,False,True
+PyDI-LLMExtractor,14,model_number,False,GV-R56XTGAMING OC-6GD,MZ-76E4T0B,False,False
+PyDI-LLMExtractor,15,bus_type,False,PCIe 3.0 x16,UNKNOWN,False,True
+PyDI-LLMExtractor,15,model_number,False,100-506008,UNKNOWN,False,True
+PyDI-LLMExtractor,16,model_number,False,NE6166SS18J9-161F,UNKNOWN,False,True
+PyDI-LLMExtractor,17,model_number,False,843266-B21,UNKNOWN,False,True
+PyDI-LLMExtractor,18,read_speed_mb_s,True,550.0,UNKNOWN,False,True
+PyDI-LLMExtractor,18,height_mm,True,7.0,UNKNOWN,False,True
+PyDI-LLMExtractor,19,bus_type,False,PCIe 3.0 x16,UNKNOWN,False,True
+PyDI-LLMExtractor,19,model_number,False,ROG-STRIX-RTX2080TI-O11G-GAMING,UNKNOWN,False,True
+PyDI-LLMExtractor,20,model,False,220S,WD Green,False,False
+PyDI-LLMExtractor,20,read_speed_mb_s,True,550.0,545.0,True,False
+PyDI-LLMExtractor,21,model_number,False,PBU240GS25SSDR,UNKNOWN,False,True
+PyDI-LLMExtractor,23,model_number,False,SDCZ50-128G-B35,UNKNOWN,False,True
+PyDI-LLMExtractor,25,bus_type,False,PCIe 3.0,UNKNOWN,False,True
+PyDI-LLMExtractor,26,bus_type,False,SATA III,UNKNOWN,False,True
+PyDI-LLMExtractor,27,model_number,False,WDBWLG0040HBK-EESN,UNKNOWN,False,True
+PyDI-LLMExtractor,28,height_mm,True,42.0,UNKNOWN,False,True
+PyDI-LLMExtractor,30,bus_type,False,USB 3.0,UNKNOWN,False,True
+PyDI-LLMExtractor,30,model_number,False,WDBMCG5000ABT-WESN,UNKNOWN,False,True
+PyDI-LLMExtractor,31,model_number,False,DT100G3/256GB,UNKNOWN,False,True
