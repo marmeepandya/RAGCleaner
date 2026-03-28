@@ -1,0 +1,79 @@
+df1_idx,config,attribute,is_numeric,ground_truth,predicted,unknown,correct_standard,llm_judgment
+0,RAG-clean,model_number,False,GV-N3080GAMING OC-10GD,GV-N3080GAMING OC-10GD,False,True,correct
+2,RAG-clean,model_number,False,CSSD-F960GBMP510,CSSD-F960GBMP510,False,True,correct
+2,RAG-clean,read_speed_mb_s,True,3480.0,3480,False,True,correct
+2,RAG-clean,write_speed_mb_s,True,3000.0,3000,False,True,correct
+3,RAG-clean,read_speed_mb_s,True,226.0,UNKNOWN,True,False,wrong
+4,RAG-clean,width_mm,True,433.0,UNKNOWN,True,False,wrong
+5,RAG-clean,bus_type,False,PCIe 3.0 x16,PCIe 3.0,False,True,acceptable
+5,RAG-clean,model_number,False,90YV0CV2-M0NA00,UNKNOWN,True,False,wrong
+6,RAG-clean,bus_type,False,USB 3.0,UNKNOWN,True,False,wrong
+8,RAG-clean,model_number,False,GV-N166SOC-6GD,GeForce GTX 1660 SUPER OC,False,False,acceptable
+9,RAG-clean,bus_type,False,PCIe 3.0 x16,PCIe 3.0 x16,False,True,correct
+9,RAG-clean,model_number,False,V375-040R,912-V375-040,False,False,acceptable
+9,RAG-clean,height_mm,True,46.0,UNKNOWN,True,False,wrong
+9,RAG-clean,width_mm,True,127.0,UNKNOWN,True,False,wrong
+11,RAG-clean,bus_type,False,PCIe 3.0,PCIe 3.0,False,True,correct
+12,RAG-clean,bus_type,False,PCIe 4.0,PCIe,False,True,acceptable
+12,RAG-clean,model_number,False,90YV0DQ0-M0NA00,Strix GeForce RTX 2060 Super EVO OC,False,False,correct
+13,RAG-clean,model_number,False,AGAMMIXS11P-1TT-C,(R:3500/W:3000 MB/s),False,False,acceptable
+14,RAG-clean,model_number,False,GV-R56XTGAMING OC-6GD,Radeon RX 5600 XT GAMING OC,False,False,acceptable
+15,RAG-clean,bus_type,False,PCIe 3.0 x16,PCIe 3.0 x8,False,False,acceptable
+15,RAG-clean,model_number,False,100-506008,100-506008,False,True,correct
+16,RAG-clean,model_number,False,NE6166SS18J9-161F,NE6166SS18J9-161F,False,True,correct
+17,RAG-clean,model_number,False,843266-B21,843266-B21,False,True,correct
+18,RAG-clean,read_speed_mb_s,True,550.0,550,False,True,correct
+18,RAG-clean,write_speed_mb_s,True,520.0,520,False,True,correct
+18,RAG-clean,height_mm,True,7.0,7.0,False,True,correct
+19,RAG-clean,bus_type,False,PCIe 3.0 x16,PCIe,False,True,acceptable
+19,RAG-clean,model_number,False,ROG-STRIX-RTX2080TI-O11G-GAMING,ROG STRIX ADVANCED GAMING,False,False,acceptable
+20,RAG-clean,model,False,220S,UNKNOWN,True,False,wrong
+20,RAG-clean,read_speed_mb_s,True,550.0,UNKNOWN,True,False,wrong
+21,RAG-clean,model_number,False,PBU240GS25SSDR,PBU240GS25SSDR,False,True,correct
+23,RAG-clean,model_number,False,SDCZ50-128G-B35,SDCZ50-128G-B35,False,True,correct
+25,RAG-clean,bus_type,False,PCIe 3.0,PCIe 3.0 x16,False,True,acceptable
+26,RAG-clean,bus_type,False,SATA III,SATA III,False,True,correct
+27,RAG-clean,model_number,False,WDBWLG0040HBK-EESN,WD Elements Desktop,False,False,acceptable
+28,RAG-clean,height_mm,True,42.0,UNKNOWN,True,False,wrong
+28,RAG-clean,width_mm,True,130.9,130.9,False,True,correct
+30,RAG-clean,bus_type,False,USB 3.0,USB,False,True,acceptable
+30,RAG-clean,model_number,False,WDBMCG5000ABT-WESN,My Passport GO,False,False,correct
+0,RAG-noisy,model_number,False,GV-N3080GAMING OC-10GD,GV-N3080GAMING OC-10GD,False,True,correct
+2,RAG-noisy,model_number,False,CSSD-F960GBMP510,CSSD-F960GBMP510,False,True,correct
+2,RAG-noisy,read_speed_mb_s,True,3480.0,3480,False,True,correct
+2,RAG-noisy,write_speed_mb_s,True,3000.0,3000,False,True,correct
+3,RAG-noisy,read_speed_mb_s,True,226.0,UNKNOWN,True,False,wrong
+4,RAG-noisy,width_mm,True,433.0,UNKNOWN,True,False,wrong
+5,RAG-noisy,bus_type,False,PCIe 3.0 x16,PCIe 3.0,False,True,acceptable
+5,RAG-noisy,model_number,False,90YV0CV2-M0NA00,UNKNOWN,True,False,wrong
+6,RAG-noisy,bus_type,False,USB 3.0,UNKNOWN,True,False,wrong
+8,RAG-noisy,model_number,False,GV-N166SOC-6GD,GeForce GTX 1660 SUPER OC,False,False,acceptable
+9,RAG-noisy,bus_type,False,PCIe 3.0 x16,PCIe 3.0 x16,False,True,correct
+9,RAG-noisy,model_number,False,V375-040R,912-V375-040,False,False,acceptable
+9,RAG-noisy,height_mm,True,46.0,46,False,True,correct
+9,RAG-noisy,width_mm,True,127.0,127.0,False,True,correct
+11,RAG-noisy,bus_type,False,PCIe 3.0,PCIe 3.0,False,True,correct
+12,RAG-noisy,bus_type,False,PCIe 4.0,PCIe,False,True,acceptable
+12,RAG-noisy,model_number,False,90YV0DQ0-M0NA00,90YV0C91-M0NA00,False,False,acceptable
+13,RAG-noisy,model_number,False,AGAMMIXS11P-1TT-C,(R:3500/W:3000 MB/s),False,False,acceptable
+14,RAG-noisy,model_number,False,GV-R56XTGAMING OC-6GD,GV-R56XTWF2OC-6GD,False,False,acceptable
+15,RAG-noisy,bus_type,False,PCIe 3.0 x16,PCIe 3.0 x8,False,False,acceptable
+15,RAG-noisy,model_number,False,100-506008,100-506008,False,True,correct
+16,RAG-noisy,model_number,False,NE6166SS18J9-161F,NED3090019SB-132BA,False,False,wrong
+17,RAG-noisy,model_number,False,843266-B21,843266-B21,False,True,correct
+18,RAG-noisy,read_speed_mb_s,True,550.0,550,False,True,correct
+18,RAG-noisy,write_speed_mb_s,True,520.0,520,False,True,correct
+18,RAG-noisy,height_mm,True,7.0,UNKNOWN,True,False,wrong
+19,RAG-noisy,bus_type,False,PCIe 3.0 x16,PCIe,False,True,acceptable
+19,RAG-noisy,model_number,False,ROG-STRIX-RTX2080TI-O11G-GAMING,ASUS GeForce RTX 2080 Ti Strix Edition,False,False,acceptable
+20,RAG-noisy,model,False,220S,UNKNOWN,True,False,wrong
+20,RAG-noisy,read_speed_mb_s,True,550.0,UNKNOWN,True,False,wrong
+21,RAG-noisy,model_number,False,PBU240GS25SSDR,Burst,False,False,wrong
+23,RAG-noisy,model_number,False,SDCZ50-128G-B35,SDCZ50-128G-B35,False,True,correct
+25,RAG-noisy,bus_type,False,PCIe 3.0,PCIe 3.0,False,True,correct
+26,RAG-noisy,bus_type,False,SATA III,SATA III,False,True,correct
+27,RAG-noisy,model_number,False,WDBWLG0040HBK-EESN,WD Elements Desktop,False,False,acceptable
+28,RAG-noisy,height_mm,True,42.0,UNKNOWN,True,False,wrong
+28,RAG-noisy,width_mm,True,130.9,UNKNOWN,True,False,wrong
+30,RAG-noisy,bus_type,False,USB 3.0,UNKNOWN,True,False,wrong
+30,RAG-noisy,model_number,False,WDBMCG5000ABT-WESN,My Passport GO,False,False,wrong

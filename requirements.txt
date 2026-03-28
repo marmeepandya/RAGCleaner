@@ -1,4 +1,16 @@
 pandas
 numpy
 sentence-transformers
-ollama
+requests
+langchain-core
+langchain-ollama
+pydantic
+pint
+pycountry
+python-stdnum
+schwifty
+jsonschema
+phonenumbers
+matplotlib
+seaborn
+scikit-learn

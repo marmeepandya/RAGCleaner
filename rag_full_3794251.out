@@ -1,0 +1,1193 @@
+[GIN] 2026/03/28 - 12:14:49 | 200 |   10.603003ms |       127.0.0.1 | HEAD     "/"
+[GIN] 2026/03/28 - 12:14:49 | 200 |   17.260459ms |       127.0.0.1 | GET      "/api/ps"
+NAME    ID    SIZE    PROCESSOR    UNTIL 
+[GIN] 2026/03/28 - 12:16:43 | 200 | 11.737464838s |       127.0.0.1 | POST     "/api/chat"
+Setup complete. USE_RAG=True
+Dataset 1: 812 rows
+KB full:   2200 rows
+Query rows:       534
+Total eval tasks: 897
+
+Tasks per attribute:
+attribute
+model_number        302
+bus_type            154
+read_speed_mb_s     122
+height_mm           101
+write_speed_mb_s     87
+width_mm             84
+model                47
+Name: count, dtype: int64
+KB size: 2200 rows
+=== SANITY CHECK: Ground truth present in KB ===
+
+✓ Row 0 | model_number         | GT: GV-N3080GAMING OC-10GD         | KB matches: 3
+✓ Row 2 | model_number         | GT: CSSD-F960GBMP510               | KB matches: 3
+✓ Row 2 | read_speed_mb_s      | GT: 3480.0                         | KB matches: 3
+✓ Row 2 | write_speed_mb_s     | GT: 3000.0                         | KB matches: 3
+✓ Row 3 | read_speed_mb_s      | GT: 226.0                          | KB matches: 3
+✓ Row 4 | width_mm             | GT: 433.0                          | KB matches: 3
+✓ Row 5 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 5 | model_number         | GT: 90YV0CV2-M0NA00                | KB matches: 3
+✓ Row 6 | bus_type             | GT: USB 3.0                        | KB matches: 2
+✓ Row 8 | model_number         | GT: GV-N166SOC-6GD                 | KB matches: 3
+✓ Row 9 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 9 | model_number         | GT: V375-040R                      | KB matches: 3
+✓ Row 9 | height_mm            | GT: 46.0                           | KB matches: 3
+✓ Row 9 | width_mm             | GT: 127.0                          | KB matches: 3
+✓ Row 11 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 12 | bus_type             | GT: PCIe 4.0                       | KB matches: 3
+✓ Row 12 | model_number         | GT: 90YV0DQ0-M0NA00                | KB matches: 3
+✓ Row 13 | model_number         | GT: AGAMMIXS11P-1TT-C              | KB matches: 3
+✓ Row 14 | model_number         | GT: GV-R56XTGAMING OC-6GD          | KB matches: 3
+✓ Row 15 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 15 | model_number         | GT: 100-506008                     | KB matches: 3
+✓ Row 16 | model_number         | GT: NE6166SS18J9-161F              | KB matches: 2
+✓ Row 17 | model_number         | GT: 843266-B21                     | KB matches: 3
+✓ Row 18 | read_speed_mb_s      | GT: 550.0                          | KB matches: 3
+✓ Row 18 | write_speed_mb_s     | GT: 520.0                          | KB matches: 3
+✓ Row 18 | height_mm            | GT: 7.0                            | KB matches: 3
+✓ Row 19 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 2
+✓ Row 19 | model_number         | GT: ROG-STRIX-RTX2080TI-O11G-GAMING | KB matches: 2
+✓ Row 20 | model                | GT: 220S                           | KB matches: 2
+✓ Row 20 | read_speed_mb_s      | GT: 550.0                          | KB matches: 2
+✓ Row 21 | model_number         | GT: PBU240GS25SSDR                 | KB matches: 3
+✓ Row 23 | model_number         | GT: SDCZ50-128G-B35                | KB matches: 2
+✓ Row 25 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 26 | bus_type             | GT: SATA III                       | KB matches: 3
+✓ Row 27 | model_number         | GT: WDBWLG0040HBK-EESN             | KB matches: 3
+✓ Row 28 | height_mm            | GT: 42.0                           | KB matches: 3
+✓ Row 28 | width_mm             | GT: 130.9                          | KB matches: 3
+✓ Row 30 | bus_type             | GT: USB 3.0                        | KB matches: 2
+✓ Row 30 | model_number         | GT: WDBMCG5000ABT-WESN             | KB matches: 2
+✓ Row 31 | model_number         | GT: DT100G3/256GB                  | KB matches: 3
+✓ Row 32 | model_number         | GT: ST4000NE001                    | KB matches: 3
+✓ Row 33 | read_speed_mb_s      | GT: 130.0                          | KB matches: 3
+✓ Row 33 | height_mm            | GT: 20.8                           | KB matches: 3
+✓ Row 33 | width_mm             | GT: 87.9                           | KB matches: 3
+✓ Row 39 | bus_type             | GT: PCIe 3.0                       | KB matches: 2
+✓ Row 39 | model_number         | GT: PH-GTX1650-O4G                 | KB matches: 2
+✓ Row 41 | read_speed_mb_s      | GT: 540.0                          | KB matches: 3
+✓ Row 41 | height_mm            | GT: 10.5                           | KB matches: 3
+✓ Row 41 | width_mm             | GT: 57.0                           | KB matches: 3
+✓ Row 42 | bus_type             | GT: SATA III                       | KB matches: 3
+✓ Row 43 | model_number         | GT: GP-ASM2NE6100TTTD              | KB matches: 3
+✓ Row 43 | height_mm            | GT: 11.4                           | KB matches: 3
+✓ Row 43 | width_mm             | GT: 80.5                           | KB matches: 3
+✓ Row 45 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 45 | model_number         | GT: 912-V372-257                   | KB matches: 3
+✓ Row 46 | model_number         | GT: DT100G3/128GB                  | KB matches: 3
+✓ Row 49 | bus_type             | GT: USB 3.0                        | KB matches: 3
+✓ Row 51 | model_number         | GT: PH-RTX2060-6G                  | KB matches: 3
+✓ Row 52 | bus_type             | GT: SATA III                       | KB matches: 3
+✓ Row 52 | model                | GT: SU800                          | KB matches: 3
+✓ Row 52 | read_speed_mb_s      | GT: 560.0                          | KB matches: 3
+✓ Row 52 | write_speed_mb_s     | GT: 520.0                          | KB matches: 3
+✓ Row 52 | height_mm            | GT: 3.5                            | KB matches: 3
+✓ Row 52 | width_mm             | GT: 22.0                           | KB matches: 3
+✓ Row 54 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 54 | model_number         | GT: N20702-08D6-1710VA23           | KB matches: 3
+✓ Row 54 | width_mm             | GT: 113.0                          | KB matches: 3
+✓ Row 56 | read_speed_mb_s      | GT: 560.0                          | KB matches: 3
+✓ Row 56 | write_speed_mb_s     | GT: 510.0                          | KB matches: 3
+✓ Row 57 | model_number         | GT: MZ-76P2T0B                     | KB matches: 3
+✓ Row 58 | model_number         | GT: CT2000P5SSD8                   | KB matches: 3
+✓ Row 59 | width_mm             | GT: 690.0                          | KB matches: 3
+✓ Row 60 | model                | GT: Ironwolf 110                   | KB matches: 2
+✓ Row 60 | read_speed_mb_s      | GT: 560.0                          | KB matches: 2
+✓ Row 61 | bus_type             | GT: PCIe 4.0                       | KB matches: 3
+✓ Row 61 | model_number         | GT: ZT-A30900D-10P                 | KB matches: 3
+✓ Row 63 | model_number         | GT: CSSD-F500GBMP600               | KB matches: 3
+✓ Row 66 | bus_type             | GT: PCIe 4.0                       | KB matches: 3
+✓ Row 67 | read_speed_mb_s      | GT: 550.0                          | KB matches: 3
+✓ Row 71 | read_speed_mb_s      | GT: 500.0                          | KB matches: 1
+✓ Row 72 | model_number         | GT: CT1000P1SSD8                   | KB matches: 3
+✓ Row 74 | bus_type             | GT: USB 3.2 Gen 2                  | KB matches: 3
+✓ Row 74 | model_number         | GT: MU-PC2T0H                      | KB matches: 3
+✓ Row 77 | read_speed_mb_s      | GT: 555.0                          | KB matches: 2
+✓ Row 77 | write_speed_mb_s     | GT: 520.0                          | KB matches: 2
+✓ Row 77 | height_mm            | GT: 7.0                            | KB matches: 2
+✓ Row 78 | model_number         | GT: ST300MP0106                    | KB matches: 3
+✓ Row 79 | model_number         | GT: GT 710 1GD3H LP                | KB matches: 3
+✓ Row 81 | model_number         | GT: 02G-P3-2717-KR                 | KB matches: 3
+✓ Row 82 | model_number         | GT: CT2000P1SSD8                   | KB matches: 3
+✓ Row 82 | read_speed_mb_s      | GT: 2000.0                         | KB matches: 3
+✓ Row 82 | write_speed_mb_s     | GT: 1700.0                         | KB matches: 3
+✓ Row 84 | bus_type             | GT: PCIe x16                       | KB matches: 3
+✓ Row 85 | model_number         | GT: MZ-76E500BW                    | KB matches: 3
+✓ Row 86 | height_mm            | GT: 67.0                           | KB matches: 3
+✓ Row 86 | width_mm             | GT: 15.0                           | KB matches: 3
+✓ Row 88 | model_number         | GT: MU-PC1T0S/WW                   | KB matches: 3
+✓ Row 89 | model_number         | GT: STHH1000400                    | KB matches: 3
+✓ Row 90 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 90 | height_mm            | GT: 41.0                           | KB matches: 3
+✓ Row 90 | width_mm             | GT: 119.3                          | KB matches: 3
+✓ Row 92 | model_number         | GT: SDCZ48-032G-U46                | KB matches: 2
+✓ Row 93 | read_speed_mb_s      | GT: 175.0                          | KB matches: 3
+✓ Row 94 | model_number         | GT: MZ-76E2T0BW                    | KB matches: 3
+✓ Row 94 | height_mm            | GT: 7.0                            | KB matches: 3
+✓ Row 95 | model_number         | GT: 801882-B21                     | KB matches: 3
+✓ Row 95 | model                | GT: ISS                            | KB matches: 3
+✓ Row 97 | model_number         | GT: WDS250G3X0C                    | KB matches: 3
+✓ Row 98 | model_number         | GT: AGAMMIXS50-1TT-C               | KB matches: 3
+✓ Row 99 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 99 | model_number         | GT: GV-N165SOC-4GD                 | KB matches: 3
+✓ Row 100 | model_number         | GT: CT1000P5SSD8                   | KB matches: 3
+✓ Row 100 | width_mm             | GT: 100.0                          | KB matches: 3
+✓ Row 102 | height_mm            | GT: 41.0                           | KB matches: 1
+✓ Row 102 | width_mm             | GT: 118.0                          | KB matches: 1
+✓ Row 103 | bus_type             | GT: PCIe x16                       | KB matches: 3
+✓ Row 105 | height_mm            | GT: 40.0                           | KB matches: 3
+✓ Row 105 | width_mm             | GT: 121.0                          | KB matches: 3
+✓ Row 107 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 108 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 108 | model_number         | GT: GV-N105TOC-4GD                 | KB matches: 3
+✓ Row 112 | model_number         | GT: LAC301558                      | KB matches: 3
+✓ Row 114 | model_number         | GT: AGAMMIXS5-1TT-C                | KB matches: 3
+✓ Row 115 | model_number         | GT: WD40PURX                       | KB matches: 3
+✓ Row 116 | height_mm            | GT: 7.0                            | KB matches: 3
+✓ Row 116 | width_mm             | GT: 100.0                          | KB matches: 3
+✓ Row 117 | model_number         | GT: GP-ASM2NE6500GTTD              | KB matches: 3
+✓ Row 117 | height_mm            | GT: 11.4                           | KB matches: 3
+✓ Row 117 | width_mm             | GT: 23.5                           | KB matches: 3
+✓ Row 119 | model_number         | GT: WDS200T2B0A                    | KB matches: 3
+✓ Row 122 | model_number         | GT: GP-GSTFS31480GNTD              | KB matches: 3
+✓ Row 123 | model_number         | GT: GV-N208SAORUS-8GC              | KB matches: 3
+✓ Row 124 | bus_type             | GT: USB 3.0                        | KB matches: 3
+✓ Row 126 | model_number         | GT: XA1920ME10063                  | KB matches: 3
+✓ Row 127 | model_number         | GT: NEAT7100HD46H                  | KB matches: 3
+✓ Row 129 | model_number         | GT: MTFDHBE3T8TDF-1AW1ZABYY        | KB matches: 3
+✓ Row 130 | model_number         | GT: DC450R/3840G                   | KB matches: 2
+✓ Row 130 | height_mm            | GT: 7.0                            | KB matches: 2
+✓ Row 131 | model_number         | GT: WDS120G2G0A                    | KB matches: 3
+✓ Row 131 | write_speed_mb_s     | GT: 430.0                          | KB matches: 3
+✓ Row 131 | height_mm            | GT: 7.0                            | KB matches: 3
+✓ Row 132 | model_number         | GT: CZ73                           | KB matches: 2
+✓ Row 132 | read_speed_mb_s      | GT: 150.0                          | KB matches: 2
+✓ Row 133 | height_mm            | GT: 26.1                           | KB matches: 3
+✓ Row 133 | width_mm             | GT: 101.6                          | KB matches: 3
+✓ Row 135 | read_speed_mb_s      | GT: 560.0                          | KB matches: 3
+✓ Row 135 | write_speed_mb_s     | GT: 540.0                          | KB matches: 3
+✓ Row 137 | model                | GT: L200                           | KB matches: 3
+✓ Row 139 | model_number         | GT: HDWD105UZSVA                   | KB matches: 3
+✓ Row 140 | bus_type             | GT: USB 3.0                        | KB matches: 2
+✓ Row 142 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 143 | read_speed_mb_s      | GT: 210.0                          | KB matches: 3
+✓ Row 145 | read_speed_mb_s      | GT: 2400.0                         | KB matches: 3
+✓ Row 145 | write_speed_mb_s     | GT: 1950.0                         | KB matches: 3
+✓ Row 145 | height_mm            | GT: 2.4                            | KB matches: 3
+✓ Row 145 | width_mm             | GT: 22.0                           | KB matches: 3
+✓ Row 146 | bus_type             | GT: PCIe                           | KB matches: 3
+✓ Row 146 | model_number         | GT: GV-N2070WF2-8GD                | KB matches: 3
+✓ Row 149 | bus_type             | GT: PCIe                           | KB matches: 3
+✓ Row 150 | bus_type             | GT: PCIe x16                       | KB matches: 3
+✓ Row 150 | height_mm            | GT: 39.0                           | KB matches: 3
+✓ Row 150 | width_mm             | GT: 130.0                          | KB matches: 3
+✓ Row 151 | model_number         | GT: MZ-V7S1T0B/AM                  | KB matches: 3
+✓ Row 152 | model_number         | GT: MZ-76P1T0B/EU                  | KB matches: 3
+✓ Row 152 | read_speed_mb_s      | GT: 560.0                          | KB matches: 3
+✓ Row 152 | write_speed_mb_s     | GT: 530.0                          | KB matches: 3
+✓ Row 153 | model_number         | GT: ZP480NM30011                   | KB matches: 3
+✓ Row 154 | height_mm            | GT: 25.4                           | KB matches: 3
+✓ Row 154 | width_mm             | GT: 101.6                          | KB matches: 3
+✓ Row 157 | model_number         | GT: MZ-V7E250BW                    | KB matches: 2
+✓ Row 158 | model                | GT: HDD SRV SAS 12G                | KB matches: 2
+✓ Row 159 | model_number         | GT: GV-RXVEGA56GAMING OC-8GD       | KB matches: 3
+✓ Row 160 | read_speed_mb_s      | GT: 3000.0                         | KB matches: 3
+✓ Row 160 | write_speed_mb_s     | GT: 1000.0                         | KB matches: 3
+✓ Row 163 | model_number         | GT: HDWE140EZSTA                   | KB matches: 3
+✓ Row 164 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 164 | height_mm            | GT: 30.0                           | KB matches: 3
+✓ Row 164 | width_mm             | GT: 113.0                          | KB matches: 3
+✓ Row 165 | model_number         | GT: AXRX5700XT-8GBD6-3DHDR/OC      | KB matches: 3
+✓ Row 168 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 168 | model_number         | GT: GV-N166TOC-6GD                 | KB matches: 3
+✓ Row 169 | model_number         | GT: ZA500GM1A001                   | KB matches: 2
+✓ Row 170 | model_number         | GT: VPN100-512GM28H                | KB matches: 3
+✓ Row 170 | read_speed_mb_s      | GT: 3300.0                         | KB matches: 3
+✓ Row 170 | write_speed_mb_s     | GT: 2200.0                         | KB matches: 3
+✓ Row 173 | read_speed_mb_s      | GT: 550.0                          | KB matches: 3
+✓ Row 173 | write_speed_mb_s     | GT: 520.0                          | KB matches: 3
+✓ Row 174 | bus_type             | GT: PCIe                           | KB matches: 3
+✓ Row 175 | model_number         | GT: CT500P2SSD8                    | KB matches: 3
+✓ Row 178 | model                | GT: Ace - A80                      | KB matches: 2
+✓ Row 179 | height_mm            | GT: 36.0                           | KB matches: 3
+✓ Row 179 | width_mm             | GT: 119.0                          | KB matches: 3
+✓ Row 180 | model_number         | GT: DTEG2/64GB                     | KB matches: 2
+✓ Row 180 | read_speed_mb_s      | GT: 180.0                          | KB matches: 2
+✓ Row 180 | write_speed_mb_s     | GT: 70.0                           | KB matches: 2
+✓ Row 181 | read_speed_mb_s      | GT: 520.0                          | KB matches: 3
+✓ Row 181 | write_speed_mb_s     | GT: 500.0                          | KB matches: 3
+✓ Row 181 | width_mm             | GT: 70.0                           | KB matches: 3
+✓ Row 182 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 183 | model_number         | GT: DT70/32GB                      | KB matches: 3
+✓ Row 184 | bus_type             | GT: PCIe 3.0                       | KB matches: 2
+✓ Row 186 | model_number         | GT: 100-505957                     | KB matches: 3
+✓ Row 187 | bus_type             | GT: USB 3.0                        | KB matches: 3
+✓ Row 188 | model                | GT: Barracuda 7200.12              | KB matches: 3
+✓ Row 189 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 192 | bus_type             | GT: PCIe                           | KB matches: 3
+✓ Row 193 | read_speed_mb_s      | GT: 237.0                          | KB matches: 3
+✓ Row 194 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 194 | model_number         | GT: V809-2404R                     | KB matches: 3
+✓ Row 198 | model_number         | GT: SKC600/512G                    | KB matches: 3
+✓ Row 198 | write_speed_mb_s     | GT: 520.0                          | KB matches: 3
+✓ Row 202 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 203 | model_number         | GT: STEA2000403                    | KB matches: 3
+✓ Row 206 | model_number         | GT: SP512GBP34A80M28               | KB matches: 3
+✓ Row 206 | read_speed_mb_s      | GT: 3200.0                         | KB matches: 3
+✓ Row 206 | write_speed_mb_s     | GT: 3000.0                         | KB matches: 3
+✓ Row 207 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 207 | height_mm            | GT: 42.0                           | KB matches: 3
+✓ Row 207 | width_mm             | GT: 133.0                          | KB matches: 3
+✓ Row 208 | model_number         | GT: MZ-76E250BW                    | KB matches: 3
+✓ Row 208 | read_speed_mb_s      | GT: 550.0                          | KB matches: 3
+✓ Row 208 | write_speed_mb_s     | GT: 520.0                          | KB matches: 3
+✓ Row 208 | height_mm            | GT: 7.0                            | KB matches: 3
+✓ Row 210 | read_speed_mb_s      | GT: 254.0                          | KB matches: 3
+✓ Row 210 | height_mm            | GT: 26.2                           | KB matches: 3
+✓ Row 210 | width_mm             | GT: 101.9                          | KB matches: 3
+✓ Row 211 | model_number         | GT: WDS240G2G0B                    | KB matches: 3
+✓ Row 211 | height_mm            | GT: 7.0                            | KB matches: 3
+✓ Row 212 | height_mm            | GT: 42.0                           | KB matches: 3
+✓ Row 212 | width_mm             | GT: 128.0                          | KB matches: 3
+✓ Row 214 | model_number         | GT: WD20EURX                       | KB matches: 2
+✓ Row 215 | height_mm            | GT: 3.5                            | KB matches: 3
+✓ Row 215 | width_mm             | GT: 22.0                           | KB matches: 3
+✓ Row 216 | bus_type             | GT: PCIe 3.0 x4                    | KB matches: 3
+✓ Row 216 | model_number         | GT: AS40G-1TT-C                    | KB matches: 3
+✓ Row 216 | read_speed_mb_s      | GT: 3500.0                         | KB matches: 3
+✓ Row 216 | write_speed_mb_s     | GT: 1900.0                         | KB matches: 3
+✓ Row 218 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 218 | model_number         | GT: 06G-P4-1161-KR                 | KB matches: 3
+✓ Row 219 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 221 | height_mm            | GT: 20.0                           | KB matches: 3
+✓ Row 221 | width_mm             | GT: 44.9                           | KB matches: 3
+✓ Row 223 | read_speed_mb_s      | GT: 550.0                          | KB matches: 3
+✓ Row 223 | write_speed_mb_s     | GT: 520.0                          | KB matches: 3
+✓ Row 224 | model                | GT: Cheetah                        | KB matches: 3
+✓ Row 225 | model                | GT: GIGABYTE SSD 1TB               | KB matches: 3
+✓ Row 225 | height_mm            | GT: 7.0                            | KB matches: 3
+✓ Row 229 | read_speed_mb_s      | GT: 40.0                           | KB matches: 3
+✓ Row 229 | write_speed_mb_s     | GT: 10.0                           | KB matches: 3
+✓ Row 231 | model_number         | GT: AHD830-5TU31-CBK               | KB matches: 1
+✓ Row 233 | model_number         | GT: GP-ASM2NE6200TTTD              | KB matches: 3
+✓ Row 233 | height_mm            | GT: 11.4                           | KB matches: 3
+✓ Row 233 | width_mm             | GT: 80.5                           | KB matches: 3
+✓ Row 234 | model_number         | GT: STHN2000400                    | KB matches: 3
+✓ Row 237 | model_number         | GT: WDS250G2B0C                    | KB matches: 3
+✓ Row 238 | model_number         | GT: DTDUO3/64GB                    | KB matches: 3
+✓ Row 238 | read_speed_mb_s      | GT: 70.0                           | KB matches: 3
+✓ Row 238 | write_speed_mb_s     | GT: 15.0                           | KB matches: 3
+✓ Row 241 | model_number         | GT: 02G-P4-6333-KR                 | KB matches: 3
+✓ Row 244 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 246 | model_number         | GT: ZT-T20610E-10M                 | KB matches: 3
+✓ Row 247 | read_speed_mb_s      | GT: 217.0                          | KB matches: 3
+✓ Row 248 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 249 | bus_type             | GT: SATA                           | KB matches: 3
+✓ Row 249 | read_speed_mb_s      | GT: 600.0                          | KB matches: 3
+✓ Row 251 | model_number         | GT: HDWD120UZSVA                   | KB matches: 3
+✓ Row 251 | height_mm            | GT: 26.1                           | KB matches: 3
+✓ Row 251 | width_mm             | GT: 101.6                          | KB matches: 3
+✓ Row 253 | model_number         | GT: 652611-B21                     | KB matches: 3
+✓ Row 253 | model                | GT: SERVER SMART MEMORY            | KB matches: 3
+✓ Row 253 | height_mm            | GT: 15.6                           | KB matches: 3
+✓ Row 253 | width_mm             | GT: 75.7                           | KB matches: 3
+✓ Row 254 | model                | GT: 4TB 3.5" SATA III              | KB matches: 3
+✓ Row 255 | model_number         | GT: 785067-B21                     | KB matches: 2
+✓ Row 255 | model                | GT: G8 G9                          | KB matches: 2
+✓ Row 256 | model_number         | GT: WD20EZRZ                       | KB matches: 3
+✓ Row 257 | height_mm            | GT: 67.0                           | KB matches: 3
+✓ Row 257 | width_mm             | GT: 15.0                           | KB matches: 3
+✓ Row 259 | read_speed_mb_s      | GT: 2850.0                         | KB matches: 3
+✓ Row 259 | write_speed_mb_s     | GT: 1100.0                         | KB matches: 3
+✓ Row 260 | model                | GT: 900GB SAS 12G Enterprise 15K SFF (2.5in) SC 3yr Wty Digitally Signed Firmware | KB matches: 3
+✓ Row 261 | model                | GT: 600GB 6G 15K 3.5" SAS DP SAS Server Hard Disk | KB matches: 2
+✓ Row 262 | model_number         | GT: GP-ASM2NE2512GTTDR             | KB matches: 3
+✓ Row 262 | read_speed_mb_s      | GT: 3480.0                         | KB matches: 3
+✓ Row 262 | write_speed_mb_s     | GT: 2000.0                         | KB matches: 3
+✓ Row 264 | read_speed_mb_s      | GT: 520.0                          | KB matches: 3
+✓ Row 264 | write_speed_mb_s     | GT: 320.0                          | KB matches: 3
+✓ Row 264 | height_mm            | GT: 7.0                            | KB matches: 3
+✓ Row 266 | model_number         | GT: ST10000NM001G                  | KB matches: 3
+✓ Row 267 | bus_type             | GT: USB 3.1 Gen 2                  | KB matches: 2
+✓ Row 268 | bus_type             | GT: USB 3.1 Gen 2                  | KB matches: 3
+✓ Row 268 | model_number         | GT: CT500X8SSD9                    | KB matches: 3
+✓ Row 269 | bus_type             | GT: PCIe 4.0                       | KB matches: 3
+✓ Row 273 | model_number         | GT: GV-N208SGAMING-OC-8GC          | KB matches: 3
+✓ Row 274 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 274 | model_number         | GT: 11G-P4-2589-KR                 | KB matches: 3
+✓ Row 275 | read_speed_mb_s      | GT: 550.0                          | KB matches: 3
+✓ Row 275 | write_speed_mb_s     | GT: 520.0                          | KB matches: 3
+✓ Row 276 | model_number         | GT: XA960LE10063                   | KB matches: 3
+✓ Row 276 | read_speed_mb_s      | GT: 560.0                          | KB matches: 3
+✓ Row 276 | write_speed_mb_s     | GT: 535.0                          | KB matches: 3
+✓ Row 279 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 279 | height_mm            | GT: 36.0                           | KB matches: 3
+✓ Row 279 | width_mm             | GT: 114.0                          | KB matches: 3
+✓ Row 280 | model_number         | GT: ST10000VX0004                  | KB matches: 3
+✓ Row 282 | model_number         | GT: 100-505826                     | KB matches: 3
+✓ Row 284 | model_number         | GT: MZ-76E1T0B                     | KB matches: 3
+✓ Row 284 | read_speed_mb_s      | GT: 550.0                          | KB matches: 3
+✓ Row 284 | write_speed_mb_s     | GT: 520.0                          | KB matches: 3
+✓ Row 285 | read_speed_mb_s      | GT: 3500.0                         | KB matches: 2
+✓ Row 285 | write_speed_mb_s     | GT: 2100.0                         | KB matches: 2
+✓ Row 285 | height_mm            | GT: 2.4                            | KB matches: 2
+✓ Row 285 | width_mm             | GT: 22.0                           | KB matches: 2
+✓ Row 286 | model_number         | GT: MZ-76P512B/EU                  | KB matches: 3
+✓ Row 287 | model                | GT: Proliant                       | KB matches: 3
+✓ Row 288 | model_number         | GT: WDS100T2X0C                    | KB matches: 3
+✓ Row 289 | model_number         | GT: MU-PC2T0S/WW                   | KB matches: 3
+✓ Row 290 | width_mm             | GT: 134.3                          | KB matches: 3
+✓ Row 294 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 294 | model_number         | GT: 90YV0CU1-M0NA00                | KB matches: 3
+✓ Row 295 | model_number         | GT: ASX8200PNP-2TT-C               | KB matches: 3
+✓ Row 295 | read_speed_mb_s      | GT: 3350.0                         | KB matches: 3
+✓ Row 295 | write_speed_mb_s     | GT: 2900.0                         | KB matches: 3
+✓ Row 296 | read_speed_mb_s      | GT: 27.0                           | KB matches: 2
+✓ Row 296 | write_speed_mb_s     | GT: 25.0                           | KB matches: 2
+✓ Row 297 | model_number         | GT: ZA480CV1A001                   | KB matches: 3
+✓ Row 298 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 298 | model_number         | GT: TUF-RTX2060-6G-GAMING          | KB matches: 3
+✓ Row 302 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 302 | model_number         | GT: GV-N208SAORUS-WB-8GC           | KB matches: 3
+✓ Row 303 | model_number         | GT: ST4000NM0025                   | KB matches: 3
+✓ Row 303 | read_speed_mb_s      | GT: 215.0                          | KB matches: 3
+✓ Row 303 | height_mm            | GT: 26.1                           | KB matches: 3
+✓ Row 303 | width_mm             | GT: 101.8                          | KB matches: 3
+✓ Row 307 | model_number         | GT: SDCZ73-256G-G46                | KB matches: 3
+✓ Row 307 | read_speed_mb_s      | GT: 150.0                          | KB matches: 3
+✓ Row 309 | model_number         | GT: SSDSC2KB019T7                  | KB matches: 3
+✓ Row 309 | read_speed_mb_s      | GT: 500.0                          | KB matches: 3
+✓ Row 309 | write_speed_mb_s     | GT: 490.0                          | KB matches: 3
+✓ Row 310 | bus_type             | GT: PCIe 4.0                       | KB matches: 3
+✓ Row 313 | model_number         | GT: GV-N730D5-2GL                  | KB matches: 3
+✓ Row 314 | model_number         | GT: DUAL-RX580-O8G                 | KB matches: 3
+✓ Row 315 | model_number         | GT: MZ-V7S250B/AM                  | KB matches: 3
+✓ Row 315 | read_speed_mb_s      | GT: 3500.0                         | KB matches: 3
+✓ Row 315 | write_speed_mb_s     | GT: 2300.0                         | KB matches: 3
+✓ Row 316 | bus_type             | GT: SATA III                       | KB matches: 3
+✓ Row 316 | read_speed_mb_s      | GT: 560.0                          | KB matches: 3
+✓ Row 316 | write_speed_mb_s     | GT: 480.0                          | KB matches: 3
+✓ Row 316 | height_mm            | GT: 7.0                            | KB matches: 3
+✓ Row 317 | bus_type             | GT: PCIe 4.0                       | KB matches: 3
+✓ Row 318 | model_number         | GT: ZA500CM1A003                   | KB matches: 3
+✓ Row 318 | height_mm            | GT: 7.0                            | KB matches: 3
+✓ Row 319 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 2
+✓ Row 319 | height_mm            | GT: 41.0                           | KB matches: 2
+✓ Row 319 | width_mm             | GT: 129.0                          | KB matches: 2
+✓ Row 320 | model_number         | GT: CMFVY3A-128GB                  | KB matches: 2
+✓ Row 321 | model_number         | GT: MU-PA500                       | KB matches: 3
+✓ Row 321 | height_mm            | GT: 10.5                           | KB matches: 3
+✓ Row 321 | width_mm             | GT: 57.0                           | KB matches: 3
+✓ Row 322 | model_number         | GT: STGG8000400                    | KB matches: 2
+✓ Row 324 | model_number         | GT: ZA3840NM10011                  | KB matches: 3
+✓ Row 324 | read_speed_mb_s      | GT: 560.0                          | KB matches: 3
+✓ Row 324 | write_speed_mb_s     | GT: 535.0                          | KB matches: 3
+✓ Row 325 | height_mm            | GT: 26.1                           | KB matches: 3
+✓ Row 326 | model_number         | GT: SDCZ48-06G-U46                 | KB matches: 3
+✓ Row 327 | read_speed_mb_s      | GT: 555.0                          | KB matches: 2
+✓ Row 327 | write_speed_mb_s     | GT: 500.0                          | KB matches: 2
+✓ Row 327 | height_mm            | GT: 7.0                            | KB matches: 2
+✓ Row 329 | model_number         | GT: ZT-T20810D-10P                 | KB matches: 2
+✓ Row 330 | bus_type             | GT: PCIe x16                       | KB matches: 2
+✓ Row 331 | model_number         | GT: ASD700-256GU31-CBK             | KB matches: 2
+✓ Row 331 | read_speed_mb_s      | GT: 440.0                          | KB matches: 2
+✓ Row 331 | write_speed_mb_s     | GT: 430.0                          | KB matches: 2
+✓ Row 332 | model_number         | GT: SSDPE21D480GAX1                | KB matches: 2
+✓ Row 334 | model_number         | GT: DC450R/1920G                   | KB matches: 3
+✓ Row 334 | read_speed_mb_s      | GT: 560.0                          | KB matches: 3
+✓ Row 334 | write_speed_mb_s     | GT: 530.0                          | KB matches: 3
+✓ Row 335 | height_mm            | GT: 36.6                           | KB matches: 2
+✓ Row 335 | width_mm             | GT: 120.6                          | KB matches: 2
+✓ Row 336 | model_number         | GT: MG04ACA600E                    | KB matches: 3
+✓ Row 336 | height_mm            | GT: 25.4                           | KB matches: 3
+✓ Row 336 | width_mm             | GT: 101.6                          | KB matches: 3
+✓ Row 340 | read_speed_mb_s      | GT: 18.0                           | KB matches: 2
+✓ Row 340 | write_speed_mb_s     | GT: 5.0                            | KB matches: 2
+✓ Row 340 | height_mm            | GT: 27.9                           | KB matches: 2
+✓ Row 340 | width_mm             | GT: 53.3                           | KB matches: 2
+✓ Row 343 | height_mm            | GT: 25.4                           | KB matches: 3
+✓ Row 343 | width_mm             | GT: 101.6                          | KB matches: 3
+✓ Row 344 | height_mm            | GT: 26.0                           | KB matches: 2
+✓ Row 344 | width_mm             | GT: 100.0                          | KB matches: 2
+✓ Row 347 | bus_type             | GT: PCIe                           | KB matches: 3
+✓ Row 347 | model_number         | GT: Turbo -RTX2070S-8G-EVO         | KB matches: 3
+✓ Row 348 | model_number         | GT: DT100G3/ 16GBCR                | KB matches: 3
+✓ Row 349 | model_number         | GT: 90YV0DV1-M0NA00                | KB matches: 1
+✓ Row 351 | model_number         | GT: WDBWLG0030HBK                  | KB matches: 3
+✓ Row 352 | model_number         | GT: GT1030-2G-BRK                  | KB matches: 2
+✓ Row 353 | model_number         | GT: ST8000VN004                    | KB matches: 3
+✓ Row 354 | height_mm            | GT: 3.5                            | KB matches: 3
+✓ Row 354 | width_mm             | GT: 80.0                           | KB matches: 3
+✓ Row 356 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 357 | model_number         | GT: WDS200T1R0B                    | KB matches: 2
+✓ Row 357 | height_mm            | GT: 2.4                            | KB matches: 2
+✓ Row 357 | width_mm             | GT: 22.0                           | KB matches: 2
+✓ Row 360 | model_number         | GT: XA480ME10063                   | KB matches: 3
+✓ Row 361 | read_speed_mb_s      | GT: 550.0                          | KB matches: 3
+✓ Row 362 | read_speed_mb_s      | GT: 100.0                          | KB matches: 3
+✓ Row 363 | bus_type             | GT: PCIe 3.0                       | KB matches: 2
+✓ Row 363 | model_number         | GT: TUF-GTX1650S-4G-GAMING         | KB matches: 2
+✓ Row 364 | read_speed_mb_s      | GT: 550.0                          | KB matches: 3
+✓ Row 365 | write_speed_mb_s     | GT: 520.0                          | KB matches: 3
+✓ Row 366 | bus_type             | GT: USB 3.2 Gen 2                  | KB matches: 3
+✓ Row 366 | model_number         | GT: MU-PC1T0H/WW                   | KB matches: 3
+✓ Row 368 | bus_type             | GT: PCIe 2.0                       | KB matches: 3
+✓ Row 369 | model_number         | GT: ROG-STRIX-RX5700XT-O8G-GAMING  | KB matches: 3
+✓ Row 373 | model                | GT: Midline                        | KB matches: 3
+✓ Row 374 | model_number         | GT: WDBYNN0010BRD-WESN             | KB matches: 2
+✓ Row 376 | model                | GT: 1TB 6G SAS 7.2K 2.5 inch SFF Dual Port Midline Hard Disk | KB matches: 3
+✓ Row 379 | model_number         | GT: WDBYVG0010BBK-WESN             | KB matches: 3
+✓ Row 380 | model                | GT: GeForce GTX 1660 Ti 6GB StormX Boost | KB matches: 3
+✓ Row 381 | model_number         | GT: SSDSC2KB240G801                | KB matches: 3
+✓ Row 382 | model_number         | GT: VGAGT1030-2G-BRK               | KB matches: 3
+✓ Row 384 | model_number         | GT: ST1000NM001A                   | KB matches: 3
+✓ Row 385 | model                | GT: Disco Solido                   | KB matches: 3
+✓ Row 386 | model_number         | GT: ZA240NM10011                   | KB matches: 3
+✓ Row 387 | height_mm            | GT: 115.0                          | KB matches: 2
+✓ Row 388 | model_number         | GT: WD100PURZ                      | KB matches: 3
+✓ Row 389 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 1
+✓ Row 390 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 391 | read_speed_mb_s      | GT: 560.0                          | KB matches: 3
+✓ Row 392 | model_number         | GT: STHH2000400                    | KB matches: 1
+✓ Row 394 | model_number         | GT: MU-PC500S/WW                   | KB matches: 3
+✓ Row 395 | read_speed_mb_s      | GT: 150.0                          | KB matches: 2
+✓ Row 396 | model_number         | GT: GV-N208STURBO-8GC              | KB matches: 3
+✓ Row 397 | model_number         | GT: WDS100T2G0A                    | KB matches: 3
+✓ Row 397 | read_speed_mb_s      | GT: 545.0                          | KB matches: 3
+✓ Row 397 | write_speed_mb_s     | GT: 465.0                          | KB matches: 3
+✓ Row 398 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 400 | bus_type             | GT: USB 3.1 Gen 1                  | KB matches: 1
+✓ Row 400 | read_speed_mb_s      | GT: 150.0                          | KB matches: 1
+✓ Row 402 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 402 | model_number         | GT: N208TAORUSX W-11GC             | KB matches: 3
+✓ Row 403 | model_number         | GT: SE9 G2                         | KB matches: 3
+✓ Row 405 | bus_type             | GT: SATA III                       | KB matches: 3
+✓ Row 405 | model_number         | GT: WDS250G2B0B                    | KB matches: 3
+✓ Row 405 | read_speed_mb_s      | GT: 550.0                          | KB matches: 3
+✓ Row 405 | write_speed_mb_s     | GT: 525.0                          | KB matches: 3
+✓ Row 405 | height_mm            | GT: 2.2                            | KB matches: 3
+✓ Row 405 | width_mm             | GT: 22.0                           | KB matches: 3
+✓ Row 407 | model_number         | GT: ZP500GM3A002                   | KB matches: 3
+✓ Row 409 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 414 | read_speed_mb_s      | GT: 250.0                          | KB matches: 3
+✓ Row 414 | height_mm            | GT: 26.1                           | KB matches: 3
+✓ Row 414 | width_mm             | GT: 101.8                          | KB matches: 3
+✓ Row 416 | model_number         | GT: STJM2000400                    | KB matches: 3
+✓ Row 418 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 419 | read_speed_mb_s      | GT: 550.0                          | KB matches: 3
+✓ Row 419 | write_speed_mb_s     | GT: 520.0                          | KB matches: 3
+✓ Row 420 | read_speed_mb_s      | GT: 5000.0                         | KB matches: 3
+✓ Row 420 | write_speed_mb_s     | GT: 4400.0                         | KB matches: 3
+✓ Row 421 | bus_type             | GT: PCIe                           | KB matches: 3
+✓ Row 423 | read_speed_mb_s      | GT: 175.0                          | KB matches: 2
+✓ Row 425 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 425 | model_number         | GT: TURBO-RTX2060S-8G-EVO          | KB matches: 3
+✓ Row 426 | model_number         | GT: SSDPED1K750GA01                | KB matches: 3
+✓ Row 426 | read_speed_mb_s      | GT: 2500.0                         | KB matches: 3
+✓ Row 426 | write_speed_mb_s     | GT: 2200.0                         | KB matches: 3
+✓ Row 427 | model_number         | GT: WD10PURZ                       | KB matches: 3
+✓ Row 428 | height_mm            | GT: 70.0                           | KB matches: 2
+✓ Row 429 | model_number         | GT: ST8000NM000A                   | KB matches: 3
+✓ Row 432 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 433 | read_speed_mb_s      | GT: 1050.0                         | KB matches: 3
+✓ Row 433 | write_speed_mb_s     | GT: 1000.0                         | KB matches: 3
+✓ Row 434 | height_mm            | GT: 70.0                           | KB matches: 3
+✓ Row 436 | bus_type             | GT: USB 3.0                        | KB matches: 2
+✓ Row 437 | model_number         | GT: CZ73                           | KB matches: 3
+✓ Row 438 | read_speed_mb_s      | GT: 267.0                          | KB matches: 3
+✓ Row 440 | height_mm            | GT: 40.0                           | KB matches: 2
+✓ Row 440 | width_mm             | GT: 128.0                          | KB matches: 2
+✓ Row 443 | write_speed_mb_s     | GT: 500.0                          | KB matches: 3
+✓ Row 445 | model_number         | GT: D3-S4610                       | KB matches: 3
+✓ Row 447 | model_number         | GT: DTVP30/32GB                    | KB matches: 3
+✓ Row 449 | read_speed_mb_s      | GT: 180.0                          | KB matches: 3
+✓ Row 451 | read_speed_mb_s      | GT: 261.0                          | KB matches: 3
+✓ Row 452 | model_number         | GT: MG07ACA12TE                    | KB matches: 3
+✓ Row 452 | height_mm            | GT: 26.1                           | KB matches: 3
+✓ Row 453 | model_number         | GT: WD40EFAX                       | KB matches: 3
+✓ Row 454 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 456 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 456 | model_number         | GT: GV-N2060WF2OC-6GD              | KB matches: 3
+✓ Row 456 | height_mm            | GT: 40.4                           | KB matches: 3
+✓ Row 456 | width_mm             | GT: 120.6                          | KB matches: 3
+✓ Row 458 | model_number         | GT: STEA4000402                    | KB matches: 1
+✓ Row 460 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 460 | model_number         | GT: GVN166TGO6-00-G                | KB matches: 3
+✓ Row 461 | model_number         | GT: 652583-B21                     | KB matches: 3
+✓ Row 461 | model                | GT: 600GB 6G SAS 10K 2.5" SC Server Hard Disk | KB matches: 3
+✓ Row 465 | bus_type             | GT: USB 2.0                        | KB matches: 2
+✓ Row 465 | model_number         | GT: SDCZ50-008G                    | KB matches: 2
+✓ Row 466 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 466 | model_number         | GT: ZT-T16610F-10L                 | KB matches: 3
+✓ Row 467 | model_number         | GT: WDS200T1R0A                    | KB matches: 3
+✓ Row 467 | height_mm            | GT: 7.0                            | KB matches: 3
+✓ Row 467 | width_mm             | GT: 69.0                           | KB matches: 3
+✓ Row 469 | model_number         | GT: SDIX30C-016G-GN6NN             | KB matches: 2
+✓ Row 469 | read_speed_mb_s      | GT: 20.0                           | KB matches: 2
+✓ Row 471 | model_number         | GT: 870757-B21                     | KB matches: 3
+✓ Row 471 | model                | GT: 600GB 2.5" 12G SAS             | KB matches: 3
+✓ Row 473 | model_number         | GT: SDCZ48-128G-U46                | KB matches: 3
+✓ Row 474 | model_number         | GT: SA2000M8/1000G                 | KB matches: 3
+✓ Row 476 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 478 | read_speed_mb_s      | GT: 160.0                          | KB matches: 3
+✓ Row 478 | height_mm            | GT: 118.0                          | KB matches: 3
+✓ Row 478 | width_mm             | GT: 41.0                           | KB matches: 3
+✓ Row 480 | read_speed_mb_s      | GT: 3500.0                         | KB matches: 3
+✓ Row 480 | write_speed_mb_s     | GT: 2300.0                         | KB matches: 3
+✓ Row 480 | height_mm            | GT: 2.4                            | KB matches: 3
+✓ Row 480 | width_mm             | GT: 22.1                           | KB matches: 3
+✓ Row 481 | bus_type             | GT: PCIe 4.0                       | KB matches: 3
+✓ Row 482 | model_number         | GT: RX-580P8DFD6                   | KB matches: 3
+✓ Row 484 | read_speed_mb_s      | GT: 560.0                          | KB matches: 2
+✓ Row 485 | model_number         | GT: STHP4000403                    | KB matches: 1
+✓ Row 487 | model_number         | GT: MZ-76P256B/EU                  | KB matches: 3
+✓ Row 487 | read_speed_mb_s      | GT: 560.0                          | KB matches: 3
+✓ Row 487 | write_speed_mb_s     | GT: 530.0                          | KB matches: 3
+✓ Row 488 | model_number         | GT: 652564-B21                     | KB matches: 3
+✓ Row 489 | model_number         | GT: CSSD-F240GBMP510               | KB matches: 3
+✓ Row 490 | model_number         | GT: GV-N207SAORUS-8GC              | KB matches: 2
+✓ Row 491 | model                | GT: Savvio                         | KB matches: 3
+✓ Row 491 | height_mm            | GT: 10.2                           | KB matches: 3
+✓ Row 491 | width_mm             | GT: 68.6                           | KB matches: 3
+✓ Row 493 | height_mm            | GT: 26.1                           | KB matches: 2
+✓ Row 494 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 494 | model_number         | GT: ROG -STRIX-RTX2070S-O8G-GAMING | KB matches: 3
+✓ Row 496 | model                | GT: Dual Port Enterprise           | KB matches: 3
+✓ Row 497 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 498 | read_speed_mb_s      | GT: 100.0                          | KB matches: 3
+✓ Row 498 | write_speed_mb_s     | GT: 15.0                           | KB matches: 3
+✓ Row 499 | model_number         | GT: DTIG4/128GB                    | KB matches: 3
+✓ Row 499 | height_mm            | GT: 30.5                           | KB matches: 3
+✓ Row 499 | width_mm             | GT: 36.8                           | KB matches: 3
+✓ Row 501 | model_number         | GT: SSDPEKNW010T8X1                | KB matches: 3
+✓ Row 503 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 506 | bus_type             | GT: SATA III                       | KB matches: 3
+✓ Row 509 | model_number         | GT: DT01ACA200                     | KB matches: 3
+✓ Row 512 | model_number         | GT: ST10000VN0004                  | KB matches: 3
+✓ Row 513 | model_number         | GT: WDS500G3X0C                    | KB matches: 3
+✓ Row 514 | model_number         | GT: WD30PURZ                       | KB matches: 2
+✓ Row 516 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 516 | model_number         | GT: DUAL-RTX2070S-8G-EVO           | KB matches: 3
+✓ Row 517 | model_number         | GT: ST16000NE000                   | KB matches: 3
+✓ Row 518 | read_speed_mb_s      | GT: 540.0                          | KB matches: 2
+✓ Row 518 | write_speed_mb_s     | GT: 515.0                          | KB matches: 2
+✓ Row 519 | model_number         | GT: WD5003AZEX                     | KB matches: 3
+✓ Row 520 | model                | GT: Dual Port Enterprise           | KB matches: 3
+✓ Row 521 | model_number         | GT: ST3000VX010                    | KB matches: 3
+✓ Row 524 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 525 | read_speed_mb_s      | GT: 4950.0                         | KB matches: 3
+✓ Row 525 | write_speed_mb_s     | GT: 4250.0                         | KB matches: 3
+✓ Row 526 | model_number         | GT: SDCZ71-032G-B35                | KB matches: 1
+✓ Row 526 | read_speed_mb_s      | GT: 24.0                           | KB matches: 1
+✓ Row 526 | write_speed_mb_s     | GT: 6.0                            | KB matches: 1
+✓ Row 527 | read_speed_mb_s      | GT: 560.0                          | KB matches: 3
+✓ Row 527 | write_speed_mb_s     | GT: 530.0                          | KB matches: 3
+✓ Row 528 | read_speed_mb_s      | GT: 3500.0                         | KB matches: 3
+✓ Row 528 | write_speed_mb_s     | GT: 3200.0                         | KB matches: 3
+✓ Row 528 | height_mm            | GT: 2.5                            | KB matches: 3
+✓ Row 528 | width_mm             | GT: 22.9                           | KB matches: 3
+✓ Row 530 | model_number         | GT: MZ-V6E500BW                    | KB matches: 1
+✓ Row 531 | model_number         | GT: ST600MP0006                    | KB matches: 3
+✓ Row 532 | model_number         | GT: 3813430                        | KB matches: 3
+✓ Row 532 | read_speed_mb_s      | GT: 520.0                          | KB matches: 3
+✓ Row 532 | write_speed_mb_s     | GT: 500.0                          | KB matches: 3
+✓ Row 532 | width_mm             | GT: 70.0                           | KB matches: 3
+✓ Row 533 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 533 | model_number         | GT: GV-N166SGAMING OC-6GD          | KB matches: 3
+✓ Row 534 | model_number         | GT: GT710-4H-SL-2GD5               | KB matches: 3
+✓ Row 535 | model_number         | GT: GV-R55XTGAMING OC-8GD          | KB matches: 3
+✓ Row 536 | height_mm            | GT: 147.0                          | KB matches: 3
+✓ Row 536 | width_mm             | GT: 101.8                          | KB matches: 3
+✓ Row 537 | bus_type             | GT: PCIe 3.0                       | KB matches: 2
+✓ Row 539 | read_speed_mb_s      | GT: 2000.0                         | KB matches: 3
+✓ Row 539 | write_speed_mb_s     | GT: 1700.0                         | KB matches: 3
+✓ Row 541 | model                | GT: Enterprise 3yr Warranty Hard Drive | KB matches: 3
+✓ Row 541 | height_mm            | GT: 40.6                           | KB matches: 3
+✓ Row 541 | width_mm             | GT: 78.7                           | KB matches: 3
+✓ Row 542 | model                | GT: Festplatte                     | KB matches: 3
+✓ Row 543 | bus_type             | GT: PCIe                           | KB matches: 3
+✓ Row 543 | model_number         | GT: DUAL-RTX3070-8G                | KB matches: 3
+✓ Row 545 | bus_type             | GT: USB 3.1                        | KB matches: 3
+✓ Row 545 | read_speed_mb_s      | GT: 540.0                          | KB matches: 3
+✓ Row 545 | write_speed_mb_s     | GT: 540.0                          | KB matches: 3
+✓ Row 546 | read_speed_mb_s      | GT: 550.0                          | KB matches: 3
+✓ Row 546 | write_speed_mb_s     | GT: 520.0                          | KB matches: 3
+✓ Row 547 | bus_type             | GT: USB 3.1                        | KB matches: 3
+✓ Row 547 | model_number         | GT: DTDUO3C/32GB                   | KB matches: 3
+✓ Row 547 | read_speed_mb_s      | GT: 100.0                          | KB matches: 3
+✓ Row 547 | write_speed_mb_s     | GT: 15.0                           | KB matches: 3
+✓ Row 548 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 550 | model_number         | GT: PH-GTX1050TI-4G                | KB matches: 3
+✓ Row 553 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 553 | model_number         | GT: VCG20708STFMPB-O               | KB matches: 3
+✓ Row 553 | width_mm             | GT: 504.0                          | KB matches: 3
+✓ Row 554 | read_speed_mb_s      | GT: 110.0                          | KB matches: 1
+✓ Row 556 | model_number         | GT: MZ-76P256E                     | KB matches: 2
+✓ Row 556 | read_speed_mb_s      | GT: 560.0                          | KB matches: 2
+✓ Row 556 | write_speed_mb_s     | GT: 530.0                          | KB matches: 2
+✓ Row 557 | height_mm            | GT: 26.1                           | KB matches: 3
+✓ Row 557 | width_mm             | GT: 101.8                          | KB matches: 3
+✓ Row 558 | bus_type             | GT: PCIe 3.0                       | KB matches: 2
+✓ Row 558 | model_number         | GT: DUAL-RTX2070S-A8G-EVO          | KB matches: 2
+✓ Row 559 | model_number         | GT: ZA1000GM1A001                  | KB matches: 3
+✓ Row 560 | bus_type             | GT: PCIe x16                       | KB matches: 3
+✓ Row 560 | model_number         | GT: ROG-STRIX-RTX2060-A6G-GAMING   | KB matches: 3
+✓ Row 561 | bus_type             | GT: SAS 12G                        | KB matches: 3
+✓ Row 561 | model_number         | GT: ST2000NX0273                   | KB matches: 3
+✓ Row 561 | model                | GT: Exos 7E2000                    | KB matches: 3
+✓ Row 562 | model                | GT: Cheetah NS                     | KB matches: 3
+✓ Row 563 | bus_type             | GT: SATA III                       | KB matches: 3
+✓ Row 563 | model_number         | GT: ST2000NX0253                   | KB matches: 3
+✓ Row 563 | read_speed_mb_s      | GT: 136.0                          | KB matches: 3
+✓ Row 569 | height_mm            | GT: 25.4                           | KB matches: 3
+✓ Row 569 | width_mm             | GT: 101.6                          | KB matches: 3
+✓ Row 572 | read_speed_mb_s      | GT: 540.0                          | KB matches: 1
+✓ Row 572 | write_speed_mb_s     | GT: 430.0                          | KB matches: 1
+✓ Row 573 | model_number         | GT: ST1000NX0313                   | KB matches: 3
+✓ Row 574 | model_number         | GT: 11293-05-40G                   | KB matches: 3
+✓ Row 576 | bus_type             | GT: PCIe 4.0                       | KB matches: 3
+✓ Row 577 | read_speed_mb_s      | GT: 545.0                          | KB matches: 3
+✓ Row 577 | write_speed_mb_s     | GT: 525.0                          | KB matches: 3
+✓ Row 578 | model_number         | GT: WDS500G1B0A                    | KB matches: 3
+✓ Row 578 | read_speed_mb_s      | GT: 545.0                          | KB matches: 3
+✓ Row 578 | write_speed_mb_s     | GT: 525.0                          | KB matches: 3
+✓ Row 578 | height_mm            | GT: 7.0                            | KB matches: 3
+✓ Row 579 | height_mm            | GT: 10.5                           | KB matches: 3
+✓ Row 579 | width_mm             | GT: 57.0                           | KB matches: 3
+✓ Row 580 | bus_type             | GT: PCIe 4.0                       | KB matches: 3
+✓ Row 580 | model_number         | GT: 11293-01-20G                   | KB matches: 3
+✓ Row 581 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 581 | model_number         | GT: GV-N166TWF2OC-6GD              | KB matches: 3
+✓ Row 582 | height_mm            | GT: 7.0                            | KB matches: 3
+✓ Row 582 | width_mm             | GT: 69.8                           | KB matches: 3
+✓ Row 585 | model_number         | GT: MZ-N6E500BW                    | KB matches: 3
+✓ Row 586 | model_number         | GT: ST6000VN0033                   | KB matches: 3
+✓ Row 587 | model_number         | GT: GP-GSM2NE3100TNTD              | KB matches: 3
+✓ Row 589 | bus_type             | GT: PCIe 3.0                       | KB matches: 1
+✓ Row 589 | model_number         | GT: TUF-GTX1660S-6G-GAMING         | KB matches: 1
+✓ Row 589 | height_mm            | GT: 46.0                           | KB matches: 1
+✓ Row 589 | width_mm             | GT: 124.0                          | KB matches: 1
+✓ Row 590 | model_number         | GT: WDS100T1R0B                    | KB matches: 3
+✓ Row 593 | bus_type             | GT: PCIe 4.0                       | KB matches: 3
+✓ Row 593 | model_number         | GT: GV-R56XTWF2OC-6GD              | KB matches: 3
+✓ Row 595 | bus_type             | GT: PCIe                           | KB matches: 3
+✓ Row 595 | model_number         | GT: NED3090019SB-132BA             | KB matches: 3
+✓ Row 596 | bus_type             | GT: SATA III                       | KB matches: 3
+✓ Row 597 | read_speed_mb_s      | GT: 3500.0                         | KB matches: 3
+✓ Row 597 | write_speed_mb_s     | GT: 3300.0                         | KB matches: 3
+✓ Row 598 | height_mm            | GT: 66.0                           | KB matches: 3
+✓ Row 598 | width_mm             | GT: 102.0                          | KB matches: 3
+✓ Row 600 | model_number         | GT: AS102P-32G-RGY                 | KB matches: 3
+✓ Row 600 | read_speed_mb_s      | GT: 200.0                          | KB matches: 3
+✓ Row 600 | write_speed_mb_s     | GT: 120.0                          | KB matches: 3
+✓ Row 602 | bus_type             | GT: USB 3.1                        | KB matches: 1
+✓ Row 604 | model_number         | GT: ASX6000LNP-512GT-C             | KB matches: 3
+✓ Row 606 | read_speed_mb_s      | GT: 3430.0                         | KB matches: 2
+✓ Row 606 | write_speed_mb_s     | GT: 2900.0                         | KB matches: 2
+✓ Row 606 | height_mm            | GT: 8.0                            | KB matches: 2
+✓ Row 606 | width_mm             | GT: 25.0                           | KB matches: 2
+✓ Row 608 | model_number         | GT: WDBYNN0010BYL-WESN             | KB matches: 3
+✓ Row 609 | model_number         | GT: 759208-B21                     | KB matches: 3
+✓ Row 611 | height_mm            | GT: 26.1                           | KB matches: 3
+✓ Row 611 | width_mm             | GT: 101.6                          | KB matches: 3
+✓ Row 612 | model                | GT: GEFORCE RTX 2080TI GAMING X TRIO | KB matches: 3
+✓ Row 613 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 613 | model_number         | GT: TUF-GTX1660-6G-GAMING          | KB matches: 3
+✓ Row 614 | model_number         | GT: 718037782898                   | KB matches: 3
+✓ Row 614 | model                | GT: Caviar Green                   | KB matches: 3
+✓ Row 615 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 615 | model_number         | GT: 08G-P4-3071-KR                 | KB matches: 3
+✓ Row 616 | read_speed_mb_s      | GT: 540.0                          | KB matches: 3
+✓ Row 616 | height_mm            | GT: 10.5                           | KB matches: 3
+✓ Row 616 | width_mm             | GT: 57.0                           | KB matches: 3
+✓ Row 617 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 617 | model_number         | GT: GV-N105TOC-4GL                 | KB matches: 3
+✓ Row 618 | bus_type             | GT: USB 2.0                        | KB matches: 3
+✓ Row 618 | model                | GT: USB Flash Drive                | KB matches: 3
+✓ Row 620 | model                | GT: ThinkPad 256GB SAMSUNG PCIe NVME TLC OPAL M.2 SSD | KB matches: 3
+✓ Row 622 | model_number         | GT: WDBYVG0010BBK-WESN             | KB matches: 2
+✓ Row 623 | read_speed_mb_s      | GT: 215.0                          | KB matches: 3
+✓ Row 625 | model_number         | GT: ZT-T20710D-10P                 | KB matches: 3
+✓ Row 626 | model_number         | GT: ST1200MM0129                   | KB matches: 3
+✓ Row 626 | height_mm            | GT: 15.0                           | KB matches: 3
+✓ Row 628 | read_speed_mb_s      | GT: 1050.0                         | KB matches: 3
+✓ Row 628 | write_speed_mb_s     | GT: 1000.0                         | KB matches: 3
+✓ Row 629 | bus_type             | GT: PCIe 4.0                       | KB matches: 2
+✓ Row 629 | model_number         | GT: 90YV0DQ2-M0NA00                | KB matches: 2
+✓ Row 632 | model_number         | GT: CT500P5SSD8                    | KB matches: 3
+✓ Row 632 | read_speed_mb_s      | GT: 3400.0                         | KB matches: 3
+✓ Row 632 | write_speed_mb_s     | GT: 3000.0                         | KB matches: 3
+✓ Row 633 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 633 | height_mm            | GT: 35.3                           | KB matches: 3
+✓ Row 633 | width_mm             | GT: 115.2                          | KB matches: 3
+✓ Row 635 | bus_type             | GT: PCIe 4.0                       | KB matches: 3
+✓ Row 636 | bus_type             | GT: USB 3.2 Gen 2                  | KB matches: 2
+✓ Row 637 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 639 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 639 | model_number         | GT: GVN166TA-00-G                  | KB matches: 3
+✓ Row 640 | model_number         | GT: WDS480G2G0A                    | KB matches: 3
+✓ Row 641 | model_number         | GT: ST2000DM006                    | KB matches: 3
+✓ Row 642 | model_number         | GT: AUV128-16G-RBE                 | KB matches: 3
+✓ Row 642 | read_speed_mb_s      | GT: 40.0                           | KB matches: 3
+✓ Row 642 | write_speed_mb_s     | GT: 15.0                           | KB matches: 3
+✓ Row 644 | bus_type             | GT: USB 3.0                        | KB matches: 1
+✓ Row 644 | model_number         | GT: WDBS4B0020BBK-WESN             | KB matches: 1
+✓ Row 645 | bus_type             | GT: USB                            | KB matches: 3
+✓ Row 647 | read_speed_mb_s      | GT: 90.0                           | KB matches: 3
+✓ Row 647 | write_speed_mb_s     | GT: 25.0                           | KB matches: 3
+✓ Row 650 | model                | GT: Hot-Plug SC Enterprise         | KB matches: 3
+✓ Row 651 | model_number         | GT: ZT-T16620D-10M                 | KB matches: 3
+✓ Row 652 | model_number         | GT: 832514-b21                     | KB matches: 3
+✓ Row 653 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 653 | model_number         | GT: 912-V373-283                   | KB matches: 3
+✓ Row 654 | model_number         | GT: ROG -STRIX-RTX2060-O6G-EVO-GAMING | KB matches: 1
+✓ Row 655 | model                | GT: 1.2TB 6G SAS 10K 2.5" SC Server Hard Disk | KB matches: 2
+✓ Row 657 | read_speed_mb_s      | GT: 150.0                          | KB matches: 3
+✓ Row 660 | bus_type             | GT: PCIe 4.0                       | KB matches: 3
+✓ Row 663 | model_number         | GT: TUF 3-RX5700XT-O8G-GAMING      | KB matches: 3
+✓ Row 664 | bus_type             | GT: PCIe                           | KB matches: 2
+✓ Row 664 | model_number         | GT: 01G-P3-1313-KR                 | KB matches: 2
+✓ Row 666 | read_speed_mb_s      | GT: 560.0                          | KB matches: 3
+✓ Row 666 | write_speed_mb_s     | GT: 345.0                          | KB matches: 3
+✓ Row 667 | model_number         | GT: SSDPEKNW010T9X1                | KB matches: 3
+✓ Row 668 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 2
+✓ Row 668 | model_number         | GT: VCQP400DVI-PB                  | KB matches: 2
+✓ Row 669 | bus_type             | GT: PCIe                           | KB matches: 3
+✓ Row 670 | model_number         | GT: 2240                           | KB matches: 3
+✓ Row 670 | model                | GT: SSD                            | KB matches: 3
+✓ Row 670 | height_mm            | GT: 7.0                            | KB matches: 3
+✓ Row 670 | width_mm             | GT: 69.8                           | KB matches: 3
+✓ Row 674 | model                | GT: GeForce GTX 1660 PHOENIX 6GB OC | KB matches: 3
+✓ Row 675 | model                | GT: GeForce GT710                  | KB matches: 3
+✓ Row 676 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 677 | model                | GT: SUPER MINI USB Flash Drive     | KB matches: 3
+✓ Row 679 | model                | GT: Smart Drive                    | KB matches: 3
+✓ Row 680 | model_number         | GT: MZ-76Q4T0BW                    | KB matches: 2
+✓ Row 680 | read_speed_mb_s      | GT: 550.0                          | KB matches: 2
+✓ Row 680 | write_speed_mb_s     | GT: 520.0                          | KB matches: 2
+✓ Row 683 | model_number         | GT: 11295-05-20G                   | KB matches: 3
+✓ Row 685 | model_number         | GT: MU-PC1T0T                      | KB matches: 3
+✓ Row 686 | read_speed_mb_s      | GT: 555.0                          | KB matches: 2
+✓ Row 686 | write_speed_mb_s     | GT: 525.0                          | KB matches: 2
+✓ Row 686 | height_mm            | GT: 7.0                            | KB matches: 2
+✓ Row 688 | bus_type             | GT: PCIe 3.0                       | KB matches: 2
+✓ Row 689 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 689 | model_number         | GT: DUAL-RTX2060-O6G-EVO           | KB matches: 3
+✓ Row 690 | bus_type             | GT: SATA III                       | KB matches: 3
+✓ Row 691 | bus_type             | GT: PCIe                           | KB matches: 3
+✓ Row 691 | model_number         | GT: TUF-RTX3090-24G-GAMING         | KB matches: 3
+✓ Row 693 | model_number         | GT: WDS500G1R0A                    | KB matches: 3
+✓ Row 694 | read_speed_mb_s      | GT: 560.0                          | KB matches: 3
+✓ Row 694 | write_speed_mb_s     | GT: 510.0                          | KB matches: 3
+✓ Row 694 | height_mm            | GT: 7.0                            | KB matches: 3
+✓ Row 695 | height_mm            | GT: 40.5                           | KB matches: 3
+✓ Row 695 | width_mm             | GT: 122.0                          | KB matches: 3
+✓ Row 696 | model_number         | GT: DTDUO3/16GB                    | KB matches: 3
+✓ Row 696 | read_speed_mb_s      | GT: 70.0                           | KB matches: 3
+✓ Row 696 | write_speed_mb_s     | GT: 10.0                           | KB matches: 3
+✓ Row 697 | bus_type             | GT: PCIe 4.0                       | KB matches: 3
+✓ Row 697 | model_number         | GT: GV-R57XTGAMING OC-8GD          | KB matches: 3
+✓ Row 700 | read_speed_mb_s      | GT: 560.0                          | KB matches: 3
+✓ Row 700 | write_speed_mb_s     | GT: 300.0                          | KB matches: 3
+✓ Row 700 | height_mm            | GT: 7.0                            | KB matches: 3
+✓ Row 700 | width_mm             | GT: 69.8                           | KB matches: 3
+✓ Row 701 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 701 | model_number         | GT: DUAL-RTX2070S-O8G-EVO          | KB matches: 3
+✓ Row 702 | model                | GT: Server Hard Drive              | KB matches: 3
+✓ Row 704 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 704 | model_number         | GT: V375-032R                      | KB matches: 3
+✓ Row 705 | model_number         | GT: 781518-B21                     | KB matches: 3
+✓ Row 705 | model                | GT: 1.2TB 12G SAS 10K 2.5″ SC Enterprise HDD | KB matches: 3
+✓ Row 706 | bus_type             | GT: PCIe 3.0                       | KB matches: 2
+✓ Row 707 | model_number         | GT: STEA500400                     | KB matches: 3
+✓ Row 711 | height_mm            | GT: 19.9                           | KB matches: 2
+✓ Row 711 | width_mm             | GT: 82.0                           | KB matches: 2
+✓ Row 712 | bus_type             | GT: USB 3.2 Gen 2                  | KB matches: 3
+✓ Row 712 | model_number         | GT: MU-PC500T                      | KB matches: 3
+✓ Row 713 | model_number         | GT: ST14000NE0008                  | KB matches: 3
+✓ Row 714 | model_number         | GT: 861691-B21                     | KB matches: 3
+✓ Row 714 | model                | GT: 1TB 6G SATA 7.2K LFF MDL SC Server Hard Drive | KB matches: 3
+✓ Row 715 | model_number         | GT: WDS200T2B0B                    | KB matches: 3
+✓ Row 715 | read_speed_mb_s      | GT: 560.0                          | KB matches: 3
+✓ Row 715 | write_speed_mb_s     | GT: 530.0                          | KB matches: 3
+✓ Row 716 | model_number         | GT: SDCZ60-064G-B35                | KB matches: 2
+✓ Row 717 | model_number         | GT: WD82PURZ                       | KB matches: 3
+✓ Row 719 | model_number         | GT: ST1800MM0129                   | KB matches: 3
+✓ Row 720 | model_number         | GT: GV-N1650OC-4GD                 | KB matches: 3
+✓ Row 721 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 721 | model_number         | GT: 100-505940                     | KB matches: 3
+✓ Row 722 | height_mm            | GT: 25.4                           | KB matches: 3
+✓ Row 722 | width_mm             | GT: 101.6                          | KB matches: 3
+✓ Row 724 | model_number         | GT: ZA250CM1A003                   | KB matches: 3
+✓ Row 725 | read_speed_mb_s      | GT: 550.0                          | KB matches: 3
+✓ Row 726 | bus_type             | GT: USB 2.0                        | KB matches: 3
+✓ Row 726 | model                | GT: Multifunctional USB Flash Drive | KB matches: 3
+✓ Row 728 | bus_type             | GT: USB 2.0                        | KB matches: 3
+✓ Row 730 | model_number         | GT: HDWQ140UZSVA                   | KB matches: 3
+✓ Row 733 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 2
+✓ Row 734 | model_number         | GT: SKC2000M8 / 500G               | KB matches: 3
+✓ Row 735 | model_number         | GT: WDS100T1R0A                    | KB matches: 3
+✓ Row 736 | model                | GT: Compatible                     | KB matches: 2
+✓ Row 738 | read_speed_mb_s      | GT: 560.0                          | KB matches: 3
+✓ Row 738 | write_speed_mb_s     | GT: 530.0                          | KB matches: 3
+✓ Row 738 | height_mm            | GT: 7.0                            | KB matches: 3
+✓ Row 739 | bus_type             | GT: PCIe 4.0                       | KB matches: 3
+✓ Row 739 | height_mm            | GT: 40.0                           | KB matches: 3
+✓ Row 739 | width_mm             | GT: 128.0                          | KB matches: 3
+✓ Row 740 | read_speed_mb_s      | GT: 3480.0                         | KB matches: 3
+✓ Row 740 | write_speed_mb_s     | GT: 3000.0                         | KB matches: 3
+✓ Row 741 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 742 | model_number         | GT: 652572-B21                     | KB matches: 3
+✓ Row 742 | model                | GT: G8 G9                          | KB matches: 3
+✓ Row 745 | model_number         | GT: SDIX30C-032G-GN6NN             | KB matches: 3
+✓ Row 745 | read_speed_mb_s      | GT: 20.0                           | KB matches: 3
+✓ Row 745 | write_speed_mb_s     | GT: 5.0                            | KB matches: 3
+✓ Row 747 | read_speed_mb_s      | GT: 3400.0                         | KB matches: 2
+✓ Row 747 | write_speed_mb_s     | GT: 2500.0                         | KB matches: 2
+✓ Row 748 | bus_type             | GT: USB 3.0                        | KB matches: 1
+✓ Row 748 | model_number         | GT: STEB4000100                    | KB matches: 1
+✓ Row 749 | model_number         | GT: ST12000NE0008                  | KB matches: 3
+✓ Row 750 | height_mm            | GT: 100.0                          | KB matches: 1
+✓ Row 750 | width_mm             | GT: 140.0                          | KB matches: 1
+✓ Row 751 | height_mm            | GT: 101.0                          | KB matches: 2
+✓ Row 751 | width_mm             | GT: 21.0                           | KB matches: 2
+✓ Row 753 | model_number         | GT: SSDSC2KG960G801                | KB matches: 3
+✓ Row 755 | model_number         | GT: WDS500G2B0B                    | KB matches: 3
+✓ Row 757 | model_number         | GT: 90YV0DU0-M0NA00                | KB matches: 2
+✓ Row 758 | read_speed_mb_s      | GT: 3470.0                         | KB matches: 3
+✓ Row 758 | write_speed_mb_s     | GT: 2600.0                         | KB matches: 3
+✓ Row 759 | model_number         | GT: ST8000VX004                    | KB matches: 3
+✓ Row 760 | height_mm            | GT: 25.4                           | KB matches: 3
+✓ Row 760 | width_mm             | GT: 101.6                          | KB matches: 3
+✓ Row 761 | model_number         | GT: DTLPG3                         | KB matches: 3
+✓ Row 761 | read_speed_mb_s      | GT: 135.0                          | KB matches: 3
+✓ Row 762 | bus_type             | GT: PCIe 3.0                       | KB matches: 2
+✓ Row 762 | height_mm            | GT: 38.8                           | KB matches: 2
+✓ Row 763 | read_speed_mb_s      | GT: 550.0                          | KB matches: 3
+✓ Row 763 | write_speed_mb_s     | GT: 520.0                          | KB matches: 3
+✓ Row 763 | height_mm            | GT: 6.8                            | KB matches: 3
+✓ Row 763 | width_mm             | GT: 100.0                          | KB matches: 3
+✓ Row 765 | model_number         | GT: ST3000LM024                    | KB matches: 3
+✓ Row 765 | height_mm            | GT: 15.0                           | KB matches: 3
+✓ Row 768 | model_number         | GT: STJP1000400                    | KB matches: 3
+✓ Row 768 | read_speed_mb_s      | GT: 2000.0                         | KB matches: 3
+✓ Row 769 | model_number         | GT: SSDPEKNW512G8X1                | KB matches: 3
+✓ Row 772 | model_number         | GT: MU-PA1T0B/WW                   | KB matches: 2
+✓ Row 773 | model_number         | GT: ASX6000LNP-1TT-C               | KB matches: 3
+✓ Row 774 | model                | GT: Desktop HDD.15                 | KB matches: 3
+✓ Row 776 | model_number         | GT: 90YV0AL0-M0NA00                | KB matches: 3
+✓ Row 778 | height_mm            | GT: 26.1                           | KB matches: 3
+✓ Row 778 | width_mm             | GT: 101.6                          | KB matches: 3
+✓ Row 781 | bus_type             | GT: USB 3.0                        | KB matches: 1
+✓ Row 781 | model_number         | GT: WDBYNN0010BWT-WESN             | KB matches: 1
+✓ Row 782 | read_speed_mb_s      | GT: 180.0                          | KB matches: 3
+✓ Row 782 | height_mm            | GT: 26.1                           | KB matches: 3
+✓ Row 782 | width_mm             | GT: 101.6                          | KB matches: 3
+✓ Row 783 | bus_type             | GT: PCIe 4.0                       | KB matches: 3
+✓ Row 784 | model_number         | GT: WDBYFT0040BOR-WESN             | KB matches: 2
+✓ Row 785 | model_number         | GT: AUV128-32G-RBE                 | KB matches: 3
+✓ Row 785 | read_speed_mb_s      | GT: 90.0                           | KB matches: 3
+✓ Row 785 | write_speed_mb_s     | GT: 40.0                           | KB matches: 3
+✓ Row 785 | height_mm            | GT: 90.0                           | KB matches: 3
+✓ Row 785 | width_mm             | GT: 20.0                           | KB matches: 3
+✓ Row 786 | bus_type             | GT: PCIe                           | KB matches: 3
+✓ Row 789 | bus_type             | GT: PCIe                           | KB matches: 3
+✓ Row 789 | model_number         | GT: ROG-STRIX-RTX3080-10G-GAMING   | KB matches: 3
+✓ Row 790 | model_number         | GT: AXRX 5700XT 8GBD6-3DHR/OC      | KB matches: 3
+✓ Row 792 | model_number         | GT: ROG -STRIX-RTX2070S-A8G-GAMING | KB matches: 3
+✓ Row 794 | model_number         | GT: NE51660018J9-165F              | KB matches: 1
+✓ Row 795 | model_number         | GT: GV-N207SWF3OC-8GD              | KB matches: 3
+✓ Row 797 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 2
+✓ Row 798 | model_number         | GT: ST16000NM001G                  | KB matches: 3
+✓ Row 798 | height_mm            | GT: 25.4                           | KB matches: 3
+✓ Row 798 | width_mm             | GT: 101.6                          | KB matches: 3
+✓ Row 802 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 803 | bus_type             | GT: PCIe                           | KB matches: 3
+✓ Row 803 | model_number         | GT: ROG-STRIX-RTX3090-O24G-GAMING  | KB matches: 3
+✓ Row 804 | model_number         | GT: WDS500G1B0C                    | KB matches: 3
+✓ Row 805 | read_speed_mb_s      | GT: 1800.0                         | KB matches: 3
+✓ Row 805 | write_speed_mb_s     | GT: 1800.0                         | KB matches: 3
+✓ Row 806 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 806 | height_mm            | GT: 40.0                           | KB matches: 3
+✓ Row 806 | width_mm             | GT: 124.0                          | KB matches: 3
+✓ Row 807 | model_number         | GT: PBU120GS25SSDR                 | KB matches: 3
+✓ Row 809 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 810 | model_number         | GT: MZ-V7S250BW                    | KB matches: 3
+✓ Row 811 | model_number         | GT: SUV500MS-480GB                 | KB matches: 3
+✓ Row 811 | read_speed_mb_s      | GT: 520.0                          | KB matches: 3
+✓ Row 811 | write_speed_mb_s     | GT: 500.0                          | KB matches: 3
+
+Coverage: 897/897 = 100.0%
+Ollama OK: 'OK'
+Loading embedding model...
+Encoding KB...
+KB encoded: 2200 rows
+Encoding query rows...
+[GIN] 2026/03/28 - 12:16:50 | 200 |  1.593656094s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:16:51 | 200 |  878.258576ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:16:52 | 200 |   1.01507197s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:16:53 | 200 |  949.404873ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:16:54 | 200 |  942.924094ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:17:51 | 200 | 57.607406367s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:17:52 | 200 |  726.903616ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:17:53 | 200 |  1.321329193s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:17:54 | 200 |  615.894737ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:17:55 | 200 |  695.145399ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:17:57 | 200 |  2.308610416s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:17:58 | 200 |  764.791345ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:01 | 200 |  3.085545084s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:03 | 200 |  1.869720801s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:04 | 200 |  1.395848426s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:05 | 200 |  1.231538128s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:06 | 200 |   955.63662ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:07 | 200 |   769.16512ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:09 | 200 |  1.894329267s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:10 | 200 |  1.271453539s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:11 | 200 |  717.138555ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:12 | 200 |  623.770219ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:12 | 200 |  760.969349ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:13 | 200 |  860.299322ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:14 | 200 |  678.826738ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:16 | 200 |  2.205343624s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:18 | 200 |   1.86642145s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:19 | 200 |  848.617908ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:19 | 200 |  626.043785ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:20 | 200 |  586.201256ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:21 | 200 |  1.175972526s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:22 | 200 |  550.802038ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:23 | 200 |  1.394675859s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:24 | 200 |  584.472883ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:24 | 200 |  714.933036ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:26 | 200 |  1.908915755s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:28 | 200 |   1.95167548s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:30 | 200 |  1.401339895s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:30 | 200 |  651.368429ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:32 | 200 |  1.184287629s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:32 | 200 |  590.338448ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:33 | 200 |  856.305517ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:34 | 200 |  806.428308ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:36 | 200 |   1.98441226s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:37 | 200 |  1.561018036s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:18:39 | 200 |   1.82501971s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:23:42 | 200 |  2.761660565s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:23:45 | 200 |    2.6693937s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:23:46 | 200 |  1.033697273s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:23:47 | 200 |  972.620883ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:23:48 | 200 |  1.740307905s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:23:50 | 200 |  1.130663748s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:23:54 | 200 |  3.940990418s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:23:57 | 200 |  3.097577634s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:00 | 200 |  3.561271473s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:02 | 200 |  1.497428785s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:04 | 200 |  2.188565709s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:06 | 200 |  1.772220846s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:07 | 200 |   932.47911ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:08 | 200 |  1.081237051s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:09 | 200 |  1.567739892s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:11 | 200 |  1.204393119s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:12 | 200 |  1.166413236s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:15 | 200 |  3.146534333s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:16 | 200 |  1.607498695s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:24 | 200 |  7.844503445s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:27 | 200 |  2.841220335s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:28 | 200 |  1.248130311s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:30 | 200 |   1.67851867s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:36 | 200 |   6.33091992s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:38 | 200 |  1.294958037s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:40 | 200 |  2.220378595s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:43 | 200 |  3.082151254s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:45 | 200 |  2.272961705s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:48 | 200 |  3.019836539s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:51 | 200 |  2.399863428s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:54 | 200 |  3.372819549s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:55 | 200 |  1.017586092s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:24:58 | 200 |  2.874673531s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:25:00 | 200 |   1.61363757s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:30:02 | 200 |  1.378058487s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:30:04 | 200 |  1.928128523s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:30:05 | 200 |  991.217658ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:30:08 | 200 |  2.249157275s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:30:11 | 200 |  3.487233191s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:30:14 | 200 |  3.146204952s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:30:17 | 200 |  2.506908212s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:30:19 | 200 |  2.210030014s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:30:21 | 200 |  2.169397203s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:30:24 | 200 |  2.415754209s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:30:29 | 200 |  5.051271151s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:30:32 | 200 |  2.919979919s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:30:33 | 200 |  1.213023089s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:30:39 | 200 |  5.864803768s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:30:40 | 200 |  1.650832305s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:30:42 | 200 |  1.495464381s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:30:45 | 200 |  2.793986851s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:30:49 | 200 |  4.675431483s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:30:54 | 200 |  4.992675559s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:30:56 | 200 |  1.426205075s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:30:58 | 200 |  1.863546047s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:30:59 | 200 |  1.610356774s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:31:01 | 200 |  1.817356177s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:31:03 | 200 |  1.578802503s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:31:06 | 200 |  3.881229936s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:31:08 | 200 |  1.687257047s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:31:10 | 200 |  1.888352292s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:31:12 | 200 |  2.352270891s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:31:16 | 200 |   3.35756522s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:31:19 | 200 |  3.323264705s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:31:20 | 200 |   1.26424084s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:31:24 | 200 |  3.707036115s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:31:28 | 200 |   3.60840315s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:31:33 | 200 |  5.443350388s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:31:35 | 200 |  1.365845464s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:31:36 | 200 |  1.272238144s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:31:41 | 200 |  5.245240524s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:31:42 | 200 |   1.26403755s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:31:44 | 200 |  1.181656436s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:31:46 | 200 |  2.731431648s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:31:48 | 200 |  1.486331668s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:31:49 | 200 |  1.051483284s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:31:53 | 200 |   4.64260384s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:31:58 | 200 |  4.751405897s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:32:03 | 200 |  4.331979085s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:32:05 | 200 |  2.488386366s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:32:07 | 200 |  1.900693887s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:32:09 | 200 |  1.958821969s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:32:11 | 200 |  1.548015663s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:32:12 | 200 |  1.820733918s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:32:16 | 200 |  3.190782417s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:32:17 | 200 |  1.681966839s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:32:20 | 200 |  3.159731982s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:32:23 | 200 |  3.060753478s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:32:28 | 200 |   4.24219001s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:32:32 | 200 |  4.051127598s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:32:34 | 200 |  1.740453205s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:32:35 | 200 |  1.586323763s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:32:37 | 200 |  2.178947266s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:32:39 | 200 |   1.64079705s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:32:40 | 200 |  1.130590443s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:32:45 | 200 |  4.872495754s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:32:50 | 200 |  5.040703392s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:32:51 | 200 |  1.284127937s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:32:53 | 200 |   1.49211733s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:33:01 | 200 |  7.783828457s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:33:02 | 200 |  1.398555169s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:33:05 | 200 |  3.380149063s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:33:08 | 200 |  2.991103929s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:33:10 | 200 |  1.378892666s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:33:11 | 200 |  1.494834234s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:33:13 | 200 |  1.606277236s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:33:15 | 200 |  2.007333517s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:33:16 | 200 |   1.35124465s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:33:18 | 200 |  1.852831017s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:33:21 | 200 |  3.092005183s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:33:27 | 200 |  6.259149804s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:33:29 | 200 |  1.592662836s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:33:30 | 200 |  1.304634895s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:33:33 | 200 |  2.437085286s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:33:34 | 200 |  1.468365231s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:38:36 | 200 |  1.310449436s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:38:38 | 200 |  1.935275509s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:38:40 | 200 |   1.58217571s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:38:42 | 200 |  2.215589154s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:38:44 | 200 |  1.317264062s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:38:45 | 200 |  1.668355365s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:38:50 | 200 |  5.079599445s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:38:52 | 200 |  1.634462536s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:38:53 | 200 |  1.358359381s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:38:55 | 200 |  1.484630425s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:38:56 | 200 |  1.241906365s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:38:58 | 200 |  2.305453702s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:39:00 | 200 |  1.328952902s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:39:01 | 200 |  1.291766085s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:39:03 | 200 |  1.937369729s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:39:08 | 200 |  4.671008031s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:39:10 | 200 |  2.094188528s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:39:11 | 200 |  1.770105412s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:39:15 | 200 |   3.98901935s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:39:22 | 200 |   6.76785828s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:39:25 | 200 |  2.331578476s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:39:29 | 200 |  4.128493816s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:39:30 | 200 |  1.471368488s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:39:32 | 200 |  2.014194699s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:39:36 | 200 |  3.772395167s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:39:57 | 200 | 20.654836309s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:39:59 | 200 |  2.126254065s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:40:02 | 200 |  2.826311532s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:40:04 | 200 |  2.120608824s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:40:06 | 200 |  2.116778866s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:40:11 | 200 |  4.404558231s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:40:12 | 200 |  1.248391445s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:40:13 | 200 |  1.321114737s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:40:19 | 200 |  6.056868398s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:40:22 | 200 |  2.901920714s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:40:24 | 200 |  1.906779361s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:40:27 | 200 |  2.268666631s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:40:28 | 200 |   1.94804113s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:40:33 | 200 |  4.656976469s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:40:38 | 200 |  5.070759396s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:40:49 | 200 | 11.237169257s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:40:55 | 200 |  5.641732164s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:40:57 | 200 |  2.187024779s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:41:02 | 200 |  4.984984563s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:41:03 | 200 |  1.080850394s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:41:05 | 200 |  1.208341416s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:41:07 | 200 |  2.154308985s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:41:09 | 200 |  2.109529424s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:41:12 | 200 |  2.900226181s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:41:20 | 200 |  7.816659495s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:41:21 | 200 |  1.803806345s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:41:23 | 200 |  1.313016739s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:41:26 | 200 |  2.964191874s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:41:29 | 200 |  3.443253719s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:41:34 | 200 |  4.917478584s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:41:36 | 200 |  1.494128551s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:41:37 | 200 |  1.769551416s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:41:45 | 200 |   7.88393307s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:41:49 | 200 |  3.538587655s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:41:51 | 200 |  1.771813282s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:41:53 | 200 |  2.708837187s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:41:55 | 200 |  1.618954613s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:41:57 | 200 |  1.966326045s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:42:03 | 200 |  6.224420122s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:42:07 | 200 |  3.366003699s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:42:12 | 200 |  5.307747401s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:42:14 | 200 |  1.689774692s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:42:16 | 200 |  2.077389392s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:42:17 | 200 |  1.344676229s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:42:19 | 200 |  2.496615521s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:42:21 | 200 |  1.932605647s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:42:24 | 200 |  2.189358045s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:42:25 | 200 |  1.604259266s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:42:29 | 200 |  3.583409622s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:42:31 | 200 |  1.732371008s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:42:34 | 200 |  3.482021049s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:42:36 | 200 |  1.593130644s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:42:38 | 200 |  2.608394044s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:42:40 | 200 |    2.1290714s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:42:42 | 200 |  1.659198861s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:42:44 | 200 |  2.131622727s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:42:51 | 200 |   6.93192977s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:42:53 | 200 |  2.064637312s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:42:56 | 200 |  2.580947467s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:42:58 | 200 |  1.818771023s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:43:00 | 200 |   1.92382736s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:43:01 | 200 |  1.585828156s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:43:03 | 200 |  1.545261189s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:43:04 | 200 |  1.671847311s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/03/28 - 12:43:09 | 200 |   4.16644212s |       127.0.0.1 | POST     "/api/chat"
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n905
+Job ID: 3794251
+Cluster: uc3
+User/Group: ma_mpandya/ma_ma
+State: CANCELLED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:04
+CPU Efficiency: 0.01% of 13:29:04 core-walltime
+Job Wall-clock time: 00:50:34
+Memory Utilized: 1.71 GB
+Memory Efficiency: 1.38% of 124.51 GB (124.51 GB/node)
