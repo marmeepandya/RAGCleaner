@@ -42,7 +42,7 @@ hostname
 
 ```bash
 # Request an A100 GPU node interactively
-salloc -p gpu_a100_il --nodes=1 --ntasks=1 --gres=gpu:1 --time=08:00:00
+salloc -p gpu_a100_il --nodes=1 --ntasks=1 --gres=gpu:1 --time=12:00:00
 
 # After it is granted, you will be on uc2n9xx automatically
 # Confirm with:
@@ -122,6 +122,12 @@ module load cs/ollama/0.5.11
 # Start Ollama server in the background
 ollama serve &
 sleep 15
+
+# OR
+module load cs/ollama/0.5.11
+OLLAMA_HOST=127.0.0.1:11435 ollama serve &
+sleep 15
+ollama ps
 
 # Check what is loaded and whether it is using GPU
 ollama ps
