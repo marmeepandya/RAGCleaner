@@ -44,6 +44,9 @@ hostname
 # Request an A100 GPU node interactively
 salloc -p gpu_a100_il --nodes=1 --ntasks=1 --gres=gpu:1 --time=12:00:00
 
+# For shorter jobs
+salloc -p cpu -n 1 -t 120 --mem=5000
+
 # After it is granted, you will be on uc2n9xx automatically
 # Confirm with:
 hostname
@@ -76,6 +79,9 @@ tail -f rag_full_<JOBID>.err
 
 # Cancel a job
 scancel <JOBID>
+
+# Available Partition
+sinfo_t_idlw
 
 # Check job history (after it finishes)
 sacct -u ma_mpandya --format=JobID,JobName,State,ExitCode,Start,End --starttime=today
@@ -123,11 +129,12 @@ module load cs/ollama/0.5.11
 ollama serve &
 sleep 15
 
-# OR
+# Your full startup sequence should now be:
 module load cs/ollama/0.5.11
+module load devel/cuda/12.8
 OLLAMA_HOST=127.0.0.1:11435 ollama serve &
 sleep 15
-ollama ps
+OLLAMA_HOST=127.0.0.1:11435 ollama ps
 
 # Check what is loaded and whether it is using GPU
 ollama ps
@@ -139,6 +146,8 @@ ollama list
 
 # Kill Ollama
 pkill ollama
+
+https://wiki.bwhpc.de/e/BwUniCluster3.0/Hardware_and_Architecture
 
 # Test if Ollama is responding (and measure speed)
 curl http://localhost:11434/api/generate \

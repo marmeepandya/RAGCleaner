@@ -1,6 +1,11 @@
 pandas
 numpy
+torch
+transformers
+tokenizers
+huggingface-hub
 sentence-transformers
+tqdm
 requests
 langchain-core
 langchain-ollama
@@ -14,3 +19,4 @@ phonenumbers
 matplotlib
 seaborn
 scikit-learn
+openpyxl
