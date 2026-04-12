@@ -1,11 +1,11 @@
 [
   {
-    "timestamp": "2026-03-24T14:05:49.619943Z",
+    "timestamp": "2026-04-11T21:39:49.077071Z",
     "row_index": 0,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 211700.74701309204,
+    "duration_ms": 15920.273542404175,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {
@@ -30,12 +30,12 @@
     "response_text_preview": "{\n    \"bus_type\": null,\n    \"model_number\": null,\n    \"model\": \"NVIDIA GeForce RTX 3080 Gaming OC\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
   },
   {
-    "timestamp": "2026-03-24T14:07:15.530368Z",
+    "timestamp": "2026-04-11T21:39:57.771712Z",
     "row_index": 1,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 85903.24211120605,
+    "duration_ms": 8691.538095474243,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {
@@ -60,12 +60,12 @@
     "response_text_preview": "{\n    \"bus_type\": \"PCIe 3.0\",\n    \"model_number\": null,\n    \"model\": \"Force MP510\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
   },
   {
-    "timestamp": "2026-03-24T14:09:26.520313Z",
+    "timestamp": "2026-04-11T21:40:04.310877Z",
     "row_index": 2,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 130985.29124259949,
+    "duration_ms": 6535.292863845825,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {
@@ -90,102 +90,12 @@
     "response_text_preview": "{\n    \"bus_type\": \"SATA III\",\n    \"model_number\": \"ST4000NM0115\",\n    \"model\": \"Seagate EXOS ST4000NM0115\",\n    \"read_speed_mb_s\": 600,\n    \"height_mm\": null\n}"
   },
   {
-    "timestamp": "2026-03-24T14:12:03.520535Z",
-    "row_index": 0,
-    "attempt": 0,
-    "provider_class": "ChatOllama",
-    "model": "llama3.1:8b",
-    "duration_ms": 92676.96952819824,
-    "temperature": 0.0,
-    "max_tokens": null,
-    "usage": {
-      "input_tokens": 520,
-      "output_tokens": 49,
-      "total_tokens": 569
-    },
-    "request_messages": [
-      {
-        "type": "system",
-        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
-      },
-      {
-        "type": "system",
-        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
-      },
-      {
-        "type": "human",
-        "content": "Gigabyte NVIDIA GeForce RTX 3080 Gaming OC 10GB Ampere Graphics Card. Description: CUDA Cores: 8704, Boost Clock: 1800MHz, GDDR6X, 320-bit Memory, Memory Clock: 19.0 Gbps, Ray Tracing, 3x Display Port, 2x HDMI, 3 Yr Warranty."
-      }
-    ],
-    "response_text_preview": "{\n    \"bus_type\": null,\n    \"model_number\": null,\n    \"model\": \"NVIDIA GeForce RTX 3080 Gaming OC\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
-  },
-  {
-    "timestamp": "2026-03-24T14:13:44.723485Z",
-    "row_index": 1,
-    "attempt": 0,
-    "provider_class": "ChatOllama",
-    "model": "llama3.1:8b",
-    "duration_ms": 101182.68013000488,
-    "temperature": 0.0,
-    "max_tokens": null,
-    "usage": {
-      "input_tokens": 490,
-      "output_tokens": 48,
-      "total_tokens": 538
-    },
-    "request_messages": [
-      {
-        "type": "system",
-        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
-      },
-      {
-        "type": "system",
-        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
-      },
-      {
-        "type": "human",
-        "content": "Corsair Force MP510 M.2 SSD - 960GB. Description: Solid State Drive, 960 GB, intern, M.2 2280, PCI Express 3.0 x4 (NVMe), 256-bit AES"
-      }
-    ],
-    "response_text_preview": "{\n    \"bus_type\": \"PCIe 3.0\",\n    \"model_number\": null,\n    \"model\": \"Force MP510\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
-  },
-  {
-    "timestamp": "2026-03-24T14:15:16.521020Z",
-    "row_index": 2,
-    "attempt": 0,
-    "provider_class": "ChatOllama",
-    "model": "llama3.1:8b",
-    "duration_ms": 91768.95666122437,
-    "temperature": 0.0,
-    "max_tokens": null,
-    "usage": {
-      "input_tokens": 515,
-      "output_tokens": 59,
-      "total_tokens": 574
-    },
-    "request_messages": [
-      {
-        "type": "system",
-        "content": "You are a product data expert specializing in computer hardware.\nExtract the following attributes from the product information.\nFor numeric attributes (read_speed_mb_s, height_mm), return only the number.\nIf an attribute cannot be determined from the text, return null.\nReturn valid JSON only, no explanation."
-      },
-      {
-        "type": "system",
-        "content": "Follow these output format instructions strictly:\nThe output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"bus_type\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Interface bus type e.g. PCIe 3.0, SATA III, USB 3.0\", \"title\": \"Bus Type\"}, \"model_number\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Exact product model number or SKU\", \"title\": \"Model Number\"}, \"model\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product model name\", \"title\": \"Model\"}, \"read_speed_mb_s\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Sequential read speed in MB/s, number only\", \"title\": \"Read Speed Mb S\"}, \"height_mm\": {\"anyOf\": [{\"type\": \"number\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"Product height in millimeters, number only\", \"title\": \"Height Mm\"}}}\n```"
-      },
-      {
-        "type": "human",
-        "content": "Seagate EXOS 4TB 3.5\\\" SATA HDD/Hard Drive. Description: 4TB Seagate EXOS ST4000NM0115, 3.5\\\" Enterprise HDD, SATA III - 6GB/s, 7200rpm, 128MB Cache, 512E, 4.16ms, NCQ, OEM"
-      }
-    ],
-    "response_text_preview": "{\n    \"bus_type\": \"SATA III\",\n    \"model_number\": \"ST4000NM0115\",\n    \"model\": \"Seagate EXOS ST4000NM0115\",\n    \"read_speed_mb_s\": 600,\n    \"height_mm\": null\n}"
-  },
-  {
-    "timestamp": "2026-03-24T14:16:47.921157Z",
+    "timestamp": "2026-04-11T21:40:11.805488Z",
     "row_index": 3,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 91396.65365219116,
+    "duration_ms": 7492.198705673218,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {
@@ -210,12 +120,12 @@
     "response_text_preview": "{\n    \"bus_type\": null,\n    \"model_number\": null,\n    \"model\": \"GTX 1650\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
   },
   {
-    "timestamp": "2026-03-24T14:17:54.021307Z",
+    "timestamp": "2026-04-11T21:40:19.007787Z",
     "row_index": 4,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 66070.15442848206,
+    "duration_ms": 7199.737787246704,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {
@@ -240,12 +150,12 @@
     "response_text_preview": "{\n    \"bus_type\": null,\n    \"model_number\": null,\n    \"model\": \"DataTraveler Vault\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
   },
   {
-    "timestamp": "2026-03-24T14:20:42.624049Z",
+    "timestamp": "2026-04-11T21:40:34.202652Z",
     "row_index": 5,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 168592.5567150116,
+    "duration_ms": 15192.012786865234,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {
@@ -270,12 +180,12 @@
     "response_text_preview": "{\n    \"bus_type\": null,\n    \"model_number\": null,\n    \"model\": \"Gigabyte GeForce GTX 1660 SUPER OC 6GB Dual Fan Graphics Card\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": 40.5\n}"
   },
   {
-    "timestamp": "2026-03-24T14:21:49.331339Z",
+    "timestamp": "2026-04-11T21:40:38.376342Z",
     "row_index": 6,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 66698.85206222534,
+    "duration_ms": 4170.328855514526,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {
@@ -300,12 +210,12 @@
     "response_text_preview": "{\n    \"bus_type\": null,\n    \"model_number\": null,\n    \"model\": \"GeForce GTX 1660 Ti GAMING X\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
   },
   {
-    "timestamp": "2026-03-24T14:23:23.620983Z",
+    "timestamp": "2026-04-11T21:40:43.451233Z",
     "row_index": 7,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 94285.88342666626,
+    "duration_ms": 5072.451114654541,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {
@@ -330,12 +240,12 @@
     "response_text_preview": "{\n    \"bus_type\": null,\n    \"model_number\": null,\n    \"model\": \"ROG-STRIX-RTX2080S-A8G-GAMING\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
   },
   {
-    "timestamp": "2026-03-24T14:24:38.620231Z",
+    "timestamp": "2026-04-11T21:40:48.083145Z",
     "row_index": 8,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 74988.44289779663,
+    "duration_ms": 4628.011465072632,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {
@@ -360,12 +270,12 @@
     "response_text_preview": "{\n    \"bus_type\": null,\n    \"model_number\": null,\n    \"model\": \"Asus Strix GeForce RTX 2060 Super EVO OC Gaming\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
   },
   {
-    "timestamp": "2026-03-24T14:27:02.428345Z",
+    "timestamp": "2026-04-11T21:40:59.350645Z",
     "row_index": 9,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 143793.12586784363,
+    "duration_ms": 11265.10763168335,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {
@@ -390,12 +300,12 @@
     "response_text_preview": "```json\n{\n    \"bus_type\": \"PCIe Gen3x4\",\n    \"model_number\": null,\n    \"model\": \"XPG GAMMIX S11 Pro\",\n    \"read_speed_mb_s\": 3500,\n    \"height_mm\": 6.1\n}\n```"
   },
   {
-    "timestamp": "2026-03-24T14:28:52.324239Z",
+    "timestamp": "2026-04-11T21:41:04.069753Z",
     "row_index": 10,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 109880.45763969421,
+    "duration_ms": 4716.657876968384,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {
@@ -420,12 +330,12 @@
     "response_text_preview": "{\n    \"bus_type\": \"PCIe 4.0\",\n    \"model_number\": null,\n    \"model\": \"Radeon RX 5600 XT GAMING OC\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
   },
   {
-    "timestamp": "2026-03-24T14:30:55.623171Z",
+    "timestamp": "2026-04-11T21:41:11.094312Z",
     "row_index": 11,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 123281.64315223694,
+    "duration_ms": 7021.795272827148,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {
@@ -450,12 +360,12 @@
     "response_text_preview": "{\n  \"bus_type\": null,\n  \"model_number\": null,\n  \"model\": \"Radeon Pro WX 4100\",\n  \"read_speed_mb_s\": null,\n  \"height_mm\": null\n}"
   },
   {
-    "timestamp": "2026-03-24T14:32:43.320240Z",
+    "timestamp": "2026-04-11T21:41:17.888951Z",
     "row_index": 12,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 107664.89601135254,
+    "duration_ms": 6790.976524353027,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {
@@ -480,12 +390,12 @@
     "response_text_preview": "{\n    \"bus_type\": null,\n    \"model_number\": null,\n    \"model\": \"GeForce GTX 1660 SUPER\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
   },
   {
-    "timestamp": "2026-03-24T14:34:44.920625Z",
+    "timestamp": "2026-04-11T21:41:29.751048Z",
     "row_index": 13,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 121597.21660614014,
+    "duration_ms": 11859.699726104736,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {
@@ -510,12 +420,12 @@
     "response_text_preview": "```\n{\n  \"bus_type\": \"SATA\",\n  \"model_number\": null,\n  \"model\": null,\n  \"read_speed_mb_s\": 600,\n  \"height_mm\": 1.6\n}\n```"
   },
   {
-    "timestamp": "2026-03-24T14:36:12.120238Z",
+    "timestamp": "2026-04-11T21:41:34.761602Z",
     "row_index": 14,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 87190.98019599915,
+    "duration_ms": 5007.9185962677,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {
@@ -540,12 +450,12 @@
     "response_text_preview": "{\n    \"bus_type\": \"SATA\",\n    \"model_number\": \"MZ-76E4T0B\",\n    \"model\": \"Samsung 860 EVO Series SSD 4TB\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
   },
   {
-    "timestamp": "2026-03-24T14:37:40.922842Z",
+    "timestamp": "2026-04-11T21:41:38.965003Z",
     "row_index": 15,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 88799.83520507812,
+    "duration_ms": 4200.987339019775,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {
@@ -570,12 +480,12 @@
     "response_text_preview": "{\n    \"bus_type\": null,\n    \"model_number\": null,\n    \"model\": \"GeForce RTX 2080 Ti Strix Edition\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
   },
   {
-    "timestamp": "2026-03-24T14:38:55.625274Z",
+    "timestamp": "2026-04-11T21:41:43.072335Z",
     "row_index": 16,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 74685.05668640137,
+    "duration_ms": 4104.943037033081,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {
@@ -600,12 +510,12 @@
     "response_text_preview": "{\n    \"bus_type\": \"SATA III\",\n    \"model_number\": null,\n    \"model\": \"SSD 2.5in 120GB SATA3 TLC\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
   },
   {
-    "timestamp": "2026-03-24T14:40:39.525453Z",
+    "timestamp": "2026-04-11T21:41:47.407480Z",
     "row_index": 17,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 103880.61428070068,
+    "duration_ms": 4332.492828369141,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {
@@ -630,12 +540,12 @@
     "response_text_preview": "{\n    \"bus_type\": \"SATA III\",\n    \"model_number\": null,\n    \"model\": \"Patriot Burst\",\n    \"read_speed_mb_s\": 560,\n    \"height_mm\": 7\n}"
   },
   {
-    "timestamp": "2026-03-24T14:42:28.129395Z",
+    "timestamp": "2026-04-11T21:41:54.272106Z",
     "row_index": 18,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 108600.97050666809,
+    "duration_ms": 6862.220764160156,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {
@@ -660,12 +570,12 @@
     "response_text_preview": "{\n  \"bus_type\": \"USB 2.0\",\n  \"model_number\": null,\n  \"model\": \"Cruzer Blade\",\n  \"read_speed_mb_s\": null,\n  \"height_mm\": null\n}"
   },
   {
-    "timestamp": "2026-03-24T14:43:45.320996Z",
+    "timestamp": "2026-04-11T21:41:58.588392Z",
     "row_index": 19,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 77141.8936252594,
+    "duration_ms": 4312.894344329834,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {
@@ -690,12 +600,12 @@
     "response_text_preview": "{\n    \"bus_type\": null,\n    \"model_number\": null,\n    \"model\": \"NVIDIA GeForce RTX 2070 SUPER\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
   },
   {
-    "timestamp": "2026-03-24T14:44:52.322896Z",
+    "timestamp": "2026-04-11T21:42:02.602837Z",
     "row_index": 20,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 66998.76379966736,
+    "duration_ms": 4012.033462524414,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {
@@ -720,12 +630,12 @@
     "response_text_preview": "{\n    \"bus_type\": null,\n    \"model_number\": null,\n    \"model\": \"WD Green\",\n    \"read_speed_mb_s\": 545,\n    \"height_mm\": null\n}"
   },
   {
-    "timestamp": "2026-03-24T14:45:55.323789Z",
+    "timestamp": "2026-04-11T21:42:06.568172Z",
     "row_index": 21,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 62997.55597114563,
+    "duration_ms": 3962.9600048065186,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {
@@ -750,12 +660,12 @@
     "response_text_preview": "{\n    \"bus_type\": \"USB 3.0\",\n    \"model_number\": null,\n    \"model\": \"WD Elements Desktop\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
   },
   {
-    "timestamp": "2026-03-24T14:47:44.122238Z",
+    "timestamp": "2026-04-11T21:42:12.051139Z",
     "row_index": 22,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 108795.1111793518,
+    "duration_ms": 5480.57746887207,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {
@@ -780,12 +690,12 @@
     "response_text_preview": "{\n    \"bus_type\": \"PCI Express 3.0\",\n    \"model_number\": null,\n    \"model\": \"Phantom Gaming Radeon RX 550\",\n    \"read_speed_mb_s\": null,\n    \"height_mm\": null\n}"
   },
   {
-    "timestamp": "2026-03-24T14:48:53.123576Z",
+    "timestamp": "2026-04-11T21:42:16.186508Z",
     "row_index": 23,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 68986.04345321655,
+    "duration_ms": 4131.360054016113,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {
@@ -810,12 +720,12 @@
     "response_text_preview": "{\n  \"bus_type\": null,\n  \"model_number\": null,\n  \"model\": \"My Passport GO Portable SSD\",\n  \"read_speed_mb_s\": null,\n  \"height_mm\": null\n}"
   },
   {
-    "timestamp": "2026-03-24T14:49:54.723440Z",
+    "timestamp": "2026-04-11T21:42:20.699382Z",
     "row_index": 24,
     "attempt": 0,
     "provider_class": "ChatOllama",
     "model": "llama3.1:8b",
-    "duration_ms": 61584.66958999634,
+    "duration_ms": 4509.740352630615,
     "temperature": 0.0,
     "max_tokens": null,
     "usage": {

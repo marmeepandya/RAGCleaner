@@ -24,7 +24,7 @@
 
 # ## 1. Setup
 
-# In[18]:
+# In[ ]:
 
 
 import sys
@@ -58,10 +58,10 @@ TEXT_ATTRIBUTES = {"bus_type", "model_number", "model"}
 
 USE_RAG = True  # Set to False for LLM-only baseline
 
-LLM_FILE  = "results_exp10_easy_llm_only.csv"
-RAG_FILE  = "results_exp10_easy_rag.csv"
+LLM_FILE  = "exp10_easy_llm_only.csv"
+RAG_FILE  = "exp10_easy_rag.csv"
 RESULT_FILE = RAG_FILE if USE_RAG else LLM_FILE
-FINAL_RESULTS_FILE = "results_exp10_easy_all.csv"
+FINAL_RESULTS_FILE = "exp10_easy_all.csv"
 
 TOP_N = 20   # candidates retrieved by MiniLM
 TOP_K = 3    # candidates passed to LLM after re-ranking
@@ -710,18 +710,6 @@ print("format_candidates() ready.")
 
 # ## 12. Run Prediction
 
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
 # In[29]:
 
 
@@ -1012,8 +1000,8 @@ if os.path.exists(LLM_FILE) and os.path.exists(RAG_FILE):
 
     # Optionally load exp8.1 for comparison
     configs_to_compare = []
-    if os.path.exists("results_exp8_1_all.csv"):
-        exp81 = pd.read_csv("results_exp8_1_all.csv")
+    if os.path.exists("exp8_1_all.csv"):
+        exp81 = pd.read_csv("exp8_1_all.csv")
         exp81["config"] = exp81["config"].replace({"RAG": "RAG (exp8.1)", "LLM-only": "LLM-only"})
         configs_to_compare.append(exp81)
 

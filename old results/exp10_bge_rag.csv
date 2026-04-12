@@ -1,0 +1,52 @@
+df1_idx,config,attribute,is_numeric,ground_truth,predicted,unknown,correct_standard,ce_judgment
+0,RAG+BGE+Reranker,model_number,False,GV-N3080GAMING OC-10GD,GV-N3080GAMING OC-10GD,False,True,correct
+2,RAG+BGE+Reranker,model_number,False,CSSD-F960GBMP510,UNKNOWN,True,False,wrong
+2,RAG+BGE+Reranker,read_speed_mb_s,True,3480.0,3480,False,True,correct
+2,RAG+BGE+Reranker,write_speed_mb_s,True,3000.0,3000,False,True,correct
+3,RAG+BGE+Reranker,read_speed_mb_s,True,226.0,226.0,False,True,correct
+4,RAG+BGE+Reranker,width_mm,True,433.0,UNKNOWN,True,False,wrong
+5,RAG+BGE+Reranker,bus_type,False,PCIe 3.0 x16,PCIe,False,True,wrong
+5,RAG+BGE+Reranker,model_number,False,90YV0CV2-M0NA00,90YV0CV0-M0NA00,False,False,correct
+6,RAG+BGE+Reranker,bus_type,False,USB 3.0,USB 3.1,False,False,correct
+8,RAG+BGE+Reranker,model_number,False,GV-N166SOC-6GD,GV-N166TSL-6GD,False,False,correct
+9,RAG+BGE+Reranker,bus_type,False,PCIe 3.0 x16,PCIe 3.0 x16,False,True,correct
+9,RAG+BGE+Reranker,model_number,False,V375-040R,912-V375-040,False,False,correct
+9,RAG+BGE+Reranker,height_mm,True,46.0,46,False,True,correct
+9,RAG+BGE+Reranker,width_mm,True,127.0,127,False,True,correct
+11,RAG+BGE+Reranker,bus_type,False,PCIe 3.0,PCIe 3.0,False,True,correct
+12,RAG+BGE+Reranker,bus_type,False,PCIe 4.0,PCIe 3.0 x16,False,False,correct
+12,RAG+BGE+Reranker,model_number,False,90YV0DQ0-M0NA00,ROG Strix GeForce RTX 2070 Super Advance Gaming,False,False,wrong
+18,RAG+BGE+Reranker,read_speed_mb_s,True,550.0,550,False,True,correct
+18,RAG+BGE+Reranker,write_speed_mb_s,True,520.0,550,False,True,correct
+18,RAG+BGE+Reranker,height_mm,True,7.0,7,False,True,correct
+20,RAG+BGE+Reranker,model,False,220S,SSD220,False,False,wrong
+20,RAG+BGE+Reranker,read_speed_mb_s,True,550.0,550,False,True,correct
+28,RAG+BGE+Reranker,height_mm,True,42.0,42,False,True,correct
+28,RAG+BGE+Reranker,width_mm,True,130.9,130.9,False,True,correct
+33,RAG+BGE+Reranker,read_speed_mb_s,True,130.0,UNKNOWN,True,False,wrong
+33,RAG+BGE+Reranker,height_mm,True,20.8,UNKNOWN,True,False,wrong
+33,RAG+BGE+Reranker,width_mm,True,87.9,UNKNOWN,True,False,wrong
+41,RAG+BGE+Reranker,read_speed_mb_s,True,540.0,540,False,True,correct
+41,RAG+BGE+Reranker,height_mm,True,10.5,10.5,False,True,correct
+41,RAG+BGE+Reranker,width_mm,True,57.0,10,False,False,wrong
+52,RAG+BGE+Reranker,bus_type,False,SATA III,SATA III,False,True,correct
+52,RAG+BGE+Reranker,model,False,SU800,Ultimate SU800,False,True,correct
+52,RAG+BGE+Reranker,read_speed_mb_s,True,560.0,560,False,True,correct
+52,RAG+BGE+Reranker,write_speed_mb_s,True,520.0,520,False,True,correct
+52,RAG+BGE+Reranker,height_mm,True,3.5,UNKNOWN,True,False,wrong
+52,RAG+BGE+Reranker,width_mm,True,22.0,UNKNOWN,True,False,wrong
+56,RAG+BGE+Reranker,read_speed_mb_s,True,560.0,560,False,True,correct
+56,RAG+BGE+Reranker,write_speed_mb_s,True,510.0,510,False,True,correct
+60,RAG+BGE+Reranker,model,False,Ironwolf 110,Nytro 1351,False,False,wrong
+60,RAG+BGE+Reranker,read_speed_mb_s,True,560.0,UNKNOWN,True,False,wrong
+77,RAG+BGE+Reranker,read_speed_mb_s,True,555.0,560,False,True,correct
+77,RAG+BGE+Reranker,write_speed_mb_s,True,520.0,560,False,True,correct
+77,RAG+BGE+Reranker,height_mm,True,7.0,UNKNOWN,True,False,wrong
+95,RAG+BGE+Reranker,model_number,False,801882-B21,801882-B21,False,True,correct
+95,RAG+BGE+Reranker,model,False,ISS,801882-B21,False,False,wrong
+137,RAG+BGE+Reranker,model,False,L200,L200,False,True,correct
+13,RAG+BGE+Reranker,model_number,False,AGAMMIXS11P-1TT-C,AGAMMIXS11P-1TT-C,False,True,correct
+14,RAG+BGE+Reranker,model_number,False,GV-R56XTGAMING OC-6GD,GV-R56XTGAMING OC-6GD,False,True,correct
+15,RAG+BGE+Reranker,bus_type,False,PCIe 3.0 x16,PCIe 3.0 x8,False,False,correct
+15,RAG+BGE+Reranker,model_number,False,100-506008,100-506008,False,True,correct
+16,RAG+BGE+Reranker,model_number,False,NE6166SS18J9-161F,NE6166SS18J9-161F,False,True,correct

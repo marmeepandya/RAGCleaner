@@ -1,0 +1,270 @@
+NAME           ID              SIZE      PROCESSOR    UNTIL              
+llama3.1:8b    46e0c10c039e    6.9 GB    100% GPU     4 minutes from now    
+Setup complete. USE_RAG=False
+Dataset 1: 812 rows
+KB full:   2200 rows
+Query rows:       25
+Total eval tasks: 51
+
+Tasks per attribute:
+attribute
+model_number        11
+read_speed_mb_s     10
+bus_type             7
+height_mm            7
+width_mm             6
+write_speed_mb_s     5
+model                5
+Name: count, dtype: int64
+
+Attribute coverage check:
+  bus_type                    7 instances  ✓
+  model_number               11 instances  ✓
+  model                       5 instances  ✓
+  read_speed_mb_s            10 instances  ✓
+  write_speed_mb_s            5 instances  ✓
+  height_mm                   7 instances  ✓
+  width_mm                    6 instances  ✓
+KB size: 2242 rows
+=== SANITY CHECK: Ground truth present in KB ===
+
+✓ Row 0 | model_number         | GT: GV-N3080GAMING OC-10GD         | KB matches: 3
+✓ Row 2 | model_number         | GT: CSSD-F960GBMP510               | KB matches: 3
+✓ Row 2 | read_speed_mb_s      | GT: 3480.0                         | KB matches: 3
+✓ Row 2 | write_speed_mb_s     | GT: 3000.0                         | KB matches: 3
+✓ Row 3 | read_speed_mb_s      | GT: 226.0                          | KB matches: 3
+✓ Row 4 | width_mm             | GT: 433.0                          | KB matches: 3
+✓ Row 5 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 5 | model_number         | GT: 90YV0CV2-M0NA00                | KB matches: 3
+✓ Row 6 | bus_type             | GT: USB 3.0                        | KB matches: 2
+✓ Row 8 | model_number         | GT: GV-N166SOC-6GD                 | KB matches: 3
+✓ Row 9 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 9 | model_number         | GT: V375-040R                      | KB matches: 3
+✓ Row 9 | height_mm            | GT: 46.0                           | KB matches: 3
+✓ Row 9 | width_mm             | GT: 127.0                          | KB matches: 3
+✓ Row 11 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 12 | bus_type             | GT: PCIe 4.0                       | KB matches: 3
+✓ Row 12 | model_number         | GT: 90YV0DQ0-M0NA00                | KB matches: 3
+✓ Row 18 | read_speed_mb_s      | GT: 550.0                          | KB matches: 3
+✓ Row 18 | write_speed_mb_s     | GT: 520.0                          | KB matches: 3
+✓ Row 18 | height_mm            | GT: 7.0                            | KB matches: 3
+✓ Row 20 | model                | GT: 220S                           | KB matches: 2
+✓ Row 20 | read_speed_mb_s      | GT: 550.0                          | KB matches: 2
+✓ Row 28 | height_mm            | GT: 42.0                           | KB matches: 3
+✓ Row 28 | width_mm             | GT: 130.9                          | KB matches: 3
+✓ Row 33 | read_speed_mb_s      | GT: 130.0                          | KB matches: 3
+✓ Row 33 | height_mm            | GT: 20.8                           | KB matches: 3
+✓ Row 33 | width_mm             | GT: 87.9                           | KB matches: 3
+✓ Row 41 | read_speed_mb_s      | GT: 540.0                          | KB matches: 3
+✓ Row 41 | height_mm            | GT: 10.5                           | KB matches: 3
+✓ Row 41 | width_mm             | GT: 57.0                           | KB matches: 3
+✓ Row 52 | bus_type             | GT: SATA III                       | KB matches: 3
+✓ Row 52 | model                | GT: SU800                          | KB matches: 3
+✓ Row 52 | read_speed_mb_s      | GT: 560.0                          | KB matches: 3
+✓ Row 52 | write_speed_mb_s     | GT: 520.0                          | KB matches: 3
+✓ Row 52 | height_mm            | GT: 3.5                            | KB matches: 3
+✓ Row 52 | width_mm             | GT: 22.0                           | KB matches: 3
+✓ Row 56 | read_speed_mb_s      | GT: 560.0                          | KB matches: 3
+✓ Row 56 | write_speed_mb_s     | GT: 510.0                          | KB matches: 3
+✓ Row 60 | model                | GT: Ironwolf 110                   | KB matches: 2
+✓ Row 60 | read_speed_mb_s      | GT: 560.0                          | KB matches: 2
+✓ Row 77 | read_speed_mb_s      | GT: 555.0                          | KB matches: 2
+✓ Row 77 | write_speed_mb_s     | GT: 520.0                          | KB matches: 2
+✓ Row 77 | height_mm            | GT: 7.0                            | KB matches: 2
+✓ Row 95 | model_number         | GT: 801882-B21                     | KB matches: 3
+✓ Row 95 | model                | GT: ISS                            | KB matches: 3
+✓ Row 137 | model                | GT: L200                           | KB matches: 3
+✓ Row 13 | model_number         | GT: AGAMMIXS11P-1TT-C              | KB matches: 3
+✓ Row 14 | model_number         | GT: GV-R56XTGAMING OC-6GD          | KB matches: 3
+✓ Row 15 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 15 | model_number         | GT: 100-506008                     | KB matches: 3
+✓ Row 16 | model_number         | GT: NE6166SS18J9-161F              | KB matches: 2
+
+Coverage: 51/51 = 100.0%
+Ollama OK: 'OK'
+Loading MiniLM embedding model...
+Found CrossEncoder at: /home/ma/ma_ma/ma_mpandya/.cache/huggingface/hub/models--cross-encoder--ms-marco-MiniLM-L-6-v2/snapshots/c5ee24cb16019beea0893ab7796b1df96625c6b8
+Loading CrossEncoder re-ranker...
+CrossEncoder loaded.
+Encoding KB with MiniLM...
+KB encoded: 2242 rows
+Encoding query rows...
+Query rows encoded.
+
+Retrieval pipeline: MiniLM top-20 → CrossEncoder re-rank → top-3
+retrieve_and_rerank() defined.
+
+Test retrieval for: Gigabyte NVIDIA GeForce RTX 3080 Gaming OC 10GB Ampere Graphics Card | NVIDIA Ge
+Top-3 after re-ranking:
+  [1] score=8.991 | Gigabyte NVIDIA GeForce RTX 3080 10GB GAMING OC Ampere Graphics Card
+  [2] score=8.756 | GIGABYTE GeForce RTX 3080 GAMING OC 10G GRAPHICS CARD (GV-N3080GAMING 
+  [3] score=8.452 | Gigabyte NVIDIA GeForce RTX 3080 Eagle OC 10G Ampere Graphics Card
+LLM-only prompts defined for: ['bus_type', 'model_number', 'model', 'read_speed_mb_s', 'write_speed_mb_s', 'height_mm', 'width_mm']
+RAG prompts defined for: ['bus_type', 'model_number', 'model', 'read_speed_mb_s', 'write_speed_mb_s', 'height_mm', 'width_mm']
+format_candidates() ready.
+Running prediction (RAG=OFF, retrieval: MiniLM top-20 → CrossEncoder top-3)...
+  [1/51] Row 0 | model_number         | GT: GV-N3080GAMING OC-10GD    | Pred: 90YV0CV2-M0NA00           | ETA: 0.3min
+  [2/51] Row 2 | model_number         | GT: CSSD-F960GBMP510          | Pred: CSSD-F960GBMP510          | ETA: 0.2min
+  [3/51] Row 2 | read_speed_mb_s      | GT: 3480.0                    | Pred: UNKNOWN                   | ETA: 0.2min
+  [4/51] Row 2 | write_speed_mb_s     | GT: 3000.0                    | Pred: UNKNOWN                   | ETA: 0.2min
+  [5/51] Row 3 | read_speed_mb_s      | GT: 226.0                     | Pred: UNKNOWN                   | ETA: 0.2min
+  [6/51] Row 4 | width_mm             | GT: 433.0                     | Pred: UNKNOWN                   | ETA: 0.2min
+  [7/51] Row 5 | bus_type             | GT: PCIe 3.0 x16              | Pred: PCIe                      | ETA: 0.2min
+  [8/51] Row 5 | model_number         | GT: 90YV0CV2-M0NA00           | Pred: 90YV0CV2-M0NA00           | ETA: 0.2min
+  [9/51] Row 6 | bus_type             | GT: USB 3.0                   | Pred: UNKNOWN                   | ETA: 0.2min
+  [10/51] Row 8 | model_number         | GT: GV-N166SOC-6GD            | Pred: GV-N166SOP6GD             | ETA: 0.2min
+  [11/51] Row 9 | bus_type             | GT: PCIe 3.0 x16              | Pred: PCIe                      | ETA: 0.2min
+  [12/51] Row 9 | model_number         | GT: V375-040R                 | Pred: MSI GeForce GTX 1660 Ti GAMING X 6GB GDDR6 Graphics Card | ETA: 0.2min
+  [13/51] Row 9 | height_mm            | GT: 46.0                      | Pred: 46                        | ETA: 0.2min
+  [14/51] Row 9 | width_mm             | GT: 127.0                     | Pred: UNKNOWN                   | ETA: 0.1min
+  [15/51] Row 11 | bus_type             | GT: PCIe 3.0                  | Pred: PCIe x16                  | ETA: 0.1min
+  [16/51] Row 12 | bus_type             | GT: PCIe 4.0                  | Pred: NVIDIA RTX 2060 Super     | ETA: 0.1min
+  [17/51] Row 12 | model_number         | GT: 90YV0DQ0-M0NA00           | Pred: 90YV0CV2-M0NA00           | ETA: 0.1min
+  [18/51] Row 18 | read_speed_mb_s      | GT: 550.0                     | Pred: UNKNOWN                   | ETA: 0.1min
+  [19/51] Row 18 | write_speed_mb_s     | GT: 520.0                     | Pred: UNKNOWN                   | ETA: 0.1min
+  [20/51] Row 18 | height_mm            | GT: 7.0                       | Pred: UNKNOWN                   | ETA: 0.1min
+  [21/51] Row 20 | model                | GT: 220S                      | Pred: UNKNOWN                   | ETA: 0.1min
+  [22/51] Row 20 | read_speed_mb_s      | GT: 550.0                     | Pred: UNKNOWN                   | ETA: 0.1min
+  [23/51] Row 28 | height_mm            | GT: 42.0                      | Pred: UNKNOWN                   | ETA: 0.1min
+  [24/51] Row 28 | width_mm             | GT: 130.9                     | Pred: UNKNOWN                   | ETA: 0.1min
+  [25/51] Row 33 | read_speed_mb_s      | GT: 130.0                     | Pred: UNKNOWN                   | ETA: 0.1min
+  [26/51] Row 33 | height_mm            | GT: 20.8                      | Pred: 7                         | ETA: 0.1min
+  [27/51] Row 33 | width_mm             | GT: 87.9                      | Pred: 127                       | ETA: 0.1min
+  [28/51] Row 41 | read_speed_mb_s      | GT: 540.0                     | Pred: UNKNOWN                   | ETA: 0.1min
+  [29/51] Row 41 | height_mm            | GT: 10.5                      | Pred: UNKNOWN                   | ETA: 0.1min
+  [30/51] Row 41 | width_mm             | GT: 57.0                      | Pred: UNKNOWN                   | ETA: 0.1min
+  [31/51] Row 52 | bus_type             | GT: SATA III                  | Pred: M.2                       | ETA: 0.1min
+  [32/51] Row 52 | model                | GT: SU800                     | Pred: ASU800NS38-256GT-C        | ETA: 0.1min
+  [33/51] Row 52 | read_speed_mb_s      | GT: 560.0                     | Pred: 5600                      | ETA: 0.1min
+  [34/51] Row 52 | write_speed_mb_s     | GT: 520.0                     | Pred: UNKNOWN                   | ETA: 0.1min
+  [35/51] Row 52 | height_mm            | GT: 3.5                       | Pred: UNKNOWN                   | ETA: 0.1min
+  [36/51] Row 52 | width_mm             | GT: 22.0                      | Pred: UNKNOWN                   | ETA: 0.1min
+  [37/51] Row 56 | read_speed_mb_s      | GT: 560.0                     | Pred: UNKNOWN                   | ETA: 0.1min
+  [38/51] Row 56 | write_speed_mb_s     | GT: 510.0                     | Pred: UNKNOWN                   | ETA: 0.0min
+  [39/51] Row 60 | model                | GT: Ironwolf 110              | Pred: SG SSD                    | ETA: 0.0min
+  [40/51] Row 60 | read_speed_mb_s      | GT: 560.0                     | Pred: UNKNOWN                   | ETA: 0.0min
+  [41/51] Row 77 | read_speed_mb_s      | GT: 555.0                     | Pred: UNKNOWN                   | ETA: 0.0min
+  [42/51] Row 77 | write_speed_mb_s     | GT: 520.0                     | Pred: UNKNOWN                   | ETA: 0.0min
+  [43/51] Row 77 | height_mm            | GT: 7.0                       | Pred: 7                         | ETA: 0.0min
+  [44/51] Row 95 | model_number         | GT: 801882-B21                | Pred: (3.5in)                   | ETA: 0.0min
+  [45/51] Row 95 | model                | GT: ISS                       | Pred: HPE                       | ETA: 0.0min
+  [46/51] Row 137 | model                | GT: L200                      | Pred: Toshiba                   | ETA: 0.0min
+  [47/51] Row 13 | model_number         | GT: AGAMMIXS11P-1TT-C         | Pred: (R:3500/W:3000 MB/s)      | ETA: 0.0min
+  [48/51] Row 14 | model_number         | GT: GV-R56XTGAMING OC-6GD     | Pred: GV-N56XTAOC-6GD           | ETA: 0.0min
+  [49/51] Row 15 | bus_type             | GT: PCIe 3.0 x16              | Pred: PCIe                      | ETA: 0.0min
+  [50/51] Row 15 | model_number         | GT: 100-506008                | Pred: UNKNOWN                   | ETA: 0.0min
+  [51/51] Row 16 | model_number         | GT: NE6166SS18J9-161F         | Pred: 90YV0CV2-M0NA00           | ETA: 0.0min
+
+Done in 11.4s
+Skipping Hit@k — LLM-only mode, no retrieval.
+=======================================================
+STANDARD EVALUATION
+=======================================================
+Overall accuracy: 0.157
+UNKNOWN rate:     0.510
+Total tasks:      51
+
+Per-attribute:
+                  total  correct  accuracy  unknown_rate
+attribute                                               
+bus_type              7        3     0.429         0.143
+height_mm             7        2     0.286         0.571
+model                 5        1     0.200         0.200
+model_number         11        2     0.182         0.091
+read_speed_mb_s      10        0     0.000         0.900
+width_mm              6        0     0.000         0.833
+write_speed_mb_s      5        0     0.000         1.000
+Running improved evaluation (CrossEncoder for text, rule-based for numeric)...
+  [1/51] model_number         | GT: GV-N3080GAMING OC-10GD    | Pred: 90YV0CV2-M0NA00           | wrong
+  [2/51] model_number         | GT: CSSD-F960GBMP510          | Pred: CSSD-F960GBMP510          | correct
+  [3/51] read_speed_mb_s      | GT: 3480.0                    | Pred: UNKNOWN                   | wrong
+  [4/51] write_speed_mb_s     | GT: 3000.0                    | Pred: UNKNOWN                   | wrong
+  [5/51] read_speed_mb_s      | GT: 226.0                     | Pred: UNKNOWN                   | wrong
+  [6/51] width_mm             | GT: 433.0                     | Pred: UNKNOWN                   | wrong
+  [7/51] bus_type             | GT: PCIe 3.0 x16              | Pred: PCIe                      | wrong
+  [8/51] model_number         | GT: 90YV0CV2-M0NA00           | Pred: 90YV0CV2-M0NA00           | correct
+  [9/51] bus_type             | GT: USB 3.0                   | Pred: UNKNOWN                   | wrong
+  [10/51] model_number         | GT: GV-N166SOC-6GD            | Pred: GV-N166SOP6GD             | correct
+  [11/51] bus_type             | GT: PCIe 3.0 x16              | Pred: PCIe                      | wrong
+  [12/51] model_number         | GT: V375-040R                 | Pred: MSI GeForce GTX 1660 Ti GAMING X 6GB GDDR6 Graphics Card | wrong
+  [13/51] height_mm            | GT: 46.0                      | Pred: 46                        | correct
+  [14/51] width_mm             | GT: 127.0                     | Pred: UNKNOWN                   | wrong
+  [15/51] bus_type             | GT: PCIe 3.0                  | Pred: PCIe x16                  | acceptable
+  [16/51] bus_type             | GT: PCIe 4.0                  | Pred: NVIDIA RTX 2060 Super     | wrong
+  [17/51] model_number         | GT: 90YV0DQ0-M0NA00           | Pred: 90YV0CV2-M0NA00           | correct
+  [18/51] read_speed_mb_s      | GT: 550.0                     | Pred: UNKNOWN                   | wrong
+  [19/51] write_speed_mb_s     | GT: 520.0                     | Pred: UNKNOWN                   | wrong
+  [20/51] height_mm            | GT: 7.0                       | Pred: UNKNOWN                   | wrong
+  [21/51] model                | GT: 220S                      | Pred: UNKNOWN                   | wrong
+  [22/51] read_speed_mb_s      | GT: 550.0                     | Pred: UNKNOWN                   | wrong
+  [23/51] height_mm            | GT: 42.0                      | Pred: UNKNOWN                   | wrong
+  [24/51] width_mm             | GT: 130.9                     | Pred: UNKNOWN                   | wrong
+  [25/51] read_speed_mb_s      | GT: 130.0                     | Pred: UNKNOWN                   | wrong
+  [26/51] height_mm            | GT: 20.8                      | Pred: 7                         | wrong
+  [27/51] width_mm             | GT: 87.9                      | Pred: 127                       | wrong
+  [28/51] read_speed_mb_s      | GT: 540.0                     | Pred: UNKNOWN                   | wrong
+  [29/51] height_mm            | GT: 10.5                      | Pred: UNKNOWN                   | wrong
+  [30/51] width_mm             | GT: 57.0                      | Pred: UNKNOWN                   | wrong
+  [31/51] bus_type             | GT: SATA III                  | Pred: M.2                       | wrong
+  [32/51] model                | GT: SU800                     | Pred: ASU800NS38-256GT-C        | wrong
+  [33/51] read_speed_mb_s      | GT: 560.0                     | Pred: 5600                      | wrong
+  [34/51] write_speed_mb_s     | GT: 520.0                     | Pred: UNKNOWN                   | wrong
+  [35/51] height_mm            | GT: 3.5                       | Pred: UNKNOWN                   | wrong
+  [36/51] width_mm             | GT: 22.0                      | Pred: UNKNOWN                   | wrong
+  [37/51] read_speed_mb_s      | GT: 560.0                     | Pred: UNKNOWN                   | wrong
+  [38/51] write_speed_mb_s     | GT: 510.0                     | Pred: UNKNOWN                   | wrong
+  [39/51] model                | GT: Ironwolf 110              | Pred: SG SSD                    | wrong
+  [40/51] read_speed_mb_s      | GT: 560.0                     | Pred: UNKNOWN                   | wrong
+  [41/51] read_speed_mb_s      | GT: 555.0                     | Pred: UNKNOWN                   | wrong
+  [42/51] write_speed_mb_s     | GT: 520.0                     | Pred: UNKNOWN                   | wrong
+  [43/51] height_mm            | GT: 7.0                       | Pred: 7                         | correct
+  [44/51] model_number         | GT: 801882-B21                | Pred: (3.5in)                   | wrong
+  [45/51] model                | GT: ISS                       | Pred: HPE                       | wrong
+  [46/51] model                | GT: L200                      | Pred: Toshiba                   | wrong
+  [47/51] model_number         | GT: AGAMMIXS11P-1TT-C         | Pred: (R:3500/W:3000 MB/s)      | wrong
+  [48/51] model_number         | GT: GV-R56XTGAMING OC-6GD     | Pred: GV-N56XTAOC-6GD           | correct
+  [49/51] bus_type             | GT: PCIe 3.0 x16              | Pred: PCIe                      | wrong
+  [50/51] model_number         | GT: 100-506008                | Pred: UNKNOWN                   | wrong
+  [51/51] model_number         | GT: NE6166SS18J9-161F         | Pred: 90YV0CV2-M0NA00           | wrong
+
+Done in 0.1s — saved to exp10_confusing_llm_only.csv
+============================================================
+RESULTS — LLM-only (exp 10)
+============================================================
+Standard accuracy                             0.157
+CE eval — correct only                        0.137
+CE eval — correct + acceptable                0.157
+UNKNOWN rate                                  0.510
+
+Per-attribute breakdown:
+                  total  standard_acc  ce_correct+acceptable  unknown_rate
+attribute                                                                 
+bus_type            7.0         0.429                  0.143         0.143
+height_mm           7.0         0.286                  0.286         0.571
+model               5.0         0.200                  0.000         0.200
+model_number       11.0         0.182                  0.455         0.091
+read_speed_mb_s    10.0         0.000                  0.000         0.900
+width_mm            6.0         0.000                  0.000         0.833
+write_speed_mb_s    5.0         0.000                  0.000         1.000
+
+CE judgment distribution:
+ce_judgment
+wrong         43
+correct        7
+acceptable     1
+Name: count, dtype: int64
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n566
+Job ID: 3914781
+Cluster: uc3
+User/Group: ma_mpandya/ma_ma
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 12
+CPU Utilized: 00:00:15
+CPU Efficiency: 1.89% of 00:13:12 core-walltime
+Job Wall-clock time: 00:01:06
+Memory Utilized: 1.01 GB
+Memory Efficiency: 1.10% of 91.80 GB (91.80 GB/node)

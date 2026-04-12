@@ -1,0 +1,52 @@
+df1_idx,attribute,ground_truth,is_numeric,pred_LLM-only,correct_LLM-only,judgment_LLM-only,pred_RAG clean,correct_RAG clean,judgment_RAG clean,pred_RAG confusing,correct_RAG confusing,judgment_RAG confusing,pred_+Reranker,correct_+Reranker,judgment_+Reranker,pred_Confusing+RR,correct_Confusing+RR,judgment_Confusing+RR,pred_BGE+RR,correct_BGE+RR,judgment_BGE+RR,n_correct,n_configs
+5,bus_type,PCIe 3.0 x16,False,PCIe,True,acceptable,PCIe 3.0,True,acceptable,PCIe 3.0 x16,True,correct,UNKNOWN,False,wrong,PCIe 3.0 x16,True,correct,PCIe,True,wrong,5,6
+6,bus_type,USB 3.0,False,UNKNOWN,False,wrong,USB 3.0,True,correct,USB 2.0,False,wrong,USB 3.0,True,correct,USB 2.0,False,correct,USB 3.1,False,correct,2,6
+9,bus_type,PCIe 3.0 x16,False,PCIe,True,acceptable,PCIe 3.0 x16,True,correct,PCIe 3.0 x16,True,correct,PCIe 3.0 x16,True,correct,PCIe 3.0 x16,True,correct,PCIe 3.0 x16,True,correct,6,6
+11,bus_type,PCIe 3.0,False,PCIe x16,False,acceptable,PCIe 3.0,True,correct,PCIe 3.0,True,correct,PCIe 3.0,True,correct,PCIe 3.0,True,correct,PCIe 3.0,True,correct,5,6
+12,bus_type,PCIe 4.0,False,PCIe,True,acceptable,SATA III,False,wrong,PCIe 3.0 x16,False,acceptable,PCIe,True,acceptable,PCIe 3.0 x16,False,correct,PCIe 3.0 x16,False,correct,2,6
+15,bus_type,PCIe 3.0 x16,False,PCIe,True,acceptable,PCIe 3.0 x8,False,acceptable,PCIe 3.0 x8,False,acceptable,PCIe 3.0 x16,True,correct,PCIe 3.0 x8,False,correct,PCIe 3.0 x8,False,correct,2,6
+52,bus_type,SATA III,False,M.2,False,wrong,SATA III,True,correct,SATA III,True,correct,SATA III,True,correct,SATA III,True,correct,SATA III,True,correct,5,6
+9,height_mm,46.0,True,UNKNOWN,False,wrong,UNKNOWN,False,wrong,54,False,wrong,46,True,correct,54,False,acceptable,46,True,correct,2,6
+18,height_mm,7.0,True,UNKNOWN,False,wrong,7,True,correct,7,True,correct,7.0,True,correct,7.0,True,correct,7,True,correct,5,6
+28,height_mm,42.0,True,UNKNOWN,False,wrong,42,True,correct,38,True,wrong,42.0,True,correct,37,False,acceptable,42,True,correct,4,6
+33,height_mm,20.8,True,7,False,wrong,20.8,True,correct,20.8,True,correct,UNKNOWN,False,wrong,67,False,wrong,UNKNOWN,False,wrong,2,6
+41,height_mm,10.5,True,UNKNOWN,False,wrong,UNKNOWN,False,wrong,UNKNOWN,False,wrong,10.5,True,correct,10.5,True,correct,10.5,True,correct,3,6
+52,height_mm,3.5,True,UNKNOWN,False,wrong,3.5,True,correct,3.5,True,correct,22,False,wrong,UNKNOWN,False,wrong,UNKNOWN,False,wrong,2,6
+77,height_mm,7.0,True,7,True,correct,UNKNOWN,False,wrong,7,True,correct,UNKNOWN,False,wrong,UNKNOWN,False,wrong,UNKNOWN,False,wrong,2,6
+20,model,220S,False,UNKNOWN,False,wrong,220S,True,correct,220S,True,correct,220S,True,correct,220S,True,correct,SSD220,False,wrong,4,6
+52,model,SU800,False,ASU800NS38,True,wrong,ASU800NS38-256GT-C,True,wrong,Ultimate SU800,True,acceptable,Ultimate SU800,True,correct,Ultimate SU800,True,correct,Ultimate SU800,True,correct,6,6
+60,model,Ironwolf 110,False,SG SSD,False,wrong,Nytro 1000,False,wrong,IronWolf 110,True,correct,Barracuda Q1,False,wrong,IronWolf 110,True,correct,Nytro 1351,False,wrong,2,6
+95,model,ISS,False,HPE,False,wrong,801882-B21,False,wrong,HPE 2TB SATA LFF,False,wrong,801882-B21,False,wrong,HPE 1TB SATA LFF,False,wrong,801882-B21,False,wrong,0,6
+137,model,L200,False,Toshiba,False,wrong,Toshiba 2TB 3.5,False,wrong,MQ04ABD200,False,wrong,L200,True,correct,L200,True,correct,L200,True,correct,3,6
+0,model_number,GV-N3080GAMING OC-10GD,False,UNKNOWN,False,wrong,GV-N3080GAMING OC-10GD,True,correct,GV-N3080GAMING OC-10GD,True,correct,GV-N3080GAMING OC-10GD,True,correct,GV-N3080GAMING OC-10GD,True,correct,GV-N3080GAMING OC-10GD,True,correct,5,6
+2,model_number,CSSD-F960GBMP510,False,CSSD-F960GBMP510,True,correct,CSSD-F960GBMP510,True,correct,CSSD-F960GBMP510,True,correct,CSSD-F960GBMP510,True,correct,CSSD-F960GBMP510,True,correct,UNKNOWN,False,wrong,5,6
+5,model_number,90YV0CV2-M0NA00,False,90YV0CV2-M0NA00,True,correct,GTX1650SOPH-4G,False,wrong,UNKNOWN,False,wrong,90YV0CV2-M0NA00,True,correct,90YV0CV2-M0NA00,True,correct,90YV0CV0-M0NA00,False,correct,3,6
+8,model_number,GV-N166SOC-6GD,False,GV-N166SOP6GD,False,wrong,GeForce GTX 1660 OC,False,wrong,UNKNOWN,False,wrong,GeForce GTX 1660 OC,False,wrong,GV-N1660OC-6GD,False,correct,GV-N166TSL-6GD,False,correct,0,6
+9,model_number,V375-040R,False,90YV0CV2-M0NA00,False,wrong,V375-040R,True,correct,GTX 1660 SUPER GAMING X,False,wrong,912-V375-040,False,correct,912-V375-040,False,correct,912-V375-040,False,correct,1,6
+12,model_number,90YV0DQ0-M0NA00,False,90YV0CV2-M0NA00,False,wrong,GV-N206SGAMING-6GC,False,wrong,ROG-STRIX-RTX2060S-O8G-GAMING,False,wrong,90YV0C90-M0NA00,False,correct,ROG-STRIX-RTX2060S-O8G-GAMING,False,wrong,ROG Strix GeForce RTX 2070 Super Advance Gaming,False,wrong,0,6
+13,model_number,AGAMMIXS11P-1TT-C,False,R:3500/W:3000,False,wrong,XPG GAMMIX S11 Pro Series,False,wrong,AGAMMIXS11P-512GT-C,False,wrong,AGAMMIXS11P-1TT-C,True,correct,AGAMMIXS11P-1TT-C,True,correct,AGAMMIXS11P-1TT-C,True,correct,3,6
+14,model_number,GV-R56XTGAMING OC-6GD,False,GV-N56XTAOR-6GD,False,wrong,Radeon RX 5600 XT GAMING OC,False,wrong,Radeon RX 5600 XT GAMING OC,False,wrong,GV-R56XTGAMING OC-6GD,True,correct,GV-R56XTGAMING OC-6GD,True,correct,GV-R56XTGAMING OC-6GD,True,correct,3,6
+15,model_number,100-506008,False,UNKNOWN,False,wrong,100-506008,True,correct,100-506008,True,correct,100-506008,True,correct,100-506008,True,correct,100-506008,True,correct,5,6
+16,model_number,NE6166SS18J9-161F,False,90YV0CV2-M0NA00,False,wrong,NE51660018J9-165F,False,wrong,NE6166T018J9-161F,False,wrong,NE6166SS18J9-161F,True,correct,NE6166S018J9-1160A,False,correct,NE6166SS18J9-161F,True,correct,2,6
+95,model_number,801882-B21,False,(3.5in),False,wrong,801882-B21,True,correct,801882-B21,True,correct,801882-B21,True,correct,801882-B21,True,correct,801882-B21,True,correct,5,6
+2,read_speed_mb_s,3480.0,True,UNKNOWN,False,wrong,3480,True,correct,3480,True,correct,3480,True,correct,3480,True,correct,3480,True,correct,5,6
+3,read_speed_mb_s,226.0,True,UNKNOWN,False,wrong,226,True,correct,226,True,correct,226.0,True,correct,226.0,True,correct,226.0,True,correct,5,6
+18,read_speed_mb_s,550.0,True,UNKNOWN,False,wrong,550,True,correct,550,True,correct,550,True,correct,550,True,correct,550,True,correct,5,6
+20,read_speed_mb_s,550.0,True,UNKNOWN,False,wrong,UNKNOWN,False,wrong,600,True,correct,550,True,correct,550,True,correct,550,True,correct,4,6
+33,read_speed_mb_s,130.0,True,UNKNOWN,False,wrong,130,True,correct,130,True,correct,UNKNOWN,False,wrong,UNKNOWN,False,wrong,UNKNOWN,False,wrong,2,6
+41,read_speed_mb_s,540.0,True,UNKNOWN,False,wrong,500,True,wrong,500,True,wrong,540,True,correct,540,True,correct,540,True,correct,5,6
+52,read_speed_mb_s,560.0,True,5600,False,wrong,560,True,correct,560,True,correct,560,True,correct,560,True,correct,560,True,correct,5,6
+56,read_speed_mb_s,560.0,True,UNKNOWN,False,wrong,560,True,correct,560,True,correct,560,True,correct,560,True,correct,560,True,correct,5,6
+60,read_speed_mb_s,560.0,True,UNKNOWN,False,wrong,850,False,wrong,560,True,correct,560,True,correct,560,True,correct,UNKNOWN,False,wrong,3,6
+77,read_speed_mb_s,555.0,True,UNKNOWN,False,wrong,3000,False,wrong,555,True,correct,560,True,correct,560,True,correct,560,True,correct,4,6
+4,width_mm,433.0,True,UNKNOWN,False,wrong,UNKNOWN,False,wrong,UNKNOWN,False,wrong,433,True,correct,433,True,correct,UNKNOWN,False,wrong,2,6
+9,width_mm,127.0,True,UNKNOWN,False,wrong,127,True,correct,140,False,wrong,127,True,correct,140,False,acceptable,127,True,correct,3,6
+28,width_mm,130.9,True,UNKNOWN,False,wrong,130.9,True,correct,107,False,wrong,130.9,True,correct,107,False,acceptable,130.9,True,correct,3,6
+33,width_mm,87.9,True,127,False,wrong,87.9,True,correct,87.9,True,correct,UNKNOWN,False,wrong,88,True,correct,UNKNOWN,False,wrong,3,6
+41,width_mm,57.0,True,UNKNOWN,False,wrong,UNKNOWN,False,wrong,UNKNOWN,False,wrong,VALUE:UNKNOWN,False,wrong,57.3,True,correct,10,False,wrong,1,6
+52,width_mm,22.0,True,UNKNOWN,False,wrong,22,True,correct,22,True,correct,UNKNOWN,False,wrong,UNKNOWN,False,wrong,UNKNOWN,False,wrong,2,6
+2,write_speed_mb_s,3000.0,True,UNKNOWN,False,wrong,3000,True,correct,3000,True,correct,3000,True,correct,3000,True,correct,3000,True,correct,5,6
+18,write_speed_mb_s,520.0,True,UNKNOWN,False,wrong,520,True,correct,520,True,correct,UNKNOWN,False,wrong,550,True,correct,550,True,correct,4,6
+52,write_speed_mb_s,520.0,True,UNKNOWN,False,wrong,520,True,correct,520,True,correct,520,True,correct,3000,False,wrong,520,True,correct,4,6
+56,write_speed_mb_s,510.0,True,UNKNOWN,False,wrong,510,True,correct,510,True,correct,510,True,correct,510,True,correct,510,True,correct,5,6
+77,write_speed_mb_s,520.0,True,UNKNOWN,False,wrong,550,True,correct,500,True,correct,UNKNOWN,False,wrong,560,True,correct,560,True,correct,4,6

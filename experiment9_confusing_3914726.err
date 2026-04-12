@@ -1,0 +1,23 @@
+Error: listen tcp 127.0.0.1:11435: bind: address already in use
+Batches:   0%|          | 0/36 [00:00<?, ?it/s]Batches:   3%|▎         | 1/36 [00:00<00:08,  3.98it/s]Batches:  22%|██▏       | 8/36 [00:00<00:01, 26.52it/s]Batches:  42%|████▏     | 15/36 [00:00<00:00, 40.29it/s]Batches:  75%|███████▌  | 27/36 [00:00<00:00, 64.38it/s]Batches: 100%|██████████| 36/36 [00:00<00:00, 55.85it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 140.67it/s]
+Traceback (most recent call last):
+  File "/pfs/data6/home/ma/ma_ma/ma_mpandya/RAG_Data_Cleaning/experiment9_confusing.py", line 979, in <module>
+    results_rag = pd.read_csv("exp9_rag.csv")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ma/ma_ma/ma_mpandya/RAG_Data_Cleaning/PyDI/venv/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ma/ma_ma/ma_mpandya/RAG_Data_Cleaning/PyDI/venv/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ma/ma_ma/ma_mpandya/RAG_Data_Cleaning/PyDI/venv/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ma/ma_ma/ma_mpandya/RAG_Data_Cleaning/PyDI/venv/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/home/ma/ma_ma/ma_mpandya/RAG_Data_Cleaning/PyDI/venv/lib/python3.12/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'exp9_rag.csv'

@@ -24,7 +24,7 @@
 
 # ## 1. Setup
 
-# In[1]:
+# In[ ]:
 
 
 import sys
@@ -58,10 +58,10 @@ TEXT_ATTRIBUTES = {"bus_type", "model_number", "model"}
 
 USE_RAG = True  # Set to False for LLM-only baseline
 
-LLM_FILE  = "results_exp10_llm_only.csv"
-RAG_FILE  = "results_exp10_rag.csv"
+LLM_FILE  = "exp10_confusing_llm_only.csv"
+RAG_FILE  = "exp10_confusing_rag.csv"
 RESULT_FILE = RAG_FILE if USE_RAG else LLM_FILE
-FINAL_RESULTS_FILE = "results_exp10_all.csv"
+FINAL_RESULTS_FILE = "exp10_confusing_all.csv"
 
 TOP_N = 20   # candidates retrieved by MiniLM
 TOP_K = 3    # candidates passed to LLM after re-ranking
@@ -71,7 +71,7 @@ print(f"Setup complete. USE_RAG={USE_RAG}")
 
 # ## 2. Load Datasets
 
-# In[2]:
+# In[ ]:
 
 
 df1 = pd.read_json("normalized_products/dataset_1_normalized.json")
@@ -86,7 +86,7 @@ print(f"KB full:   {len(kb_full)} rows")
 
 # ## 3. Build Evaluation Set (same 25 rows as exp 9)
 
-# In[3]:
+# In[ ]:
 
 
 def get_ground_truth(cluster_id, attribute):
@@ -165,7 +165,7 @@ for attr in TARGET_ATTRIBUTES:
 
 # ## 4. Build Knowledge Base (full 2,200 rows)
 
-# In[4]:
+# In[ ]:
 
 
 kb = pd.read_excel("kb_confusing.xlsx")
@@ -174,7 +174,7 @@ print(f"KB size: {len(kb)} rows")
 
 # ## 5. Sanity Check
 
-# In[5]:
+# In[ ]:
 
 
 print("=== SANITY CHECK: Ground truth present in KB ===\n")
@@ -205,7 +205,7 @@ print(f"\nCoverage: {found}/{found+not_found} = {100*found/(found+not_found):.1f
 # - **CrossEncoder** — re-ranking top-20 to top-3 + evaluating text predictions
 # - **Llama 3.1 8B** — prediction only
 
-# In[6]:
+# In[ ]:
 
 
 # Prediction model — Llama only used for prediction
@@ -216,7 +216,7 @@ print("Ollama OK:", repr(test.content[:20]))
 
 # ## 7. Retriever Setup — MiniLM + CrossEncoder
 
-# In[7]:
+# In[ ]:
 
 
 # ── MiniLM for initial embedding retrieval ───────────────────────────────────
@@ -273,7 +273,7 @@ print(f"\nRetrieval pipeline: MiniLM top-{TOP_N} → CrossEncoder re-rank → to
 
 # ## 8. Two-Stage Retrieval Function
 
-# In[8]:
+# In[ ]:
 
 
 def retrieve_and_rerank(query_text, q_emb, top_n=TOP_N, top_k=TOP_K):
@@ -308,7 +308,7 @@ for i, (_, row) in enumerate(test_cands.iterrows()):
 
 # ## 9. LLM-Only Prompts
 
-# In[9]:
+# In[ ]:
 
 
 FEW_SHOT_PROMPTS = {
@@ -474,7 +474,7 @@ print("LLM-only prompts defined for:", list(FEW_SHOT_PROMPTS.keys()))
 
 # ## 10. RAG Prompts (with KB candidates)
 
-# In[10]:
+# In[ ]:
 
 
 FEW_SHOT_PROMPTS_RAG = {
@@ -684,7 +684,7 @@ print("RAG prompts defined for:", list(FEW_SHOT_PROMPTS_RAG.keys()))
 
 # ## 11. Format Candidates
 
-# In[11]:
+# In[ ]:
 
 
 SKIP_FIELDS = {
@@ -801,7 +801,7 @@ print(f"\nDone in {time.time()-t0:.1f}s")
 
 # ## 13. Retrieval Hit@k Analysis (before and after re-ranking)
 
-# In[13]:
+# In[ ]:
 
 
 if USE_RAG:
@@ -847,7 +847,7 @@ else:
 
 # ## 14. Standard Evaluation
 
-# In[14]:
+# In[ ]:
 
 
 def normalize(val):
@@ -896,7 +896,7 @@ print(results_df.groupby("attribute").agg(
 # - Text attributes: CrossEncoder similarity score — removes same-model bias
 # - Llama is used only for prediction, not evaluation
 
-# In[15]:
+# In[ ]:
 
 
 def evaluate_prediction(predicted, ground_truth, attribute):
@@ -953,7 +953,7 @@ print(f"\nDone in {time.time()-t0:.1f}s — saved to {RESULT_FILE}")
 
 # ## 16. Final Summary
 
-# In[16]:
+# In[ ]:
 
 
 standard_acc = results_df["correct_standard"].mean()
@@ -979,81 +979,4 @@ print(per_attr.to_string())
 
 print("\nCE judgment distribution:")
 print(results_df["ce_judgment"].value_counts())
-
-
-# ## 17. Combined Comparison with Experiments 9 and 10
-
-# In[17]:
-
-
-import os
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-if os.path.exists(LLM_FILE) and os.path.exists(RAG_FILE):
-    results_llm = pd.read_csv(LLM_FILE)
-    results_rag = pd.read_csv(RAG_FILE)
-    results_llm["config"] = "LLM-only"
-    results_rag["config"] = "RAG+Reranker"
-    all_exp10 = pd.concat([results_llm, results_rag], ignore_index=True)
-    all_exp10.to_csv(FINAL_RESULTS_FILE, index=False)
-
-    # Optionally load exp9 for comparison
-    configs_to_compare = []
-    if os.path.exists("results_exp9_all.csv"):
-        exp9 = pd.read_csv("results_exp9_all.csv")
-        exp9["config"] = exp9["config"].replace({"RAG": "RAG (exp9)", "LLM-only": "LLM-only"})
-        configs_to_compare.append(exp9)
-
-    configs_to_compare.append(all_exp10)
-    combined = pd.concat(configs_to_compare, ignore_index=True)
-
-    print("=" * 70)
-    print("COMPARISON: exp 9 vs exp 10 (with CrossEncoder re-ranking)")
-    print("=" * 70)
-
-    for config in combined["config"].unique():
-        df_c = combined[combined["config"] == config]
-        print(f"\n--- {config} ---")
-        print(f"  Standard accuracy: {df_c['correct_standard'].mean():.3f}")
-        print(f"  UNKNOWN rate:      {df_c['unknown'].mean():.3f}")
-        if "ce_judgment" in df_c.columns:
-            ce = (df_c["ce_judgment"].isin(["correct","acceptable"])).mean()
-            print(f"  CE eval:           {ce:.3f}")
-        elif "llm_judgment" in df_c.columns:
-            llm = (df_c["llm_judgment"].isin(["correct","acceptable"])).mean()
-            print(f"  LLM eval:          {llm:.3f}")
-
-    # Heatmap — standard accuracy
-    heatmap_data = (
-        combined.groupby(["attribute", "config"])["correct_standard"]
-        .mean().unstack("config")
-    )
-
-    fig, ax = plt.subplots(figsize=(10, 5))
-    sns.heatmap(
-        heatmap_data,
-        annot=True, fmt=".2f",
-        cmap="Blues", vmin=0, vmax=1,
-        linewidths=0.5, linecolor="white",
-        ax=ax, cbar_kws={"label": "Standard Accuracy"}
-    )
-    ax.set_title("Experiment 10 — Standard Accuracy: CrossEncoder Re-ranking vs Baseline",
-                 fontsize=12, pad=10)
-    ax.set_xlabel("Configuration")
-    ax.set_ylabel("Attribute")
-    plt.xticks(rotation=15, ha="right")
-    plt.tight_layout()
-    plt.savefig("fig_exp10_heatmap.png", dpi=150, bbox_inches="tight")
-    plt.show()
-    print("\n✓ Saved to fig_exp10_heatmap.png")
-    print(f"✓ Saved to {FINAL_RESULTS_FILE}")
-else:
-    print(f"Run with USE_RAG=False first to generate {LLM_FILE}, then rerun with USE_RAG=True.")
-
-
-# In[ ]:
-
-
-
 

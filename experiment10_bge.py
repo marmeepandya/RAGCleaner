@@ -47,11 +47,11 @@ TEXT_ATTRIBUTES    = {"bus_type", "model_number", "model"}
 TOP_N = 20   # MiniLM retrieves this many
 TOP_K = 3    # CrossEncoder re-ranks to this many
 
-RESULT_FILE        = "results_exp11_bge_rag.csv"
-FINAL_RESULTS_FILE = "results_exp11_bge_all.csv"
+RESULT_FILE        = "exp10_bge_rag.csv"
+FINAL_RESULTS_FILE = "exp10_bge_all.csv"
 
 print("=" * 60)
-print("Experiment 11 — BGE-large + CrossEncoder Re-ranking")
+print("Experiment 10 — BGE-large + CrossEncoder Re-ranking")
 print("=" * 60)
 
 # ── 1. Load datasets ──────────────────────────────────────────────────────────

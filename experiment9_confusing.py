@@ -35,7 +35,9 @@ import threading
 
 from langchain_ollama import ChatOllama
 from langchain_core.messages import HumanMessage
-from sentence_transformers import SentenceTransformer, util
+
+import glob
+from sentence_transformers import SentenceTransformer, CrossEncoder, util
 
 random.seed(42)
 np.random.seed(42)
@@ -49,9 +51,19 @@ NUMERIC_ATTRIBUTES = {"read_speed_mb_s", "write_speed_mb_s", "height_mm", "width
 
 # Output file names
 USE_RAG = True  # Set to False for LLM-only, True for RAG
-LLM_FILE = "results_exp9_llm_only.csv"
-RAG_FILE = "results_exp9_rag.csv"
+LLM_FILE = "exp9_llm_only.csv"
+RAG_FILE = "exp9_rag.csv"
+
+LLM_HEATMAP_FILE = "heatmap_exp9_llm_only.png"
+RAG_HEATMAP_FILE = "heatmap_exp9_rag.png"
+FINAL_HEATMAP_FILE = RAG_HEATMAP_FILE if USE_RAG else LLM_HEATMAP_FILE
+
 RESULT_FILE = RAG_FILE if USE_RAG else LLM_FILE
+
+ALL_LLM = "exp9_all_LLM.csv"
+ALL_RAG = "exp9_all_RAG.csv"
+
+FINAL_RESULTS_FILE = "exp9_all.csv"
 
 print(f"Setup complete. USE_RAG={USE_RAG}")
 
@@ -150,14 +162,6 @@ for attr in TARGET_ATTRIBUTES:
     print(f"  {attr:<25} {count:>3} instances  {status}")
 
 
-# In[ ]:
-
-
-# print("Query products and cluster IDs:")
-# for idx, row in query_df.iterrows():
-#     print(f"  cluster_id: {row['cluster_id']} | {str(row['title'])[:80]}")
-
-
 # ## 4. Build Knowledge Base (full 2,200 rows)
 
 # In[ ]:
@@ -198,8 +202,7 @@ print(f"\nCoverage: {found}/{found+not_found} = {100*found/(found+not_found):.1f
 # In[ ]:
 
 
-predict_model = ChatOllama(model="llama3.1:8b", temperature=0)
-eval_model = ChatOllama(model="llama3.1:8b", temperature=0)
+predict_model = ChatOllama(model="llama3.1:8b", temperature=0, base_url="http://127.0.0.1:11435")
 
 test = predict_model.invoke("Say OK")
 print("Ollama OK:", repr(test.content[:20]))
@@ -214,6 +217,13 @@ LOCAL_MODEL_PATH = "/home/ma/ma_ma/ma_mpandya/.cache/huggingface/hub/models--sen
 
 print("Loading embedding model...")
 embedding_model = SentenceTransformer(LOCAL_MODEL_PATH)
+
+print("Loading CrossEncoder for evaluation...")
+CE_CACHE = "/home/ma/ma_ma/ma_mpandya/.cache/huggingface/hub/models--cross-encoder--ms-marco-MiniLM-L-6-v2/snapshots/"
+ce_snaps = glob.glob(CE_CACHE + "*/")
+CE_PATH  = ce_snaps[0].rstrip("/") if ce_snaps else "cross-encoder/ms-marco-MiniLM-L-6-v2"
+cross_encoder = CrossEncoder(CE_PATH)
+print("  CrossEncoder loaded.")
 
 def row_to_text(row):
     attrs = ["title", "model", "model_number", "brand", "product_type"]
@@ -700,7 +710,7 @@ def predict_attribute(product_text, attribute, predict_model, candidates=None):
     return "UNKNOWN"
 
 
-def predict_with_timeout(product_text, attribute, predict_model, candidates=None, timeout=45):
+def predict_with_timeout(product_text, attribute, predict_model, candidates=None, timeout=300):
     result = ["UNKNOWN"]
     def target():
         try:
@@ -737,7 +747,7 @@ for i, (_, task) in enumerate(eval_df.iterrows()):
         candidates = None
 
     # predicted = predict_attribute(text, attr, predict_model, candidates)
-    predicted = predict_with_timeout(text, attr, predict_model, candidates, timeout=45)
+    predicted = predict_with_timeout(text, attr, predict_model, candidates, timeout=300)
 
     elapsed = time.time() - t0
     eta = (elapsed / (i+1)) * (total - i - 1)
@@ -756,6 +766,37 @@ for i, (_, task) in enumerate(eval_df.iterrows()):
 
 results_df = pd.DataFrame(predictions)
 print(f"\nDone in {time.time()-t0:.1f}s")
+
+
+# In[ ]:
+
+
+if USE_RAG:
+    # ── Retrieval Quality Check: Hit@k ────────────────────────────────────────────
+    print(f"=== RETRIEVAL HIT@{TOP_K} ANALYSIS ===\n")
+
+    hit = 0
+    total = 0
+
+    for _, task in eval_df.iterrows():
+        idx = task["df1_idx"]
+        cluster_id = query_df.loc[idx, "cluster_id"]
+
+        pos = query_idx_to_pos[idx]
+        q_emb = query_embeddings[pos]
+        scores = util.cos_sim(q_emb, kb_embeddings)[0]
+        top_idx = np.argsort(-scores.cpu().numpy())[:TOP_K]
+        retrieved = kb.iloc[top_idx]
+
+        correct_retrieved = cluster_id in retrieved["cluster_id"].values
+        hit += int(correct_retrieved)
+        total += 1
+
+        print(f"  Row {idx:<4} | cluster {cluster_id} | {'✓ HIT' if correct_retrieved else '✗ MISS'}")
+
+    print(f"\nHit@{TOP_K}: {hit}/{total} = {hit/total:.3f}")
+else:
+    print("Skipping Hit@k — LLM-only mode, no retrieval.")
 
 
 # ## 12. Standard Evaluation
@@ -811,95 +852,79 @@ print(results_df[["attribute", "ground_truth", "predicted", "correct_standard"]]
 # In[ ]:
 
 
-def llm_evaluate(predicted, ground_truth, attribute, cluster_id, kb, eval_model):
-    if predicted == "UNKNOWN" or str(predicted).lower() in {"nan", "none", "null"}:
+def evaluate_prediction_ce(predicted, ground_truth, attribute):
+    if predicted == "UNKNOWN" or str(predicted).lower() in {"nan","none","null",""}:
         return "wrong"
-    kb_matches = kb[kb["cluster_id"] == cluster_id]
-    kb_context = ""
-    for _, kb_row in kb_matches.head(3).iterrows():
-        val = kb_row.get(attribute)
-        title = kb_row.get("title", "")
-        if pd.notna(val):
-            kb_context += f"  - {str(title)[:80]} | {attribute}: {val}\n"
-    eval_prompt = f"""You are evaluating a data cleaning prediction for a product database.
+    if attribute in NUMERIC_ATTRIBUTES:
+        try:
+            p = float(str(predicted).replace(",","").strip())
+            g = float(str(ground_truth).replace(",","").strip())
+            if g == 0: return "correct" if p == 0 else "wrong"
+            ratio = abs(p - g) / abs(g)
+            if ratio <= 0.10: return "correct"
+            if ratio <= 0.30: return "acceptable"
+            return "wrong"
+        except:
+            return "wrong"
+    score = cross_encoder.predict([[ground_truth, predicted]])[0]
+    if score > 2.0:  return "correct"
+    if score > -1.0: return "acceptable"
+    return "wrong"
 
-Attribute: {attribute}
-Ground truth (from knowledge base): {ground_truth}
-Predicted value: {predicted}
-
-Knowledge base context (matching products):
-{kb_context if kb_context else '  (none)'}
-
-Judge as exactly one of:
-- CORRECT: exact match or semantically equivalent (e.g. PCIe Gen3x4 = PCIe 3.0 x4, 3480 = 3480.0)
-- ACCEPTABLE: partially correct or less detailed but not wrong (e.g. PCIe 3.0 when GT is PCIe 3.0 x16)
-- WRONG: clearly incorrect value
-
-Respond with JUDGMENT:<label> only. Example: JUDGMENT:CORRECT"""
-
-    response = eval_model.invoke([HumanMessage(content=eval_prompt)])
-    response_text = response.content.strip().upper()
-    if "JUDGMENT:CORRECT" in response_text:
-        return "correct"
-    elif "JUDGMENT:ACCEPTABLE" in response_text:
-        return "acceptable"
-    else:
-        return "wrong"
-
-
-print("Running LLM-based evaluation...")
-llm_judgments = []
+print("Running CE-based evaluation...")
+judgments = []
 t0 = time.time()
 
 for i, (_, row) in enumerate(results_df.iterrows()):
-    cluster_id = query_df.loc[row["df1_idx"], "cluster_id"]
-    judgment = llm_evaluate(
-        row["predicted"], row["ground_truth"],
-        row["attribute"], cluster_id, kb, eval_model
+    judgment = evaluate_prediction_ce(
+        row["predicted"], row["ground_truth"], row["attribute"]
     )
-    llm_judgments.append(judgment)
+    judgments.append(judgment)
     print(f"  [{i+1}/{len(results_df)}] {row['attribute']:<20} | "
           f"GT: {str(row['ground_truth']):<25} | "
           f"Pred: {str(row['predicted']):<25} | {judgment}")
 
-results_df["llm_judgment"] = llm_judgments
+results_df["ce_judgment"] = judgments
 results_df.to_csv(RESULT_FILE, index=False)
 print(f"\nDone in {time.time()-t0:.1f}s — saved to {RESULT_FILE}")
 
 
-# ## 14. Final Comparison: Standard vs LLM Evaluation
+# ## 14. Final Comparison: Standard vs CE Evaluation
 
 # In[ ]:
 
 
 string_acc = results_df["correct_standard"].mean()
-llm_correct = (results_df["llm_judgment"] == "correct").mean()
-llm_acceptable = (results_df["llm_judgment"].isin(["correct", "acceptable"])).mean()
+ce_correct     = (results_df["ce_judgment"] == "correct").mean()
+ce_acceptable  = (results_df["ce_judgment"].isin(["correct", "acceptable"])).mean()
+
+print(f"{'CE eval — correct only':<42} {ce_correct:.3f}")
+print(f"{'CE eval — correct + acceptable':<42} {ce_acceptable:.3f}")
 
 print("=" * 60)
 print(f"RESULTS — {'RAG' if USE_RAG else 'LLM-only'} (experiment 8.1)")
 print("=" * 60)
 print(f"{'Standard accuracy':<42} {string_acc:.3f}")
-print(f"{'LLM eval — correct only':<42} {llm_correct:.3f}")
-print(f"{'LLM eval — correct + acceptable':<42} {llm_acceptable:.3f}")
+print(f"{'LLM eval — correct only':<42} {ce_correct:.3f}")
+print(f"{'LLM eval — correct + acceptable':<42} {ce_acceptable:.3f}")
 print(f"{'UNKNOWN rate':<42} {results_df['unknown'].mean():.3f}")
 
 print("\nPer-attribute breakdown:")
 per_attr = results_df.groupby("attribute").apply(lambda x: pd.Series({
     "total": len(x),
     "standard_acc": x["correct_standard"].mean(),
-    "llm_correct": (x["llm_judgment"] == "correct").mean(),
-    "llm_correct+acceptable": (x["llm_judgment"].isin(["correct", "acceptable"])).mean(),
+    "llm_correct": (x["ce_judgment"] == "correct").mean(),
+    "llm_correct+acceptable": (x["ce_judgment"].isin(["correct", "acceptable"])).mean(),
     "unknown_rate": x["unknown"].mean()
 }), include_groups=False).round(3)
 print(per_attr.to_string())
 
 print("\nLLM judgment distribution:")
-print(results_df["llm_judgment"].value_counts())
+print(results_df["ce_judgment"].value_counts())
 
 print("\nFull prediction table:")
 print(results_df[["attribute", "ground_truth", "predicted",
-                   "correct_standard", "llm_judgment"]].to_string(index=False))
+                   "correct_standard", "ce_judgment"]].to_string(index=False))
 
 
 # ## 15. Combined Comparison (run after both LLM-only and RAG)
@@ -923,21 +948,21 @@ if os.path.exists(LLM_FILE) and os.path.exists(RAG_FILE):
         df_c = all_results[all_results["config"] == config]
         print(f"\n--- {config} ---")
         print(f"  Standard accuracy:              {df_c['correct_standard'].mean():.3f}")
-        print(f"  LLM eval (correct only):        {(df_c['llm_judgment'] == 'correct').mean():.3f}")
-        print(f"  LLM eval (correct+acceptable):  {(df_c['llm_judgment'].isin(['correct','acceptable'])).mean():.3f}")
+        print(f"  LLM eval (correct only):        {(df_c['ce_judgment'] == 'correct').mean():.3f}")
+        print(f"  LLM eval (correct+acceptable):  {(df_c['ce_judgment'].isin(['correct','acceptable'])).mean():.3f}")
         print(f"  UNKNOWN rate:                   {df_c['unknown'].mean():.3f}")
 
     print("\nPer-attribute breakdown:")
     per_attr = all_results.groupby(["config", "attribute"]).apply(lambda x: pd.Series({
         "total": len(x),
         "standard_acc": x["correct_standard"].mean(),
-        "llm_correct+acceptable": (x["llm_judgment"].isin(["correct","acceptable"])).mean(),
+        "llm_correct+acceptable": (x["ce_judgment"].isin(["correct","acceptable"])).mean(),
         "unknown_rate": x["unknown"].mean()
     }), include_groups=False).round(3)
     print(per_attr.to_string())
 
-    all_results.to_csv("results_exp8_1_all.csv", index=False)
-    print("\n✓ Saved to results_exp8_1_all.csv")
+    all_results.to_csv(FINAL_RESULTS_FILE, index=False)
+    print(f"\n✓ Saved to {FINAL_RESULTS_FILE}")
 else:
     print(f"Run with USE_RAG=False first to generate {LLM_FILE}, then re-run with USE_RAG=True.")
 
@@ -947,10 +972,17 @@ else:
 
 import matplotlib.pyplot as plt
 import seaborn as sns
-import matplotlib.ticker as mtick
 import pandas as pd
 
-all_results = pd.read_csv("results_exp8_1_all.csv")
+# Load both files
+results_llm = pd.read_csv("exp9_llm_only.csv")
+results_rag = pd.read_csv("exp9_rag.csv")
+
+# Make sure config labels are correct
+results_llm["config"] = "LLM-only"
+results_rag["config"] = "RAG"
+
+all_results = pd.concat([results_llm, results_rag], ignore_index=True)
 
 # Build heatmap data — standard accuracy
 heatmap_data = (
@@ -960,9 +992,17 @@ heatmap_data = (
     .reindex(columns=["LLM-only", "RAG"])
 )
 
+# Build heatmap data — LLM eval
+heatmap_ce = (
+    all_results.groupby(["attribute", "config"])
+    .apply(lambda x: (x["ce_judgment"].isin(["correct", "acceptable"])).mean(),
+           include_groups=False)
+    .unstack("config")
+    .reindex(columns=["LLM-only", "RAG"])
+)
+
 fig, axes = plt.subplots(1, 2, figsize=(12, 5))
 
-# Plot 1: Standard accuracy heatmap
 sns.heatmap(
     heatmap_data,
     annot=True, fmt=".2f",
@@ -976,33 +1016,24 @@ axes[0].set_ylabel("Attribute")
 axes[0].tick_params(axis='x', rotation=0)
 axes[0].tick_params(axis='y', rotation=0)
 
-# Plot 2: LLM eval (correct+acceptable) heatmap
-heatmap_llm = (
-    all_results.groupby(["attribute", "config"])
-    .apply(lambda x: (x["llm_judgment"].isin(["correct","acceptable"])).mean(),
-           include_groups=False)
-    .unstack("config")
-    .reindex(columns=["LLM-only", "RAG"])
-)
-
 sns.heatmap(
-    heatmap_llm,
+    heatmap_ce,
     annot=True, fmt=".2f",
     cmap="Blues", vmin=0, vmax=1,
     linewidths=0.5, linecolor="white",
     ax=axes[1], cbar_kws={"label": "Accuracy"}
 )
-axes[1].set_title("LLM Evaluation (correct+acceptable)\n(LLM-only vs RAG)", fontsize=12, pad=10)
+axes[1].set_title("CE Evaluation (correct+acceptable)\n(LLM-only vs RAG)", fontsize=12, pad=10)
 axes[1].set_xlabel("Configuration")
 axes[1].set_ylabel("")
 axes[1].tick_params(axis='x', rotation=0)
 axes[1].tick_params(axis='y', rotation=0)
 
-plt.suptitle("Experiment 8.1 - Full KB w/o confusing data", fontsize=13, y=1.02)
+plt.suptitle("Experiment 9 - Full KB w confusing data", fontsize=13, y=1.02)
 plt.tight_layout()
-plt.savefig("fig_exp8_1_heatmap.png", dpi=150, bbox_inches="tight")
+plt.savefig("fig_exp9_heatmap.png", dpi=150, bbox_inches="tight")
 plt.show()
-print("✓ Saved fig_exp8_1_heatmap.png")
+print("✓ Saved to fig_exp9_heatmap.png")
 
 
 # In[ ]:
