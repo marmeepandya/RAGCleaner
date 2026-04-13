@@ -44,8 +44,8 @@ TARGET_ATTRIBUTES = [
 NUMERIC_ATTRIBUTES = {"read_speed_mb_s", "write_speed_mb_s", "height_mm", "width_mm"}
 TEXT_ATTRIBUTES    = {"bus_type", "model_number", "model"}
 
-TOP_N = 20   # MiniLM retrieves this many
-TOP_K = 3    # CrossEncoder re-ranks to this many
+TOP_N = 30   # MiniLM retrieves this many
+TOP_K = 5    # CrossEncoder re-ranks to this many
 
 RESULT_FILE        = "exp10_bge_rag.csv"
 FINAL_RESULTS_FILE = "exp10_bge_all.csv"
@@ -152,8 +152,16 @@ print("  BGE-large loaded.")
 
 # BGE requires query prefix for retrieval
 def row_to_text(row, is_query=False):
-    attrs = ["title", "model", "model_number", "brand", "product_type"]
-    text  = " | ".join([str(row[a]) for a in attrs if pd.notna(row.get(a))])
+    # Use title_description if available — richer text for BGE
+    td = row.get("title_description", "")
+    if pd.notna(td) and str(td).strip():
+        text = str(td).strip()[:400]
+    else:
+        attrs = ["title", "model", "model_number", "brand", "product_type"]
+        text = " | ".join([str(row[a]) for a in attrs if pd.notna(row.get(a))])
+        desc = row.get("description", "")
+        if pd.notna(desc) and str(desc).strip():
+            text += " | " + str(desc).strip()[:200]
     if is_query:
         return "Represent this product for retrieval: " + text
     return text
@@ -472,9 +480,11 @@ def predict_attribute(product_text, attribute, candidates=None):
     else:
         return "UNKNOWN"
 
+    import re
     response      = predict_model.invoke([HumanMessage(content=prompt)])
     response_text = response.content.strip()
 
+    # First try — VALUE: prefix
     for line in response_text.splitlines():
         line = line.strip()
         if line.upper().startswith("VALUE:"):
@@ -482,12 +492,30 @@ def predict_attribute(product_text, attribute, candidates=None):
             if value.upper() != "UNKNOWN" and value.lower() not in {"", "none", "nan", "null"}:
                 return value
             return "UNKNOWN"
+
+    # Second try — attribute name followed by value anywhere in response
+    pattern = rf'{attribute}\s*[:\→>\-]+\s*([^\s|]+)'
+    match = re.search(pattern, response_text, re.IGNORECASE)
+    if match:
+        value = match.group(1).strip().strip('"').strip("'")
+        if value.upper() != "UNKNOWN" and value.lower() not in {"", "none", "nan", "null"}:
+            return value
+
+    # Third try — for numeric attributes extract any standalone number
+    if attribute in NUMERIC_ATTRIBUTES:
+        numbers = re.findall(r'\b\d+\.?\d*\b', response_text)
+        if numbers:
+            return numbers[0]
+
+    # Fallback — short single line response
     cleaned = response_text.strip().strip('"').strip("'")
+    if cleaned.upper().startswith("VALUE:"):
+        cleaned = cleaned.split(":", 1)[1].strip()
     if cleaned and len(cleaned) < 80 and "\n" not in cleaned:
         if cleaned.upper() not in {"UNKNOWN", "NONE", "NULL", "NAN", ""}:
             return cleaned
     return "UNKNOWN"
-
+    
 
 def predict_with_timeout(product_text, attribute, candidates=None, timeout=300):
     result = ["UNKNOWN"]

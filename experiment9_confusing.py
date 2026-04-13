@@ -35,9 +35,7 @@ import threading
 
 from langchain_ollama import ChatOllama
 from langchain_core.messages import HumanMessage
-
-import glob
-from sentence_transformers import SentenceTransformer, CrossEncoder, util
+from sentence_transformers import SentenceTransformer, util
 
 random.seed(42)
 np.random.seed(42)
@@ -203,6 +201,7 @@ print(f"\nCoverage: {found}/{found+not_found} = {100*found/(found+not_found):.1f
 
 
 predict_model = ChatOllama(model="llama3.1:8b", temperature=0, base_url="http://127.0.0.1:11435")
+eval_model = ChatOllama(model="llama3.1:8b", temperature=0, base_url="http://127.0.0.1:11435")
 
 test = predict_model.invoke("Say OK")
 print("Ollama OK:", repr(test.content[:20]))
@@ -217,13 +216,6 @@ LOCAL_MODEL_PATH = "/home/ma/ma_ma/ma_mpandya/.cache/huggingface/hub/models--sen
 
 print("Loading embedding model...")
 embedding_model = SentenceTransformer(LOCAL_MODEL_PATH)
-
-print("Loading CrossEncoder for evaluation...")
-CE_CACHE = "/home/ma/ma_ma/ma_mpandya/.cache/huggingface/hub/models--cross-encoder--ms-marco-MiniLM-L-6-v2/snapshots/"
-ce_snaps = glob.glob(CE_CACHE + "*/")
-CE_PATH  = ce_snaps[0].rstrip("/") if ce_snaps else "cross-encoder/ms-marco-MiniLM-L-6-v2"
-cross_encoder = CrossEncoder(CE_PATH)
-print("  CrossEncoder loaded.")
 
 def row_to_text(row):
     attrs = ["title", "model", "model_number", "brand", "product_type"]
@@ -852,79 +844,116 @@ print(results_df[["attribute", "ground_truth", "predicted", "correct_standard"]]
 # In[ ]:
 
 
-def evaluate_prediction_ce(predicted, ground_truth, attribute):
-    if predicted == "UNKNOWN" or str(predicted).lower() in {"nan","none","null",""}:
+def llm_evaluate(predicted, ground_truth, attribute, cluster_id, kb, eval_model):
+    if predicted == "UNKNOWN" or str(predicted).lower() in {"nan", "none", "null"}:
         return "wrong"
-    if attribute in NUMERIC_ATTRIBUTES:
-        try:
-            p = float(str(predicted).replace(",","").strip())
-            g = float(str(ground_truth).replace(",","").strip())
-            if g == 0: return "correct" if p == 0 else "wrong"
-            ratio = abs(p - g) / abs(g)
-            if ratio <= 0.10: return "correct"
-            if ratio <= 0.30: return "acceptable"
-            return "wrong"
-        except:
-            return "wrong"
-    score = cross_encoder.predict([[ground_truth, predicted]])[0]
-    if score > 2.0:  return "correct"
-    if score > -1.0: return "acceptable"
-    return "wrong"
+    kb_matches = kb[kb["cluster_id"] == cluster_id]
+    kb_context = ""
+    for _, kb_row in kb_matches.head(3).iterrows():
+        val = kb_row.get(attribute)
+        title = kb_row.get("title", "")
+        if pd.notna(val):
+            kb_context += f"  - {str(title)[:80]} | {attribute}: {val}\n"
+    eval_prompt = f"""You are a strict data quality evaluator for a product database. Your job is to check if a predicted attribute value is correct.
 
-print("Running CE-based evaluation...")
-judgments = []
+Attribute being evaluated: {attribute}
+Ground truth value: {ground_truth}
+Predicted value: {predicted}
+
+Knowledge base context:
+{kb_context if kb_context else '  (none)'}
+
+STRICT RULES BY ATTRIBUTE TYPE:
+
+For model_number:
+- CORRECT only if the predicted SKU matches the ground truth SKU exactly or with trivial formatting differences (e.g. same characters, different case or spacing)
+- WRONG if it is a different SKU, a model name, a chipset name, or anything that is not the exact same part number
+- Example CORRECT: GT: 90YV0CV2-M0NA00 | Pred: 90YV0CV2-M0NA00
+- Example WRONG: GT: 90YV0CV2-M0NA00 | Pred: GTX1650SOPH-4G (different SKU)
+- Example WRONG: GT: GV-N166SOC-6GD | Pred: GeForce GTX 1660 OC (model name, not SKU)
+
+For model:
+- CORRECT if the predicted model name matches the ground truth model name
+- ACCEPTABLE if it is a longer or shorter version of the same model name
+- WRONG if it is a completely different model or a full product title instead of a model name
+
+For bus_type:
+- CORRECT if the interface type matches exactly or is a well-known equivalent (e.g. SATA III = SATA 6Gb/s)
+- ACCEPTABLE if it is a less specific version (e.g. PCIe 3.0 when GT is PCIe 3.0 x16)
+- WRONG if it is a different interface entirely (e.g. USB when GT is SATA)
+
+For read_speed_mb_s, write_speed_mb_s, height_mm, width_mm:
+- CORRECT if the predicted number is within 10% of the ground truth number
+- WRONG if the number is outside 10% tolerance or is not a number at all
+
+Judge as exactly one of: CORRECT, ACCEPTABLE, or WRONG.
+Be strict. When in doubt, choose WRONG over ACCEPTABLE, and ACCEPTABLE over CORRECT.
+
+Respond with JUDGMENT:<label> only. Example: JUDGMENT:CORRECT"""
+
+    response = eval_model.invoke([HumanMessage(content=eval_prompt)])
+    response_text = response.content.strip().upper()
+    if "JUDGMENT:CORRECT" in response_text:
+        return "correct"
+    elif "JUDGMENT:ACCEPTABLE" in response_text:
+        return "acceptable"
+    else:
+        return "wrong"
+
+
+print("Running LLM-based evaluation...")
+llm_judgments = []
 t0 = time.time()
 
 for i, (_, row) in enumerate(results_df.iterrows()):
-    judgment = evaluate_prediction_ce(
-        row["predicted"], row["ground_truth"], row["attribute"]
+    cluster_id = query_df.loc[row["df1_idx"], "cluster_id"]
+    judgment = llm_evaluate(
+        row["predicted"], row["ground_truth"],
+        row["attribute"], cluster_id, kb, eval_model
     )
-    judgments.append(judgment)
+    llm_judgments.append(judgment)
     print(f"  [{i+1}/{len(results_df)}] {row['attribute']:<20} | "
           f"GT: {str(row['ground_truth']):<25} | "
           f"Pred: {str(row['predicted']):<25} | {judgment}")
 
-results_df["ce_judgment"] = judgments
+results_df["llm_judgment"] = llm_judgments
 results_df.to_csv(RESULT_FILE, index=False)
 print(f"\nDone in {time.time()-t0:.1f}s — saved to {RESULT_FILE}")
 
 
-# ## 14. Final Comparison: Standard vs CE Evaluation
+# ## 14. Final Comparison: Standard vs LLM Evaluation
 
 # In[ ]:
 
 
 string_acc = results_df["correct_standard"].mean()
-ce_correct     = (results_df["ce_judgment"] == "correct").mean()
-ce_acceptable  = (results_df["ce_judgment"].isin(["correct", "acceptable"])).mean()
-
-print(f"{'CE eval — correct only':<42} {ce_correct:.3f}")
-print(f"{'CE eval — correct + acceptable':<42} {ce_acceptable:.3f}")
+llm_correct = (results_df["llm_judgment"] == "correct").mean()
+llm_acceptable = (results_df["llm_judgment"].isin(["correct", "acceptable"])).mean()
 
 print("=" * 60)
 print(f"RESULTS — {'RAG' if USE_RAG else 'LLM-only'} (experiment 8.1)")
 print("=" * 60)
 print(f"{'Standard accuracy':<42} {string_acc:.3f}")
-print(f"{'LLM eval — correct only':<42} {ce_correct:.3f}")
-print(f"{'LLM eval — correct + acceptable':<42} {ce_acceptable:.3f}")
+print(f"{'LLM eval — correct only':<42} {llm_correct:.3f}")
+print(f"{'LLM eval — correct + acceptable':<42} {llm_acceptable:.3f}")
 print(f"{'UNKNOWN rate':<42} {results_df['unknown'].mean():.3f}")
 
 print("\nPer-attribute breakdown:")
 per_attr = results_df.groupby("attribute").apply(lambda x: pd.Series({
     "total": len(x),
     "standard_acc": x["correct_standard"].mean(),
-    "llm_correct": (x["ce_judgment"] == "correct").mean(),
-    "llm_correct+acceptable": (x["ce_judgment"].isin(["correct", "acceptable"])).mean(),
+    "llm_correct": (x["llm_judgment"] == "correct").mean(),
+    "llm_correct+acceptable": (x["llm_judgment"].isin(["correct", "acceptable"])).mean(),
     "unknown_rate": x["unknown"].mean()
 }), include_groups=False).round(3)
 print(per_attr.to_string())
 
 print("\nLLM judgment distribution:")
-print(results_df["ce_judgment"].value_counts())
+print(results_df["llm_judgment"].value_counts())
 
 print("\nFull prediction table:")
 print(results_df[["attribute", "ground_truth", "predicted",
-                   "correct_standard", "ce_judgment"]].to_string(index=False))
+                   "correct_standard", "llm_judgment"]].to_string(index=False))
 
 
 # ## 15. Combined Comparison (run after both LLM-only and RAG)
@@ -948,15 +977,15 @@ if os.path.exists(LLM_FILE) and os.path.exists(RAG_FILE):
         df_c = all_results[all_results["config"] == config]
         print(f"\n--- {config} ---")
         print(f"  Standard accuracy:              {df_c['correct_standard'].mean():.3f}")
-        print(f"  LLM eval (correct only):        {(df_c['ce_judgment'] == 'correct').mean():.3f}")
-        print(f"  LLM eval (correct+acceptable):  {(df_c['ce_judgment'].isin(['correct','acceptable'])).mean():.3f}")
+        print(f"  LLM eval (correct only):        {(df_c['llm_judgment'] == 'correct').mean():.3f}")
+        print(f"  LLM eval (correct+acceptable):  {(df_c['llm_judgment'].isin(['correct','acceptable'])).mean():.3f}")
         print(f"  UNKNOWN rate:                   {df_c['unknown'].mean():.3f}")
 
     print("\nPer-attribute breakdown:")
     per_attr = all_results.groupby(["config", "attribute"]).apply(lambda x: pd.Series({
         "total": len(x),
         "standard_acc": x["correct_standard"].mean(),
-        "llm_correct+acceptable": (x["ce_judgment"].isin(["correct","acceptable"])).mean(),
+        "llm_correct+acceptable": (x["llm_judgment"].isin(["correct","acceptable"])).mean(),
         "unknown_rate": x["unknown"].mean()
     }), include_groups=False).round(3)
     print(per_attr.to_string())
@@ -993,9 +1022,9 @@ heatmap_data = (
 )
 
 # Build heatmap data — LLM eval
-heatmap_ce = (
+heatmap_llm = (
     all_results.groupby(["attribute", "config"])
-    .apply(lambda x: (x["ce_judgment"].isin(["correct", "acceptable"])).mean(),
+    .apply(lambda x: (x["llm_judgment"].isin(["correct", "acceptable"])).mean(),
            include_groups=False)
     .unstack("config")
     .reindex(columns=["LLM-only", "RAG"])
@@ -1017,13 +1046,13 @@ axes[0].tick_params(axis='x', rotation=0)
 axes[0].tick_params(axis='y', rotation=0)
 
 sns.heatmap(
-    heatmap_ce,
+    heatmap_llm,
     annot=True, fmt=".2f",
     cmap="Blues", vmin=0, vmax=1,
     linewidths=0.5, linecolor="white",
     ax=axes[1], cbar_kws={"label": "Accuracy"}
 )
-axes[1].set_title("CE Evaluation (correct+acceptable)\n(LLM-only vs RAG)", fontsize=12, pad=10)
+axes[1].set_title("LLM Evaluation (correct+acceptable)\n(LLM-only vs RAG)", fontsize=12, pad=10)
 axes[1].set_xlabel("Configuration")
 axes[1].set_ylabel("")
 axes[1].tick_params(axis='x', rotation=0)

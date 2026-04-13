@@ -1,0 +1,562 @@
+[GIN] 2026/04/13 - 09:42:32 | 200 |   10.736315ms |       127.0.0.1 | HEAD     "/"
+[GIN] 2026/04/13 - 09:42:32 | 200 |    13.86459ms |       127.0.0.1 | GET      "/api/ps"
+NAME    ID    SIZE    PROCESSOR    UNTIL 
+[GIN] 2026/04/13 - 09:43:40 | 200 |  9.026714616s |       127.0.0.1 | POST     "/api/chat"
+Setup complete. USE_RAG=True
+Dataset 1: 812 rows
+KB full:   2200 rows
+Query rows:       25
+Total eval tasks: 51
+
+Tasks per attribute:
+attribute
+model_number        11
+read_speed_mb_s     10
+bus_type             7
+height_mm            7
+width_mm             6
+write_speed_mb_s     5
+model                5
+Name: count, dtype: int64
+
+Attribute coverage check:
+  bus_type                    7 instances  ✓
+  model_number               11 instances  ✓
+  model                       5 instances  ✓
+  read_speed_mb_s            10 instances  ✓
+  write_speed_mb_s            5 instances  ✓
+  height_mm                   7 instances  ✓
+  width_mm                    6 instances  ✓
+KB size: 2242 rows
+=== SANITY CHECK: Ground truth present in KB ===
+
+✓ Row 0 | model_number         | GT: GV-N3080GAMING OC-10GD         | KB matches: 3
+✓ Row 2 | model_number         | GT: CSSD-F960GBMP510               | KB matches: 3
+✓ Row 2 | read_speed_mb_s      | GT: 3480.0                         | KB matches: 3
+✓ Row 2 | write_speed_mb_s     | GT: 3000.0                         | KB matches: 3
+✓ Row 3 | read_speed_mb_s      | GT: 226.0                          | KB matches: 3
+✓ Row 4 | width_mm             | GT: 433.0                          | KB matches: 3
+✓ Row 5 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 5 | model_number         | GT: 90YV0CV2-M0NA00                | KB matches: 3
+✓ Row 6 | bus_type             | GT: USB 3.0                        | KB matches: 2
+✓ Row 8 | model_number         | GT: GV-N166SOC-6GD                 | KB matches: 3
+✓ Row 9 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 9 | model_number         | GT: V375-040R                      | KB matches: 3
+✓ Row 9 | height_mm            | GT: 46.0                           | KB matches: 3
+✓ Row 9 | width_mm             | GT: 127.0                          | KB matches: 3
+✓ Row 11 | bus_type             | GT: PCIe 3.0                       | KB matches: 3
+✓ Row 12 | bus_type             | GT: PCIe 4.0                       | KB matches: 3
+✓ Row 12 | model_number         | GT: 90YV0DQ0-M0NA00                | KB matches: 3
+✓ Row 18 | read_speed_mb_s      | GT: 550.0                          | KB matches: 3
+✓ Row 18 | write_speed_mb_s     | GT: 520.0                          | KB matches: 3
+✓ Row 18 | height_mm            | GT: 7.0                            | KB matches: 3
+✓ Row 20 | model                | GT: 220S                           | KB matches: 2
+✓ Row 20 | read_speed_mb_s      | GT: 550.0                          | KB matches: 2
+✓ Row 28 | height_mm            | GT: 42.0                           | KB matches: 3
+✓ Row 28 | width_mm             | GT: 130.9                          | KB matches: 3
+✓ Row 33 | read_speed_mb_s      | GT: 130.0                          | KB matches: 3
+✓ Row 33 | height_mm            | GT: 20.8                           | KB matches: 3
+✓ Row 33 | width_mm             | GT: 87.9                           | KB matches: 3
+✓ Row 41 | read_speed_mb_s      | GT: 540.0                          | KB matches: 3
+✓ Row 41 | height_mm            | GT: 10.5                           | KB matches: 3
+✓ Row 41 | width_mm             | GT: 57.0                           | KB matches: 3
+✓ Row 52 | bus_type             | GT: SATA III                       | KB matches: 3
+✓ Row 52 | model                | GT: SU800                          | KB matches: 3
+✓ Row 52 | read_speed_mb_s      | GT: 560.0                          | KB matches: 3
+✓ Row 52 | write_speed_mb_s     | GT: 520.0                          | KB matches: 3
+✓ Row 52 | height_mm            | GT: 3.5                            | KB matches: 3
+✓ Row 52 | width_mm             | GT: 22.0                           | KB matches: 3
+✓ Row 56 | read_speed_mb_s      | GT: 560.0                          | KB matches: 3
+✓ Row 56 | write_speed_mb_s     | GT: 510.0                          | KB matches: 3
+✓ Row 60 | model                | GT: Ironwolf 110                   | KB matches: 2
+✓ Row 60 | read_speed_mb_s      | GT: 560.0                          | KB matches: 2
+✓ Row 77 | read_speed_mb_s      | GT: 555.0                          | KB matches: 2
+✓ Row 77 | write_speed_mb_s     | GT: 520.0                          | KB matches: 2
+✓ Row 77 | height_mm            | GT: 7.0                            | KB matches: 2
+✓ Row 95 | model_number         | GT: 801882-B21                     | KB matches: 3
+✓ Row 95 | model                | GT: ISS                            | KB matches: 3
+✓ Row 137 | model                | GT: L200                           | KB matches: 3
+✓ Row 13 | model_number         | GT: AGAMMIXS11P-1TT-C              | KB matches: 3
+✓ Row 14 | model_number         | GT: GV-R56XTGAMING OC-6GD          | KB matches: 3
+✓ Row 15 | bus_type             | GT: PCIe 3.0 x16                   | KB matches: 3
+✓ Row 15 | model_number         | GT: 100-506008                     | KB matches: 3
+✓ Row 16 | model_number         | GT: NE6166SS18J9-161F              | KB matches: 2
+
+Coverage: 51/51 = 100.0%
+Ollama OK: 'OK'
+Loading embedding model...
+Encoding KB...
+KB encoded: 2242 rows
+Encoding query rows...
+[GIN] 2026/04/13 - 09:43:44 | 200 |  717.189196ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:43:46 | 200 |  1.663962487s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:43:47 | 200 |  1.332624775s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:43:49 | 200 |  1.435705905s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:43:51 | 200 |  2.053828093s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:48:54 | 200 |  2.876588809s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:48:56 | 200 |  2.522779958s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:48:58 | 200 |  1.898842196s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:48:59 | 200 |  856.697256ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:49:03 | 200 |  4.400146973s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:49:05 | 200 |  1.963057583s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:49:07 | 200 |  2.211832557s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:49:10 | 200 |  2.098062379s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:49:12 | 200 |  2.743882078s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:49:15 | 200 |  2.516007226s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:49:16 | 200 |   1.34952093s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:49:17 | 200 |  1.138516662s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:49:18 | 200 |  1.134267104s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:49:22 | 200 |  3.312264034s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:49:24 | 200 |  2.597557163s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:49:27 | 200 |  2.206518865s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:49:30 | 200 |  3.748172314s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:49:33 | 200 |  2.506541586s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:49:38 | 200 |  4.908538833s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:49:40 | 200 |  2.415561454s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:49:44 | 200 |  3.725664273s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:49:47 | 200 |  2.711393538s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:49:49 | 200 |  2.637898154s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:51:15 | 200 |         1m25s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:51:16 | 200 |  1.299668301s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:51:19 | 200 |  2.441935984s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:51:22 | 200 |  3.366763232s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:51:25 | 200 |  2.954867364s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:51:28 | 200 |  2.728201945s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:51:33 | 200 |  5.404996561s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:51:36 | 200 |  2.309186903s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:51:38 | 200 |  2.211088188s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:51:42 | 200 |  4.069682319s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:51:44 | 200 |  1.792957311s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:51:47 | 200 |  3.749355338s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:51:51 | 200 |  3.833707187s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:51:53 | 200 |  1.346914195s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:51:54 | 200 |   1.29731356s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:07 | 200 | 13.603507123s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:10 | 200 |  2.285715333s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:12 | 200 |  1.745368811s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:14 | 200 |  2.339186954s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:19 | 200 |  5.393576365s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:21 | 200 |  1.867338315s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:22 | 200 |    761.1628ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:22 | 200 |  410.561312ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:23 | 200 |  342.640315ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:23 | 200 |  387.023519ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:24 | 200 |  387.856176ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:24 | 200 |  344.155653ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:24 | 200 |  340.202418ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:25 | 200 |  382.438945ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:25 | 200 |  347.987018ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:25 | 200 |   341.47196ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:26 | 200 |  386.236065ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:26 | 200 |  383.296353ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:26 | 200 |  344.082296ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:27 | 200 |   340.34665ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:27 | 200 |  343.037038ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:27 | 200 |  346.967669ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:28 | 200 |  376.461487ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:28 | 200 |  329.795718ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:29 | 200 |  330.385767ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:29 | 200 |  328.607002ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:29 | 200 |  344.018302ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:30 | 200 |  328.304725ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:30 | 200 |  325.627476ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:30 | 200 |  326.183765ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:30 | 200 |  323.337564ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:31 | 200 |  322.388871ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:31 | 200 |   326.85911ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:32 | 200 |  383.178144ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:32 | 200 |  370.050603ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:32 | 200 |  374.605271ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:33 | 200 |  371.432915ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:33 | 200 |  329.554167ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:33 | 200 |  332.073976ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:34 | 200 |  345.816885ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:34 | 200 |  332.674931ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:34 | 200 |   329.92475ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:35 | 200 |  329.714799ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:35 | 200 |  325.496498ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:35 | 200 |   326.53178ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:36 | 200 |  324.482553ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:36 | 200 |   387.97573ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:36 | 200 |  330.677823ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:37 | 200 |  370.638212ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:37 | 200 |  368.615297ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:37 | 200 |  334.521329ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:38 | 200 |  367.154728ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:38 | 200 |   363.49822ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/04/13 - 09:52:39 | 200 |  367.830097ms |       127.0.0.1 | POST     "/api/chat"
+Query rows encoded.
+LLM-only prompts defined for: ['bus_type', 'model_number', 'model', 'read_speed_mb_s', 'write_speed_mb_s', 'height_mm', 'width_mm']
+RAG prompts defined for: ['bus_type', 'model_number', 'model', 'read_speed_mb_s', 'write_speed_mb_s', 'height_mm', 'width_mm']
+format_candidates() ready.
+
+Sample formatted candidate:
+  - title: usb flash drive pen drive pendrive 8gb 16gb 32gb 64gb 128gb u disk cute MM rainbow beansbulkflash memory stickhotsale | product_type: USB_STICK
+  - brand: Gigabyte | title: Gigabyte GeForce GTX 1650 Super OC | model: GeForce GTX 1650 Super OC | product_type: GPU | chipset_name: GeForce GT
+Running per-attribute prediction (RAG=ON)...
+  [1/51] Row 0 | model_number         | GT: GV-N3080GAMING OC-10GD    | Pred: GV-N3080GAMING OC-10GD    | ETA: 0.6min
+  [2/51] Row 2 | model_number         | GT: CSSD-F960GBMP510          | Pred: CSSD-F960GBMP510          | ETA: 1.0min
+  [3/51] Row 2 | read_speed_mb_s      | GT: 3480.0                    | Pred: 3480                      | ETA: 1.0min
+  [4/51] Row 2 | write_speed_mb_s     | GT: 3000.0                    | Pred: 3000                      | ETA: 1.0min
+  [5/51] Row 3 | read_speed_mb_s      | GT: 226.0                     | Pred: 226                       | ETA: 1.1min
+    ⚠️ TIMEOUT — skipping
+  [6/51] Row 4 | width_mm             | GT: 433.0                     | Pred: UNKNOWN                   | ETA: 38.4min
+  [7/51] Row 5 | bus_type             | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x16              | ETA: 32.5min
+  [8/51] Row 5 | model_number         | GT: 90YV0CV2-M0NA00           | Pred: DUAL-GTX1660-O6G          | ETA: 28.0min
+  [9/51] Row 6 | bus_type             | GT: USB 3.0                   | Pred: USB 2.0                   | ETA: 24.5min
+  [10/51] Row 8 | model_number         | GT: GV-N166SOC-6GD            | Pred: GV-N1660OC-6GD            | ETA: 21.6min
+  [11/51] Row 9 | bus_type             | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x16              | ETA: 19.4min
+  [12/51] Row 9 | model_number         | GT: V375-040R                 | Pred: GTX 1660 SUPER GAMING X   | ETA: 17.4min
+  [13/51] Row 9 | height_mm            | GT: 46.0                      | Pred: 51                        | ETA: 15.8min
+  [14/51] Row 9 | width_mm             | GT: 127.0                     | Pred: 140                       | ETA: 14.4min
+  [15/51] Row 11 | bus_type             | GT: PCIe 3.0                  | Pred: PCIe 3.0                  | ETA: 13.2min
+  [16/51] Row 12 | bus_type             | GT: PCIe 4.0                  | Pred: PCIe 3.0 x16              | ETA: 12.1min
+  [17/51] Row 12 | model_number         | GT: 90YV0DQ0-M0NA00           | Pred: ROG-STRIX-RTX2060S-O8G-GAMING | ETA: 11.1min
+  [18/51] Row 18 | read_speed_mb_s      | GT: 550.0                     | Pred: 550                       | ETA: 10.2min
+  [19/51] Row 18 | write_speed_mb_s     | GT: 520.0                     | Pred: 520                       | ETA: 9.4min
+  [20/51] Row 18 | height_mm            | GT: 7.0                       | Pred: 7                         | ETA: 8.7min
+  [21/51] Row 20 | model                | GT: 220S                      | Pred: 220S                      | ETA: 8.1min
+  [22/51] Row 20 | read_speed_mb_s      | GT: 550.0                     | Pred: UNKNOWN                   | ETA: 7.5min
+  [23/51] Row 28 | height_mm            | GT: 42.0                      | Pred: 38                        | ETA: 7.0min
+  [24/51] Row 28 | width_mm             | GT: 130.9                     | Pred: 110                       | ETA: 6.6min
+  [25/51] Row 33 | read_speed_mb_s      | GT: 130.0                     | Pred: 130                       | ETA: 6.1min
+  [26/51] Row 33 | height_mm            | GT: 20.8                      | Pred: 20.8                      | ETA: 5.7min
+  [27/51] Row 33 | width_mm             | GT: 87.9                      | Pred: 87.9                      | ETA: 5.3min
+  [28/51] Row 41 | read_speed_mb_s      | GT: 540.0                     | Pred: 300                       | ETA: 5.0min
+  [29/51] Row 41 | height_mm            | GT: 10.5                      | Pred: UNKNOWN                   | ETA: 4.6min
+  [30/51] Row 41 | width_mm             | GT: 57.0                      | Pred: UNKNOWN                   | ETA: 5.3min
+  [31/51] Row 52 | bus_type             | GT: SATA III                  | Pred: SATA III                  | ETA: 4.9min
+  [32/51] Row 52 | model                | GT: SU800                     | Pred: Ultimate SU800            | ETA: 4.5min
+  [33/51] Row 52 | read_speed_mb_s      | GT: 560.0                     | Pred: 560                       | ETA: 4.2min
+  [34/51] Row 52 | write_speed_mb_s     | GT: 520.0                     | Pred: 520                       | ETA: 3.8min
+  [35/51] Row 52 | height_mm            | GT: 3.5                       | Pred: 3.5                       | ETA: 3.5min
+  [36/51] Row 52 | width_mm             | GT: 22.0                      | Pred: 22                        | ETA: 3.3min
+  [37/51] Row 56 | read_speed_mb_s      | GT: 560.0                     | Pred: 560                       | ETA: 3.0min
+  [38/51] Row 56 | write_speed_mb_s     | GT: 510.0                     | Pred: 510                       | ETA: 2.7min
+  [39/51] Row 60 | model                | GT: Ironwolf 110              | Pred: IronWolf 110              | ETA: 2.5min
+  [40/51] Row 60 | read_speed_mb_s      | GT: 560.0                     | Pred: 560                       | ETA: 2.2min
+  [41/51] Row 77 | read_speed_mb_s      | GT: 555.0                     | Pred: 555                       | ETA: 2.0min
+  [42/51] Row 77 | write_speed_mb_s     | GT: 520.0                     | Pred: 500                       | ETA: 1.7min
+  [43/51] Row 77 | height_mm            | GT: 7.0                       | Pred: 7                         | ETA: 1.5min
+  [44/51] Row 95 | model_number         | GT: 801882-B21                | Pred: 801882-B21                | ETA: 1.3min
+  [45/51] Row 95 | model                | GT: ISS                       | Pred: HPE 1TB                   | ETA: 1.1min
+  [46/51] Row 137 | model                | GT: L200                      | Pred: MQ04ABD200                | ETA: 0.9min
+  [47/51] Row 13 | model_number         | GT: AGAMMIXS11P-1TT-C         | Pred: AGAMMIXS11P-512GT-C       | ETA: 0.7min
+  [48/51] Row 14 | model_number         | GT: GV-R56XTGAMING OC-6GD     | Pred: Radeon RX 5600 XT GAMING OC | ETA: 0.5min
+  [49/51] Row 15 | bus_type             | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x8               | ETA: 0.4min
+  [50/51] Row 15 | model_number         | GT: 100-506008                | Pred: 100-506008                | ETA: 0.2min
+  [51/51] Row 16 | model_number         | GT: NE6166SS18J9-161F         | Pred: NE6166T018J9-161F         | ETA: 0.0min
+
+Done in 518.5s
+=== RETRIEVAL HIT@3 ANALYSIS ===
+
+  Row 0    | cluster 1002037 | ✓ HIT
+  Row 2    | cluster 1007272 | ✓ HIT
+  Row 2    | cluster 1007272 | ✓ HIT
+  Row 2    | cluster 1007272 | ✓ HIT
+  Row 3    | cluster 1014052 | ✓ HIT
+  Row 4    | cluster 1014152 | ✓ HIT
+  Row 5    | cluster 1021594 | ✗ MISS
+  Row 5    | cluster 1021594 | ✗ MISS
+  Row 6    | cluster 1023407 | ✗ MISS
+  Row 8    | cluster 1028734 | ✗ MISS
+  Row 9    | cluster 1029916 | ✗ MISS
+  Row 9    | cluster 1029916 | ✗ MISS
+  Row 9    | cluster 1029916 | ✗ MISS
+  Row 9    | cluster 1029916 | ✗ MISS
+  Row 11   | cluster 1036963 | ✓ HIT
+  Row 12   | cluster 1038355 | ✗ MISS
+  Row 12   | cluster 1038355 | ✗ MISS
+  Row 18   | cluster 1057972 | ✓ HIT
+  Row 18   | cluster 1057972 | ✓ HIT
+  Row 18   | cluster 1057972 | ✓ HIT
+  Row 20   | cluster 1066948 | ✓ HIT
+  Row 20   | cluster 1066948 | ✓ HIT
+  Row 28   | cluster 1080185 | ✓ HIT
+  Row 28   | cluster 1080185 | ✓ HIT
+  Row 33   | cluster 1103088 | ✓ HIT
+  Row 33   | cluster 1103088 | ✓ HIT
+  Row 33   | cluster 1103088 | ✓ HIT
+  Row 41   | cluster 1131083 | ✗ MISS
+  Row 41   | cluster 1131083 | ✗ MISS
+  Row 41   | cluster 1131083 | ✗ MISS
+  Row 52   | cluster 1178275 | ✓ HIT
+  Row 52   | cluster 1178275 | ✓ HIT
+  Row 52   | cluster 1178275 | ✓ HIT
+  Row 52   | cluster 1178275 | ✓ HIT
+  Row 52   | cluster 1178275 | ✓ HIT
+  Row 52   | cluster 1178275 | ✓ HIT
+  Row 56   | cluster 1194060 | ✓ HIT
+  Row 56   | cluster 1194060 | ✓ HIT
+  Row 60   | cluster 1204468 | ✗ MISS
+  Row 60   | cluster 1204468 | ✗ MISS
+  Row 77   | cluster 1263391 | ✗ MISS
+  Row 77   | cluster 1263391 | ✗ MISS
+  Row 77   | cluster 1263391 | ✗ MISS
+  Row 95   | cluster 1339299 | ✓ HIT
+  Row 95   | cluster 1339299 | ✓ HIT
+  Row 137  | cluster 1540902 | ✗ MISS
+  Row 13   | cluster 1045382 | ✗ MISS
+  Row 14   | cluster 1048970 | ✓ HIT
+  Row 15   | cluster 1050421 | ✓ HIT
+  Row 15   | cluster 1050421 | ✓ HIT
+  Row 16   | cluster 1051451 | ✗ MISS
+
+Hit@3: 30/51 = 0.588
+=======================================================
+STANDARD EVALUATION
+=======================================================
+Overall accuracy: 0.608
+UNKNOWN rate:     0.078
+Total tasks:      51
+
+Per-attribute:
+                  total  correct  accuracy  unknown_rate
+attribute                                               
+bus_type              7        4     0.571         0.000
+height_mm             7        5     0.714         0.143
+model                 5        3     0.600         0.000
+model_number         11        4     0.364         0.000
+read_speed_mb_s      10        8     0.800         0.100
+width_mm              6        2     0.333         0.333
+write_speed_mb_s      5        5     1.000         0.000
+
+Full prediction table:
+       attribute           ground_truth                     predicted  correct_standard
+    model_number GV-N3080GAMING OC-10GD        GV-N3080GAMING OC-10GD              True
+    model_number       CSSD-F960GBMP510              CSSD-F960GBMP510              True
+ read_speed_mb_s                 3480.0                          3480              True
+write_speed_mb_s                 3000.0                          3000              True
+ read_speed_mb_s                  226.0                           226              True
+        width_mm                  433.0                       UNKNOWN             False
+        bus_type           PCIe 3.0 x16                  PCIe 3.0 x16              True
+    model_number        90YV0CV2-M0NA00              DUAL-GTX1660-O6G             False
+        bus_type                USB 3.0                       USB 2.0             False
+    model_number         GV-N166SOC-6GD                GV-N1660OC-6GD             False
+        bus_type           PCIe 3.0 x16                  PCIe 3.0 x16              True
+    model_number              V375-040R       GTX 1660 SUPER GAMING X             False
+       height_mm                   46.0                            51             False
+        width_mm                  127.0                           140             False
+        bus_type               PCIe 3.0                      PCIe 3.0              True
+        bus_type               PCIe 4.0                  PCIe 3.0 x16             False
+    model_number        90YV0DQ0-M0NA00 ROG-STRIX-RTX2060S-O8G-GAMING             False
+ read_speed_mb_s                  550.0                           550              True
+write_speed_mb_s                  520.0                           520              True
+       height_mm                    7.0                             7              True
+           model                   220S                          220S              True
+ read_speed_mb_s                  550.0                       UNKNOWN             False
+       height_mm                   42.0                            38              True
+        width_mm                  130.9                           110             False
+ read_speed_mb_s                  130.0                           130              True
+       height_mm                   20.8                          20.8              True
+        width_mm                   87.9                          87.9              True
+ read_speed_mb_s                  540.0                           300             False
+       height_mm                   10.5                       UNKNOWN             False
+        width_mm                   57.0                       UNKNOWN             False
+        bus_type               SATA III                      SATA III              True
+           model                  SU800                Ultimate SU800              True
+ read_speed_mb_s                  560.0                           560              True
+write_speed_mb_s                  520.0                           520              True
+       height_mm                    3.5                           3.5              True
+        width_mm                   22.0                            22              True
+ read_speed_mb_s                  560.0                           560              True
+write_speed_mb_s                  510.0                           510              True
+           model           Ironwolf 110                  IronWolf 110              True
+ read_speed_mb_s                  560.0                           560              True
+ read_speed_mb_s                  555.0                           555              True
+write_speed_mb_s                  520.0                           500              True
+       height_mm                    7.0                             7              True
+    model_number             801882-B21                    801882-B21              True
+           model                    ISS                       HPE 1TB             False
+           model                   L200                    MQ04ABD200             False
+    model_number      AGAMMIXS11P-1TT-C           AGAMMIXS11P-512GT-C             False
+    model_number  GV-R56XTGAMING OC-6GD   Radeon RX 5600 XT GAMING OC             False
+        bus_type           PCIe 3.0 x16                   PCIe 3.0 x8             False
+    model_number             100-506008                    100-506008              True
+    model_number      NE6166SS18J9-161F             NE6166T018J9-161F             False
+Running LLM-based evaluation...
+  [1/51] model_number         | GT: GV-N3080GAMING OC-10GD    | Pred: GV-N3080GAMING OC-10GD    | correct
+  [2/51] model_number         | GT: CSSD-F960GBMP510          | Pred: CSSD-F960GBMP510          | correct
+  [3/51] read_speed_mb_s      | GT: 3480.0                    | Pred: 3480                      | correct
+  [4/51] write_speed_mb_s     | GT: 3000.0                    | Pred: 3000                      | correct
+  [5/51] read_speed_mb_s      | GT: 226.0                     | Pred: 226                       | correct
+  [6/51] width_mm             | GT: 433.0                     | Pred: UNKNOWN                   | wrong
+  [7/51] bus_type             | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x16              | correct
+  [8/51] model_number         | GT: 90YV0CV2-M0NA00           | Pred: DUAL-GTX1660-O6G          | wrong
+  [9/51] bus_type             | GT: USB 3.0                   | Pred: USB 2.0                   | wrong
+  [10/51] model_number         | GT: GV-N166SOC-6GD            | Pred: GV-N1660OC-6GD            | wrong
+  [11/51] bus_type             | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x16              | correct
+  [12/51] model_number         | GT: V375-040R                 | Pred: GTX 1660 SUPER GAMING X   | wrong
+  [13/51] height_mm            | GT: 46.0                      | Pred: 51                        | wrong
+  [14/51] width_mm             | GT: 127.0                     | Pred: 140                       | wrong
+  [15/51] bus_type             | GT: PCIe 3.0                  | Pred: PCIe 3.0                  | correct
+  [16/51] bus_type             | GT: PCIe 4.0                  | Pred: PCIe 3.0 x16              | acceptable
+  [17/51] model_number         | GT: 90YV0DQ0-M0NA00           | Pred: ROG-STRIX-RTX2060S-O8G-GAMING | wrong
+  [18/51] read_speed_mb_s      | GT: 550.0                     | Pred: 550                       | correct
+  [19/51] write_speed_mb_s     | GT: 520.0                     | Pred: 520                       | correct
+  [20/51] height_mm            | GT: 7.0                       | Pred: 7                         | correct
+  [21/51] model                | GT: 220S                      | Pred: 220S                      | correct
+  [22/51] read_speed_mb_s      | GT: 550.0                     | Pred: UNKNOWN                   | wrong
+  [23/51] height_mm            | GT: 42.0                      | Pred: 38                        | wrong
+  [24/51] width_mm             | GT: 130.9                     | Pred: 110                       | wrong
+  [25/51] read_speed_mb_s      | GT: 130.0                     | Pred: 130                       | correct
+  [26/51] height_mm            | GT: 20.8                      | Pred: 20.8                      | correct
+  [27/51] width_mm             | GT: 87.9                      | Pred: 87.9                      | correct
+  [28/51] read_speed_mb_s      | GT: 540.0                     | Pred: 300                       | wrong
+  [29/51] height_mm            | GT: 10.5                      | Pred: UNKNOWN                   | wrong
+  [30/51] width_mm             | GT: 57.0                      | Pred: UNKNOWN                   | wrong
+  [31/51] bus_type             | GT: SATA III                  | Pred: SATA III                  | correct
+  [32/51] model                | GT: SU800                     | Pred: Ultimate SU800            | acceptable
+  [33/51] read_speed_mb_s      | GT: 560.0                     | Pred: 560                       | correct
+  [34/51] write_speed_mb_s     | GT: 520.0                     | Pred: 520                       | correct
+  [35/51] height_mm            | GT: 3.5                       | Pred: 3.5                       | correct
+  [36/51] width_mm             | GT: 22.0                      | Pred: 22                        | correct
+  [37/51] read_speed_mb_s      | GT: 560.0                     | Pred: 560                       | correct
+  [38/51] write_speed_mb_s     | GT: 510.0                     | Pred: 510                       | correct
+  [39/51] model                | GT: Ironwolf 110              | Pred: IronWolf 110              | correct
+  [40/51] read_speed_mb_s      | GT: 560.0                     | Pred: 560                       | correct
+  [41/51] read_speed_mb_s      | GT: 555.0                     | Pred: 555                       | correct
+  [42/51] write_speed_mb_s     | GT: 520.0                     | Pred: 500                       | correct
+  [43/51] height_mm            | GT: 7.0                       | Pred: 7                         | correct
+  [44/51] model_number         | GT: 801882-B21                | Pred: 801882-B21                | correct
+  [45/51] model                | GT: ISS                       | Pred: HPE 1TB                   | wrong
+  [46/51] model                | GT: L200                      | Pred: MQ04ABD200                | wrong
+  [47/51] model_number         | GT: AGAMMIXS11P-1TT-C         | Pred: AGAMMIXS11P-512GT-C       | wrong
+  [48/51] model_number         | GT: GV-R56XTGAMING OC-6GD     | Pred: Radeon RX 5600 XT GAMING OC | wrong
+  [49/51] bus_type             | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x8               | acceptable
+  [50/51] model_number         | GT: 100-506008                | Pred: 100-506008                | correct
+  [51/51] model_number         | GT: NE6166SS18J9-161F         | Pred: NE6166T018J9-161F         | wrong
+
+Done in 16.6s — saved to exp9_rag.csv
+============================================================
+RESULTS — RAG (experiment 8.1)
+============================================================
+Standard accuracy                          0.608
+LLM eval — correct only                    0.569
+LLM eval — correct + acceptable            0.627
+UNKNOWN rate                               0.078
+
+Per-attribute breakdown:
+                  total  standard_acc  llm_correct  llm_correct+acceptable  unknown_rate
+attribute                                                                               
+bus_type            7.0         0.571        0.571                   0.857         0.000
+height_mm           7.0         0.714        0.571                   0.571         0.143
+model               5.0         0.600        0.400                   0.600         0.000
+model_number       11.0         0.364        0.364                   0.364         0.000
+read_speed_mb_s    10.0         0.800        0.800                   0.800         0.100
+width_mm            6.0         0.333        0.333                   0.333         0.333
+write_speed_mb_s    5.0         1.000        1.000                   1.000         0.000
+
+LLM judgment distribution:
+llm_judgment
+correct       29
+wrong         19
+acceptable     3
+Name: count, dtype: int64
+
+Full prediction table:
+       attribute           ground_truth                     predicted  correct_standard llm_judgment
+    model_number GV-N3080GAMING OC-10GD        GV-N3080GAMING OC-10GD              True      correct
+    model_number       CSSD-F960GBMP510              CSSD-F960GBMP510              True      correct
+ read_speed_mb_s                 3480.0                          3480              True      correct
+write_speed_mb_s                 3000.0                          3000              True      correct
+ read_speed_mb_s                  226.0                           226              True      correct
+        width_mm                  433.0                       UNKNOWN             False        wrong
+        bus_type           PCIe 3.0 x16                  PCIe 3.0 x16              True      correct
+    model_number        90YV0CV2-M0NA00              DUAL-GTX1660-O6G             False        wrong
+        bus_type                USB 3.0                       USB 2.0             False        wrong
+    model_number         GV-N166SOC-6GD                GV-N1660OC-6GD             False        wrong
+        bus_type           PCIe 3.0 x16                  PCIe 3.0 x16              True      correct
+    model_number              V375-040R       GTX 1660 SUPER GAMING X             False        wrong
+       height_mm                   46.0                            51             False        wrong
+        width_mm                  127.0                           140             False        wrong
+        bus_type               PCIe 3.0                      PCIe 3.0              True      correct
+        bus_type               PCIe 4.0                  PCIe 3.0 x16             False   acceptable
+    model_number        90YV0DQ0-M0NA00 ROG-STRIX-RTX2060S-O8G-GAMING             False        wrong
+ read_speed_mb_s                  550.0                           550              True      correct
+write_speed_mb_s                  520.0                           520              True      correct
+       height_mm                    7.0                             7              True      correct
+           model                   220S                          220S              True      correct
+ read_speed_mb_s                  550.0                       UNKNOWN             False        wrong
+       height_mm                   42.0                            38              True        wrong
+        width_mm                  130.9                           110             False        wrong
+ read_speed_mb_s                  130.0                           130              True      correct
+       height_mm                   20.8                          20.8              True      correct
+        width_mm                   87.9                          87.9              True      correct
+ read_speed_mb_s                  540.0                           300             False        wrong
+       height_mm                   10.5                       UNKNOWN             False        wrong
+        width_mm                   57.0                       UNKNOWN             False        wrong
+        bus_type               SATA III                      SATA III              True      correct
+           model                  SU800                Ultimate SU800              True   acceptable
+ read_speed_mb_s                  560.0                           560              True      correct
+write_speed_mb_s                  520.0                           520              True      correct
+       height_mm                    3.5                           3.5              True      correct
+        width_mm                   22.0                            22              True      correct
+ read_speed_mb_s                  560.0                           560              True      correct
+write_speed_mb_s                  510.0                           510              True      correct
+           model           Ironwolf 110                  IronWolf 110              True      correct
+ read_speed_mb_s                  560.0                           560              True      correct
+ read_speed_mb_s                  555.0                           555              True      correct
+write_speed_mb_s                  520.0                           500              True      correct
+       height_mm                    7.0                             7              True      correct
+    model_number             801882-B21                    801882-B21              True      correct
+           model                    ISS                       HPE 1TB             False        wrong
+           model                   L200                    MQ04ABD200             False        wrong
+    model_number      AGAMMIXS11P-1TT-C           AGAMMIXS11P-512GT-C             False        wrong
+    model_number  GV-R56XTGAMING OC-6GD   Radeon RX 5600 XT GAMING OC             False        wrong
+        bus_type           PCIe 3.0 x16                   PCIe 3.0 x8             False   acceptable
+    model_number             100-506008                    100-506008              True      correct
+    model_number      NE6166SS18J9-161F             NE6166T018J9-161F             False        wrong
+======================================================================
+FINAL COMPARISON: LLM-only vs RAG
+======================================================================
+
+--- LLM-only ---
+  Standard accuracy:              0.137
+  LLM eval (correct only):        0.078
+  LLM eval (correct+acceptable):  0.157
+  UNKNOWN rate:                   0.529
+
+--- RAG ---
+  Standard accuracy:              0.608
+  LLM eval (correct only):        0.569
+  LLM eval (correct+acceptable):  0.627
+  UNKNOWN rate:                   0.078
+
+Per-attribute breakdown:
+                           total  standard_acc  llm_correct+acceptable  unknown_rate
+config   attribute                                                                  
+LLM-only bus_type            7.0         0.286                   0.429         0.286
+         height_mm           7.0         0.286                   0.286         0.571
+         model               5.0         0.200                   0.200         0.200
+         model_number       11.0         0.182                   0.182         0.182
+         read_speed_mb_s    10.0         0.000                   0.000         0.900
+         width_mm            6.0         0.000                   0.000         0.667
+         write_speed_mb_s    5.0         0.000                   0.000         1.000
+RAG      bus_type            7.0         0.571                   0.857         0.000
+         height_mm           7.0         0.714                   0.571         0.143
+         model               5.0         0.600                   0.600         0.000
+         model_number       11.0         0.364                   0.364         0.000
+         read_speed_mb_s    10.0         0.800                   0.800         0.100
+         width_mm            6.0         0.333                   0.333         0.333
+         write_speed_mb_s    5.0         1.000                   1.000         0.000
+
+✓ Saved to exp9_all.csv
+✓ Saved to fig_exp9_heatmap.png
+[GIN] 2026/04/13 - 10:08:33 | 200 |      63.605µs |       127.0.0.1 | HEAD     "/"
+[GIN] 2026/04/13 - 10:08:33 | 200 |      46.739µs |       127.0.0.1 | GET      "/api/ps"
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n565
+Job ID: 3923193
+Cluster: uc3
+User/Group: ma_mpandya/ma_ma
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 12
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 06:03:48 core-walltime
+Job Wall-clock time: 00:30:19
+Memory Utilized: 1.84 GB
+Memory Efficiency: 2.00% of 91.80 GB (91.80 GB/node)

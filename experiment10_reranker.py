@@ -56,7 +56,7 @@ TARGET_ATTRIBUTES = [
 NUMERIC_ATTRIBUTES = {"read_speed_mb_s", "write_speed_mb_s", "height_mm", "width_mm"}
 TEXT_ATTRIBUTES = {"bus_type", "model_number", "model"}
 
-USE_RAG = True  # Set to False for LLM-only baseline
+USE_RAG = False  # Set to False for LLM-only baseline
 
 LLM_FILE  = "exp10_easy_llm_only.csv"
 RAG_FILE  = "exp10_easy_rag.csv"

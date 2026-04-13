@@ -1,12 +1,12 @@
 #!/bin/bash
-#SBATCH --job-name=experiment10_bge
+#SBATCH --job-name=eexperiment10_bge.py
 #SBATCH --partition=gpu_a100_short
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:1
 #SBATCH --time=00:30:00
-#SBATCH --output=/home/ma/ma_ma/ma_mpandya/RAG_Data_Cleaning/experiment10_bge_%j.out
-#SBATCH --error=/home/ma/ma_ma/ma_mpandya/RAG_Data_Cleaning/experiment10_bge_%j.err
+#SBATCH --output=/home/ma/ma_ma/ma_mpandya/RAG_Data_Cleaning/exp10_bge_%j.out
+#SBATCH --error=/home/ma/ma_ma/ma_mpandya/RAG_Data_Cleaning/exp10_bge_%j.err
 #SBATCH --mail-type=END,FAIL
 #SBATCH --mail-user=marmeep23@gmail.com
 
@@ -20,7 +20,7 @@ source /home/ma/ma_ma/ma_mpandya/RAG_Data_Cleaning/PyDI/venv/bin/activate
 cd /home/ma/ma_ma/ma_mpandya/RAG_Data_Cleaning
 
 
-# jupyter nbconvert --to script experiment10_reranker_confusingKB.ipynb
+# jupyter nbconvert --to script experiment10_bge.pyr.ipynb
 python experiment10_bge.py
 
 pkill ollama

@@ -1,0 +1,4 @@
+Error: listen tcp 127.0.0.1:11435: bind: address already in use
+Batches:   0%|          | 0/35 [00:00<?, ?it/s]Batches:   3%|▎         | 1/35 [00:00<00:08,  4.05it/s]Batches:  23%|██▎       | 8/35 [00:00<00:01, 26.95it/s]Batches:  43%|████▎     | 15/35 [00:00<00:00, 41.11it/s]Batches:  71%|███████▏  | 25/35 [00:00<00:00, 59.80it/s]Batches: 100%|██████████| 35/35 [00:00<00:00, 54.96it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 142.73it/s]
+[2026-04-13T10:41:05.545] error: *** JOB 3923344 ON uc2n562 CANCELLED AT 2026-04-13T10:41:05 DUE to SIGNAL Terminated ***
