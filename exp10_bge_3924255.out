@@ -1,0 +1,17 @@
+NAME           ID              SIZE      PROCESSOR    UNTIL       
+llama3.1:8b    46e0c10c039e    6.9 GB    100% GPU     Stopping...    
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n566
+Job ID: 3924255
+Cluster: uc3
+User/Group: ma_mpandya/ma_ma
+State: CANCELLED (exit code 0)
+Nodes: 1
+Cores per node: 12
+CPU Utilized: 00:00:01
+CPU Efficiency: 0.09% of 00:19:12 core-walltime
+Job Wall-clock time: 00:01:36
+Memory Utilized: 541.52 MB
+Memory Efficiency: 0.58% of 91.80 GB (91.80 GB/node)

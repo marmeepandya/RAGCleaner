@@ -44,7 +44,7 @@ TARGET_ATTRIBUTES = [
 NUMERIC_ATTRIBUTES = {"read_speed_mb_s", "write_speed_mb_s", "height_mm", "width_mm"}
 TEXT_ATTRIBUTES    = {"bus_type", "model_number", "model"}
 
-TOP_N = 30   # MiniLM retrieves this many
+TOP_N = 20   # MiniLM retrieves this many
 TOP_K = 5    # CrossEncoder re-ranks to this many
 
 RESULT_FILE        = "exp10_bge_rag.csv"
@@ -497,8 +497,8 @@ def predict_attribute(product_text, attribute, candidates=None):
     pattern = rf'{attribute}\s*[:\→>\-]+\s*([^\s|]+)'
     match = re.search(pattern, response_text, re.IGNORECASE)
     if match:
-        value = match.group(1).strip().strip('"').strip("'")
-        if value.upper() != "UNKNOWN" and value.lower() not in {"", "none", "nan", "null"}:
+        value = match.group(1).strip().strip('"').strip("'").strip('[').strip(']')
+        if value.upper() != "UNKNOWN" and len(value) > 2 and value.lower() not in {"none","nan","null","exact","value","from","reference"}:
             return value
 
     # Third try — for numeric attributes extract any standalone number

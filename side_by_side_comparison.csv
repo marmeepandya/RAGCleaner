@@ -12,18 +12,18 @@ df1_idx,attribute,ground_truth,is_numeric,pred_LLM-only,correct_LLM-only,judgmen
 33,height_mm,20.8,True,7,False,wrong,UNKNOWN,False,wrong,20.8,True,correct,1,3
 41,height_mm,10.5,True,10.5,True,correct,UNKNOWN,False,wrong,10.5,True,correct,2,3
 52,height_mm,3.5,True,UNKNOWN,False,wrong,22,False,wrong,3.5,True,correct,1,3
-77,height_mm,7.0,True,7,True,correct,UNKNOWN,False,wrong,VALUE:12,False,wrong,1,3
+77,height_mm,7.0,True,7,True,correct,UNKNOWN,False,wrong,VALUE:10,False,wrong,1,3
 20,model,220S,False,UNKNOWN,False,wrong,220S,True,correct,220S,True,correct,2,3
 52,model,SU800,False,ASU800NS38-256GT-C,True,wrong,Ultimate SU800,True,correct,ASU800NS38-256GT-C,True,wrong,3,3
 60,model,Ironwolf 110,False,SG SSD,False,wrong,Barracuda Q1,False,wrong,Ironwolf 110,True,correct,1,3
-95,model,ISS,False,HPE,False,wrong,801882-B21,False,wrong,HPE 1TB,False,wrong,0,3
-137,model,L200,False,Toshiba,False,wrong,L200,True,correct,VALUE:2TB,False,wrong,1,3
+95,model,ISS,False,HPE,False,wrong,801882-B21,False,wrong,HPE 1TB 6G SATA 7.2K rpm LFF (3.5in) Non-hot Plug Standard 1yr Warranty Hard Drive,False,wrong,0,3
+137,model,L200,False,Toshiba,False,wrong,L200,True,correct,L200,True,correct,2,3
 0,model_number,GV-N3080GAMING OC-10GD,False,UNKNOWN,False,wrong,GV-N3080GAMING OC-10GD,True,correct,GV-N3080EAGLE-10GB,False,correct,1,3
 2,model_number,CSSD-F960GBMP510,False,CSSD-F960GBMP510,True,correct,CSSD-F960GBMP510,True,correct,CSSD-F960GBMP510,True,correct,3,3
 5,model_number,90YV0CV2-M0NA00,False,90YV0CV2-M0NA00,True,correct,90YV0CV2-M0NA00,True,correct,90YV0CV2-M0NA00,True,correct,3,3
 8,model_number,GV-N166SOC-6GD,False,GV-N166SOP6GD,False,wrong,UNKNOWN,False,wrong,GEFORCE GTX 1660 SUPER OC,False,wrong,0,3
 9,model_number,V375-040R,False,90YV0CV2-M0NA00,False,wrong,912-V375-040,False,correct,UNKNOWN,False,wrong,0,3
-12,model_number,90YV0DQ0-M0NA00,False,90YV0CV2-M0NA00,False,wrong,90YV0C90-M0NA00,False,correct,Aorus GeForce RTX 2060 Super,False,wrong,0,3
+12,model_number,90YV0DQ0-M0NA00,False,90YV0CV2-M0NA00,False,wrong,90YV0C90-M0NA00,False,correct,AORUS-GEFORCE-RTX-2060-SUPER,False,wrong,0,3
 13,model_number,AGAMMIXS11P-1TT-C,False,R:3500/W:3000,False,wrong,AGAMMIXS11P-1TT-C,True,correct,AGAMMIXS11P-1TT-C,True,correct,2,3
 14,model_number,GV-R56XTGAMING OC-6GD,False,GV-N56XTAOC-6GD,False,wrong,GV-R56XTGAMING OC-6GD,True,correct,GV-R56XTGAMING OC-6GD,True,correct,2,3
 15,model_number,100-506008,False,UNKNOWN,False,wrong,100-506008,True,correct,100-506008,True,correct,2,3
@@ -33,18 +33,18 @@ df1_idx,attribute,ground_truth,is_numeric,pred_LLM-only,correct_LLM-only,judgmen
 3,read_speed_mb_s,226.0,True,UNKNOWN,False,wrong,226.0,True,correct,226.0,True,correct,2,3
 18,read_speed_mb_s,550.0,True,UNKNOWN,False,wrong,550,True,correct,550,True,correct,2,3
 20,read_speed_mb_s,550.0,True,UNKNOWN,False,wrong,550,True,correct,560,True,correct,2,3
-33,read_speed_mb_s,130.0,True,UNKNOWN,False,wrong,UNKNOWN,False,wrong,130,True,correct,1,3
-41,read_speed_mb_s,540.0,True,UNKNOWN,False,wrong,540,True,correct,540,True,correct,2,3
+33,read_speed_mb_s,130.0,True,UNKNOWN,False,wrong,UNKNOWN,False,wrong,130.0,True,correct,1,3
+41,read_speed_mb_s,540.0,True,UNKNOWN,False,wrong,540,True,correct,1050,False,wrong,1,3
 52,read_speed_mb_s,560.0,True,5600,False,wrong,560,True,correct,560,True,correct,2,3
 56,read_speed_mb_s,560.0,True,UNKNOWN,False,wrong,560,True,correct,560,True,correct,2,3
 60,read_speed_mb_s,560.0,True,UNKNOWN,False,wrong,UNKNOWN,False,wrong,560,True,correct,1,3
-77,read_speed_mb_s,555.0,True,UNKNOWN,False,wrong,560,True,correct,560,True,correct,2,3
+77,read_speed_mb_s,555.0,True,UNKNOWN,False,wrong,560,True,correct,550,True,correct,2,3
 4,width_mm,433.0,True,UNKNOWN,False,wrong,433,True,correct,433,True,correct,2,3
 9,width_mm,127.0,True,UNKNOWN,False,wrong,127,True,correct,127,True,correct,2,3
 28,width_mm,130.9,True,UNKNOWN,False,wrong,130.9,True,correct,130.9,True,correct,2,3
 33,width_mm,87.9,True,127,False,wrong,UNKNOWN,False,wrong,87.9,True,correct,1,3
 41,width_mm,57.0,True,UNKNOWN,False,wrong,UNKNOWN,False,wrong,1,False,wrong,0,3
-52,width_mm,22.0,True,80,False,wrong,UNKNOWN,False,wrong,22.0,True,correct,1,3
+52,width_mm,22.0,True,80,False,wrong,UNKNOWN,False,wrong,22,True,correct,1,3
 2,write_speed_mb_s,3000.0,True,UNKNOWN,False,wrong,3000,True,correct,3000,True,correct,2,3
 18,write_speed_mb_s,520.0,True,UNKNOWN,False,wrong,550,True,correct,520,True,correct,2,3
 52,write_speed_mb_s,520.0,True,UNKNOWN,False,wrong,3000,False,wrong,520,True,correct,1,3

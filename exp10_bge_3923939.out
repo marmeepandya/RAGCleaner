@@ -283,3 +283,20 @@ Name: count, dtype: int64
 ✓ Saved to exp10_bge_rag.csv
 
 Done.
+[GIN] 2026/04/13 - 12:21:39 | 200 |   10.303438ms |       127.0.0.1 | HEAD     "/"
+[GIN] 2026/04/13 - 12:21:39 | 200 |    3.759895ms |       127.0.0.1 | GET      "/api/ps"
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n566
+Job ID: 3923939
+Cluster: uc3
+User/Group: ma_mpandya/ma_ma
+State: CANCELLED (exit code 0)
+Nodes: 1
+Cores per node: 12
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 04:34:00 core-walltime
+Job Wall-clock time: 00:22:50
+Memory Utilized: 3.32 GB
+Memory Efficiency: 3.61% of 91.80 GB (91.80 GB/node)
