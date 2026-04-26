@@ -1,0 +1,97 @@
+df1_idx,attribute,ground_truth,is_numeric
+0,model_number,GV-N3080GAMING OC-10GD,False
+2,model_number,CSSD-F960GBMP510,False
+2,read_speed_mb_s,3480.0,True
+2,write_speed_mb_s,3000.0,True
+3,read_speed_mb_s,226.0,True
+4,width_mm,433.0,True
+5,bus_type,PCIe 3.0 x16,False
+5,model_number,90YV0CV2-M0NA00,False
+6,bus_type,USB 3.0,False
+8,model_number,GV-N166SOC-6GD,False
+9,bus_type,PCIe 3.0 x16,False
+9,model_number,V375-040R,False
+9,height_mm,46.0,True
+9,width_mm,127.0,True
+11,bus_type,PCIe 3.0,False
+12,bus_type,PCIe 4.0,False
+12,model_number,90YV0DQ0-M0NA00,False
+13,model_number,AGAMMIXS11P-1TT-C,False
+14,model_number,GV-R56XTGAMING OC-6GD,False
+15,bus_type,PCIe 3.0 x16,False
+15,model_number,100-506008,False
+16,model_number,NE6166SS18J9-161F,False
+18,read_speed_mb_s,550.0,True
+18,write_speed_mb_s,520.0,True
+18,height_mm,7.0,True
+19,bus_type,PCIe 3.0 x16,False
+19,model_number,ROG-STRIX-RTX2080TI-O11G-GAMING,False
+20,model,220S,False
+20,read_speed_mb_s,550.0,True
+25,bus_type,PCIe 3.0,False
+26,bus_type,SATA III,False
+28,height_mm,42.0,True
+28,width_mm,130.9,True
+30,bus_type,USB 3.0,False
+30,model_number,WDBMCG5000ABT-WESN,False
+33,read_speed_mb_s,130.0,True
+33,height_mm,20.8,True
+33,width_mm,87.9,True
+41,read_speed_mb_s,540.0,True
+41,height_mm,10.5,True
+41,width_mm,57.0,True
+43,model_number,GP-ASM2NE6100TTTD,False
+43,height_mm,11.4,True
+43,width_mm,80.5,True
+52,bus_type,SATA III,False
+52,model,SU800,False
+52,read_speed_mb_s,560.0,True
+52,write_speed_mb_s,520.0,True
+52,height_mm,3.5,True
+52,width_mm,22.0,True
+54,bus_type,PCIe 3.0 x16,False
+54,model_number,N20702-08D6-1710VA23,False
+54,width_mm,113.0,True
+56,read_speed_mb_s,560.0,True
+56,write_speed_mb_s,510.0,True
+59,width_mm,690.0,True
+60,model,Ironwolf 110,False
+60,read_speed_mb_s,560.0,True
+67,read_speed_mb_s,550.0,True
+77,read_speed_mb_s,555.0,True
+77,write_speed_mb_s,520.0,True
+77,height_mm,7.0,True
+82,model_number,CT2000P1SSD8,False
+82,read_speed_mb_s,2000.0,True
+82,write_speed_mb_s,1700.0,True
+86,height_mm,67.0,True
+86,width_mm,15.0,True
+90,bus_type,PCIe 3.0,False
+90,height_mm,41.0,True
+90,width_mm,119.3,True
+95,model_number,801882-B21,False
+95,model,ISS,False
+131,model_number,WDS120G2G0A,False
+131,write_speed_mb_s,430.0,True
+131,height_mm,7.0,True
+135,read_speed_mb_s,560.0,True
+135,write_speed_mb_s,540.0,True
+137,model,L200,False
+145,read_speed_mb_s,2400.0,True
+145,write_speed_mb_s,1950.0,True
+145,height_mm,2.4,True
+145,width_mm,22.0,True
+152,model_number,MZ-76P1T0B/EU,False
+152,read_speed_mb_s,560.0,True
+152,write_speed_mb_s,530.0,True
+158,model,HDD SRV SAS 12G,False
+178,model,Ace - A80,False
+188,model,Barracuda 7200.12,False
+224,model,Cheetah,False
+225,model,GIGABYTE SSD 1TB,False
+225,height_mm,7.0,True
+17,model_number,843266-B21,False
+21,model_number,PBU240GS25SSDR,False
+23,model_number,SDCZ50-128G-B35,False
+27,model_number,WDBWLG0040HBK-EESN,False
+31,model_number,DT100G3/256GB,False

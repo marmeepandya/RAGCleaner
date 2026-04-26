@@ -1,12 +1,12 @@
 #!/bin/bash
-#SBATCH --job-name=experiment10_reranker_confusingKB
+#SBATCH --job-name=exp_runner_end
 #SBATCH --partition=gpu_a100_short
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --gres=gpu:1
+#SBATCH --gres=gpu:2
 #SBATCH --time=00:30:00
-#SBATCH --output=/home/ma/ma_ma/ma_mpandya/RAG_Data_Cleaning/experiment10_reranker_confusingKB_%j.out
-#SBATCH --error=/home/ma/ma_ma/ma_mpandya/RAG_Data_Cleaning/experiment10_reranker_confusingKB_%j.err
+#SBATCH --output=/home/ma/ma_ma/ma_mpandya/RAG_Data_Cleaning/exp_runner_end_%j.out
+#SBATCH --error=/home/ma/ma_ma/ma_mpandya/RAG_Data_Cleaning/exp_runner_end_%j.err
 #SBATCH --mail-type=END,FAIL
 #SBATCH --mail-user=marmeep23@gmail.com
 
@@ -21,6 +21,6 @@ cd /home/ma/ma_ma/ma_mpandya/RAG_Data_Cleaning
 
 
 # jupyter nbconvert --to script experiment10_reranker_confusingKB.ipynb
-python experiment10_reranker_confusingKB.py
+python exp_runner_end.py
 
 pkill ollama

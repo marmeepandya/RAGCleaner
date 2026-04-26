@@ -1,0 +1,97 @@
+df1_idx,config,attribute,is_numeric,ground_truth,predicted,unknown,correct_standard,ce_judgment
+0,LLM-only,model_number,False,GV-N3080GAMING OC-10GD,UNKNOWN,True,False,wrong
+2,LLM-only,model_number,False,CSSD-F960GBMP510,CSSD-F960GBMP510,False,True,correct
+2,LLM-only,read_speed_mb_s,True,3480.0,UNKNOWN,True,False,wrong
+2,LLM-only,write_speed_mb_s,True,3000.0,3480,False,False,acceptable
+3,LLM-only,read_speed_mb_s,True,226.0,UNKNOWN,True,False,wrong
+4,LLM-only,width_mm,True,433.0,UNKNOWN,True,False,wrong
+5,LLM-only,bus_type,False,PCIe 3.0 x16,UNKNOWN,True,False,wrong
+5,LLM-only,model_number,False,90YV0CV2-M0NA00,GV-N165D5-4G,False,False,wrong
+6,LLM-only,bus_type,False,USB 3.0,USB 3.0,False,True,correct
+8,LLM-only,model_number,False,GV-N166SOC-6GD,GV-N166SO6GC-6G,False,False,correct
+9,LLM-only,bus_type,False,PCIe 3.0 x16,PCIe,False,True,wrong
+9,LLM-only,model_number,False,V375-040R,UNKNOWN,True,False,wrong
+9,LLM-only,height_mm,True,46.0,UNKNOWN,True,False,wrong
+9,LLM-only,width_mm,True,127.0,127,False,True,correct
+11,LLM-only,bus_type,False,PCIe 3.0,PCIe,False,True,acceptable
+12,LLM-only,bus_type,False,PCIe 4.0,NVIDIA CUDA (no bus_type specified),False,False,wrong
+12,LLM-only,model_number,False,90YV0DQ0-M0NA00,RTX2060-SUPER-EVO-OC,False,False,wrong
+13,LLM-only,model_number,False,AGAMMIXS11P-1TT-C,"ADATA SSD 1TB XPG GAMMIX S11 Pro, PCIe Gen3x4 M.2 2280 (R:3500/W:3000 MB/s)",False,False,wrong
+14,LLM-only,model_number,False,GV-R56XTGAMING OC-6GD,GV-N56XTAOC-6GD,False,False,correct
+15,LLM-only,bus_type,False,PCIe 3.0 x16,PCIe,False,True,wrong
+15,LLM-only,model_number,False,100-506008,UNKNOWN,True,False,wrong
+16,LLM-only,model_number,False,NE6166SS18J9-161F,UNKNOWN,True,False,wrong
+18,LLM-only,read_speed_mb_s,True,550.0,550,False,True,correct
+18,LLM-only,write_speed_mb_s,True,520.0,520,False,True,correct
+18,LLM-only,height_mm,True,7.0,UNKNOWN,True,False,wrong
+19,LLM-only,bus_type,False,PCIe 3.0 x16,"HDMI, DisplayPort",False,False,wrong
+19,LLM-only,model_number,False,ROG-STRIX-RTX2080TI-O11G-GAMING,RTX-2080-Ti,False,False,wrong
+20,LLM-only,model,False,220S,Ssd 2.5in,False,False,wrong
+20,LLM-only,read_speed_mb_s,True,550.0,UNKNOWN,True,False,wrong
+25,LLM-only,bus_type,False,PCIe 3.0,PCIe,False,True,acceptable
+26,LLM-only,bus_type,False,SATA III,M.2,False,False,wrong
+28,LLM-only,height_mm,True,42.0,UNKNOWN,True,False,wrong
+28,LLM-only,width_mm,True,130.9,UNKNOWN,True,False,wrong
+30,LLM-only,bus_type,False,USB 3.0,USB 3.0,False,True,correct
+30,LLM-only,model_number,False,WDBMCG5000ABT-WESN,UNKNOWN,True,False,wrong
+33,LLM-only,read_speed_mb_s,True,130.0,UNKNOWN,True,False,wrong
+33,LLM-only,height_mm,True,20.8,UNKNOWN,True,False,wrong
+33,LLM-only,width_mm,True,87.9,UNKNOWN,True,False,wrong
+41,LLM-only,read_speed_mb_s,True,540.0,UNKNOWN,True,False,wrong
+41,LLM-only,height_mm,True,10.5,UNKNOWN,True,False,wrong
+41,LLM-only,width_mm,True,57.0,UNKNOWN,True,False,wrong
+43,LLM-only,model_number,False,GP-ASM2NE6100TTTD,AORUS-1TB-M.2-Pcie-4.0-x4-NVMe-SSD,False,False,wrong
+43,LLM-only,height_mm,True,11.4,UNKNOWN,True,False,wrong
+43,LLM-only,width_mm,True,80.5,UNKNOWN,True,False,wrong
+52,LLM-only,bus_type,False,SATA III,M.2,False,False,wrong
+52,LLM-only,model,False,SU800,ASU800NS38,False,True,wrong
+52,LLM-only,read_speed_mb_s,True,560.0,5600,False,False,wrong
+52,LLM-only,write_speed_mb_s,True,520.0,520,False,True,correct
+52,LLM-only,height_mm,True,3.5,UNKNOWN,True,False,wrong
+52,LLM-only,width_mm,True,22.0,UNKNOWN,True,False,wrong
+54,LLM-only,bus_type,False,PCIe 3.0 x16,UNKNOWN,True,False,wrong
+54,LLM-only,model_number,False,N20702-08D6-1710VA23,UNKNOWN,True,False,wrong
+54,LLM-only,width_mm,True,113.0,UNKNOWN,True,False,wrong
+56,LLM-only,read_speed_mb_s,True,560.0,UNKNOWN,True,False,wrong
+56,LLM-only,write_speed_mb_s,True,510.0,UNKNOWN,True,False,wrong
+59,LLM-only,width_mm,True,690.0,UNKNOWN,True,False,wrong
+60,LLM-only,model,False,Ironwolf 110,SG SSD,False,False,wrong
+60,LLM-only,read_speed_mb_s,True,560.0,UNKNOWN,True,False,wrong
+67,LLM-only,read_speed_mb_s,True,550.0,550,False,True,correct
+77,LLM-only,read_speed_mb_s,True,555.0,520,False,True,correct
+77,LLM-only,write_speed_mb_s,True,520.0,520,False,True,correct
+77,LLM-only,height_mm,True,7.0,12.5,False,False,wrong
+82,LLM-only,model_number,False,CT2000P1SSD8,C40M2B2000G,False,False,wrong
+82,LLM-only,read_speed_mb_s,True,2000.0,UNKNOWN,True,False,wrong
+82,LLM-only,write_speed_mb_s,True,1700.0,3000,False,False,wrong
+86,LLM-only,height_mm,True,67.0,UNKNOWN,True,False,wrong
+86,LLM-only,width_mm,True,15.0,UNKNOWN,True,False,wrong
+90,LLM-only,bus_type,False,PCIe 3.0,PCIe 3.0 x16,False,True,correct
+90,LLM-only,height_mm,True,41.0,UNKNOWN,True,False,wrong
+90,LLM-only,width_mm,True,119.3,UNKNOWN,True,False,wrong
+95,LLM-only,model_number,False,801882-B21,HPE 1TB 6G SATA 7.2K rpm LFF (3.5in) Non-hot Plug Standard 1yr Warranty Hard Drive,False,False,wrong
+95,LLM-only,model,False,ISS,HPE,False,False,wrong
+131,LLM-only,model_number,False,WDS120G2G0A,WD Green 120 GB Serial ATA III 2.5 inch,False,False,wrong
+131,LLM-only,write_speed_mb_s,True,430.0,520,False,False,acceptable
+131,LLM-only,height_mm,True,7.0,UNKNOWN,True,False,wrong
+135,LLM-only,read_speed_mb_s,True,560.0,UNKNOWN,True,False,wrong
+135,LLM-only,write_speed_mb_s,True,540.0,UNKNOWN,True,False,wrong
+137,LLM-only,model,False,L200,Toshiba,False,False,wrong
+145,LLM-only,read_speed_mb_s,True,2400.0,4000,False,False,wrong
+145,LLM-only,write_speed_mb_s,True,1950.0,560,False,False,wrong
+145,LLM-only,height_mm,True,2.4,UNKNOWN,True,False,wrong
+145,LLM-only,width_mm,True,22.0,UNKNOWN,True,False,wrong
+152,LLM-only,model_number,False,MZ-76P1T0B/EU,860 PRO 1TB SSD,False,False,wrong
+152,LLM-only,read_speed_mb_s,True,560.0,UNKNOWN,True,False,wrong
+152,LLM-only,write_speed_mb_s,True,530.0,520,False,True,correct
+158,LLM-only,model,False,HDD SRV SAS 12G,Fujitsu,False,False,wrong
+178,LLM-only,model,False,Ace - A80,Silicon Power,False,False,wrong
+188,LLM-only,model,False,Barracuda 7200.12,Seagate Force Series MP510,False,False,wrong
+224,LLM-only,model,False,Cheetah,EMC,False,False,wrong
+225,LLM-only,model,False,GIGABYTE SSD 1TB,GP-GSTFS31100TNTD,False,False,wrong
+225,LLM-only,height_mm,True,7.0,UNKNOWN,True,False,wrong
+17,LLM-only,model_number,False,843266-B21,HPE 1TB 6G SATA 7.2K 3.5IN NHP ETY HDD,False,False,wrong
+21,LLM-only,model_number,False,PBU240GS25SSDR,PBT240GS25SSDR,False,False,correct
+23,LLM-only,model_number,False,SDCZ50-128G-B35,SDSSD-CFB-128G-G46,False,False,acceptable
+27,LLM-only,model_number,False,WDBWLG0040HBK-EESN,WD40E032S,False,False,wrong
+31,LLM-only,model_number,False,DT100G3/256GB,DTG3/256GB,False,False,correct

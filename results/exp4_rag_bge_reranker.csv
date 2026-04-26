@@ -1,0 +1,97 @@
+df1_idx,config,attribute,is_numeric,ground_truth,predicted,unknown,correct_standard,ce_judgment
+0,RAG-BGE-Reranker,model_number,False,GV-N3080GAMING OC-10GD,GV-N3080EAGLE-OC-10GD,False,False,correct
+2,RAG-BGE-Reranker,model_number,False,CSSD-F960GBMP510,CSSD-F960GBMP510,False,True,correct
+2,RAG-BGE-Reranker,read_speed_mb_s,True,3480.0,3480.0,False,True,correct
+2,RAG-BGE-Reranker,write_speed_mb_s,True,3000.0,3000.0,False,True,correct
+3,RAG-BGE-Reranker,read_speed_mb_s,True,226.0,226,False,True,correct
+4,RAG-BGE-Reranker,width_mm,True,433.0,433,False,True,correct
+5,RAG-BGE-Reranker,bus_type,False,PCIe 3.0 x16,PCIe 3.0 x16,False,True,correct
+5,RAG-BGE-Reranker,model_number,False,90YV0CV2-M0NA00,90YV0CV2-M0NA00,False,True,correct
+6,RAG-BGE-Reranker,bus_type,False,USB 3.0,USB 3.0,False,True,correct
+8,RAG-BGE-Reranker,model_number,False,GV-N166SOC-6GD,GV-N166SOC-6GD,False,True,correct
+9,RAG-BGE-Reranker,bus_type,False,PCIe 3.0 x16,PCIe 3.0 x16,False,True,correct
+9,RAG-BGE-Reranker,model_number,False,V375-040R,GV-N166TOC-6GD,False,False,wrong
+9,RAG-BGE-Reranker,height_mm,True,46.0,46,False,True,correct
+9,RAG-BGE-Reranker,width_mm,True,127.0,127,False,True,correct
+11,RAG-BGE-Reranker,bus_type,False,PCIe 3.0,PCIe 3.0,False,True,correct
+12,RAG-BGE-Reranker,bus_type,False,PCIe 4.0,PCIe,False,True,acceptable
+12,RAG-BGE-Reranker,model_number,False,90YV0DQ0-M0NA00,ROG-STRIX-RTX2060S-EVO-A8G,False,False,wrong
+13,RAG-BGE-Reranker,model_number,False,AGAMMIXS11P-1TT-C,AGAMMIXS11P-1TT-C,False,True,correct
+14,RAG-BGE-Reranker,model_number,False,GV-R56XTGAMING OC-6GD,GV-R56XTGAMING OC-6GD,False,True,correct
+15,RAG-BGE-Reranker,bus_type,False,PCIe 3.0 x16,PCIe 3.0 x8,False,False,correct
+15,RAG-BGE-Reranker,model_number,False,100-506008,100-506008,False,True,correct
+16,RAG-BGE-Reranker,model_number,False,NE6166SS18J9-161F,NE51660018J9-165F,False,False,correct
+18,RAG-BGE-Reranker,read_speed_mb_s,True,550.0,550,False,True,correct
+18,RAG-BGE-Reranker,write_speed_mb_s,True,520.0,520,False,True,correct
+18,RAG-BGE-Reranker,height_mm,True,7.0,6.8,False,True,correct
+19,RAG-BGE-Reranker,bus_type,False,PCIe 3.0 x16,PCIe,False,True,wrong
+19,RAG-BGE-Reranker,model_number,False,ROG-STRIX-RTX2080TI-O11G-GAMING,GeForce RTX 2080 Ti ROG Strix A11G,False,False,correct
+20,RAG-BGE-Reranker,model,False,220S,220S,False,True,correct
+20,RAG-BGE-Reranker,read_speed_mb_s,True,550.0,UNKNOWN,True,False,wrong
+25,RAG-BGE-Reranker,bus_type,False,PCIe 3.0,PCIe,False,True,acceptable
+26,RAG-BGE-Reranker,bus_type,False,SATA III,SATA III,False,True,correct
+28,RAG-BGE-Reranker,height_mm,True,42.0,42,False,True,correct
+28,RAG-BGE-Reranker,width_mm,True,130.9,130.9,False,True,correct
+30,RAG-BGE-Reranker,bus_type,False,USB 3.0,USB 3.0,False,True,correct
+30,RAG-BGE-Reranker,model_number,False,WDBMCG5000ABT-WESN,WDBMCG5000ABT-WESN,False,True,correct
+33,RAG-BGE-Reranker,read_speed_mb_s,True,130.0,130,False,True,correct
+33,RAG-BGE-Reranker,height_mm,True,20.8,20.8,False,True,correct
+33,RAG-BGE-Reranker,width_mm,True,87.9,87.9,False,True,correct
+41,RAG-BGE-Reranker,read_speed_mb_s,True,540.0,1050,False,False,wrong
+41,RAG-BGE-Reranker,height_mm,True,10.5,1,False,False,wrong
+41,RAG-BGE-Reranker,width_mm,True,57.0,75,False,False,wrong
+43,RAG-BGE-Reranker,model_number,False,GP-ASM2NE6100TTTD,UNKNOWN,True,False,wrong
+43,RAG-BGE-Reranker,height_mm,True,11.4,11.4,False,True,correct
+43,RAG-BGE-Reranker,width_mm,True,80.5,23.5,False,False,wrong
+52,RAG-BGE-Reranker,bus_type,False,SATA III,SATA III,False,True,correct
+52,RAG-BGE-Reranker,model,False,SU800,ASU800NS38-256GT-C,False,True,wrong
+52,RAG-BGE-Reranker,read_speed_mb_s,True,560.0,560.0,False,True,correct
+52,RAG-BGE-Reranker,write_speed_mb_s,True,520.0,520.0,False,True,correct
+52,RAG-BGE-Reranker,height_mm,True,3.5,3.5,False,True,correct
+52,RAG-BGE-Reranker,width_mm,True,22.0,22,False,True,correct
+54,RAG-BGE-Reranker,bus_type,False,PCIe 3.0 x16,PCIe 3.0 x16,False,True,correct
+54,RAG-BGE-Reranker,model_number,False,N20702-08D6-1710VA23,N20702-08D6-1710VA23,False,True,correct
+54,RAG-BGE-Reranker,width_mm,True,113.0,113,False,True,correct
+56,RAG-BGE-Reranker,read_speed_mb_s,True,560.0,560,False,True,correct
+56,RAG-BGE-Reranker,write_speed_mb_s,True,510.0,510,False,True,correct
+59,RAG-BGE-Reranker,width_mm,True,690.0,710,False,True,correct
+60,RAG-BGE-Reranker,model,False,Ironwolf 110,Ironwolf 110,False,True,correct
+60,RAG-BGE-Reranker,read_speed_mb_s,True,560.0,560,False,True,correct
+67,RAG-BGE-Reranker,read_speed_mb_s,True,550.0,550,False,True,correct
+77,RAG-BGE-Reranker,read_speed_mb_s,True,555.0,UNKNOWN,True,False,wrong
+77,RAG-BGE-Reranker,write_speed_mb_s,True,520.0,520,False,True,correct
+77,RAG-BGE-Reranker,height_mm,True,7.0,15,False,False,wrong
+82,RAG-BGE-Reranker,model_number,False,CT2000P1SSD8,CT2000P1SSD8,False,True,correct
+82,RAG-BGE-Reranker,read_speed_mb_s,True,2000.0,2000.0,False,True,correct
+82,RAG-BGE-Reranker,write_speed_mb_s,True,1700.0,1700.0,False,True,correct
+86,RAG-BGE-Reranker,height_mm,True,67.0,98,False,False,wrong
+86,RAG-BGE-Reranker,width_mm,True,15.0,127,False,False,wrong
+90,RAG-BGE-Reranker,bus_type,False,PCIe 3.0,PCIe 3.0,False,True,correct
+90,RAG-BGE-Reranker,height_mm,True,41.0,41,False,True,correct
+90,RAG-BGE-Reranker,width_mm,True,119.3,119,False,True,correct
+95,RAG-BGE-Reranker,model_number,False,801882-B21,801882-B21,False,True,correct
+95,RAG-BGE-Reranker,model,False,ISS,801882-B21,False,False,wrong
+131,RAG-BGE-Reranker,model_number,False,WDS120G2G0A,WDS120G2G0A,False,True,correct
+131,RAG-BGE-Reranker,write_speed_mb_s,True,430.0,430,False,True,correct
+131,RAG-BGE-Reranker,height_mm,True,7.0,7,False,True,correct
+135,RAG-BGE-Reranker,read_speed_mb_s,True,560.0,560,False,True,correct
+135,RAG-BGE-Reranker,write_speed_mb_s,True,540.0,540,False,True,correct
+137,RAG-BGE-Reranker,model,False,L200,Toshiba,False,False,wrong
+145,RAG-BGE-Reranker,read_speed_mb_s,True,2400.0,2400,False,True,correct
+145,RAG-BGE-Reranker,write_speed_mb_s,True,1950.0,1950,False,True,correct
+145,RAG-BGE-Reranker,height_mm,True,2.4,2.4,False,True,correct
+145,RAG-BGE-Reranker,width_mm,True,22.0,22,False,True,correct
+152,RAG-BGE-Reranker,model_number,False,MZ-76P1T0B/EU,MZ-76P1T0B/EU,False,True,correct
+152,RAG-BGE-Reranker,read_speed_mb_s,True,560.0,560,False,True,correct
+152,RAG-BGE-Reranker,write_speed_mb_s,True,530.0,300,False,False,wrong
+158,RAG-BGE-Reranker,model,False,HDD SRV SAS 12G,HP 300 GB,False,False,wrong
+178,RAG-BGE-Reranker,model,False,Ace - A80,Ace - A80,False,True,correct
+188,RAG-BGE-Reranker,model,False,Barracuda 7200.12,ST500DM002,False,False,wrong
+224,RAG-BGE-Reranker,model,False,Cheetah,Cheetah,False,True,correct
+225,RAG-BGE-Reranker,model,False,GIGABYTE SSD 1TB,Barracuda 120,False,False,wrong
+225,RAG-BGE-Reranker,height_mm,True,7.0,7,False,True,correct
+17,RAG-BGE-Reranker,model_number,False,843266-B21,843266-B21,False,True,correct
+21,RAG-BGE-Reranker,model_number,False,PBU240GS25SSDR,PBU240GS25SSDR,False,True,correct
+23,RAG-BGE-Reranker,model_number,False,SDCZ50-128G-B35,CUDU32,False,False,wrong
+27,RAG-BGE-Reranker,model_number,False,WDBWLG0040HBK-EESN,WDBWLG0040HBK-EESN,False,True,correct
+31,RAG-BGE-Reranker,model_number,False,DT100G3/256GB,DT100G3,False,True,acceptable
