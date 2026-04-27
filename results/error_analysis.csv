@@ -1,0 +1,97 @@
+df1_idx,attribute,ground_truth,llm_prediction,rag_minilm_prediction,rag_minilm_reranker_prediction,rag_bge_reranker_prediction,rag_te_reranker_prediction,n_correct,n_configs
+0,model_number,GV-N3080GAMING OC-10GD,UNKNOWN,correct,correct,correct (CE),correct (CE),4,5
+2,model_number,CSSD-F960GBMP510,correct,correct,correct,correct,correct,5,5
+2,read_speed_mb_s,3480.0,UNKNOWN,correct,correct,correct,correct,4,5
+2,write_speed_mb_s,3000.0,correct (CE),correct,correct,correct,correct,5,5
+3,read_speed_mb_s,226.0,UNKNOWN,wrong value,correct,correct,correct,3,5
+4,width_mm,433.0,UNKNOWN,correct,correct,correct,correct,4,5
+5,bus_type,PCIe 3.0 x16,UNKNOWN,correct,correct,correct,correct,4,5
+5,model_number,90YV0CV2-M0NA00,wrong value,UNKNOWN,correct,correct,correct,3,5
+6,bus_type,USB 3.0,correct,correct,correct,correct,correct (CE),5,5
+8,model_number,GV-N166SOC-6GD,correct (CE),correct,correct,correct,correct,5,5
+9,bus_type,PCIe 3.0 x16,correct,correct,correct,correct,correct,5,5
+9,height_mm,46.0,UNKNOWN,wrong value,correct,correct,correct,3,5
+9,model_number,V375-040R,UNKNOWN,correct (CE),wrong value,wrong value,UNKNOWN,1,5
+9,width_mm,127.0,correct,correct,correct,correct,correct,5,5
+11,bus_type,PCIe 3.0,correct,correct,correct,correct,correct,5,5
+12,bus_type,PCIe 4.0,wrong value,correct (CE),correct,correct,correct,4,5
+12,model_number,90YV0DQ0-M0NA00,wrong value,UNKNOWN,wrong value,wrong value,wrong value,0,5
+13,model_number,AGAMMIXS11P-1TT-C,wrong value,correct,correct,correct,correct,4,5
+14,model_number,GV-R56XTGAMING OC-6GD,correct (CE),correct (CE),correct,correct,correct,5,5
+15,bus_type,PCIe 3.0 x16,correct,correct,correct (CE),correct (CE),correct (CE),5,5
+15,model_number,100-506008,UNKNOWN,UNKNOWN,correct,correct,correct,3,5
+16,model_number,NE6166SS18J9-161F,UNKNOWN,wrong value,UNKNOWN,correct (CE),correct (CE),2,5
+17,model_number,843266-B21,wrong value,correct (CE),correct (CE),correct,correct,4,5
+18,height_mm,7.0,UNKNOWN,wrong value,correct,correct,correct,3,5
+18,read_speed_mb_s,550.0,correct,UNKNOWN,correct,correct,correct,4,5
+18,write_speed_mb_s,520.0,correct,UNKNOWN,correct,correct,correct,4,5
+19,bus_type,PCIe 3.0 x16,wrong value,correct,correct,correct,correct,4,5
+19,model_number,ROG-STRIX-RTX2080TI-O11G-GAMING,wrong value,correct (CE),correct (CE),correct (CE),correct (CE),4,5
+20,model,220S,wrong value,correct,correct,correct,wrong value,3,5
+20,read_speed_mb_s,550.0,UNKNOWN,UNKNOWN,correct,UNKNOWN,correct,2,5
+21,model_number,PBU240GS25SSDR,correct (CE),wrong value,correct,correct,correct,4,5
+23,model_number,SDCZ50-128G-B35,correct (CE),correct (CE),wrong value,wrong value,wrong value,2,5
+25,bus_type,PCIe 3.0,correct,correct,correct,correct,correct,5,5
+26,bus_type,SATA III,wrong value,correct,wrong value,correct,correct,3,5
+27,model_number,WDBWLG0040HBK-EESN,wrong value,correct (CE),correct (CE),correct,correct,4,5
+28,height_mm,42.0,UNKNOWN,UNKNOWN,UNKNOWN,correct,correct,2,5
+28,width_mm,130.9,UNKNOWN,correct,UNKNOWN,correct,correct,3,5
+30,bus_type,USB 3.0,correct,correct,correct,correct,correct,5,5
+30,model_number,WDBMCG5000ABT-WESN,UNKNOWN,wrong value,correct,correct,correct,3,5
+31,model_number,DT100G3/256GB,correct (CE),correct (CE),correct,correct,correct,5,5
+33,height_mm,20.8,UNKNOWN,correct,correct,correct,correct,4,5
+33,read_speed_mb_s,130.0,UNKNOWN,correct,correct,correct,correct,4,5
+33,width_mm,87.9,UNKNOWN,correct,correct,correct,correct,4,5
+41,height_mm,10.5,UNKNOWN,wrong value,correct,wrong value,correct,2,5
+41,read_speed_mb_s,540.0,UNKNOWN,wrong value,correct,wrong value,correct,2,5
+41,width_mm,57.0,UNKNOWN,UNKNOWN,correct,wrong value,correct,2,5
+43,height_mm,11.4,UNKNOWN,wrong value,UNKNOWN,correct,correct,2,5
+43,model_number,GP-ASM2NE6100TTTD,wrong value,wrong value,correct,UNKNOWN,UNKNOWN,1,5
+43,width_mm,80.5,UNKNOWN,wrong value,UNKNOWN,wrong value,wrong value,0,5
+52,bus_type,SATA III,wrong value,wrong value,correct,correct,correct,3,5
+52,height_mm,3.5,UNKNOWN,wrong value,correct,correct,correct,3,5
+52,model,SU800,correct,wrong value,correct,correct,correct,4,5
+52,read_speed_mb_s,560.0,wrong value,wrong value,correct,correct,correct,3,5
+52,width_mm,22.0,UNKNOWN,UNKNOWN,correct,correct,correct,3,5
+52,write_speed_mb_s,520.0,correct,wrong value,correct,correct,correct,4,5
+54,bus_type,PCIe 3.0 x16,UNKNOWN,correct,correct (CE),correct,correct,4,5
+54,model_number,N20702-08D6-1710VA23,UNKNOWN,wrong value,wrong value,correct,correct,2,5
+54,width_mm,113.0,UNKNOWN,wrong value,UNKNOWN,correct,correct,2,5
+56,read_speed_mb_s,560.0,UNKNOWN,correct,correct,correct,correct,4,5
+56,write_speed_mb_s,510.0,UNKNOWN,correct,correct,correct,correct,4,5
+59,width_mm,690.0,UNKNOWN,UNKNOWN,UNKNOWN,correct,wrong value,1,5
+60,model,Ironwolf 110,wrong value,wrong value,correct,correct,wrong value,2,5
+60,read_speed_mb_s,560.0,UNKNOWN,correct,correct,correct,correct,4,5
+67,read_speed_mb_s,550.0,correct,correct,correct,correct,correct,5,5
+77,height_mm,7.0,wrong value,wrong value,correct,wrong value,wrong value,1,5
+77,read_speed_mb_s,555.0,correct,wrong value,wrong value,UNKNOWN,correct,2,5
+77,write_speed_mb_s,520.0,correct,UNKNOWN,correct,correct,wrong value,3,5
+82,model_number,CT2000P1SSD8,wrong value,UNKNOWN,correct,correct,correct,3,5
+82,read_speed_mb_s,2000.0,UNKNOWN,correct,correct,correct,correct,4,5
+82,write_speed_mb_s,1700.0,wrong value,correct,correct,correct,correct,4,5
+86,height_mm,67.0,UNKNOWN,UNKNOWN,wrong value,wrong value,wrong value,0,5
+86,width_mm,15.0,UNKNOWN,UNKNOWN,wrong value,wrong value,wrong value,0,5
+90,bus_type,PCIe 3.0,correct,correct,correct,correct,correct,5,5
+90,height_mm,41.0,UNKNOWN,UNKNOWN,correct,correct,correct,3,5
+90,width_mm,119.3,UNKNOWN,correct,correct,correct,correct,4,5
+95,model,ISS,wrong value,wrong value,wrong value,wrong value,wrong value,0,5
+95,model_number,801882-B21,wrong value,correct,correct,correct,correct,4,5
+131,height_mm,7.0,UNKNOWN,correct,correct,correct,correct,4,5
+131,model_number,WDS120G2G0A,wrong value,correct (CE),correct,correct,correct,4,5
+131,write_speed_mb_s,430.0,correct (CE),UNKNOWN,correct,correct,correct,4,5
+135,read_speed_mb_s,560.0,UNKNOWN,correct,correct,correct,correct,4,5
+135,write_speed_mb_s,540.0,UNKNOWN,correct,correct,correct,correct,4,5
+137,model,L200,wrong value,correct,wrong value,wrong value,wrong value,1,5
+145,height_mm,2.4,UNKNOWN,wrong value,correct,correct,correct,3,5
+145,read_speed_mb_s,2400.0,wrong value,correct (CE),correct,correct,correct,4,5
+145,width_mm,22.0,UNKNOWN,wrong value,correct,correct,correct,3,5
+145,write_speed_mb_s,1950.0,wrong value,UNKNOWN,correct,correct,correct,3,5
+152,model_number,MZ-76P1T0B/EU,wrong value,wrong value,correct,correct,correct,3,5
+152,read_speed_mb_s,560.0,UNKNOWN,correct,correct,correct,correct,4,5
+152,write_speed_mb_s,530.0,correct,correct,correct,wrong value,wrong value,3,5
+158,model,HDD SRV SAS 12G,wrong value,correct,UNKNOWN,wrong value,correct,2,5
+178,model,Ace - A80,wrong value,wrong value,correct,correct,correct,3,5
+188,model,Barracuda 7200.12,wrong value,wrong value,wrong value,wrong value,wrong value,0,5
+224,model,Cheetah,wrong value,wrong value,correct,correct,correct,3,5
+225,height_mm,7.0,UNKNOWN,wrong value,correct,correct,correct,3,5
+225,model,GIGABYTE SSD 1TB,wrong value,correct,wrong value,wrong value,correct (CE),2,5

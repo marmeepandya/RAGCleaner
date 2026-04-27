@@ -1,0 +1,214 @@
+source,target,value
+"Dataset 1
+(812 products)",weight_g,812
+weight_g,"Already filled
+in Dataset 1",26
+weight_g,"weight_g
+(missing)",786
+"weight_g
+(missing)","Retrievable
+from KB ✓",62
+"weight_g
+(missing)","Not retrievable
+from KB ✗",724
+"Dataset 1
+(812 products)",width_mm,812
+width_mm,"Already filled
+in Dataset 1",45
+width_mm,"width_mm
+(missing)",767
+"width_mm
+(missing)","Retrievable
+from KB ✓",84
+"width_mm
+(missing)","Not retrievable
+from KB ✗",683
+"Dataset 1
+(812 products)",length_mm,812
+length_mm,"Already filled
+in Dataset 1",45
+length_mm,"length_mm
+(missing)",767
+"length_mm
+(missing)","Retrievable
+from KB ✓",78
+"length_mm
+(missing)","Not retrievable
+from KB ✗",689
+"Dataset 1
+(812 products)",height_mm,812
+height_mm,"Already filled
+in Dataset 1",46
+height_mm,"height_mm
+(missing)",766
+"height_mm
+(missing)","Retrievable
+from KB ✓",101
+"height_mm
+(missing)","Not retrievable
+from KB ✗",665
+"Dataset 1
+(812 products)",color,812
+color,"Already filled
+in Dataset 1",120
+color,"color
+(missing)",692
+"color
+(missing)","Retrievable
+from KB ✓",64
+"color
+(missing)","Not retrievable
+from KB ✗",628
+"Dataset 1
+(812 products)",write_speed_mb_s,812
+write_speed_mb_s,"Already filled
+in Dataset 1",122
+write_speed_mb_s,"write_speed_mb_s
+(missing)",690
+"write_speed_mb_s
+(missing)","Retrievable
+from KB ✓",87
+"write_speed_mb_s
+(missing)","Not retrievable
+from KB ✗",603
+"Dataset 1
+(812 products)",read_speed_mb_s,812
+read_speed_mb_s,"Already filled
+in Dataset 1",151
+read_speed_mb_s,"read_speed_mb_s
+(missing)",661
+"read_speed_mb_s
+(missing)","Retrievable
+from KB ✓",122
+"read_speed_mb_s
+(missing)","Not retrievable
+from KB ✗",539
+"Dataset 1
+(812 products)",memory_type,812
+memory_type,"Already filled
+in Dataset 1",210
+memory_type,"memory_type
+(missing)",602
+"memory_type
+(missing)","Retrievable
+from KB ✓",43
+"memory_type
+(missing)","Not retrievable
+from KB ✗",559
+"Dataset 1
+(812 products)",vram_gb,812
+vram_gb,"Already filled
+in Dataset 1",229
+vram_gb,"vram_gb
+(missing)",583
+"vram_gb
+(missing)","Retrievable
+from KB ✓",2
+"vram_gb
+(missing)","Not retrievable
+from KB ✗",581
+"Dataset 1
+(812 products)",chipset_name,812
+chipset_name,"Already filled
+in Dataset 1",231
+chipset_name,"chipset_name
+(missing)",581
+"chipset_name
+(missing)","Not retrievable
+from KB ✗",581
+"Dataset 1
+(812 products)",model_number,812
+model_number,"Already filled
+in Dataset 1",334
+model_number,"model_number
+(missing)",478
+"model_number
+(missing)","Retrievable
+from KB ✓",302
+"model_number
+(missing)","Not retrievable
+from KB ✗",176
+"Dataset 1
+(812 products)",storage_connection_type,812
+storage_connection_type,"Already filled
+in Dataset 1",413
+storage_connection_type,"storage_connection_type
+(missing)",399
+"storage_connection_type
+(missing)","Retrievable
+from KB ✓",46
+"storage_connection_type
+(missing)","Not retrievable
+from KB ✗",353
+"Dataset 1
+(812 products)",form_factor,812
+form_factor,"Already filled
+in Dataset 1",417
+form_factor,"form_factor
+(missing)",395
+"form_factor
+(missing)","Retrievable
+from KB ✓",61
+"form_factor
+(missing)","Not retrievable
+from KB ✗",334
+"Dataset 1
+(812 products)",interface_type,812
+interface_type,"Already filled
+in Dataset 1",436
+interface_type,"interface_type
+(missing)",376
+"interface_type
+(missing)","Retrievable
+from KB ✓",64
+"interface_type
+(missing)","Not retrievable
+from KB ✗",312
+"Dataset 1
+(812 products)",storage_gb,812
+storage_gb,"Already filled
+in Dataset 1",571
+storage_gb,"storage_gb
+(missing)",241
+"storage_gb
+(missing)","Retrievable
+from KB ✓",6
+"storage_gb
+(missing)","Not retrievable
+from KB ✗",235
+"Dataset 1
+(812 products)",bus_type,812
+bus_type,"Already filled
+in Dataset 1",628
+bus_type,"bus_type
+(missing)",184
+"bus_type
+(missing)","Retrievable
+from KB ✓",154
+"bus_type
+(missing)","Not retrievable
+from KB ✗",30
+"Dataset 1
+(812 products)",model,812
+model,"Already filled
+in Dataset 1",748
+model,"model
+(missing)",64
+"model
+(missing)","Retrievable
+from KB ✓",47
+"model
+(missing)","Not retrievable
+from KB ✗",17
+"Dataset 1
+(812 products)",brand,812
+brand,"Already filled
+in Dataset 1",785
+brand,"brand
+(missing)",27
+"brand
+(missing)","Retrievable
+from KB ✓",24
+"brand
+(missing)","Not retrievable
+from KB ✗",3
