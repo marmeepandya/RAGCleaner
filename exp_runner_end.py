@@ -26,7 +26,7 @@ TEXT_ATTRIBUTES    = {'bus_type','model_number','model'}
 
 HF_CACHE       = '/home/ma/ma_ma/ma_mpandya/.cache/huggingface/hub'
 EMBEDDINGS_DIR = 'embeddings'
-RESULTS_DIR    = 'results'
+RESULTS_DIR    = 'results_ohne_UNKNOWN'
 os.makedirs(RESULTS_DIR, exist_ok=True)
 
 # Retrieval parameters
@@ -178,184 +178,6 @@ def retrieval_metrics(kb_embs, query_embs, k, label=''):
 
 print('Retrieval metric functions ready.')
 
-FEW_SHOT_PROMPTS_RAG = {
-
-'bus_type': """\
-You are a product data expert filling missing values in a product database.
-You MUST use ONLY the reference products below. Do NOT use your own knowledge.
-If no reference product clearly matches, respond with VALUE:UNKNOWN.
-Step 1: Find the reference product that best matches the query product.
-Step 2: Copy the bus_type value from that reference product exactly.
-
-Example 1:
-Query: WD Blue 6TB Desktop Hard Disk Drive - 5400 RPM SATA 6Gb/s 256MB Cache - WD60EZAZ
-Reference products:
-  - title: WD Blue 6TB Hard Drive WD60EZAZ | brand: Western Digital | bus_type: SATA III | model_number: WD60EZAZ
-Best match: WD Blue 6TB WD60EZAZ → bus_type: SATA III
-VALUE:SATA III
-
-Example 2:
-Query: CORSAIR Force Series MP510 960GB M.2 SSD NVMe PCIe Gen3
-Reference products:
-  - title: Corsair Force MP510 960GB NVMe SSD | brand: Corsair | bus_type: PCIe 3.0 x4 | model_number: CSSD-F960GBMP510
-Best match: Force MP510 960GB → bus_type: PCIe 3.0 x4
-VALUE:PCIe 3.0 x4
-
-Now fill the missing value:
-Query: {text}
-Reference products:
-{candidates}
-Best match: [identify matching product] → bus_type: [value from reference]
-VALUE:""",
-
-'model_number': """\
-You are a product data expert filling missing values in a product database.
-You MUST use ONLY the reference products below. Do NOT generate or guess a model number.
-Copy the EXACT model_number from the best matching reference product character by character.
-If no reference product clearly matches, respond with VALUE:UNKNOWN.
-
-CRITICAL: model_numbers look like GV-N3080GAMING OC-10GD or CSSD-F960GBMP510.
-Pay attention to every character — GV-N166SOC-6GD and GV-N1660OC-6GD are DIFFERENT products.
-If you are uncertain between two similar SKUs, respond with VALUE:UNKNOWN.
-
-Example 1:
-Query: WD Blue 6TB Desktop Hard Disk Drive - SATA 6Gb/s 256MB Cache 3.5 Inch
-Reference products:
-  - title: WD Blue 6TB Hard Drive WD60EZAZ | brand: Western Digital | model: WD Blue | model_number: WD60EZAZ
-Best match: WD Blue 6TB Hard Drive → model_number: WD60EZAZ
-VALUE:WD60EZAZ
-
-Example 2:
-Query: CORSAIR Force Series MP510 960GB M.2 SSD PCIe Gen3 x4 NVMe
-Reference products:
-  - title: Corsair Force MP510 960GB NVMe | brand: Corsair | model: Force Series MP510 | model_number: CSSD-F960GBMP510
-Best match: Force MP510 960GB → model_number: CSSD-F960GBMP510
-VALUE:CSSD-F960GBMP510
-
-Example 3 (near-identical SKUs):
-Query: Gigabyte GeForce GTX 1660 SUPER OC 6G graphics card
-Reference products:
-  - title: Gigabyte GTX 1660 Ti OC 6G | model_number: GV-N166TOC-6GD | brand: Gigabyte
-  - title: Gigabyte GTX 1660 SUPER OC 6G | model_number: GV-N166SOC-6GD | brand: Gigabyte
-Best match: GTX 1660 SUPER OC (not Ti) → model_number: GV-N166SOC-6GD
-VALUE:GV-N166SOC-6GD
-
-Now fill the missing value:
-Query: {text}
-Reference products:
-{candidates}
-Best match: [identify matching product] → model_number: [exact value from reference]
-VALUE:""",
-
-'model': """\
-You are a product data expert filling missing values in a product database.
-You MUST use ONLY the reference products below. Do NOT use your own knowledge.
-Copy the exact model name from the best matching reference product.
-If no reference product clearly matches, respond with VALUE:UNKNOWN.
-
-Example 1:
-Query: WD Blue 6TB Desktop Hard Disk Drive - 5400 RPM SATA 6Gb/s 256MB Cache
-Reference products:
-  - title: WD Blue 6TB Hard Drive WD60EZAZ | brand: Western Digital | model: WD Blue | model_number: WD60EZAZ
-Best match: WD Blue 6TB → model: WD Blue
-VALUE:WD Blue
-
-Example 2:
-Query: CORSAIR Force Series MP510 960GB M.2 SSD NVMe
-Reference products:
-  - title: Corsair Force MP510 960GB NVMe SSD | brand: Corsair | model: Force Series MP510 | model_number: CSSD-F960GBMP510
-Best match: Force MP510 → model: Force Series MP510
-VALUE:Force Series MP510
-
-Now fill the missing value:
-Query: {text}
-Reference products:
-{candidates}
-Best match: [identify matching product] → model: [value from reference]
-VALUE:""",
-
-'read_speed_mb_s': """\
-You are a product data expert filling missing values in a product database.
-You MUST use ONLY the reference products below. Copy the exact read_speed_mb_s number.
-Return a number only. Do NOT return the write speed.
-If no reference product clearly matches, respond with VALUE:UNKNOWN.
-
-Example 1:
-Query: CORSAIR Force Series MP510 960GB M.2 SSD NVMe PCIe Gen3
-Reference products:
-  - title: Corsair Force MP510 960GB NVMe | model_number: CSSD-F960GBMP510 | read_speed_mb_s: 3480 | write_speed_mb_s: 3000
-Best match: Force MP510 960GB → read_speed_mb_s: 3480
-VALUE:3480
-
-Now fill the missing value:
-Query: {text}
-Reference products:
-{candidates}
-Best match: [identify matching product] → read_speed_mb_s: [value from reference]
-VALUE:""",
-
-'write_speed_mb_s': """\
-You are a product data expert filling missing values in a product database.
-You MUST use ONLY the reference products below. Copy the exact write_speed_mb_s number.
-Return a number only. Do NOT return the read speed.
-If no reference product clearly matches, respond with VALUE:UNKNOWN.
-
-Example 1:
-Query: CORSAIR Force Series MP510 960GB M.2 SSD NVMe PCIe Gen3
-Reference products:
-  - title: Corsair Force MP510 960GB NVMe | model_number: CSSD-F960GBMP510 | read_speed_mb_s: 3480 | write_speed_mb_s: 3000
-Best match: Force MP510 960GB → write_speed_mb_s: 3000
-VALUE:3000
-
-Now fill the missing value:
-Query: {text}
-Reference products:
-{candidates}
-Best match: [identify matching product] → write_speed_mb_s: [value from reference]
-VALUE:""",
-
-'height_mm': """\
-You are a product data expert filling missing values in a product database.
-You MUST use ONLY the reference products below. Copy the exact height_mm number.
-Return a number only. Do NOT confuse height with width or length.
-If no reference product clearly matches, respond with VALUE:UNKNOWN.
-
-Example 1:
-Query: MSI GeForce GTX 1660 Ti GAMING X 6G graphics card
-Reference products:
-  - title: MSI GTX 1660 Ti GAMING X 6G | model_number: V375-040R | height_mm: 46 | width_mm: 127 | length_mm: 247
-Best match: GTX 1660 Ti GAMING X → height_mm: 46
-VALUE:46
-
-Now fill the missing value:
-Query: {text}
-Reference products:
-{candidates}
-Best match: [identify matching product] → height_mm: [value from reference]
-VALUE:""",
-
-'width_mm': """\
-You are a product data expert filling missing values in a product database.
-You MUST use ONLY the reference products below. Copy the exact width_mm number.
-Return a number only. Do NOT confuse width with height or length.
-If no reference product clearly matches, respond with VALUE:UNKNOWN.
-
-Example 1:
-Query: MSI GeForce GTX 1660 Ti GAMING X 6G graphics card
-Reference products:
-  - title: MSI GTX 1660 Ti GAMING X 6G | model_number: V375-040R | height_mm: 46 | width_mm: 127 | length_mm: 247
-Best match: GTX 1660 Ti GAMING X → width_mm: 127
-VALUE:127
-
-Now fill the missing value:
-Query: {text}
-Reference products:
-{candidates}
-Best match: [identify matching product] → width_mm: [value from reference]
-VALUE:"""
-}
-
-print(f'RAG prompts ready for: {list(FEW_SHOT_PROMPTS_RAG.keys())}')
 
 def format_candidates(candidates):
     """Format KB rows for the LLM prompt — all meaningful fields."""
@@ -438,7 +260,7 @@ predict_model = ChatOllama(
 print(f'Ollama: {repr(predict_model.invoke("Say OK").content[:20])}')
 
 all_files = {
-    'Exp1: LLM-only':           'exp1_llm_only.csv',
+    'Exp1: LLM-only':           f'{RESULTS_DIR}/exp1_llm_only.csv',
     'Exp2: RAG-MiniLM':         f'{RESULTS_DIR}/exp2_rag_minilm.csv',
     'Exp3: MiniLM+Reranker':    f'{RESULTS_DIR}/exp3_rag_minilm_reranker.csv',
     'Exp4: BGE+Reranker':       f'{RESULTS_DIR}/exp4_rag_bge_reranker.csv',
@@ -486,7 +308,7 @@ for name, kb_e, q_e in models:
 
 master = None
 col_map = {
-    'exp1_llm_only.csv':                        'exp1_llm_only',
+    f'{RESULTS_DIR}/exp1_llm_only.csv':                        'exp1_llm_only',
     f'{RESULTS_DIR}/exp2_rag_minilm.csv':        'exp2_rag_minilm',
     f'{RESULTS_DIR}/exp3_rag_minilm_reranker.csv':'exp3_minilm_reranker',
     f'{RESULTS_DIR}/exp4_rag_bge_reranker.csv':  'exp4_bge_reranker',

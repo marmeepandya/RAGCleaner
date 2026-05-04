@@ -587,7 +587,7 @@ if os.path.exists(OAI_KB_PATH):
     print(f'KB: {oai_kb_embs.shape} | Query: {oai_query_embs.shape}')
 else:
     import openai
-    client = openai.OpenAI(api_key="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")
+    client = openai.OpenAI(api_key="Key goes hereeeee")
     def embed_oai(texts, model='text-embedding-3-large', bs=100):
         embs = []
         for i in range(0, len(texts), bs):

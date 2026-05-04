@@ -1,12 +1,12 @@
 #!/bin/bash
-#SBATCH --job-name=exp_runner_miniLM
+#SBATCH --job-name=exp_runner_end
 #SBATCH --partition=gpu_a100_short
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:2
 #SBATCH --time=00:30:00
-#SBATCH --output=/home/ma/ma_ma/ma_mpandya/RAG_Data_Cleaning/exp_runner_miniLM_%j.out
-#SBATCH --error=/home/ma/ma_ma/ma_mpandya/RAG_Data_Cleaning/exp_runner_miniLM_%j.err
+#SBATCH --output=/home/ma/ma_ma/ma_mpandya/RAG_Data_Cleaning/exp_runner_end_%j.out
+#SBATCH --error=/home/ma/ma_ma/ma_mpandya/RAG_Data_Cleaning/exp_runner_end_%j.err
 #SBATCH --mail-type=END,FAIL
 #SBATCH --mail-user=marmeep23@gmail.com
 
@@ -20,7 +20,7 @@ source /home/ma/ma_ma/ma_mpandya/RAG_Data_Cleaning/PyDI/venv/bin/activate
 cd /home/ma/ma_ma/ma_mpandya/RAG_Data_Cleaning
 
 
-# jupyter nbconvert --to script exp_runner_miniLM.ipynb
-python exp_runner_miniLM.py
+# jupyter nbconvert --to script exp_runner_BGE.ipynb
+python exp_runner_end.py
 
 pkill ollama

@@ -188,7 +188,7 @@ FEW_SHOT_PROMPTS_RAG = {
 'bus_type': """\
 You are a product data expert filling missing values in a product database.
 You MUST use ONLY the reference products below. Do NOT use your own knowledge.
-If no reference product clearly matches, respond with VALUE:UNKNOWN.
+You MUST always provide a value. Pick the best matching reference product even if uncertain.
 Step 1: Find the reference product that best matches the query product.
 Step 2: Copy the bus_type value from that reference product exactly.
 
@@ -217,7 +217,8 @@ VALUE:""",
 You are a product data expert filling missing values in a product database.
 You MUST use ONLY the reference products below. Do NOT generate or guess a model number.
 Copy the EXACT model_number from the best matching reference product character by character.
-If no reference product clearly matches, respond with VALUE:UNKNOWN.
+
+
 
 CRITICAL: model_numbers look like GV-N3080GAMING OC-10GD or CSSD-F960GBMP510.
 Pay attention to every character — GV-N166SOC-6GD and GV-N1660OC-6GD are DIFFERENT products.
@@ -256,7 +257,7 @@ VALUE:""",
 You are a product data expert filling missing values in a product database.
 You MUST use ONLY the reference products below. Do NOT use your own knowledge.
 Copy the exact model name from the best matching reference product.
-If no reference product clearly matches, respond with VALUE:UNKNOWN.
+You MUST always provide a value. Pick the best matching reference product even if uncertain.
 
 Example 1:
 Query: WD Blue 6TB Desktop Hard Disk Drive - 5400 RPM SATA 6Gb/s 256MB Cache
@@ -283,7 +284,7 @@ VALUE:""",
 You are a product data expert filling missing values in a product database.
 You MUST use ONLY the reference products below. Copy the exact read_speed_mb_s number.
 Return a number only. Do NOT return the write speed.
-If no reference product clearly matches, respond with VALUE:UNKNOWN.
+You MUST always provide a value. Pick the best matching reference product even if uncertain.
 
 Example 1:
 Query: CORSAIR Force Series MP510 960GB M.2 SSD NVMe PCIe Gen3
@@ -303,7 +304,7 @@ VALUE:""",
 You are a product data expert filling missing values in a product database.
 You MUST use ONLY the reference products below. Copy the exact write_speed_mb_s number.
 Return a number only. Do NOT return the read speed.
-If no reference product clearly matches, respond with VALUE:UNKNOWN.
+You MUST always provide a value. Pick the best matching reference product even if uncertain.
 
 Example 1:
 Query: CORSAIR Force Series MP510 960GB M.2 SSD NVMe PCIe Gen3
@@ -323,7 +324,7 @@ VALUE:""",
 You are a product data expert filling missing values in a product database.
 You MUST use ONLY the reference products below. Copy the exact height_mm number.
 Return a number only. Do NOT confuse height with width or length.
-If no reference product clearly matches, respond with VALUE:UNKNOWN.
+You MUST always provide a value. Pick the best matching reference product even if uncertain.
 
 Example 1:
 Query: MSI GeForce GTX 1660 Ti GAMING X 6G graphics card
@@ -343,7 +344,7 @@ VALUE:""",
 You are a product data expert filling missing values in a product database.
 You MUST use ONLY the reference products below. Copy the exact width_mm number.
 Return a number only. Do NOT confuse width with height or length.
-If no reference product clearly matches, respond with VALUE:UNKNOWN.
+You MUST always provide a value. Pick the best matching reference product even if uncertain.
 
 Example 1:
 Query: MSI GeForce GTX 1660 Ti GAMING X 6G graphics card
