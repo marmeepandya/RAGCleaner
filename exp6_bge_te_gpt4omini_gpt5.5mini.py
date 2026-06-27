@@ -541,7 +541,7 @@ kb_texts_bge = kb.apply(row_to_text_bge_doc, axis=1).tolist()
 print('Helper functions ready.')
 
 
-OPENAI_KEY = os.environ.get('OPENAI_API_KEY', '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')
+OPENAI_KEY = os.environ.get('OPENAI_API_KEY')
 
 RUNS = [
     {
@@ -1209,7 +1209,7 @@ kb_texts_bge = kb.apply(row_to_text_bge_doc, axis=1).tolist()
 print('Helper functions ready.')
 
 
-OPENAI_KEY = os.environ.get('OPENAI_API_KEY', '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')
+OPENAI_KEY = os.environ.get('OPENAI_API_KEY')
 
 RUNS = [
     {

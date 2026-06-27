@@ -70,6 +70,60 @@ The LLM prompt follows a match-then-extract structure: the model first identifie
 
 **Exp 7 - PyDI fusion:** Rather than passing 5 raw KB rows to the LLM, PyDI's `DataFusionEngine` first consolidates them into a single record using attribute-specific strategies (majority vote for text attributes, median for numeric, longest string for model numbers). The LLM then extracts from one clean record instead of noisy duplicates.
 
+### Prompt design
+
+Each attribute has its own few-shot prompt. All seven follow the same match-then-extract structure: identify the best-matching reference product, then copy the target field exactly. Below is the `model_number` prompt — the hardest attribute, with an extra caution for near-identical SKUs:
+
+```
+You are a product data expert filling missing values in a product database.
+You MUST use ONLY the reference products below. Do NOT generate or guess a model number.
+Copy the EXACT model_number from the best matching reference product character by character.
+If no reference product clearly matches, respond with VALUE:UNKNOWN.
+
+CRITICAL: model_numbers look like GV-N3080GAMING OC-10GD or CSSD-F960GBMP510.
+Pay attention to every character — GV-N166SOC-6GD and GV-N1660OC-6GD are DIFFERENT products.
+If you are uncertain between two similar SKUs, respond with VALUE:UNKNOWN.
+
+Example 1:
+Query: WD Blue 6TB Desktop Hard Disk Drive - SATA 6Gb/s 256MB Cache 3.5 Inch
+Reference products:
+  - title: WD Blue 6TB Hard Drive WD60EZAZ | brand: Western Digital | model: WD Blue | model_number: WD60EZAZ
+Best match: WD Blue 6TB Hard Drive → model_number: WD60EZAZ
+VALUE:WD60EZAZ
+
+Example 2:
+Query: CORSAIR Force Series MP510 960GB M.2 SSD PCIe Gen3 x4 NVMe
+Reference products:
+  - title: Corsair Force MP510 960GB NVMe | brand: Corsair | model: Force Series MP510 | model_number: CSSD-F960GBMP510
+Best match: Force MP510 960GB → model_number: CSSD-F960GBMP510
+VALUE:CSSD-F960GBMP510
+
+Example 3 (near-identical SKUs):
+Query: Gigabyte GeForce GTX 1660 SUPER OC 6G graphics card
+Reference products:
+  - title: Gigabyte GTX 1660 Ti OC 6G | model_number: GV-N166TOC-6GD | brand: Gigabyte
+  - title: Gigabyte GTX 1660 SUPER OC 6G | model_number: GV-N166SOC-6GD | brand: Gigabyte
+Best match: GTX 1660 SUPER OC (not Ti) → model_number: GV-N166SOC-6GD
+VALUE:GV-N166SOC-6GD
+
+Now fill the missing value:
+Query: {text}
+Reference products:
+{candidates}
+Best match: [identify matching product] → model_number: [exact value from reference]
+VALUE:
+```
+
+At runtime `{text}` is replaced with the query product's title/description (truncated to 500 chars) and `{candidates}` with the top-5 reranked KB rows formatted as pipe-separated fields, for example:
+
+```
+  - title: MSI GeForce GTX 1660 Ti GAMING X 6G | brand: MSI | model: GTX 1660 Ti GAMING X | model_number: V375-040R | bus_type: PCIe 3.0 x16
+  - title: MSI GeForce GTX 1660 SUPER Gaming X 6G | brand: MSI | model: GTX 1660 SUPER | model_number: V375-242R | bus_type: PCIe 3.0 x16
+  ...
+```
+
+The numeric prompts (`read_speed_mb_s`, `write_speed_mb_s`, `height_mm`, `width_mm`) include an explicit field-confusion warning, e.g. *"Return a number only. Do NOT return the write speed."* The full prompt set for all seven attributes is in [`exp_runner_miniLM_reranker.py`](exp_runner_miniLM_reranker.py).
+
 ---
 
 ## Results
