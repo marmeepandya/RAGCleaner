@@ -1,0 +1,833 @@
+[GIN] 2026/06/16 - 12:09:00 | 200 |    1.808774ms |       127.0.0.1 | HEAD     "/"
+[GIN] 2026/06/16 - 12:09:00 | 200 |    4.750277ms |       127.0.0.1 | GET      "/api/ps"
+NAME    ID    SIZE    PROCESSOR    UNTIL 
+PyTorch: 2.10.0+cu128
+CUDA: True -- NVIDIA A100-PCIE-40GB
+KB: 2,200 rows | Query rows: 50 | Eval tasks: 96
+Loading BGE embeddings...
+  BGE KB: torch.Size([2200, 1024]) | Query: torch.Size([50, 1024])
+CrossEncoder: /home/ma/ma_ma/ma_mpandya/.cache/huggingface/hub/models--cross-encoder--ms-marco-MiniLM-L-6-v2/snapshots/c5ee24cb16019beea0893ab7796b1df96625c6b8
+Eval functions ready.
+Prompts ready.
+Helper functions ready.
+
+=================================================================
+RUN: Exp 6: BGE+RR + gpt-4o-mini (ohne UNKNOWN)
+=================================================================
+gpt-4o-mini OK: 'OK!'
+Results already exist -- loading results_ohne_UNKNOWN/exp6_bge_reranker_gpt4omini.csv
+
+============================================================
+RESULTS -- Exp 6: BGE+RR + gpt-4o-mini (ohne UNKNOWN)
+============================================================
+Standard accuracy:    0.750 (75.0%)
+CE eval (c+a):        0.833 (83.3%)
+UNKNOWN rate:         0.000 (0.0%)
+Total tasks:          96
+
+Per-attribute:
+                   n  std_acc  ce_acc  unknown
+attribute                                     
+bus_type          13    0.769   0.846      0.0
+height_mm         13    0.769   0.923      0.0
+model             10    0.600   0.800      0.0
+model_number      23    0.739   0.826      0.0
+read_speed_mb_s   15    0.867   0.933      0.0
+width_mm          12    0.667   0.667      0.0
+write_speed_mb_s  10    0.800   0.800      0.0
+
++ Saved to results_ohne_UNKNOWN/exp6_bge_reranker_gpt4omini.csv
+
+=================================================================
+RUN: Exp 6: BGE+RR + gpt-4o-mini (mit UNKNOWN)
+=================================================================
+gpt-4o-mini OK: 'OK!'
+Results already exist -- loading results_mit_UNKNOWN/exp6_bge_reranker_gpt4omini.csv
+
+============================================================
+RESULTS -- Exp 6: BGE+RR + gpt-4o-mini (mit UNKNOWN)
+============================================================
+Standard accuracy:    0.646 (64.6%)
+CE eval (c+a):        0.677 (67.7%)
+UNKNOWN rate:         0.271 (27.1%)
+Total tasks:          96
+
+Per-attribute:
+                   n  std_acc  ce_acc  unknown
+attribute                                     
+bus_type          13    0.692   0.769    0.231
+height_mm         13    0.692   0.692    0.308
+model             10    0.700   0.800    0.000
+model_number      23    0.522   0.565    0.348
+read_speed_mb_s   15    0.667   0.667    0.333
+width_mm          12    0.583   0.583    0.333
+write_speed_mb_s  10    0.800   0.800    0.200
+
++ Saved to results_mit_UNKNOWN/exp6_bge_reranker_gpt4omini.csv
+
+=================================================================
+RUN: Exp 6: BGE+RR + gpt-5.4-mini (ohne UNKNOWN)
+=================================================================
+gpt-5.4-mini OK: 'OK'
+Starting fresh.
+  [1/96] Row 0 | model_number           | GT: GV-N3080GAMING OC-10GD    | Pred: N/A                       | ETA: 2.6min
+  [2/96] Row 2 | model_number           | GT: CSSD-F960GBMP510          | Pred: CSSD-F960GBMP510          | ETA: 1.8min
+  [3/96] Row 2 | read_speed_mb_s        | GT: 3480.0                    | Pred: 3480                      | ETA: 1.6min
+  [4/96] Row 2 | write_speed_mb_s       | GT: 3000.0                    | Pred: 3000                      | ETA: 1.5min
+  [5/96] Row 3 | read_speed_mb_s        | GT: 226.0                     | Pred: 226                       | ETA: 1.4min
+  + Checkpoint saved (5/96 done)
+  [6/96] Row 4 | width_mm               | GT: 433.0                     | Pred: 433.0                     | ETA: 1.3min
+  [7/96] Row 5 | bus_type               | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x16              | ETA: 1.3min
+  [8/96] Row 5 | model_number           | GT: 90YV0CV2-M0NA00           | Pred: 90YV0CV2-M0NA00           | ETA: 1.3min
+  [9/96] Row 6 | bus_type               | GT: USB 3.0                   | Pred: USB 3.1                   | ETA: 1.3min
+  [10/96] Row 8 | model_number           | GT: GV-N166SOC-6GD            | Pred: GV-N166SOC-6GD            | ETA: 1.3min
+  + Checkpoint saved (10/96 done)
+  [11/96] Row 9 | bus_type               | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x16              | ETA: 1.2min
+  [12/96] Row 9 | model_number           | GT: V375-040R                 | Pred: GV-N166TGAMING X-6GD      | ETA: 1.3min
+  [13/96] Row 9 | height_mm              | GT: 46.0                      | Pred: 46                        | ETA: 1.2min
+  [14/96] Row 9 | width_mm               | GT: 127.0                     | Pred: 127                       | ETA: 1.2min
+  [15/96] Row 11 | bus_type               | GT: PCIe 3.0                  | Pred: PCIe 3.0                  | ETA: 1.2min
+  + Checkpoint saved (15/96 done)
+  [16/96] Row 12 | bus_type               | GT: PCIe 4.0                  | Pred: PCIe 3.0 x16              | ETA: 1.2min
+  [17/96] Row 12 | model_number           | GT: 90YV0DQ0-M0NA00           | Pred: Aorus GeForce RTX 2060 Super | ETA: 1.2min
+  [18/96] Row 13 | model_number           | GT: AGAMMIXS11P-1TT-C         | Pred: AGAMMIXS11P-1TT-C         | ETA: 1.1min
+  [19/96] Row 14 | model_number           | GT: GV-R56XTGAMING OC-6GD     | Pred: GV-R56XTGAMING OC-6GD     | ETA: 1.1min
+  [20/96] Row 15 | bus_type               | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x8               | ETA: 1.1min
+  + Checkpoint saved (20/96 done)
+  [21/96] Row 15 | model_number           | GT: 100-506008                | Pred: 100-506008                | ETA: 1.4min
+  [22/96] Row 16 | model_number           | GT: NE6166SS18J9-161F         | Pred: NE51660018J9-165F         | ETA: 1.4min
+  [23/96] Row 18 | read_speed_mb_s        | GT: 550.0                     | Pred: 550                       | ETA: 1.4min
+  [24/96] Row 18 | write_speed_mb_s       | GT: 520.0                     | Pred: 520                       | ETA: 1.3min
+  [25/96] Row 18 | height_mm              | GT: 7.0                       | Pred: 6.8                       | ETA: 1.3min
+  + Checkpoint saved (25/96 done)
+  [26/96] Row 19 | bus_type               | GT: PCIe 3.0 x16              | Pred: GDDR6                     | ETA: 1.3min
+  [27/96] Row 19 | model_number           | GT: ROG-STRIX-RTX2080TI-O11G-GAMING | Pred: ROG Strix GeForce RTX™ 2080 Ti OC edition | ETA: 1.3min
+  [28/96] Row 20 | model                  | GT: 220S                      | Pred: 220S                      | ETA: 1.3min
+  [29/96] Row 20 | read_speed_mb_s        | GT: 550.0                     | Pred: 560                       | ETA: 1.3min
+  [30/96] Row 25 | bus_type               | GT: PCIe 3.0                  | Pred: UNKNOWN                   | ETA: 1.3min
+  + Checkpoint saved (30/96 done)
+  [31/96] Row 26 | bus_type               | GT: SATA III                  | Pred: SATA III                  | ETA: 1.2min
+  [32/96] Row 28 | height_mm              | GT: 42.0                      | Pred: 42                        | ETA: 1.2min
+  [33/96] Row 28 | width_mm               | GT: 130.9                     | Pred: 130.9                     | ETA: 1.1min
+  [34/96] Row 30 | bus_type               | GT: USB 3.0                   | Pred: USB 3.0                   | ETA: 1.1min
+  [35/96] Row 30 | model_number           | GT: WDBMCG5000ABT-WESN        | Pred: WDBMCG5000ABT-WESN        | ETA: 1.1min
+  + Checkpoint saved (35/96 done)
+  [36/96] Row 33 | read_speed_mb_s        | GT: 130.0                     | Pred: 130                       | ETA: 1.1min
+  [37/96] Row 33 | height_mm              | GT: 20.8                      | Pred: 20.8                      | ETA: 1.1min
+  [38/96] Row 33 | width_mm               | GT: 87.9                      | Pred: 87.9                      | ETA: 1.1min
+  [39/96] Row 41 | read_speed_mb_s        | GT: 540.0                     | Pred: 540                       | ETA: 1.1min
+  [40/96] Row 41 | height_mm              | GT: 10.5                      | Pred: 10                        | ETA: 1.1min
+  + Checkpoint saved (40/96 done)
+  [41/96] Row 41 | width_mm               | GT: 57.0                      | Pred: 57                        | ETA: 1.0min
+  [42/96] Row 43 | model_number           | GT: GP-ASM2NE6100TTTD         | Pred: GP-ASM2NE6100TTTD         | ETA: 1.0min
+  [43/96] Row 43 | height_mm              | GT: 11.4                      | Pred: 11.4                      | ETA: 1.0min
+  [44/96] Row 43 | width_mm               | GT: 80.5                      | Pred: 23.5                      | ETA: 1.0min
+  [45/96] Row 52 | bus_type               | GT: SATA III                  | Pred: SATA III                  | ETA: 0.9min
+  + Checkpoint saved (45/96 done)
+  [46/96] Row 52 | model                  | GT: SU800                     | Pred: Ultimate SU800            | ETA: 0.9min
+  [47/96] Row 52 | read_speed_mb_s        | GT: 560.0                     | Pred: 560                       | ETA: 0.9min
+  [48/96] Row 52 | write_speed_mb_s       | GT: 520.0                     | Pred: 520                       | ETA: 0.9min
+  [49/96] Row 52 | height_mm              | GT: 3.5                       | Pred: 3.5                       | ETA: 0.8min
+  [50/96] Row 52 | width_mm               | GT: 22.0                      | Pred: 22                        | ETA: 0.8min
+  + Checkpoint saved (50/96 done)
+  [51/96] Row 54 | bus_type               | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x16              | ETA: 0.8min
+  [52/96] Row 54 | model_number           | GT: N20702-08D6-1710VA23      | Pred: N20702-08D6-1710VA23      | ETA: 0.8min
+  [53/96] Row 54 | width_mm               | GT: 113.0                     | Pred: 113                       | ETA: 0.7min
+  [54/96] Row 56 | read_speed_mb_s        | GT: 560.0                     | Pred: 560                       | ETA: 0.7min
+  [55/96] Row 56 | write_speed_mb_s       | GT: 510.0                     | Pred: 510                       | ETA: 0.7min
+  + Checkpoint saved (55/96 done)
+  [56/96] Row 59 | width_mm               | GT: 690.0                     | Pred: 69                        | ETA: 0.7min
+  [57/96] Row 60 | model                  | GT: Ironwolf 110              | Pred: Ironwolf 110              | ETA: 0.7min
+  [58/96] Row 60 | read_speed_mb_s        | GT: 560.0                     | Pred: 560                       | ETA: 0.6min
+  [59/96] Row 67 | read_speed_mb_s        | GT: 550.0                     | Pred: 550                       | ETA: 0.6min
+  [60/96] Row 77 | read_speed_mb_s        | GT: 555.0                     | Pred: 550                       | ETA: 0.6min
+  + Checkpoint saved (60/96 done)
+  [61/96] Row 77 | write_speed_mb_s       | GT: 520.0                     | Pred: 520                       | ETA: 0.6min
+  [62/96] Row 77 | height_mm              | GT: 7.0                       | Pred: 7                         | ETA: 0.6min
+  [63/96] Row 82 | model_number           | GT: CT2000P1SSD8              | Pred: P1 3D NAND NVMe           | ETA: 0.5min
+  [64/96] Row 82 | read_speed_mb_s        | GT: 2000.0                    | Pred: 2000                      | ETA: 0.5min
+  [65/96] Row 82 | write_speed_mb_s       | GT: 1700.0                    | Pred: 1700                      | ETA: 0.5min
+  + Checkpoint saved (65/96 done)
+  [66/96] Row 86 | height_mm              | GT: 67.0                      | Pred: 15                        | ETA: 0.5min
+  [67/96] Row 86 | width_mm               | GT: 15.0                      | Pred: 33                        | ETA: 0.5min
+  [68/96] Row 90 | bus_type               | GT: PCIe 3.0                  | Pred: PCIe 3.0                  | ETA: 0.4min
+  [69/96] Row 90 | height_mm              | GT: 41.0                      | Pred: 41                        | ETA: 0.4min
+  [70/96] Row 90 | width_mm               | GT: 119.3                     | Pred: 119.3                     | ETA: 0.4min
+  + Checkpoint saved (70/96 done)
+  [71/96] Row 95 | model_number           | GT: 801882-B21                | Pred: 801882-B21                | ETA: 0.4min
+  [72/96] Row 95 | model                  | GT: ISS                       | Pred: HPE 1TB 6G SATA 7.2K rpm LFF (3.5in) Non-hot Plug Standard 1yr Warranty Hard Drive | ETA: 0.4min
+  [73/96] Row 131 | model_number           | GT: WDS120G2G0A               | Pred: WDS120G2G0A               | ETA: 0.4min
+  [74/96] Row 131 | write_speed_mb_s       | GT: 430.0                     | Pred: 430                       | ETA: 0.4min
+  [75/96] Row 131 | height_mm              | GT: 7.0                       | Pred: 7                         | ETA: 0.3min
+  + Checkpoint saved (75/96 done)
+  [76/96] Row 135 | read_speed_mb_s        | GT: 560.0                     | Pred: 560                       | ETA: 0.3min
+  [77/96] Row 135 | write_speed_mb_s       | GT: 540.0                     | Pred: 540                       | ETA: 0.3min
+  [78/96] Row 137 | model                  | GT: L200                      | Pred: L200                      | ETA: 0.3min
+  [79/96] Row 145 | read_speed_mb_s        | GT: 2400.0                    | Pred: 2400                      | ETA: 0.3min
+  [80/96] Row 145 | write_speed_mb_s       | GT: 1950.0                    | Pred: 1950                      | ETA: 0.3min
+  + Checkpoint saved (80/96 done)
+  [81/96] Row 145 | height_mm              | GT: 2.4                       | Pred: 2.4                       | ETA: 0.2min
+  [82/96] Row 145 | width_mm               | GT: 22.0                      | Pred: 22.0                      | ETA: 0.2min
+  [83/96] Row 152 | model_number           | GT: MZ-76P1T0B/EU             | Pred: MZ-76P1T0B/EU             | ETA: 0.2min
+  [84/96] Row 152 | read_speed_mb_s        | GT: 560.0                     | Pred: 560                       | ETA: 0.2min
+  [85/96] Row 152 | write_speed_mb_s       | GT: 530.0                     | Pred: 530                       | ETA: 0.2min
+  + Checkpoint saved (85/96 done)
+  [86/96] Row 158 | model                  | GT: HDD SRV SAS 12G           | Pred: HDD SRV SAS 12G           | ETA: 0.2min
+  [87/96] Row 178 | model                  | GT: Ace - A80                 | Pred: Ace - A80                 | ETA: 0.1min
+  [88/96] Row 188 | model                  | GT: Barracuda 7200.12         | Pred: Seagate 500GB 7.2K 2.5" SP 6G SATA ST9500620NS HDD Hard Drive | ETA: 0.1min
+  [89/96] Row 224 | model                  | GT: Cheetah                   | Pred: Cheetah                   | ETA: 0.1min
+  [90/96] Row 225 | model                  | GT: GIGABYTE SSD 1TB          | Pred: Gigabyte 1TB 2.5" SATA 3D SSD/Solid State Drive | ETA: 0.1min
+  + Checkpoint saved (90/96 done)
+  [91/96] Row 225 | height_mm              | GT: 7.0                       | Pred: 7                         | ETA: 0.1min
+  [92/96] Row 17 | model_number           | GT: 843266-B21                | Pred: 843266-B21                | ETA: 0.1min
+  [93/96] Row 21 | model_number           | GT: PBU240GS25SSDR            | Pred: PBU240GS25SSDR            | ETA: 0.0min
+  [94/96] Row 23 | model_number           | GT: SDCZ50-128G-B35           | Pred: Cruzer BLADE™             | ETA: 0.0min
+  [95/96] Row 27 | model_number           | GT: WDBWLG0040HBK-EESN        | Pred: WDBWLG0040HBK-EESN        | ETA: 0.0min
+  + Checkpoint saved (95/96 done)
+  [96/96] Row 31 | model_number           | GT: DT100G3/256GB             | Pred: DT100G3                   | ETA: 0.0min
+
+============================================================
+RESULTS -- Exp 6: BGE+RR + gpt-5.4-mini (ohne UNKNOWN)
+============================================================
+Standard accuracy:    0.760 (76.0%)
+CE eval (c+a):        0.865 (86.5%)
+UNKNOWN rate:         0.010 (1.0%)
+Total tasks:          96
+
+Per-attribute:
+                   n  std_acc  ce_acc  unknown
+attribute                                     
+bus_type          13    0.615   0.846    0.077
+height_mm         13    0.769   0.923    0.000
+model             10    0.700   0.800    0.000
+model_number      23    0.696   0.783    0.000
+read_speed_mb_s   15    0.867   1.000    0.000
+width_mm          12    0.750   0.750    0.000
+write_speed_mb_s  10    1.000   1.000    0.000
+
++ Saved to results_ohne_UNKNOWN/exp6_bge_reranker_gpt54mini.csv
+Done in 89.8s
+
+=================================================================
+RUN: Exp 6: BGE+RR + gpt-5.4-mini (mit UNKNOWN)
+=================================================================
+gpt-5.4-mini OK: 'OK'
+Starting fresh.
+  [1/96] Row 0 | model_number           | GT: GV-N3080GAMING OC-10GD    | Pred: UNKNOWN                   | ETA: 19.2min
+  [2/96] Row 2 | model_number           | GT: CSSD-F960GBMP510          | Pred: CSSD-F960GBMP510          | ETA: 10.1min
+  [3/96] Row 2 | read_speed_mb_s        | GT: 3480.0                    | Pred: 3480                      | ETA: 7.0min
+  [4/96] Row 2 | write_speed_mb_s       | GT: 3000.0                    | Pred: 3000                      | ETA: 5.4min
+  [5/96] Row 3 | read_speed_mb_s        | GT: 226.0                     | Pred: 226                       | ETA: 4.4min
+  + Checkpoint saved (5/96 done)
+  [6/96] Row 4 | width_mm               | GT: 433.0                     | Pred: 433.0                     | ETA: 3.8min
+  [7/96] Row 5 | bus_type               | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x16              | ETA: 3.4min
+  [8/96] Row 5 | model_number           | GT: 90YV0CV2-M0NA00           | Pred: 90YV0CV2-M0NA00           | ETA: 3.1min
+  [9/96] Row 6 | bus_type               | GT: USB 3.0                   | Pred: UNKNOWN                   | ETA: 2.8min
+  [10/96] Row 8 | model_number           | GT: GV-N166SOC-6GD            | Pred: UNKNOWN                   | ETA: 2.6min
+  + Checkpoint saved (10/96 done)
+  [11/96] Row 9 | bus_type               | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x16              | ETA: 2.4min
+  [12/96] Row 9 | model_number           | GT: V375-040R                 | Pred: UNKNOWN                   | ETA: 2.3min
+  [13/96] Row 9 | height_mm              | GT: 46.0                      | Pred: 46                        | ETA: 2.1min
+  [14/96] Row 9 | width_mm               | GT: 127.0                     | Pred: 127.0                     | ETA: 2.0min
+  [15/96] Row 11 | bus_type               | GT: PCIe 3.0                  | Pred: PCIe 3.0                  | ETA: 1.9min
+  + Checkpoint saved (15/96 done)
+  [16/96] Row 12 | bus_type               | GT: PCIe 4.0                  | Pred: UNKNOWN                   | ETA: 1.9min
+  [17/96] Row 12 | model_number           | GT: 90YV0DQ0-M0NA00           | Pred: UNKNOWN                   | ETA: 1.8min
+  [18/96] Row 13 | model_number           | GT: AGAMMIXS11P-1TT-C         | Pred: AGAMMIXS11P-1TT-C         | ETA: 1.8min
+  [19/96] Row 14 | model_number           | GT: GV-R56XTGAMING OC-6GD     | Pred: GV-R56XTGAMING OC-6GD     | ETA: 1.7min
+  [20/96] Row 15 | bus_type               | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x8               | ETA: 1.6min
+  + Checkpoint saved (20/96 done)
+  [21/96] Row 15 | model_number           | GT: 100-506008                | Pred: 100-506008                | ETA: 1.6min
+  [22/96] Row 16 | model_number           | GT: NE6166SS18J9-161F         | Pred: UNKNOWN                   | ETA: 1.5min
+  [23/96] Row 18 | read_speed_mb_s        | GT: 550.0                     | Pred: 550                       | ETA: 1.6min
+  [24/96] Row 18 | write_speed_mb_s       | GT: 520.0                     | Pred: 520                       | ETA: 1.5min
+  [25/96] Row 18 | height_mm              | GT: 7.0                       | Pred: 6.8                       | ETA: 1.5min
+  + Checkpoint saved (25/96 done)
+  [26/96] Row 19 | bus_type               | GT: PCIe 3.0 x16              | Pred: UNKNOWN                   | ETA: 1.4min
+  [27/96] Row 19 | model_number           | GT: ROG-STRIX-RTX2080TI-O11G-GAMING | Pred: UNKNOWN                   | ETA: 1.4min
+  [28/96] Row 20 | model                  | GT: 220S                      | Pred: UNKNOWN                   | ETA: 1.3min
+  [29/96] Row 20 | read_speed_mb_s        | GT: 550.0                     | Pred: UNKNOWN                   | ETA: 1.3min
+  [30/96] Row 25 | bus_type               | GT: PCIe 3.0                  | Pred: UNKNOWN                   | ETA: 1.3min
+  + Checkpoint saved (30/96 done)
+  [31/96] Row 26 | bus_type               | GT: SATA III                  | Pred: UNKNOWN                   | ETA: 1.2min
+  [32/96] Row 28 | height_mm              | GT: 42.0                      | Pred: UNKNOWN                   | ETA: 1.2min
+  [33/96] Row 28 | width_mm               | GT: 130.9                     | Pred: UNKNOWN                   | ETA: 1.1min
+  [34/96] Row 30 | bus_type               | GT: USB 3.0                   | Pred: USB 3.0                   | ETA: 1.1min
+  [35/96] Row 30 | model_number           | GT: WDBMCG5000ABT-WESN        | Pred: WDBMCG5000ABT-WESN        | ETA: 1.1min
+  + Checkpoint saved (35/96 done)
+  [36/96] Row 33 | read_speed_mb_s        | GT: 130.0                     | Pred: 130                       | ETA: 1.1min
+  [37/96] Row 33 | height_mm              | GT: 20.8                      | Pred: 20.8                      | ETA: 1.0min
+  [38/96] Row 33 | width_mm               | GT: 87.9                      | Pred: 87.9                      | ETA: 1.0min
+  [39/96] Row 41 | read_speed_mb_s        | GT: 540.0                     | Pred: UNKNOWN                   | ETA: 1.0min
+  [40/96] Row 41 | height_mm              | GT: 10.5                      | Pred: UNKNOWN                   | ETA: 1.0min
+  + Checkpoint saved (40/96 done)
+  [41/96] Row 41 | width_mm               | GT: 57.0                      | Pred: UNKNOWN                   | ETA: 0.9min
+  [42/96] Row 43 | model_number           | GT: GP-ASM2NE6100TTTD         | Pred: GP-ASM2NE6100TTTD         | ETA: 0.9min
+  [43/96] Row 43 | height_mm              | GT: 11.4                      | Pred: 11.4                      | ETA: 0.9min
+  [44/96] Row 43 | width_mm               | GT: 80.5                      | Pred: 23.5                      | ETA: 0.9min
+  [45/96] Row 52 | bus_type               | GT: SATA III                  | Pred: SATA III                  | ETA: 0.8min
+  + Checkpoint saved (45/96 done)
+  [46/96] Row 52 | model                  | GT: SU800                     | Pred: Ultimate SU800            | ETA: 0.8min
+  [47/96] Row 52 | read_speed_mb_s        | GT: 560.0                     | Pred: 560                       | ETA: 0.8min
+  [48/96] Row 52 | write_speed_mb_s       | GT: 520.0                     | Pred: 520.0                     | ETA: 0.8min
+  [49/96] Row 52 | height_mm              | GT: 3.5                       | Pred: 3.5                       | ETA: 0.7min
+  [50/96] Row 52 | width_mm               | GT: 22.0                      | Pred: 22                        | ETA: 0.7min
+  + Checkpoint saved (50/96 done)
+  [51/96] Row 54 | bus_type               | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x16              | ETA: 0.7min
+  [52/96] Row 54 | model_number           | GT: N20702-08D6-1710VA23      | Pred: N20702-08D6-1710VA23      | ETA: 0.7min
+  [53/96] Row 54 | width_mm               | GT: 113.0                     | Pred: 113.0                     | ETA: 0.7min
+  [54/96] Row 56 | read_speed_mb_s        | GT: 560.0                     | Pred: 560                       | ETA: 0.6min
+  [55/96] Row 56 | write_speed_mb_s       | GT: 510.0                     | Pred: 510                       | ETA: 0.6min
+  + Checkpoint saved (55/96 done)
+  [56/96] Row 59 | width_mm               | GT: 690.0                     | Pred: UNKNOWN                   | ETA: 0.6min
+  [57/96] Row 60 | model                  | GT: Ironwolf 110              | Pred: Ironwolf 110              | ETA: 0.6min
+  [58/96] Row 60 | read_speed_mb_s        | GT: 560.0                     | Pred: UNKNOWN                   | ETA: 0.6min
+  [59/96] Row 67 | read_speed_mb_s        | GT: 550.0                     | Pred: 550                       | ETA: 0.6min
+  [60/96] Row 77 | read_speed_mb_s        | GT: 555.0                     | Pred: UNKNOWN                   | ETA: 0.5min
+  + Checkpoint saved (60/96 done)
+  [61/96] Row 77 | write_speed_mb_s       | GT: 520.0                     | Pred: UNKNOWN                   | ETA: 0.5min
+  [62/96] Row 77 | height_mm              | GT: 7.0                       | Pred: UNKNOWN                   | ETA: 0.5min
+  [63/96] Row 82 | model_number           | GT: CT2000P1SSD8              | Pred: UNKNOWN                   | ETA: 0.5min
+  [64/96] Row 82 | read_speed_mb_s        | GT: 2000.0                    | Pred: 2000                      | ETA: 0.5min
+  [65/96] Row 82 | write_speed_mb_s       | GT: 1700.0                    | Pred: 1700                      | ETA: 0.5min
+  + Checkpoint saved (65/96 done)
+  [66/96] Row 86 | height_mm              | GT: 67.0                      | Pred: UNKNOWN                   | ETA: 0.4min
+  [67/96] Row 86 | width_mm               | GT: 15.0                      | Pred: UNKNOWN                   | ETA: 0.4min
+  [68/96] Row 90 | bus_type               | GT: PCIe 3.0                  | Pred: PCIe 3.0                  | ETA: 0.4min
+  [69/96] Row 90 | height_mm              | GT: 41.0                      | Pred: 41.0                      | ETA: 0.4min
+  [70/96] Row 90 | width_mm               | GT: 119.3                     | Pred: 119.3                     | ETA: 0.4min
+  + Checkpoint saved (70/96 done)
+  [71/96] Row 95 | model_number           | GT: 801882-B21                | Pred: 801882-B21                | ETA: 0.4min
+  [72/96] Row 95 | model                  | GT: ISS                       | Pred: UNKNOWN                   | ETA: 0.3min
+  [73/96] Row 131 | model_number           | GT: WDS120G2G0A               | Pred: UNKNOWN                   | ETA: 0.3min
+  [74/96] Row 131 | write_speed_mb_s       | GT: 430.0                     | Pred: 430.0                     | ETA: 0.3min
+  [75/96] Row 131 | height_mm              | GT: 7.0                       | Pred: 7                         | ETA: 0.3min
+  + Checkpoint saved (75/96 done)
+  [76/96] Row 135 | read_speed_mb_s        | GT: 560.0                     | Pred: 560                       | ETA: 0.3min
+  [77/96] Row 135 | write_speed_mb_s       | GT: 540.0                     | Pred: 540                       | ETA: 0.3min
+  [78/96] Row 137 | model                  | GT: L200                      | Pred: L200                      | ETA: 0.3min
+  [79/96] Row 145 | read_speed_mb_s        | GT: 2400.0                    | Pred: 2400.0                    | ETA: 0.2min
+  [80/96] Row 145 | write_speed_mb_s       | GT: 1950.0                    | Pred: 1950.0                    | ETA: 0.2min
+  + Checkpoint saved (80/96 done)
+  [81/96] Row 145 | height_mm              | GT: 2.4                       | Pred: 2.4                       | ETA: 0.2min
+  [82/96] Row 145 | width_mm               | GT: 22.0                      | Pred: 22                        | ETA: 0.2min
+  [83/96] Row 152 | model_number           | GT: MZ-76P1T0B/EU             | Pred: MZ-76P1T0B/EU             | ETA: 0.2min
+  [84/96] Row 152 | read_speed_mb_s        | GT: 560.0                     | Pred: 560                       | ETA: 0.2min
+  [85/96] Row 152 | write_speed_mb_s       | GT: 530.0                     | Pred: 530                       | ETA: 0.2min
+  + Checkpoint saved (85/96 done)
+  [86/96] Row 158 | model                  | GT: HDD SRV SAS 12G           | Pred: UNKNOWN                   | ETA: 0.1min
+  [87/96] Row 178 | model                  | GT: Ace - A80                 | Pred: Ace - A80                 | ETA: 0.1min
+  [88/96] Row 188 | model                  | GT: Barracuda 7200.12         | Pred: UNKNOWN                   | ETA: 0.1min
+  [89/96] Row 224 | model                  | GT: Cheetah                   | Pred: Cheetah 15K.7             | ETA: 0.1min
+  [90/96] Row 225 | model                  | GT: GIGABYTE SSD 1TB          | Pred: UNKNOWN                   | ETA: 0.1min
+  + Checkpoint saved (90/96 done)
+  [91/96] Row 225 | height_mm              | GT: 7.0                       | Pred: 7                         | ETA: 0.1min
+  [92/96] Row 17 | model_number           | GT: 843266-B21                | Pred: 801882-B21                | ETA: 0.1min
+  [93/96] Row 21 | model_number           | GT: PBU240GS25SSDR            | Pred: UNKNOWN                   | ETA: 0.0min
+  [94/96] Row 23 | model_number           | GT: SDCZ50-128G-B35           | Pred: Cruzer BLADE™             | ETA: 0.0min
+  [95/96] Row 27 | model_number           | GT: WDBWLG0040HBK-EESN        | Pred: WDBWLG0040HBK-EESN        | ETA: 0.0min
+  + Checkpoint saved (95/96 done)
+  [96/96] Row 31 | model_number           | GT: DT100G3/256GB             | Pred: UNKNOWN                   | ETA: 0.0min
+
+============================================================
+RESULTS -- Exp 6: BGE+RR + gpt-5.4-mini (mit UNKNOWN)
+============================================================
+Standard accuracy:    0.604 (60.4%)
+CE eval (c+a):        0.635 (63.5%)
+UNKNOWN rate:         0.344 (34.4%)
+Total tasks:          96
+
+Per-attribute:
+                   n  std_acc  ce_acc  unknown
+attribute                                     
+bus_type          13    0.538   0.615    0.385
+height_mm         13    0.615   0.692    0.308
+model             10    0.500   0.500    0.500
+model_number      23    0.478   0.522    0.435
+read_speed_mb_s   15    0.733   0.733    0.267
+width_mm          12    0.583   0.583    0.333
+write_speed_mb_s  10    0.900   0.900    0.100
+
++ Saved to results_mit_UNKNOWN/exp6_bge_reranker_gpt54mini.csv
+Done in 85.6s
+
+All BGE runs complete.
+PyTorch: 2.10.0+cu128
+CUDA: True -- NVIDIA A100-PCIE-40GB
+KB: 2,200 rows | Query rows: 50 | Eval tasks: 96
+Loading TE (OpenAI) embeddings...
+  TE KB: torch.Size([2200, 3072]) | Query: torch.Size([50, 3072])
+CrossEncoder: /home/ma/ma_ma/ma_mpandya/.cache/huggingface/hub/models--cross-encoder--ms-marco-MiniLM-L-6-v2/snapshots/c5ee24cb16019beea0893ab7796b1df96625c6b8
+Eval functions ready.
+Prompts ready.
+Helper functions ready.
+
+=================================================================
+RUN: Exp 7: TE+RR + gpt-4o-mini (ohne UNKNOWN)
+=================================================================
+gpt-4o-mini OK: 'OK!'
+Results already exist -- loading results_ohne_UNKNOWN/exp7_te_reranker_gpt4omini.csv
+
+============================================================
+RESULTS -- Exp 7: TE+RR + gpt-4o-mini (ohne UNKNOWN)
+============================================================
+Standard accuracy:    0.750 (75.0%)
+CE eval (c+a):        0.844 (84.4%)
+UNKNOWN rate:         0.000 (0.0%)
+Total tasks:          96
+
+Per-attribute:
+                   n  std_acc  ce_acc  unknown
+attribute                                     
+bus_type          13    0.769   0.846      0.0
+height_mm         13    0.846   0.923      0.0
+model             10    0.400   0.600      0.0
+model_number      23    0.783   0.826      0.0
+read_speed_mb_s   15    0.800   1.000      0.0
+width_mm          12    0.750   0.750      0.0
+write_speed_mb_s  10    0.800   0.900      0.0
+
++ Saved to results_ohne_UNKNOWN/exp7_te_reranker_gpt4omini.csv
+
+=================================================================
+RUN: Exp 7: TE+RR + gpt-4o-mini (mit UNKNOWN)
+=================================================================
+gpt-4o-mini OK: 'OK!'
+Results already exist -- loading results_mit_UNKNOWN/exp7_te_reranker_gpt4omini.csv
+
+============================================================
+RESULTS -- Exp 7: TE+RR + gpt-4o-mini (mit UNKNOWN)
+============================================================
+Standard accuracy:    0.656 (65.6%)
+CE eval (c+a):        0.708 (70.8%)
+UNKNOWN rate:         0.229 (22.9%)
+Total tasks:          96
+
+Per-attribute:
+                   n  std_acc  ce_acc  unknown
+attribute                                     
+bus_type          13    0.692   0.769    0.231
+height_mm         13    0.692   0.769    0.231
+model             10    0.500   0.600    0.100
+model_number      23    0.565   0.609    0.304
+read_speed_mb_s   15    0.667   0.733    0.267
+width_mm          12    0.750   0.750    0.167
+write_speed_mb_s  10    0.800   0.800    0.200
+
++ Saved to results_mit_UNKNOWN/exp7_te_reranker_gpt4omini.csv
+
+=================================================================
+RUN: Exp 7: TE+RR + gpt-5.4-mini (ohne UNKNOWN)
+=================================================================
+gpt-5.4-mini OK: 'OK'
+Starting fresh.
+  [1/96] Row 0 | model_number           | GT: GV-N3080GAMING OC-10GD    | Pred: GV-N3080GAMING OC-10GD    | ETA: 1.1min
+  [2/96] Row 2 | model_number           | GT: CSSD-F960GBMP510          | Pred: CSSD-F960GBMP510          | ETA: 1.0min
+  [3/96] Row 2 | read_speed_mb_s        | GT: 3480.0                    | Pred: 3480                      | ETA: 1.0min
+  [4/96] Row 2 | write_speed_mb_s       | GT: 3000.0                    | Pred: 3000                      | ETA: 1.1min
+  [5/96] Row 3 | read_speed_mb_s        | GT: 226.0                     | Pred: 226                       | ETA: 1.0min
+  + Checkpoint saved (5/96 done)
+  [6/96] Row 4 | width_mm               | GT: 433.0                     | Pred: 43.3                      | ETA: 1.0min
+  [7/96] Row 5 | bus_type               | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x16              | ETA: 1.0min
+  [8/96] Row 5 | model_number           | GT: 90YV0CV2-M0NA00           | Pred: 90YV0CV2-M0NA00           | ETA: 1.0min
+  [9/96] Row 6 | bus_type               | GT: USB 3.0                   | Pred: USB 3.1                   | ETA: 1.0min
+  [10/96] Row 8 | model_number           | GT: GV-N166SOC-6GD            | Pred: GV-N166SOC-6GD            | ETA: 1.1min
+  + Checkpoint saved (10/96 done)
+  [11/96] Row 9 | bus_type               | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x16              | ETA: 1.0min
+  [12/96] Row 9 | model_number           | GT: V375-040R                 | Pred: GeForce GTX 1660 Ti GAMING X 6G | ETA: 1.0min
+  [13/96] Row 9 | height_mm              | GT: 46.0                      | Pred: 46                        | ETA: 1.0min
+  [14/96] Row 9 | width_mm               | GT: 127.0                     | Pred: 127                       | ETA: 1.0min
+  [15/96] Row 11 | bus_type               | GT: PCIe 3.0                  | Pred: PCIe 3.0                  | ETA: 1.0min
+  + Checkpoint saved (15/96 done)
+  [16/96] Row 12 | bus_type               | GT: PCIe 4.0                  | Pred: PCIe 3.0 x16              | ETA: 1.0min
+  [17/96] Row 12 | model_number           | GT: 90YV0DQ0-M0NA00           | Pred: ROG Strix GeForce RTX 2080 Super OC Edition 8GB Gaming Graphics Card | ETA: 1.0min
+  [18/96] Row 13 | model_number           | GT: AGAMMIXS11P-1TT-C         | Pred: AGAMMIXS11P-1TT-C         | ETA: 0.9min
+  [19/96] Row 14 | model_number           | GT: GV-R56XTGAMING OC-6GD     | Pred: GV-R56XTGAMING OC-6GD     | ETA: 0.9min
+  [20/96] Row 15 | bus_type               | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x8               | ETA: 0.9min
+  + Checkpoint saved (20/96 done)
+  [21/96] Row 15 | model_number           | GT: 100-506008                | Pred: 100-506008                | ETA: 0.9min
+  [22/96] Row 16 | model_number           | GT: NE6166SS18J9-161F         | Pred: NE51660018J9-165F         | ETA: 1.3min
+  [23/96] Row 18 | read_speed_mb_s        | GT: 550.0                     | Pred: 550                       | ETA: 1.2min
+  [24/96] Row 18 | write_speed_mb_s       | GT: 520.0                     | Pred: 520                       | ETA: 1.2min
+  [25/96] Row 18 | height_mm              | GT: 7.0                       | Pred: 6.8                       | ETA: 1.2min
+  + Checkpoint saved (25/96 done)
+  [26/96] Row 19 | bus_type               | GT: PCIe 3.0 x16              | Pred: PCIe 3.0                  | ETA: 1.1min
+  [27/96] Row 19 | model_number           | GT: ROG-STRIX-RTX2080TI-O11G-GAMING | Pred: ROG Strix GeForce RTX™ 2080 Ti OC edition | ETA: 1.1min
+  [28/96] Row 20 | model                  | GT: 220S                      | Pred: HIGH SSD                  | ETA: 1.1min
+  [29/96] Row 20 | read_speed_mb_s        | GT: 550.0                     | Pred: 520                       | ETA: 1.4min
+  [30/96] Row 25 | bus_type               | GT: PCIe 3.0                  | Pred: UNKNOWN                   | ETA: 1.4min
+  + Checkpoint saved (30/96 done)
+  [31/96] Row 26 | bus_type               | GT: SATA III                  | Pred: SATA III                  | ETA: 1.3min
+  [32/96] Row 28 | height_mm              | GT: 42.0                      | Pred: 42                        | ETA: 1.3min
+  [33/96] Row 28 | width_mm               | GT: 130.9                     | Pred: 130.9                     | ETA: 1.2min
+  [34/96] Row 30 | bus_type               | GT: USB 3.0                   | Pred: USB 3.0                   | ETA: 1.2min
+  [35/96] Row 30 | model_number           | GT: WDBMCG5000ABT-WESN        | Pred: WDBMCG5000ABT-WESN        | ETA: 1.2min
+  + Checkpoint saved (35/96 done)
+  [36/96] Row 33 | read_speed_mb_s        | GT: 130.0                     | Pred: 130                       | ETA: 1.1min
+  [37/96] Row 33 | height_mm              | GT: 20.8                      | Pred: 20.8                      | ETA: 1.2min
+  [38/96] Row 33 | width_mm               | GT: 87.9                      | Pred: 87.9                      | ETA: 1.2min
+  [39/96] Row 41 | read_speed_mb_s        | GT: 540.0                     | Pred: 540                       | ETA: 1.1min
+  [40/96] Row 41 | height_mm              | GT: 10.5                      | Pred: 10.5                      | ETA: 1.1min
+  + Checkpoint saved (40/96 done)
+  [41/96] Row 41 | width_mm               | GT: 57.0                      | Pred: 57.0                      | ETA: 1.1min
+  [42/96] Row 43 | model_number           | GT: GP-ASM2NE6100TTTD         | Pred: GP-ASM2NE6100TTTD         | ETA: 1.0min
+  [43/96] Row 43 | height_mm              | GT: 11.4                      | Pred: 11.4                      | ETA: 1.0min
+  [44/96] Row 43 | width_mm               | GT: 80.5                      | Pred: 23.5                      | ETA: 1.0min
+  [45/96] Row 52 | bus_type               | GT: SATA III                  | Pred: SATA III                  | ETA: 0.9min
+  + Checkpoint saved (45/96 done)
+  [46/96] Row 52 | model                  | GT: SU800                     | Pred: Ultimate SU800            | ETA: 0.9min
+  [47/96] Row 52 | read_speed_mb_s        | GT: 560.0                     | Pred: 560                       | ETA: 0.9min
+  [48/96] Row 52 | write_speed_mb_s       | GT: 520.0                     | Pred: 520                       | ETA: 0.9min
+  [49/96] Row 52 | height_mm              | GT: 3.5                       | Pred: 3.5                       | ETA: 0.8min
+  [50/96] Row 52 | width_mm               | GT: 22.0                      | Pred: 22                        | ETA: 0.8min
+  + Checkpoint saved (50/96 done)
+  [51/96] Row 54 | bus_type               | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x16              | ETA: 0.8min
+  [52/96] Row 54 | model_number           | GT: N20702-08D6-1710VA23      | Pred: N20702-08D6-1710VA23      | ETA: 0.8min
+  [53/96] Row 54 | width_mm               | GT: 113.0                     | Pred: 113                       | ETA: 0.8min
+  [54/96] Row 56 | read_speed_mb_s        | GT: 560.0                     | Pred: 560                       | ETA: 0.7min
+  [55/96] Row 56 | write_speed_mb_s       | GT: 510.0                     | Pred: 510                       | ETA: 0.7min
+  + Checkpoint saved (55/96 done)
+  [56/96] Row 59 | width_mm               | GT: 690.0                     | Pred: 69                        | ETA: 0.7min
+  [57/96] Row 60 | model                  | GT: Ironwolf 110              | Pred: Nytro 1351                | ETA: 0.7min
+  [58/96] Row 60 | read_speed_mb_s        | GT: 560.0                     | Pred: 560                       | ETA: 0.7min
+  [59/96] Row 67 | read_speed_mb_s        | GT: 550.0                     | Pred: 550                       | ETA: 0.6min
+  [60/96] Row 77 | read_speed_mb_s        | GT: 555.0                     | Pred: 560.0                     | ETA: 0.6min
+  + Checkpoint saved (60/96 done)
+  [61/96] Row 77 | write_speed_mb_s       | GT: 520.0                     | Pred: 520                       | ETA: 0.6min
+  [62/96] Row 77 | height_mm              | GT: 7.0                       | Pred: 7                         | ETA: 0.6min
+  [63/96] Row 82 | model_number           | GT: CT2000P1SSD8              | Pred: P1 3D NAND NVMe           | ETA: 0.6min
+  [64/96] Row 82 | read_speed_mb_s        | GT: 2000.0                    | Pred: 2000                      | ETA: 0.5min
+  [65/96] Row 82 | write_speed_mb_s       | GT: 1700.0                    | Pred: 1700                      | ETA: 0.5min
+  + Checkpoint saved (65/96 done)
+  [66/96] Row 86 | height_mm              | GT: 67.0                      | Pred: 10                        | ETA: 0.5min
+  [67/96] Row 86 | width_mm               | GT: 15.0                      | Pred: 16                        | ETA: 0.5min
+  [68/96] Row 90 | bus_type               | GT: PCIe 3.0                  | Pred: PCIe 3.0                  | ETA: 0.5min
+  [69/96] Row 90 | height_mm              | GT: 41.0                      | Pred: 41                        | ETA: 0.4min
+  [70/96] Row 90 | width_mm               | GT: 119.3                     | Pred: 119.3                     | ETA: 0.4min
+  + Checkpoint saved (70/96 done)
+  [71/96] Row 95 | model_number           | GT: 801882-B21                | Pred: 801882-B21                | ETA: 0.4min
+  [72/96] Row 95 | model                  | GT: ISS                       | Pred: Hewlett Packard Enterprise - 1TB 6G SATA 7.2K rpm LFF (3.5in) Non-hot Plug Standard 1yr Warranty Hard Drive | ETA: 0.4min
+  [73/96] Row 131 | model_number           | GT: WDS120G2G0A               | Pred: WDS120G2G0A               | ETA: 0.4min
+  [74/96] Row 131 | write_speed_mb_s       | GT: 430.0                     | Pred: 430                       | ETA: 0.4min
+  [75/96] Row 131 | height_mm              | GT: 7.0                       | Pred: 7                         | ETA: 0.4min
+  + Checkpoint saved (75/96 done)
+  [76/96] Row 135 | read_speed_mb_s        | GT: 560.0                     | Pred: 560                       | ETA: 0.3min
+  [77/96] Row 135 | write_speed_mb_s       | GT: 540.0                     | Pred: 540                       | ETA: 0.3min
+  [78/96] Row 137 | model                  | GT: L200                      | Pred: L200                      | ETA: 0.3min
+  [79/96] Row 145 | read_speed_mb_s        | GT: 2400.0                    | Pred: 2400                      | ETA: 0.3min
+  [80/96] Row 145 | write_speed_mb_s       | GT: 1950.0                    | Pred: 1950.0                    | ETA: 0.3min
+  + Checkpoint saved (80/96 done)
+  [81/96] Row 145 | height_mm              | GT: 2.4                       | Pred: 2.4                       | ETA: 0.3min
+  [82/96] Row 145 | width_mm               | GT: 22.0                      | Pred: 22.0                      | ETA: 0.2min
+  [83/96] Row 152 | model_number           | GT: MZ-76P1T0B/EU             | Pred: MZ-76P1T0B/EU             | ETA: 0.2min
+  [84/96] Row 152 | read_speed_mb_s        | GT: 560.0                     | Pred: 560                       | ETA: 0.2min
+  [85/96] Row 152 | write_speed_mb_s       | GT: 530.0                     | Pred: 530                       | ETA: 0.2min
+  + Checkpoint saved (85/96 done)
+  [86/96] Row 158 | model                  | GT: HDD SRV SAS 12G           | Pred: HDD SRV SAS 12G           | ETA: 0.2min
+  [87/96] Row 178 | model                  | GT: Ace - A80                 | Pred: Ace - A80                 | ETA: 0.2min
+  [88/96] Row 188 | model                  | GT: Barracuda 7200.12         | Pred: Seagate 500GB 7.2K 2.5" SP 6G SATA | ETA: 0.1min
+  [89/96] Row 224 | model                  | GT: Cheetah                   | Pred: Cheetah                   | ETA: 0.1min
+  [90/96] Row 225 | model                  | GT: GIGABYTE SSD 1TB          | Pred: SSD                       | ETA: 0.1min
+  + Checkpoint saved (90/96 done)
+  [91/96] Row 225 | height_mm              | GT: 7.0                       | Pred: 7                         | ETA: 0.1min
+  [92/96] Row 17 | model_number           | GT: 843266-B21                | Pred: 843266-B21                | ETA: 0.1min
+  [93/96] Row 21 | model_number           | GT: PBU240GS25SSDR            | Pred: PBU240GS25SSDR            | ETA: 0.1min
+  [94/96] Row 23 | model_number           | GT: SDCZ50-128G-B35           | Pred: Cruzer BLADE™             | ETA: 0.0min
+  [95/96] Row 27 | model_number           | GT: WDBWLG0040HBK-EESN        | Pred: WDBWLG0040HBK-EESN        | ETA: 0.0min
+  + Checkpoint saved (95/96 done)
+  [96/96] Row 31 | model_number           | GT: DT100G3/256GB             | Pred: DT100G3                   | ETA: 0.0min
+
+============================================================
+RESULTS -- Exp 7: TE+RR + gpt-5.4-mini (ohne UNKNOWN)
+============================================================
+Standard accuracy:    0.771 (77.1%)
+CE eval (c+a):        0.854 (85.4%)
+UNKNOWN rate:         0.010 (1.0%)
+Total tasks:          96
+
+Per-attribute:
+                   n  std_acc  ce_acc  unknown
+attribute                                     
+bus_type          13    0.692   0.923    0.077
+height_mm         13    0.846   0.923    0.000
+model             10    0.600   0.500    0.000
+model_number      23    0.739   0.826    0.000
+read_speed_mb_s   15    0.867   1.000    0.000
+width_mm          12    0.667   0.750    0.000
+write_speed_mb_s  10    1.000   1.000    0.000
+
++ Saved to results_ohne_UNKNOWN/exp7_te_reranker_gpt54mini.csv
+Done in 95.1s
+
+=================================================================
+RUN: Exp 7: TE+RR + gpt-5.4-mini (mit UNKNOWN)
+=================================================================
+gpt-5.4-mini OK: 'OK'
+Starting fresh.
+  [1/96] Row 0 | model_number           | GT: GV-N3080GAMING OC-10GD    | Pred: UNKNOWN                   | ETA: 1.0min
+  [2/96] Row 2 | model_number           | GT: CSSD-F960GBMP510          | Pred: UNKNOWN                   | ETA: 1.3min
+  [3/96] Row 2 | read_speed_mb_s        | GT: 3480.0                    | Pred: 3480                      | ETA: 1.2min
+  [4/96] Row 2 | write_speed_mb_s       | GT: 3000.0                    | Pred: 3000                      | ETA: 1.1min
+  [5/96] Row 3 | read_speed_mb_s        | GT: 226.0                     | Pred: 226                       | ETA: 1.1min
+  + Checkpoint saved (5/96 done)
+  [6/96] Row 4 | width_mm               | GT: 433.0                     | Pred: 43.3                      | ETA: 1.1min
+  [7/96] Row 5 | bus_type               | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x16              | ETA: 1.1min
+  [8/96] Row 5 | model_number           | GT: 90YV0CV2-M0NA00           | Pred: 90YV0CV2-M0NA00           | ETA: 1.4min
+  [9/96] Row 6 | bus_type               | GT: USB 3.0                   | Pred: UNKNOWN                   | ETA: 1.3min
+  [10/96] Row 8 | model_number           | GT: GV-N166SOC-6GD            | Pred: UNKNOWN                   | ETA: 1.3min
+  + Checkpoint saved (10/96 done)
+  [11/96] Row 9 | bus_type               | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x16              | ETA: 1.2min
+  [12/96] Row 9 | model_number           | GT: V375-040R                 | Pred: UNKNOWN                   | ETA: 1.2min
+  [13/96] Row 9 | height_mm              | GT: 46.0                      | Pred: 46                        | ETA: 1.1min
+  [14/96] Row 9 | width_mm               | GT: 127.0                     | Pred: 127                       | ETA: 1.2min
+  [15/96] Row 11 | bus_type               | GT: PCIe 3.0                  | Pred: PCIe 3.0                  | ETA: 1.1min
+  + Checkpoint saved (15/96 done)
+  [16/96] Row 12 | bus_type               | GT: PCIe 4.0                  | Pred: UNKNOWN                   | ETA: 1.3min
+  [17/96] Row 12 | model_number           | GT: 90YV0DQ0-M0NA00           | Pred: UNKNOWN                   | ETA: 1.3min
+  [18/96] Row 13 | model_number           | GT: AGAMMIXS11P-1TT-C         | Pred: AGAMMIXS11P-1TT-C         | ETA: 1.3min
+  [19/96] Row 14 | model_number           | GT: GV-R56XTGAMING OC-6GD     | Pred: GV-R56XTGAMING OC-6GD     | ETA: 1.3min
+  [20/96] Row 15 | bus_type               | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x8               | ETA: 1.2min
+  + Checkpoint saved (20/96 done)
+  [21/96] Row 15 | model_number           | GT: 100-506008                | Pred: 100-506008                | ETA: 1.2min
+  [22/96] Row 16 | model_number           | GT: NE6166SS18J9-161F         | Pred: UNKNOWN                   | ETA: 1.1min
+  [23/96] Row 18 | read_speed_mb_s        | GT: 550.0                     | Pred: 550                       | ETA: 1.1min
+  [24/96] Row 18 | write_speed_mb_s       | GT: 520.0                     | Pred: 520.0                     | ETA: 1.1min
+  [25/96] Row 18 | height_mm              | GT: 7.0                       | Pred: 6.8                       | ETA: 1.0min
+  + Checkpoint saved (25/96 done)
+  [26/96] Row 19 | bus_type               | GT: PCIe 3.0 x16              | Pred: UNKNOWN                   | ETA: 1.0min
+  [27/96] Row 19 | model_number           | GT: ROG-STRIX-RTX2080TI-O11G-GAMING | Pred: UNKNOWN                   | ETA: 1.0min
+  [28/96] Row 20 | model                  | GT: 220S                      | Pred: HIGH SSD                  | ETA: 1.0min
+  [29/96] Row 20 | read_speed_mb_s        | GT: 550.0                     | Pred: 520.0                     | ETA: 1.0min
+  [30/96] Row 25 | bus_type               | GT: PCIe 3.0                  | Pred: UNKNOWN                   | ETA: 0.9min
+  + Checkpoint saved (30/96 done)
+  [31/96] Row 26 | bus_type               | GT: SATA III                  | Pred: SATA III                  | ETA: 0.9min
+  [32/96] Row 28 | height_mm              | GT: 42.0                      | Pred: 42.0                      | ETA: 0.9min
+  [33/96] Row 28 | width_mm               | GT: 130.9                     | Pred: 130.9                     | ETA: 0.9min
+  [34/96] Row 30 | bus_type               | GT: USB 3.0                   | Pred: USB 3.0                   | ETA: 0.9min
+  [35/96] Row 30 | model_number           | GT: WDBMCG5000ABT-WESN        | Pred: WDBMCG5000ABT-WESN        | ETA: 0.9min
+  + Checkpoint saved (35/96 done)
+  [36/96] Row 33 | read_speed_mb_s        | GT: 130.0                     | Pred: 130                       | ETA: 0.8min
+  [37/96] Row 33 | height_mm              | GT: 20.8                      | Pred: 20.8                      | ETA: 0.8min
+  [38/96] Row 33 | width_mm               | GT: 87.9                      | Pred: 87.9                      | ETA: 0.8min
+  [39/96] Row 41 | read_speed_mb_s        | GT: 540.0                     | Pred: UNKNOWN                   | ETA: 0.8min
+  [40/96] Row 41 | height_mm              | GT: 10.5                      | Pred: 10.5                      | ETA: 0.8min
+  + Checkpoint saved (40/96 done)
+  [41/96] Row 41 | width_mm               | GT: 57.0                      | Pred: 57.0                      | ETA: 0.8min
+  [42/96] Row 43 | model_number           | GT: GP-ASM2NE6100TTTD         | Pred: GP-ASM2NE6100TTTD         | ETA: 0.8min
+  [43/96] Row 43 | height_mm              | GT: 11.4                      | Pred: 11.4                      | ETA: 0.7min
+  [44/96] Row 43 | width_mm               | GT: 80.5                      | Pred: 23.5                      | ETA: 0.7min
+  [45/96] Row 52 | bus_type               | GT: SATA III                  | Pred: SATA III                  | ETA: 0.7min
+  + Checkpoint saved (45/96 done)
+  [46/96] Row 52 | model                  | GT: SU800                     | Pred: Ultimate SU800            | ETA: 0.7min
+  [47/96] Row 52 | read_speed_mb_s        | GT: 560.0                     | Pred: 560                       | ETA: 0.7min
+  [48/96] Row 52 | write_speed_mb_s       | GT: 520.0                     | Pred: 520                       | ETA: 0.7min
+  [49/96] Row 52 | height_mm              | GT: 3.5                       | Pred: 3.5                       | ETA: 0.7min
+  [50/96] Row 52 | width_mm               | GT: 22.0                      | Pred: 22                        | ETA: 0.6min
+  + Checkpoint saved (50/96 done)
+  [51/96] Row 54 | bus_type               | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x16              | ETA: 0.6min
+  [52/96] Row 54 | model_number           | GT: N20702-08D6-1710VA23      | Pred: N20702-08D6-1710VA23      | ETA: 0.6min
+  [53/96] Row 54 | width_mm               | GT: 113.0                     | Pred: 113                       | ETA: 0.6min
+  [54/96] Row 56 | read_speed_mb_s        | GT: 560.0                     | Pred: 560                       | ETA: 0.6min
+  [55/96] Row 56 | write_speed_mb_s       | GT: 510.0                     | Pred: 510.0                     | ETA: 0.6min
+  + Checkpoint saved (55/96 done)
+  [56/96] Row 59 | width_mm               | GT: 690.0                     | Pred: UNKNOWN                   | ETA: 0.6min
+  [57/96] Row 60 | model                  | GT: Ironwolf 110              | Pred: Nytro 1351                | ETA: 0.6min
+  [58/96] Row 60 | read_speed_mb_s        | GT: 560.0                     | Pred: UNKNOWN                   | ETA: 0.5min
+  [59/96] Row 67 | read_speed_mb_s        | GT: 550.0                     | Pred: 550                       | ETA: 0.5min
+  [60/96] Row 77 | read_speed_mb_s        | GT: 555.0                     | Pred: UNKNOWN                   | ETA: 0.5min
+  + Checkpoint saved (60/96 done)
+  [61/96] Row 77 | write_speed_mb_s       | GT: 520.0                     | Pred: UNKNOWN                   | ETA: 0.5min
+  [62/96] Row 77 | height_mm              | GT: 7.0                       | Pred: 7                         | ETA: 0.5min
+  [63/96] Row 82 | model_number           | GT: CT2000P1SSD8              | Pred: UNKNOWN                   | ETA: 0.5min
+  [64/96] Row 82 | read_speed_mb_s        | GT: 2000.0                    | Pred: 2000                      | ETA: 0.4min
+  [65/96] Row 82 | write_speed_mb_s       | GT: 1700.0                    | Pred: 1700                      | ETA: 0.4min
+  + Checkpoint saved (65/96 done)
+  [66/96] Row 86 | height_mm              | GT: 67.0                      | Pred: UNKNOWN                   | ETA: 0.4min
+  [67/96] Row 86 | width_mm               | GT: 15.0                      | Pred: UNKNOWN                   | ETA: 0.4min
+  [68/96] Row 90 | bus_type               | GT: PCIe 3.0                  | Pred: PCIe 3.0                  | ETA: 0.4min
+  [69/96] Row 90 | height_mm              | GT: 41.0                      | Pred: 41.0                      | ETA: 0.4min
+  [70/96] Row 90 | width_mm               | GT: 119.3                     | Pred: 119.3                     | ETA: 0.4min
+  + Checkpoint saved (70/96 done)
+  [71/96] Row 95 | model_number           | GT: 801882-B21                | Pred: 801882-B21                | ETA: 0.3min
+  [72/96] Row 95 | model                  | GT: ISS                       | Pred: Hewlett Packard Enterprise - 1TB 6G SATA 7.2K rpm LFF (3.5in) Non-hot Plug Standard 1yr Warranty Hard Drive | ETA: 0.3min
+  [73/96] Row 131 | model_number           | GT: WDS120G2G0A               | Pred: UNKNOWN                   | ETA: 0.3min
+  [74/96] Row 131 | write_speed_mb_s       | GT: 430.0                     | Pred: 430                       | ETA: 0.3min
+  [75/96] Row 131 | height_mm              | GT: 7.0                       | Pred: 7.0                       | ETA: 0.3min
+  + Checkpoint saved (75/96 done)
+  [76/96] Row 135 | read_speed_mb_s        | GT: 560.0                     | Pred: 560                       | ETA: 0.3min
+  [77/96] Row 135 | write_speed_mb_s       | GT: 540.0                     | Pred: 540                       | ETA: 0.3min
+  [78/96] Row 137 | model                  | GT: L200                      | Pred: L200                      | ETA: 0.2min
+  [79/96] Row 145 | read_speed_mb_s        | GT: 2400.0                    | Pred: 2400                      | ETA: 0.2min
+  [80/96] Row 145 | write_speed_mb_s       | GT: 1950.0                    | Pred: 1950.0                    | ETA: 0.2min
+  + Checkpoint saved (80/96 done)
+  [81/96] Row 145 | height_mm              | GT: 2.4                       | Pred: 2.4                       | ETA: 0.2min
+  [82/96] Row 145 | width_mm               | GT: 22.0                      | Pred: 22.0                      | ETA: 0.2min
+  [83/96] Row 152 | model_number           | GT: MZ-76P1T0B/EU             | Pred: MZ-76P1T0B/EU             | ETA: 0.2min
+  [84/96] Row 152 | read_speed_mb_s        | GT: 560.0                     | Pred: 560                       | ETA: 0.2min
+  [85/96] Row 152 | write_speed_mb_s       | GT: 530.0                     | Pred: 530                       | ETA: 0.1min
+  + Checkpoint saved (85/96 done)
+  [86/96] Row 158 | model                  | GT: HDD SRV SAS 12G           | Pred: UNKNOWN                   | ETA: 0.1min
+  [87/96] Row 178 | model                  | GT: Ace - A80                 | Pred: Ace - A80                 | ETA: 0.1min
+  [88/96] Row 188 | model                  | GT: Barracuda 7200.12         | Pred: UNKNOWN                   | ETA: 0.1min
+  [89/96] Row 224 | model                  | GT: Cheetah                   | Pred: Cheetah                   | ETA: 0.1min
+  [90/96] Row 225 | model                  | GT: GIGABYTE SSD 1TB          | Pred: UNKNOWN                   | ETA: 0.1min
+  + Checkpoint saved (90/96 done)
+  [91/96] Row 225 | height_mm              | GT: 7.0                       | Pred: UNKNOWN                   | ETA: 0.1min
+  [92/96] Row 17 | model_number           | GT: 843266-B21                | Pred: 843266-B21                | ETA: 0.1min
+  [93/96] Row 21 | model_number           | GT: PBU240GS25SSDR            | Pred: UNKNOWN                   | ETA: 0.0min
+  [94/96] Row 23 | model_number           | GT: SDCZ50-128G-B35           | Pred: Cruzer BLADE™             | ETA: 0.0min
+  [95/96] Row 27 | model_number           | GT: WDBWLG0040HBK-EESN        | Pred: WDBWLG0040HBK-EESN        | ETA: 0.0min
+  + Checkpoint saved (95/96 done)
+  [96/96] Row 31 | model_number           | GT: DT100G3/256GB             | Pred: UNKNOWN                   | ETA: 0.0min
+
+============================================================
+RESULTS -- Exp 7: TE+RR + gpt-5.4-mini (mit UNKNOWN)
+============================================================
+Standard accuracy:    0.635 (63.5%)
+CE eval (c+a):        0.667 (66.7%)
+UNKNOWN rate:         0.271 (27.1%)
+Total tasks:          96
+
+Per-attribute:
+                   n  std_acc  ce_acc  unknown
+attribute                                     
+bus_type          13    0.615   0.692    0.308
+height_mm         13    0.769   0.846    0.154
+model             10    0.400   0.400    0.300
+model_number      23    0.478   0.478    0.478
+read_speed_mb_s   15    0.733   0.800    0.200
+width_mm          12    0.667   0.667    0.167
+write_speed_mb_s  10    0.900   0.900    0.100
+
++ Saved to results_mit_UNKNOWN/exp7_te_reranker_gpt54mini.csv
+Done in 75.1s
+
+All TE runs complete.
++ BGE g4omini ohne
++ BGE g4omini mit
++ BGE g54mini ohne
++ BGE g54mini mit
++ TE g4omini ohne
++ TE g4omini mit
++ TE g54mini ohne
++ TE g54mini mit
+
+=== Llama correct, BGE g4omini ohne wrong (3 cases) ===
+Row   Attr                  GT                  Llama                    Model                    
+==================================================================================================
+12    bus_type              PCIe 4.0            PCIe ok                  [not provided in reference] x
+82    model_number          CT2000P1SSD8        CT2000P1SSD8 ok          CSSD-P2000NVMe x         
+158   model                 HDD SRV SAS 12G     HDD SRV SAS 12G ok       Dysk Fujitsu 3.5" 300GB SAS 12Gb/s 10k RPM x
+-> Model returned UNKNOWN: 0
+-> Model wrong value:      3
+
+=== Llama correct, BGE g54mini ohne wrong (5 cases) ===
+Row   Attr                  GT                  Llama                    Model                    
+==================================================================================================
+0     model_number          GV-N3080GAMING OC-10GDGV-N3080GAMING OC-10GD okUNKNOWN x                
+6     bus_type              USB 3.0             USB 3.0 ok               USB 3.1 x                
+12    bus_type              PCIe 4.0            PCIe ok                  PCIe 3.0 x16 x           
+19    bus_type              PCIe 3.0 x16        PCIe ok                  GDDR6 x                  
+82    model_number          CT2000P1SSD8        CT2000P1SSD8 ok          P1 3D NAND NVMe x        
+-> Model returned UNKNOWN: 1
+-> Model wrong value:      4
+
+=== Llama correct, TE g4omini ohne wrong (6 cases) ===
+Row   Attr                  GT                  Llama                    Model                    
+==================================================================================================
+12    bus_type              PCIe 4.0            PCIe ok                  [not provided in reference] x
+20    model                 220S                220S ok                  HIGH SSD x               
+77    write_speed_mb_s      520.0               520 ok                   560 x                    
+82    model_number          CT2000P1SSD8        CT2000P1SSD8 ok          CSSD-P2000NVMe x         
+158   model                 HDD SRV SAS 12G     HDD SRV SAS 12G ok       Dysk Fujitsu 3.5" 300GB SAS 12Gb/s 10k RPM x
+225   model                 GIGABYTE SSD 1TB    1TB ok                   Gigabyte 1TB 2.5" SATA 3D SSD/Solid State Drive x
+-> Model returned UNKNOWN: 0
+-> Model wrong value:      6
+
+=== Llama correct, TE g54mini ohne wrong (4 cases) ===
+Row   Attr                  GT                  Llama                    Model                    
+==================================================================================================
+4     width_mm              433.0               433 ok                   43.3 x                   
+12    bus_type              PCIe 4.0            PCIe ok                  PCIe 3.0 x16 x           
+20    model                 220S                220S ok                  HIGH SSD x               
+82    model_number          CT2000P1SSD8        CT2000P1SSD8 ok          P1 3D NAND NVMe x        
+-> Model returned UNKNOWN: 0
+-> Model wrong value:      4
++ BGE Llama (ohne)
++ BGE g4omini (ohne)
++ BGE g54mini (ohne)
++ BGE Llama (mit)
++ BGE g4omini (mit)
++ BGE g54mini (mit)
++ TE Llama (ohne)
++ TE g4omini (ohne)
++ TE g54mini (ohne)
++ TE Llama (mit)
++ TE g4omini (mit)
++ TE g54mini (mit)
+
+=== Std ohne UNKNOWN ===
+       Attribute    Type  BGE Llama (ohne)  BGE g4omini (ohne)  BGE g54mini (ohne)  TE Llama (ohne)  TE g4omini (ohne)  TE g54mini (ohne)
+        bus_type    Text              84.6                76.9                61.5             76.9               76.9               69.2
+           model    Text              50.0                60.0                70.0             60.0               40.0               60.0
+    model_number    Text              69.6                73.9                69.6             73.9               78.3               73.9
+ read_speed_mb_s Numeric              80.0                86.7                86.7             73.3               80.0               86.7
+write_speed_mb_s Numeric              70.0                80.0               100.0             80.0               80.0              100.0
+       height_mm Numeric              69.2                76.9                76.9             69.2               84.6               84.6
+        width_mm Numeric              58.3                66.7                75.0             58.3               75.0               66.7
+         OVERALL                      69.8                75.0                76.0             70.8               75.0               77.1
+    UNKNOWN rate                       2.1                 0.0                 2.1              2.1                0.0                1.0
+
+=== CE ohne UNKNOWN ===
+       Attribute    Type  BGE Llama (ohne)  BGE g4omini (ohne)  BGE g54mini (ohne)  TE Llama (ohne)  TE g4omini (ohne)  TE g54mini (ohne)
+        bus_type    Text              84.6                84.6                84.6             92.3               84.6               92.3
+           model    Text              50.0                80.0                80.0             50.0               60.0               50.0
+    model_number    Text              87.0                82.6                78.3             87.0               82.6               82.6
+ read_speed_mb_s Numeric             100.0                93.3               100.0            100.0              100.0              100.0
+write_speed_mb_s Numeric              70.0                80.0               100.0             80.0               90.0              100.0
+       height_mm Numeric              76.9                92.3                92.3             76.9               92.3               92.3
+        width_mm Numeric              66.7                66.7                75.0             66.7               75.0               75.0
+         OVERALL                      79.2                83.3                86.5             81.2               84.4               85.4
+    UNKNOWN rate                       2.1                 0.0                 2.1              2.1                0.0                1.0
+
+=== Std mit UNKNOWN ===
+       Attribute    Type  BGE Llama (mit)  BGE g4omini (mit)  BGE g54mini (mit)  TE Llama (mit)  TE g4omini (mit)  TE g54mini (mit)
+        bus_type    Text             92.3               69.2               53.8            84.6              69.2              61.5
+           model    Text             50.0               70.0               50.0            40.0              50.0              40.0
+    model_number    Text             69.6               52.2               47.8            69.6              56.5              47.8
+ read_speed_mb_s Numeric             80.0               66.7               73.3            80.0              66.7              73.3
+write_speed_mb_s Numeric             90.0               80.0               90.0            80.0              80.0              90.0
+       height_mm Numeric             69.2               69.2               61.5            76.9              69.2              76.9
+        width_mm Numeric             58.3               58.3               58.3            66.7              75.0              66.7
+         OVERALL                     72.9               64.6               60.4            71.9              65.6              63.5
+    UNKNOWN rate                      3.1               27.1               34.4             2.1              22.9              27.1
+
+=== CE mit UNKNOWN ===
+       Attribute    Type  BGE Llama (mit)  BGE g4omini (mit)  BGE g54mini (mit)  TE Llama (mit)  TE g4omini (mit)  TE g54mini (mit)
+        bus_type    Text             92.3               76.9               61.5           100.0              76.9              69.2
+           model    Text             40.0               80.0               50.0            50.0              60.0              40.0
+    model_number    Text             82.6               56.5               52.2            82.6              60.9              47.8
+ read_speed_mb_s Numeric             80.0               66.7               73.3           100.0              73.3              80.0
+write_speed_mb_s Numeric             90.0               80.0               90.0            80.0              80.0              90.0
+       height_mm Numeric             76.9               69.2               69.2            84.6              76.9              84.6
+        width_mm Numeric             75.0               58.3               58.3            75.0              75.0              66.7
+         OVERALL                     78.1               67.7               63.5            83.3              70.8              66.7
+    UNKNOWN rate                      3.1               27.1               34.4             2.1              22.9              27.1
+
++ results/llm_comparison_ohne_unknown.xlsx
++ results/llm_comparison_mit_unknown.xlsx
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n566
+Job ID: 5041779
+Cluster: uc3
+User/Group: ma_mpandya/ma_ma
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 24
+CPU Utilized: 00:01:10
+CPU Efficiency: 0.60% of 03:14:48 core-walltime
+Job Wall-clock time: 00:08:07
+Memory Utilized: 1.06 GB
+Memory Efficiency: 0.58% of 183.59 GB (183.59 GB/node)

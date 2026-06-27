@@ -2,3 +2,6 @@ test.py
 experiment1.ipynb
 hf-token.txt
 repo.txt.env
+.env
+Report/
+.claude/

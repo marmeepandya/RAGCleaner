@@ -1,0 +1,281 @@
+[GIN] 2026/05/05 - 22:22:39 | 200 |   16.955633ms |       127.0.0.1 | HEAD     "/"
+[GIN] 2026/05/05 - 22:22:39 | 200 |    9.636554ms |       127.0.0.1 | GET      "/api/ps"
+NAME    ID    SIZE    PROCESSOR    UNTIL 
+[GIN] 2026/05/05 - 22:24:00 | 200 | 10.637925661s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:02 | 200 |  388.801169ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:02 | 200 |  209.646437ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:03 | 200 |  173.065977ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:03 | 200 |  170.731828ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:03 | 200 |  163.513544ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:03 | 200 |  163.493331ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:04 | 200 |  225.788698ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:04 | 200 |   249.04536ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:04 | 200 |  203.375068ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:04 | 200 |  269.327413ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:05 | 200 |  229.685985ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:05 | 200 |  234.863764ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:05 | 200 |  146.875867ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:05 | 200 |   145.57243ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:06 | 200 |  250.809448ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:06 | 200 |  175.038143ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:06 | 200 |  292.080075ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:06 | 200 |  273.261664ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:07 | 200 |  201.477584ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:07 | 200 |  246.002809ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:07 | 200 |   193.99279ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:07 | 200 |   202.07639ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:08 | 200 |  162.207228ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:08 | 200 |  161.401783ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:08 | 200 |   180.56087ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:08 | 200 |   212.86408ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:09 | 200 |  348.055883ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:09 | 200 |    159.0903ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:09 | 200 |  147.983833ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:09 | 200 |  175.524872ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:10 | 200 |  130.652789ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:10 | 200 |  163.839577ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:10 | 200 |  182.797378ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:10 | 200 |  197.545006ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:10 | 200 |  243.859336ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:11 | 200 |  196.330725ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:11 | 200 |  201.196054ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:11 | 200 |  199.111225ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:11 | 200 |   160.31311ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:12 | 200 |  166.393001ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:12 | 200 |  147.144647ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:12 | 200 |  274.666955ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:12 | 200 |  196.271582ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:13 | 200 |   196.69322ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:13 | 200 |  184.913338ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:13 | 200 |  203.859232ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:13 | 200 |  161.563587ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:13 | 200 |  161.788642ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:14 | 200 |  181.200854ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:14 | 200 |  164.631365ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:14 | 200 |   229.17597ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:14 | 200 |  259.922636ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:15 | 200 |   148.60113ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:15 | 200 |  145.662738ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:15 | 200 |   149.55451ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:15 | 200 |  187.132225ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:15 | 200 |  204.070842ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:16 | 200 |  164.093772ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:16 | 200 |  130.049138ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:16 | 200 |  137.846621ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:16 | 200 |  161.508245ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:16 | 200 |  164.656789ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:18 | 200 |   1.81223146s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:18 | 200 |  173.440547ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:19 | 200 |  168.995411ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:19 | 200 |  164.215198ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:19 | 200 |  162.204726ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:19 | 200 |  244.986568ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:20 | 200 |  172.999629ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:20 | 200 |  191.120208ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:20 | 200 |  211.508421ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:20 | 200 |  176.962225ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:21 | 200 |   246.48477ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:21 | 200 |  171.653877ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:21 | 200 |  166.276923ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:21 | 200 |  176.028723ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:21 | 200 |  172.751532ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:22 | 200 |    162.8373ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:22 | 200 |  182.545279ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:22 | 200 |  179.822435ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:22 | 200 |  198.075523ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:23 | 200 |  185.536174ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:23 | 200 |  265.613708ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:23 | 200 |  177.491771ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:23 | 200 |   172.41777ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:24 | 200 |  220.870928ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:24 | 200 |  179.692648ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:24 | 200 |  161.944109ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:24 | 200 |  154.872854ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:24 | 200 |    166.6583ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:25 | 200 |  178.439264ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:25 | 200 |  244.618894ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:25 | 200 |  185.089173ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:25 | 200 |  162.913922ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:26 | 200 |  220.401145ms |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2026/05/05 - 22:24:26 | 200 |    161.8759ms |       127.0.0.1 | POST     "/api/chat"
+PyTorch: 2.10.0+cu128
+CUDA: True — NVIDIA A100-PCIE-40GB
+PyDI imports OK
+TOP_N=20 | TOP_K=5
+KB rows: 2,200 | Query: 50 | Eval tasks: 96
+Tasks per attribute:
+attribute
+model_number        23
+read_speed_mb_s     15
+bus_type            13
+height_mm           13
+width_mm            12
+write_speed_mb_s    10
+model               10
+Normalizing datasets with PyDI...
+  dataset_2: 0 normalized, 0 failures
+  dataset_3: 0 normalized, 0 failures
+  dataset_4: 0 normalized, 0 failures
+
+Normalized KB: 2,200 rows
+Candidate fusion strategy ready.
+Resolvers: voting (bus_type, model) | longest_string (model_number) | median (numeric)
+OpenAI embeddings — KB: torch.Size([2200, 3072]) | Query: torch.Size([50, 3072])
+CrossEncoder loaded from: /home/ma/ma_ma/ma_mpandya/.cache/huggingface/hub/models--cross-encoder--ms-marco-MiniLM-L-6-v2/snapshots/c5ee24cb16019beea0893ab7796b1df96625c6b8
+All helper functions ready.
+PyDI candidate fusion functions ready.
+PyDI-adapted prompts ready for: ['bus_type', 'model_number', 'model', 'read_speed_mb_s', 'write_speed_mb_s', 'height_mm', 'width_mm']
+Ollama: 'OK'
+Running Exp 7 — TE+RR with PyDI Candidate Fusion...
+  [1/96] Row 0 | model_number           | GT: GV-N3080GAMING OC-10GD    | Pred: NVIDIA GeForce RTX 3080 Eagle OC 10G | ETA: 3.0min
+  [2/96] Row 2 | model_number           | GT: CSSD-F960GBMP510          | Pred: CSSD-F960GBMP510          | ETA: 1.7min
+  [3/96] Row 2 | read_speed_mb_s        | GT: 3480.0                    | Pred: 3000                      | ETA: 1.2min
+  [4/96] Row 2 | write_speed_mb_s       | GT: 3000.0                    | Pred: 3000                      | ETA: 1.0min
+  [5/96] Row 3 | read_speed_mb_s        | GT: 226.0                     | Pred: 226                       | ETA: 0.8min
+  [6/96] Row 4 | width_mm               | GT: 433.0                     | Pred: 433                       | ETA: 0.7min
+  [7/96] Row 5 | bus_type               | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x16              | ETA: 0.7min
+  [8/96] Row 5 | model_number           | GT: 90YV0CV2-M0NA00           | Pred: 90YV0CV2-M0NA00           | ETA: 0.7min
+  [9/96] Row 6 | bus_type               | GT: USB 3.0                   | Pred: USB 3.1                   | ETA: 0.6min
+  [10/96] Row 8 | model_number           | GT: GV-N166SOC-6GD            | Pred: GV-N166TWF2OC-6GD         | ETA: 0.6min
+  [11/96] Row 9 | bus_type               | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x16              | ETA: 0.6min
+  [12/96] Row 9 | model_number           | GT: V375-040R                 | Pred: ZT-T16610F-10L            | ETA: 0.5min
+  [13/96] Row 9 | height_mm              | GT: 46.0                      | Pred: 46                        | ETA: 0.5min
+  [14/96] Row 9 | width_mm               | GT: 127.0                     | Pred: 127                       | ETA: 0.5min
+  [15/96] Row 11 | bus_type               | GT: PCIe 3.0                  | Pred: PCIe 3.0                  | ETA: 0.5min
+  [16/96] Row 12 | bus_type               | GT: PCIe 4.0                  | Pred: RTX 2060 Super            | ETA: 0.5min
+  [17/96] Row 12 | model_number           | GT: 90YV0DQ0-M0NA00           | Pred: ROG Strix GeForce RTX 2060 Super EVO OC | ETA: 0.5min
+  [18/96] Row 13 | model_number           | GT: AGAMMIXS11P-1TT-C         | Pred: AGAMMIXS11P-1TT-C         | ETA: 0.4min
+  [19/96] Row 14 | model_number           | GT: GV-R56XTGAMING OC-6GD     | Pred: GV-N166SOC-6GD            | ETA: 0.4min
+  [20/96] Row 15 | bus_type               | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x8               | ETA: 0.4min
+  [21/96] Row 15 | model_number           | GT: 100-506008                | Pred: 100-505826                | ETA: 0.4min
+  [22/96] Row 16 | model_number           | GT: NE6166SS18J9-161F         | Pred: NE51660018J9-165F         | ETA: 0.4min
+  [23/96] Row 18 | read_speed_mb_s        | GT: 550.0                     | Pred: 550                       | ETA: 0.4min
+  [24/96] Row 18 | write_speed_mb_s       | GT: 520.0                     | Pred: 520                       | ETA: 0.4min
+  [25/96] Row 18 | height_mm              | GT: 7.0                       | Pred: 6.8                       | ETA: 0.4min
+  [26/96] Row 19 | bus_type               | GT: PCIe 3.0 x16              | Pred: PCIe 3.0                  | ETA: 0.4min
+  [27/96] Row 19 | model_number           | GT: ROG-STRIX-RTX2080TI-O11G-GAMING | Pred: ROG-Strix-GeForce-RTX-2080-Ti-OC-edition | ETA: 0.4min
+  [28/96] Row 20 | model                  | GT: 220S                      | Pred: HIGH SSD                  | ETA: 0.4min
+  [29/96] Row 20 | read_speed_mb_s        | GT: 550.0                     | Pred: 540                       | ETA: 0.3min
+  [30/96] Row 25 | bus_type               | GT: PCIe 3.0                  | Pred: SATA III                  | ETA: 0.3min
+  [31/96] Row 26 | bus_type               | GT: SATA III                  | Pred: SATA III                  | ETA: 0.3min
+  [32/96] Row 28 | height_mm              | GT: 42.0                      | Pred: 42                        | ETA: 0.3min
+  [33/96] Row 28 | width_mm               | GT: 130.9                     | Pred: 130.9                     | ETA: 0.3min
+  [34/96] Row 30 | bus_type               | GT: USB 3.0                   | Pred: USB 3.0                   | ETA: 0.3min
+  [35/96] Row 30 | model_number           | GT: WDBMCG5000ABT-WESN        | Pred: WDBMCG5000ABT-WESN        | ETA: 0.3min
+  [36/96] Row 33 | read_speed_mb_s        | GT: 130.0                     | Pred: 130                       | ETA: 0.3min
+  [37/96] Row 33 | height_mm              | GT: 20.8                      | Pred: 20.8                      | ETA: 0.3min
+  [38/96] Row 33 | width_mm               | GT: 87.9                      | Pred: 87.9                      | ETA: 0.3min
+  [39/96] Row 41 | read_speed_mb_s        | GT: 540.0                     | Pred: 3480                      | ETA: 0.3min
+  [40/96] Row 41 | height_mm              | GT: 10.5                      | Pred: 10.5                      | ETA: 0.3min
+  [41/96] Row 41 | width_mm               | GT: 57.0                      | Pred: 57                        | ETA: 0.3min
+  [42/96] Row 43 | model_number           | GT: GP-ASM2NE6100TTTD         | Pred: GP-ASM2NE6100TTTD         | ETA: 0.3min
+  [43/96] Row 43 | height_mm              | GT: 11.4                      | Pred: 11.4                      | ETA: 0.2min
+  [44/96] Row 43 | width_mm               | GT: 80.5                      | Pred: 23.5                      | ETA: 0.2min
+  [45/96] Row 52 | bus_type               | GT: SATA III                  | Pred: SATA III                  | ETA: 0.2min
+  [46/96] Row 52 | model                  | GT: SU800                     | Pred: SPECTRIX S40G             | ETA: 0.2min
+  [47/96] Row 52 | read_speed_mb_s        | GT: 560.0                     | Pred: 560                       | ETA: 0.2min
+  [48/96] Row 52 | write_speed_mb_s       | GT: 520.0                     | Pred: 520                       | ETA: 0.2min
+  [49/96] Row 52 | height_mm              | GT: 3.5                       | Pred: 3.5                       | ETA: 0.2min
+  [50/96] Row 52 | width_mm               | GT: 22.0                      | Pred: 22                        | ETA: 0.2min
+  [51/96] Row 54 | bus_type               | GT: PCIe 3.0 x16              | Pred: PCIe 3.0 x16              | ETA: 0.2min
+  [52/96] Row 54 | model_number           | GT: N20702-08D6-1710VA23      | Pred: N20702-08D6-1710VA23      | ETA: 0.2min
+  [53/96] Row 54 | width_mm               | GT: 113.0                     | Pred: 113                       | ETA: 0.2min
+  [54/96] Row 56 | read_speed_mb_s        | GT: 560.0                     | Pred: 560                       | ETA: 0.2min
+  [55/96] Row 56 | write_speed_mb_s       | GT: 510.0                     | Pred: 510                       | ETA: 0.2min
+  [56/96] Row 59 | width_mm               | GT: 690.0                     | Pred: 127                       | ETA: 0.2min
+  [57/96] Row 60 | model                  | GT: Ironwolf 110              | Pred: Nytro 1351                | ETA: 0.2min
+  [58/96] Row 60 | read_speed_mb_s        | GT: 560.0                     | Pred: 560                       | ETA: 0.2min
+  [59/96] Row 67 | read_speed_mb_s        | GT: 550.0                     | Pred: 550                       | ETA: 0.2min
+  [60/96] Row 77 | read_speed_mb_s        | GT: 555.0                     | Pred: 555                       | ETA: 0.2min
+  [61/96] Row 77 | write_speed_mb_s       | GT: 520.0                     | Pred: 520                       | ETA: 0.2min
+  [62/96] Row 77 | height_mm              | GT: 7.0                       | Pred: 46                        | ETA: 0.1min
+  [63/96] Row 82 | model_number           | GT: CT2000P1SSD8              | Pred: UNKNOWN                   | ETA: 0.2min
+  [64/96] Row 82 | read_speed_mb_s        | GT: 2000.0                    | Pred: 2000                      | ETA: 0.2min
+  [65/96] Row 82 | write_speed_mb_s       | GT: 1700.0                    | Pred: 1700                      | ETA: 0.1min
+  [66/96] Row 86 | height_mm              | GT: 67.0                      | Pred: 46                        | ETA: 0.1min
+  [67/96] Row 86 | width_mm               | GT: 15.0                      | Pred: 127                       | ETA: 0.1min
+  [68/96] Row 90 | bus_type               | GT: PCIe 3.0                  | Pred: PCIe 3.0                  | ETA: 0.1min
+  [69/96] Row 90 | height_mm              | GT: 41.0                      | Pred: 41                        | ETA: 0.1min
+  [70/96] Row 90 | width_mm               | GT: 119.3                     | Pred: 124.15                    | ETA: 0.1min
+  [71/96] Row 95 | model_number           | GT: 801882-B21                | Pred: 801882-B21                | ETA: 0.1min
+  [72/96] Row 95 | model                  | GT: ISS                       | Pred: SATA III                  | ETA: 0.1min
+  [73/96] Row 131 | model_number           | GT: WDS120G2G0A               | Pred: WDS100T2G0A               | ETA: 0.1min
+  [74/96] Row 131 | write_speed_mb_s       | GT: 430.0                     | Pred: 430                       | ETA: 0.1min
+  [75/96] Row 131 | height_mm              | GT: 7.0                       | Pred: 7                         | ETA: 0.1min
+  [76/96] Row 135 | read_speed_mb_s        | GT: 560.0                     | Pred: 560                       | ETA: 0.1min
+  [77/96] Row 135 | write_speed_mb_s       | GT: 540.0                     | Pred: 540                       | ETA: 0.1min
+  [78/96] Row 137 | model                  | GT: L200                      | Pred: P300                      | ETA: 0.1min
+  [79/96] Row 145 | read_speed_mb_s        | GT: 2400.0                    | Pred: 2400                      | ETA: 0.1min
+  [80/96] Row 145 | write_speed_mb_s       | GT: 1950.0                    | Pred: 3000                      | ETA: 0.1min
+  [81/96] Row 145 | height_mm              | GT: 2.4                       | Pred: 2.4                       | ETA: 0.1min
+  [82/96] Row 145 | width_mm               | GT: 22.0                      | Pred: 22                        | ETA: 0.1min
+  [83/96] Row 152 | model_number           | GT: MZ-76P1T0B/EU             | Pred: MZ-76P1T0B/EU             | ETA: 0.1min
+  [84/96] Row 152 | read_speed_mb_s        | GT: 560.0                     | Pred: 3480                      | ETA: 0.1min
+  [85/96] Row 152 | write_speed_mb_s       | GT: 530.0                     | Pred: 3000                      | ETA: 0.0min
+  [86/96] Row 158 | model                  | GT: HDD SRV SAS 12G           | Pred: HDD SRV SAS 12G           | ETA: 0.0min
+  [87/96] Row 178 | model                  | GT: Ace - A80                 | Pred: Ace - A80                 | ETA: 0.0min
+  [88/96] Row 188 | model                  | GT: Barracuda 7200.12         | Pred: Cheetah                   | ETA: 0.0min
+  [89/96] Row 224 | model                  | GT: Cheetah                   | Pred: Cheetah                   | ETA: 0.0min
+  [90/96] Row 225 | model                  | GT: GIGABYTE SSD 1TB          | Pred: SSD                       | ETA: 0.0min
+  [91/96] Row 225 | height_mm              | GT: 7.0                       | Pred: 7                         | ETA: 0.0min
+  [92/96] Row 17 | model_number           | GT: 843266-B21                | Pred: 454146-B21                | ETA: 0.0min
+  [93/96] Row 21 | model_number           | GT: PBU240GS25SSDR            | Pred: PBU120GS25SSDR            | ETA: 0.0min
+  [94/96] Row 23 | model_number           | GT: SDCZ50-128G-B35           | Pred: SD8SP128G                 | ETA: 0.0min
+  [95/96] Row 27 | model_number           | GT: WDBWLG0040HBK-EESN        | Pred: WDBWLG0040HBK-EESN        | ETA: 0.0min
+  [96/96] Row 31 | model_number           | GT: DT100G3/256GB             | Pred: DT100G3                   | ETA: 0.0min
+
+============================================================
+RESULTS — Exp 7: PyDI TE+RR
+============================================================
+Standard accuracy:    0.656 (65.6%)
+CE eval (c+a):        0.771 (77.1%)
+UNKNOWN rate:         0.010 (1.0%)
+Total tasks:          96
+
+Per-attribute:
+                   n  std_acc  ce_acc  unknown
+attribute                                     
+bus_type          13    0.692   0.846    0.000
+height_mm         13    0.846   0.846    0.000
+model             10    0.400   0.300    0.000
+model_number      23    0.435   0.826    0.043
+read_speed_mb_s   15    0.800   0.867    0.000
+width_mm          12    0.750   0.750    0.000
+write_speed_mb_s  10    0.800   0.800    0.000
+
+✓ Saved to results/exp7_pydi_te_reranker.csv
+Configuration                          Std acc    CE eval    UNKNOWN      n
+---------------------------------------------------------------------------
+  Exp1: LLM-only                           0.177      0.219      0.448     96
+  Exp2: RAG-MiniLM                         0.417      0.448      0.177     96
+  Exp3: MiniLM+Reranker                    0.740      0.760      0.083     96
+  Exp4: BGE+Reranker                       0.760      0.781      0.031     96
+  Exp5: TE+RR (manual)                     0.771      0.833      0.021     96
+  Exp6: PyDI KB Fusion                     0.990      1.000      0.000     96 ← PyDI
+  Exp7: TE+RR + PyDI Fusion                0.656      0.771      0.010     96 ← PyDI
+
+Per-attribute: Exp5 (manual TE+RR) vs Exp7 (PyDI TE+RR)
+                  Exp5_std  Exp7_std  Exp5_ce  Exp7_ce  delta_std  delta_ce
+attribute                                                                  
+bus_type             0.846     0.692    1.000    0.846     -0.154    -0.154
+height_mm            0.846     0.846    0.846    0.846      0.000     0.000
+model                0.400     0.400    0.500    0.300      0.000    -0.200
+model_number         0.696     0.435    0.826    0.826     -0.261     0.000
+read_speed_mb_s      1.000     0.800    1.000    0.867     -0.200    -0.133
+width_mm             0.750     0.750    0.750    0.750      0.000     0.000
+write_speed_mb_s     0.800     0.800    0.800    0.800      0.000     0.000
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n561
+Job ID: 4245364
+Cluster: uc3
+User/Group: ma_mpandya/ma_ma
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 24
+CPU Utilized: 00:00:20
+CPU Efficiency: 0.61% of 00:54:48 core-walltime
+Job Wall-clock time: 00:02:17
+Memory Utilized: 1.90 GB
+Memory Efficiency: 1.04% of 183.59 GB (183.59 GB/node)

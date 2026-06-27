@@ -1,0 +1,2 @@
+{"type": "evaluation_debug_header", "strategy": "rag_kb_fusion_strategy", "format": "json"}
+{"type": "evaluation_mismatch", "attribute": "model_number", "fused_id": 16, "expected_id": 16, "fused_value": "912-v375-040", "expected_value": "V375-040R", "evaluation_rule": "tokenized_match", "conflict_rule": "longest_string", "inputs": [{"record_id": "20009", "dataset": "dataset_3", "value": "v375-040r"}, {"record_id": "30008", "dataset": "dataset_4", "value": "912-v375-040"}], "reason": "mismatch"}

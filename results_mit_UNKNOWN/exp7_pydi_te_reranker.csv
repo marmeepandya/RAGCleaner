@@ -1,0 +1,97 @@
+df1_idx,config,attribute,is_numeric,ground_truth,predicted,unknown,fused_value,correct_standard,ce_judgment
+0,PyDI-TE-Reranker,model_number,False,GV-N3080GAMING OC-10GD,NVIDIA GeForce RTX 3080 Eagle OC 10G,False,N/A,False,acceptable
+2,PyDI-TE-Reranker,model_number,False,CSSD-F960GBMP510,CSSD-F960GBMP510,False,CSSD-F960GBMP510,True,correct
+2,PyDI-TE-Reranker,read_speed_mb_s,True,3480.0,3000,False,3480.0,False,acceptable
+2,PyDI-TE-Reranker,write_speed_mb_s,True,3000.0,3000,False,3000.0,True,correct
+3,PyDI-TE-Reranker,read_speed_mb_s,True,226.0,226,False,226.0,True,correct
+4,PyDI-TE-Reranker,width_mm,True,433.0,433,False,433.0,True,correct
+5,PyDI-TE-Reranker,bus_type,False,PCIe 3.0 x16,PCIe 3.0 x16,False,PCIe 3.0 x16,True,correct
+5,PyDI-TE-Reranker,model_number,False,90YV0CV2-M0NA00,90YV0CV2-M0NA00,False,90YV0CV2-M0NA00,True,correct
+6,PyDI-TE-Reranker,bus_type,False,USB 3.0,USB 3.1,False,USB 3.1,False,correct
+8,PyDI-TE-Reranker,model_number,False,GV-N166SOC-6GD,GV-N166TWF2OC-6GD,False,GV-N166TWF2OC-6GD,False,correct
+9,PyDI-TE-Reranker,bus_type,False,PCIe 3.0 x16,PCIe 3.0 x16,False,PCIe 3.0 x16,True,correct
+9,PyDI-TE-Reranker,model_number,False,V375-040R,ZT-T16610F-10L,False,ZT-T16610F-10L,False,wrong
+9,PyDI-TE-Reranker,height_mm,True,46.0,46,False,46.0,True,correct
+9,PyDI-TE-Reranker,width_mm,True,127.0,127,False,127.0,True,correct
+11,PyDI-TE-Reranker,bus_type,False,PCIe 3.0,PCIe 3.0,False,PCIe 3.0,True,correct
+12,PyDI-TE-Reranker,bus_type,False,PCIe 4.0,RTX 2060 Super,False,N/A,False,wrong
+12,PyDI-TE-Reranker,model_number,False,90YV0DQ0-M0NA00,ROG Strix GeForce RTX 2060 Super EVO OC,False,N/A,False,wrong
+13,PyDI-TE-Reranker,model_number,False,AGAMMIXS11P-1TT-C,AGAMMIXS11P-1TT-C,False,AGAMMIXS11P-1TT-C,True,correct
+14,PyDI-TE-Reranker,model_number,False,GV-R56XTGAMING OC-6GD,GV-N166SOC-6GD,False,GV-R56XTGAMING OC-6GD,False,correct
+15,PyDI-TE-Reranker,bus_type,False,PCIe 3.0 x16,PCIe 3.0 x8,False,PCIe 3.0 x8,False,correct
+15,PyDI-TE-Reranker,model_number,False,100-506008,100-505826,False,100-505826,False,acceptable
+16,PyDI-TE-Reranker,model_number,False,NE6166SS18J9-161F,NE51660018J9-165F,False,NE51660018J9-165F,False,correct
+18,PyDI-TE-Reranker,read_speed_mb_s,True,550.0,550,False,550.0,True,correct
+18,PyDI-TE-Reranker,write_speed_mb_s,True,520.0,520,False,520.0,True,correct
+18,PyDI-TE-Reranker,height_mm,True,7.0,6.8,False,6.8,True,correct
+19,PyDI-TE-Reranker,bus_type,False,PCIe 3.0 x16,PCIe 3.0,False,PCIe 3.0,True,correct
+19,PyDI-TE-Reranker,model_number,False,ROG-STRIX-RTX2080TI-O11G-GAMING,ROG-Strix-GeForce-RTX-2080-Ti-OC-edition,False,N/A,False,correct
+20,PyDI-TE-Reranker,model,False,220S,HIGH SSD,False,HIGH SSD,False,wrong
+20,PyDI-TE-Reranker,read_speed_mb_s,True,550.0,540,False,540.0,True,correct
+25,PyDI-TE-Reranker,bus_type,False,PCIe 3.0,SATA III,False,N/A,False,wrong
+26,PyDI-TE-Reranker,bus_type,False,SATA III,SATA III,False,SATA III,True,correct
+28,PyDI-TE-Reranker,height_mm,True,42.0,42,False,42.0,True,correct
+28,PyDI-TE-Reranker,width_mm,True,130.9,130.9,False,130.9,True,correct
+30,PyDI-TE-Reranker,bus_type,False,USB 3.0,USB 3.0,False,USB 3.0,True,correct
+30,PyDI-TE-Reranker,model_number,False,WDBMCG5000ABT-WESN,WDBMCG5000ABT-WESN,False,WDBMCG5000ABT-WESN,True,correct
+33,PyDI-TE-Reranker,read_speed_mb_s,True,130.0,130,False,130.0,True,correct
+33,PyDI-TE-Reranker,height_mm,True,20.8,20.8,False,20.8,True,correct
+33,PyDI-TE-Reranker,width_mm,True,87.9,87.9,False,87.9,True,correct
+41,PyDI-TE-Reranker,read_speed_mb_s,True,540.0,3480,False,N/A,False,wrong
+41,PyDI-TE-Reranker,height_mm,True,10.5,10.5,False,10.5,True,correct
+41,PyDI-TE-Reranker,width_mm,True,57.0,57,False,57.0,True,correct
+43,PyDI-TE-Reranker,model_number,False,GP-ASM2NE6100TTTD,GP-ASM2NE6100TTTD,False,GP-ASM2NE6100TTTD,True,correct
+43,PyDI-TE-Reranker,height_mm,True,11.4,11.4,False,11.4,True,correct
+43,PyDI-TE-Reranker,width_mm,True,80.5,23.5,False,23.5,False,wrong
+52,PyDI-TE-Reranker,bus_type,False,SATA III,SATA III,False,SATA III,True,correct
+52,PyDI-TE-Reranker,model,False,SU800,SPECTRIX S40G,False,SPECTRIX S40G,False,wrong
+52,PyDI-TE-Reranker,read_speed_mb_s,True,560.0,560,False,560.0,True,correct
+52,PyDI-TE-Reranker,write_speed_mb_s,True,520.0,520,False,520.0,True,correct
+52,PyDI-TE-Reranker,height_mm,True,3.5,3.5,False,3.5,True,correct
+52,PyDI-TE-Reranker,width_mm,True,22.0,22,False,22.0,True,correct
+54,PyDI-TE-Reranker,bus_type,False,PCIe 3.0 x16,PCIe 3.0 x16,False,PCIe 3.0 x16,True,correct
+54,PyDI-TE-Reranker,model_number,False,N20702-08D6-1710VA23,N20702-08D6-1710VA23,False,N20702-08D6-1710VA23,True,correct
+54,PyDI-TE-Reranker,width_mm,True,113.0,113,False,113.0,True,correct
+56,PyDI-TE-Reranker,read_speed_mb_s,True,560.0,560,False,560.0,True,correct
+56,PyDI-TE-Reranker,write_speed_mb_s,True,510.0,510,False,510.0,True,correct
+59,PyDI-TE-Reranker,width_mm,True,690.0,127,False,N/A,False,wrong
+60,PyDI-TE-Reranker,model,False,Ironwolf 110,Nytro 1351,False,Nytro 1351,False,wrong
+60,PyDI-TE-Reranker,read_speed_mb_s,True,560.0,560,False,560.0,True,correct
+67,PyDI-TE-Reranker,read_speed_mb_s,True,550.0,550,False,550.0,True,correct
+77,PyDI-TE-Reranker,read_speed_mb_s,True,555.0,555,False,555.0,True,correct
+77,PyDI-TE-Reranker,write_speed_mb_s,True,520.0,520,False,520.0,True,correct
+77,PyDI-TE-Reranker,height_mm,True,7.0,46,False,N/A,False,wrong
+82,PyDI-TE-Reranker,model_number,False,CT2000P1SSD8,UNKNOWN,True,N/A,False,wrong
+82,PyDI-TE-Reranker,read_speed_mb_s,True,2000.0,2000,False,2000.0,True,correct
+82,PyDI-TE-Reranker,write_speed_mb_s,True,1700.0,1700,False,1700.0,True,correct
+86,PyDI-TE-Reranker,height_mm,True,67.0,46,False,N/A,False,wrong
+86,PyDI-TE-Reranker,width_mm,True,15.0,127,False,N/A,False,wrong
+90,PyDI-TE-Reranker,bus_type,False,PCIe 3.0,PCIe 3.0,False,PCIe 3.0,True,correct
+90,PyDI-TE-Reranker,height_mm,True,41.0,41,False,41.0,True,correct
+90,PyDI-TE-Reranker,width_mm,True,119.3,124.15,False,124.15,True,correct
+95,PyDI-TE-Reranker,model_number,False,801882-B21,801882-B21,False,801882-B21,True,correct
+95,PyDI-TE-Reranker,model,False,ISS,SATA III,False,N/A,False,wrong
+131,PyDI-TE-Reranker,model_number,False,WDS120G2G0A,WDS100T2G0A,False,WDS100T2G0A,False,correct
+131,PyDI-TE-Reranker,write_speed_mb_s,True,430.0,430,False,430.0,True,correct
+131,PyDI-TE-Reranker,height_mm,True,7.0,7,False,7.0,True,correct
+135,PyDI-TE-Reranker,read_speed_mb_s,True,560.0,560,False,560.0,True,correct
+135,PyDI-TE-Reranker,write_speed_mb_s,True,540.0,540,False,540.0,True,correct
+137,PyDI-TE-Reranker,model,False,L200,P300,False,P300,False,wrong
+145,PyDI-TE-Reranker,read_speed_mb_s,True,2400.0,2400,False,2400.0,True,correct
+145,PyDI-TE-Reranker,write_speed_mb_s,True,1950.0,3000,False,1750.0,False,wrong
+145,PyDI-TE-Reranker,height_mm,True,2.4,2.4,False,2.4,True,correct
+145,PyDI-TE-Reranker,width_mm,True,22.0,22,False,22.0,True,correct
+152,PyDI-TE-Reranker,model_number,False,MZ-76P1T0B/EU,MZ-76P1T0B/EU,False,MZ-76P1T0B/EU,True,correct
+152,PyDI-TE-Reranker,read_speed_mb_s,True,560.0,3480,False,N/A,False,wrong
+152,PyDI-TE-Reranker,write_speed_mb_s,True,530.0,3000,False,N/A,False,wrong
+158,PyDI-TE-Reranker,model,False,HDD SRV SAS 12G,HDD SRV SAS 12G,False,HDD SRV SAS 12G,True,correct
+178,PyDI-TE-Reranker,model,False,Ace - A80,Ace - A80,False,Ace - A80,True,correct
+188,PyDI-TE-Reranker,model,False,Barracuda 7200.12,Cheetah,False,Cheetah,False,wrong
+224,PyDI-TE-Reranker,model,False,Cheetah,Cheetah,False,Cheetah,True,correct
+225,PyDI-TE-Reranker,model,False,GIGABYTE SSD 1TB,SSD,False,SSD,True,wrong
+225,PyDI-TE-Reranker,height_mm,True,7.0,7,False,7.0,True,correct
+17,PyDI-TE-Reranker,model_number,False,843266-B21,454146-B21,False,454146-B21,False,correct
+21,PyDI-TE-Reranker,model_number,False,PBU240GS25SSDR,PBU120GS25SSDR,False,PBU120GS25SSDR,False,correct
+23,PyDI-TE-Reranker,model_number,False,SDCZ50-128G-B35,SD8SP128G,False,N/A,False,wrong
+27,PyDI-TE-Reranker,model_number,False,WDBWLG0040HBK-EESN,WDBWLG0040HBK-EESN,False,WDBWLG0040HBK-EESN,True,correct
+31,PyDI-TE-Reranker,model_number,False,DT100G3/256GB,DT100G3,False,DT100G3,True,acceptable

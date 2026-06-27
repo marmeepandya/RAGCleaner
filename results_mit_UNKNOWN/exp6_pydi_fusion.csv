@@ -1,0 +1,97 @@
+df1_idx,config,attribute,is_numeric,ground_truth,predicted,unknown,cluster_id,correct_standard,ce_judgment
+0,PyDI-KB-Fusion,model_number,False,GV-N3080GAMING OC-10GD,gv-n3080gaming oc-10gd,False,1002037,True,correct
+2,PyDI-KB-Fusion,model_number,False,CSSD-F960GBMP510,cssd-f960gbmp510,False,1007272,True,correct
+2,PyDI-KB-Fusion,read_speed_mb_s,True,3480.0,3480.0,False,1007272,True,correct
+2,PyDI-KB-Fusion,write_speed_mb_s,True,3000.0,3000.0,False,1007272,True,correct
+3,PyDI-KB-Fusion,read_speed_mb_s,True,226.0,226.0,False,1014052,True,correct
+4,PyDI-KB-Fusion,width_mm,True,433.0,433.0,False,1014152,True,correct
+5,PyDI-KB-Fusion,bus_type,False,PCIe 3.0 x16,pcie 3.0 x16,False,1021594,True,correct
+5,PyDI-KB-Fusion,model_number,False,90YV0CV2-M0NA00,90yv0cv2-m0na00,False,1021594,True,correct
+6,PyDI-KB-Fusion,bus_type,False,USB 3.0,usb 3.0,False,1023407,True,correct
+8,PyDI-KB-Fusion,model_number,False,GV-N166SOC-6GD,gv-n166soc-6gd,False,1028734,True,correct
+9,PyDI-KB-Fusion,bus_type,False,PCIe 3.0 x16,pcie 3.0 x16,False,1029916,True,correct
+9,PyDI-KB-Fusion,model_number,False,V375-040R,912-v375-040,False,1029916,False,correct
+9,PyDI-KB-Fusion,height_mm,True,46.0,46.0,False,1029916,True,correct
+9,PyDI-KB-Fusion,width_mm,True,127.0,127.0,False,1029916,True,correct
+11,PyDI-KB-Fusion,bus_type,False,PCIe 3.0,pcie 3.0,False,1036963,True,correct
+12,PyDI-KB-Fusion,bus_type,False,PCIe 4.0,pcie 4.0,False,1038355,True,correct
+12,PyDI-KB-Fusion,model_number,False,90YV0DQ0-M0NA00,90yv0dq0-m0na00,False,1038355,True,correct
+13,PyDI-KB-Fusion,model_number,False,AGAMMIXS11P-1TT-C,agammixs11p-1tt-c,False,1045382,True,correct
+14,PyDI-KB-Fusion,model_number,False,GV-R56XTGAMING OC-6GD,gv-r56xtgaming oc-6gd,False,1048970,True,correct
+15,PyDI-KB-Fusion,bus_type,False,PCIe 3.0 x16,pcie 3.0 x16,False,1050421,True,correct
+15,PyDI-KB-Fusion,model_number,False,100-506008,100-506008,False,1050421,True,correct
+16,PyDI-KB-Fusion,model_number,False,NE6166SS18J9-161F,ne6166ss18j9-161f,False,1051451,True,correct
+18,PyDI-KB-Fusion,read_speed_mb_s,True,550.0,550.0,False,1057972,True,correct
+18,PyDI-KB-Fusion,write_speed_mb_s,True,520.0,520.0,False,1057972,True,correct
+18,PyDI-KB-Fusion,height_mm,True,7.0,7.0,False,1057972,True,correct
+19,PyDI-KB-Fusion,bus_type,False,PCIe 3.0 x16,pcie 3.0 x16,False,1063063,True,correct
+19,PyDI-KB-Fusion,model_number,False,ROG-STRIX-RTX2080TI-O11G-GAMING,rog-strix-rtx2080ti-o11g-gaming,False,1063063,True,correct
+20,PyDI-KB-Fusion,model,False,220S,220s,False,1066948,True,correct
+20,PyDI-KB-Fusion,read_speed_mb_s,True,550.0,550.0,False,1066948,True,correct
+25,PyDI-KB-Fusion,bus_type,False,PCIe 3.0,pcie 3.0,False,1075342,True,correct
+26,PyDI-KB-Fusion,bus_type,False,SATA III,sata iii,False,107546,True,correct
+28,PyDI-KB-Fusion,height_mm,True,42.0,42.0,False,1080185,True,correct
+28,PyDI-KB-Fusion,width_mm,True,130.9,130.9,False,1080185,True,correct
+30,PyDI-KB-Fusion,bus_type,False,USB 3.0,usb 3.0,False,1090368,True,correct
+30,PyDI-KB-Fusion,model_number,False,WDBMCG5000ABT-WESN,wdbmcg5000abt-wesn,False,1090368,True,correct
+33,PyDI-KB-Fusion,read_speed_mb_s,True,130.0,130.0,False,1103088,True,correct
+33,PyDI-KB-Fusion,height_mm,True,20.8,20.8,False,1103088,True,correct
+33,PyDI-KB-Fusion,width_mm,True,87.9,87.9,False,1103088,True,correct
+41,PyDI-KB-Fusion,read_speed_mb_s,True,540.0,540.0,False,1131083,True,correct
+41,PyDI-KB-Fusion,height_mm,True,10.5,10.5,False,1131083,True,correct
+41,PyDI-KB-Fusion,width_mm,True,57.0,57.0,False,1131083,True,correct
+43,PyDI-KB-Fusion,model_number,False,GP-ASM2NE6100TTTD,gp-asm2ne6100tttd,False,11349,True,correct
+43,PyDI-KB-Fusion,height_mm,True,11.4,11.4,False,11349,True,correct
+43,PyDI-KB-Fusion,width_mm,True,80.5,80.5,False,11349,True,correct
+52,PyDI-KB-Fusion,bus_type,False,SATA III,sata iii,False,1178275,True,correct
+52,PyDI-KB-Fusion,model,False,SU800,su800,False,1178275,True,correct
+52,PyDI-KB-Fusion,read_speed_mb_s,True,560.0,560.0,False,1178275,True,correct
+52,PyDI-KB-Fusion,write_speed_mb_s,True,520.0,520.0,False,1178275,True,correct
+52,PyDI-KB-Fusion,height_mm,True,3.5,3.5,False,1178275,True,correct
+52,PyDI-KB-Fusion,width_mm,True,22.0,22.0,False,1178275,True,correct
+54,PyDI-KB-Fusion,bus_type,False,PCIe 3.0 x16,pcie 3.0 x16,False,118064,True,correct
+54,PyDI-KB-Fusion,model_number,False,N20702-08D6-1710VA23,n20702-08d6-1710va23,False,118064,True,correct
+54,PyDI-KB-Fusion,width_mm,True,113.0,113.0,False,118064,True,correct
+56,PyDI-KB-Fusion,read_speed_mb_s,True,560.0,560.0,False,1194060,True,correct
+56,PyDI-KB-Fusion,write_speed_mb_s,True,510.0,510.0,False,1194060,True,correct
+59,PyDI-KB-Fusion,width_mm,True,690.0,690.0,False,1199424,True,correct
+60,PyDI-KB-Fusion,model,False,Ironwolf 110,ironwolf 110,False,1204468,True,correct
+60,PyDI-KB-Fusion,read_speed_mb_s,True,560.0,560.0,False,1204468,True,correct
+67,PyDI-KB-Fusion,read_speed_mb_s,True,550.0,550.0,False,1230455,True,correct
+77,PyDI-KB-Fusion,read_speed_mb_s,True,555.0,555.0,False,1263391,True,correct
+77,PyDI-KB-Fusion,write_speed_mb_s,True,520.0,520.0,False,1263391,True,correct
+77,PyDI-KB-Fusion,height_mm,True,7.0,7.0,False,1263391,True,correct
+82,PyDI-KB-Fusion,model_number,False,CT2000P1SSD8,ct2000p1ssd8,False,1284392,True,correct
+82,PyDI-KB-Fusion,read_speed_mb_s,True,2000.0,2000.0,False,1284392,True,correct
+82,PyDI-KB-Fusion,write_speed_mb_s,True,1700.0,1700.0,False,1284392,True,correct
+86,PyDI-KB-Fusion,height_mm,True,67.0,67.0,False,129607,True,correct
+86,PyDI-KB-Fusion,width_mm,True,15.0,15.0,False,129607,True,correct
+90,PyDI-KB-Fusion,bus_type,False,PCIe 3.0,pcie 3.0,False,1320297,True,correct
+90,PyDI-KB-Fusion,height_mm,True,41.0,41.0,False,1320297,True,correct
+90,PyDI-KB-Fusion,width_mm,True,119.3,119.3,False,1320297,True,correct
+95,PyDI-KB-Fusion,model_number,False,801882-B21,801882-b21,False,1339299,True,correct
+95,PyDI-KB-Fusion,model,False,ISS,iss,False,1339299,True,correct
+131,PyDI-KB-Fusion,model_number,False,WDS120G2G0A,wds120g2g0a,False,1506131,True,correct
+131,PyDI-KB-Fusion,write_speed_mb_s,True,430.0,430.0,False,1506131,True,correct
+131,PyDI-KB-Fusion,height_mm,True,7.0,7.0,False,1506131,True,correct
+135,PyDI-KB-Fusion,read_speed_mb_s,True,560.0,560.0,False,153316,True,correct
+135,PyDI-KB-Fusion,write_speed_mb_s,True,540.0,540.0,False,153316,True,correct
+137,PyDI-KB-Fusion,model,False,L200,l200,False,1540902,True,correct
+145,PyDI-KB-Fusion,read_speed_mb_s,True,2400.0,2400.0,False,156996,True,correct
+145,PyDI-KB-Fusion,write_speed_mb_s,True,1950.0,1950.0,False,156996,True,correct
+145,PyDI-KB-Fusion,height_mm,True,2.4,2.4,False,156996,True,correct
+145,PyDI-KB-Fusion,width_mm,True,22.0,22.0,False,156996,True,correct
+152,PyDI-KB-Fusion,model_number,False,MZ-76P1T0B/EU,mz-76p1t0b/eu,False,158919,True,correct
+152,PyDI-KB-Fusion,read_speed_mb_s,True,560.0,560.0,False,158919,True,correct
+152,PyDI-KB-Fusion,write_speed_mb_s,True,530.0,530.0,False,158919,True,correct
+158,PyDI-KB-Fusion,model,False,HDD SRV SAS 12G,hdd srv sas 12g,False,1611286,True,correct
+178,PyDI-KB-Fusion,model,False,Ace - A80,ace - a80,False,1705947,True,correct
+188,PyDI-KB-Fusion,model,False,Barracuda 7200.12,barracuda 7200.12,False,175411,True,correct
+224,PyDI-KB-Fusion,model,False,Cheetah,cheetah,False,1882499,True,correct
+225,PyDI-KB-Fusion,model,False,GIGABYTE SSD 1TB,gigabyte ssd 1tb,False,18879,True,correct
+225,PyDI-KB-Fusion,height_mm,True,7.0,7.0,False,18879,True,correct
+17,PyDI-KB-Fusion,model_number,False,843266-B21,843266-b21,False,1054223,True,correct
+21,PyDI-KB-Fusion,model_number,False,PBU240GS25SSDR,pbu240gs25ssdr,False,1068495,True,correct
+23,PyDI-KB-Fusion,model_number,False,SDCZ50-128G-B35,sdcz50-128g-b35,False,1068990,True,correct
+27,PyDI-KB-Fusion,model_number,False,WDBWLG0040HBK-EESN,wdbwlg0040hbk-eesn,False,1077512,True,correct
+31,PyDI-KB-Fusion,model_number,False,DT100G3/256GB,dt100g3/256gb,False,1090670,True,correct

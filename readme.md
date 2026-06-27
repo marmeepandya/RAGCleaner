@@ -1,222 +1,174 @@
 # RAG-Driven Data Cleaning with PyDI
 
-A seminar project for **CS 715 Solving Complex Tasks with Large Language Models**  
-University of Mannheim, FSS 2026  
-**Author:** Marmee Pandya  
+**CS 715 - Solving Complex Tasks with Large Language Models**  
+University of Mannheim, FSS 2026 | Marmee Pandya
 
 ---
 
 ## Overview
 
-This project implements and evaluates a **Retrieval-Augmented Generation (RAG)** approach to automated data cleaning, integrated into the [PyDI framework](https://github.com/wbsg-uni-mannheim/PyDI). Given a product dataset with missing attribute values, the system retrieves semantically similar products from a knowledge base and uses a local LLM to predict the missing values.
+Product datasets have a fundamental missing-value problem that LLMs alone cannot solve. An attribute like `model_number: V375-040R` or `read_speed_mb_s: 3480.0` does not appear anywhere in a product description. It exists only as a structured field in another retailer's listing of the same product. No amount of prompt engineering gets you there without a lookup.
 
-The core idea: instead of relying on an LLM's pre-training knowledge alone — which fails for product-specific attributes like model numbers or storage speeds — we ground every prediction in retrieved evidence from a knowledge base of similar products. This follows the **Scenario 3** setup of RetClean (Naeem et al., VLDB 2024): local LLM + retrieval, privacy-preserving, no data leaves the cluster.
+This project builds a retrieval-augmented generation (RAG) pipeline that fills missing product attribute values by finding similar products in a knowledge base and extracting the correct value from the retrieved context. It is implemented as a `RAGCleaner` component inside [PyDI](https://github.com/wbsg-uni-mannheim/PyDI), the Python Data Integration framework from the University of Mannheim, making it a composable drop-in for any PyDI pipeline.
 
----
-
-## Project Structure
-
-```
-RAG_Data_Cleaning/
-├── normalized_products/           # Input datasets (4 JSON files)
-│   ├── dataset_1_normalized.json  # Query set — 812 rows
-│   ├── dataset_2_normalized.json  # KB — ~733 rows
-│   ├── dataset_3_normalized.json  # KB — ~733 rows
-│   └── dataset_4_normalized.json  # KB — ~734 rows
-│
-├── embeddings/                    # Pre-computed embedding tensors (.pt files)
-│   ├── minilm_kb.pt               # all-MiniLM-L6-v2 KB embeddings (384-dim)
-│   ├── minilm_query.pt
-│   ├── bge_kb.pt                  # BGE-large-en-v1.5 KB embeddings (1024-dim)
-│   ├── bge_query.pt
-│   ├── openai_kb.pt               # text-embedding-3-large KB embeddings (3072-dim)
-│   └── openai_query.pt
-│
-├── results/                       # Experiment output CSVs
-│   ├── exp1_llm_only.csv
-│   ├── exp2_rag_minilm.csv
-│   ├── exp3_rag_minilm_reranker.csv
-│   ├── exp4_rag_bge_reranker.csv
-│   ├── exp5_rag_te_reranker.csv
-│   ├── master_predictions.csv     # All predictions side by side
-│   ├── null_analysis.csv          # Attribute completeness analysis
-│   └── error_analysis.csv         # Task-level failure analysis
-│
-├── figures/                       # Generated figures for report and presentation
-│
-├── exp_setup.ipynb                # ENTRY POINT — builds eval set + Exp 1 + all embeddings
-├── exp_runner_TE.py               # Exp 5 — TE-large + CrossEncoder reranker
-├── error_analysis_plots.ipynb     # Full error analysis + 12 figures
-│
-├── eval_set.csv                   # Canonical 96-task eval set (generated once)
-├── query_indices.csv              # Query row indices for eval set
-│
-└── README.md                      # This file
-```
+The setup follows RetClean's Scenario 3 (Naeem et al., VLDB 2024): local LLM inference via Ollama, local retrieval, no data sent to external services. Seven configurations are evaluated systematically, each isolating one variable: embedding model, reranker, prediction LLM, and a data fusion step.
 
 ---
 
-## Dataset
+## Problem Setup
 
-Four product offer datasets (GPUs, SSDs, HDDs, USB drives) from the PyDI project. Products across datasets are linked by a `cluster_id` identifying matching offers for the same real-world product.
+**Dataset:** Four product offer datasets from [WDC Products](https://webdatacommons.org/largescaleproductcorpus/) covering GPUs, SSDs, HDDs, and USB drives. Dataset 1 (812 rows) is the query set to clean; Datasets 2-4 (~2,200 rows combined) form the knowledge base. Products are linked across datasets by `cluster_id`.
 
-| Dataset | Role | Rows |
-|---|---|---|
-| Dataset 1 | Query set (to clean) | 812 |
-| Dataset 2 | Knowledge base | ~733 |
-| Dataset 3 | Knowledge base | ~733 |
-| Dataset 4 | Knowledge base | ~734 |
-| **Combined KB** | **Knowledge base** | **2,200** |
+**Evaluation set:** 96 tasks across 50 query products, one task per (product, missing attribute) pair. Every task was verified to have its ground truth present verbatim in the KB, so failures are always retrieval or extraction errors rather than KB gaps.
 
-**Important:** All 96 evaluation tasks were selected only where the ground truth value is confirmed present in the KB (100% coverage). The model is never penalised for values that do not exist anywhere in the KB.
+**Target attributes** span a deliberate range of difficulty:
 
----
+| Attribute | Type | Tasks | LLM without retrieval |
+|---|---|---|---|
+| `bus_type` | text | 13 | Easy: standard vocabulary |
+| `model` | text | 10 | Medium: sometimes in descriptions |
+| `model_number` | text | 23 | Hard: exact SKU, unguessable |
+| `read_speed_mb_s` | numeric | 15 | Impossible without KB |
+| `write_speed_mb_s` | numeric | 10 | Impossible without KB |
+| `height_mm` | numeric | 13 | Impossible without KB |
+| `width_mm` | numeric | 12 | Impossible without KB |
 
-## Target Attributes
-
-7 attributes selected to cover a range of difficulty levels:
-
-| Attribute | Type | Tasks | LLM Difficulty | Why |
-|---|---|---|---|---|
-| `bus_type` | text | 13 | Easy | LLM knows PCIe / SATA / USB |
-| `model` | text | 10 | Medium | Partially in descriptions |
-| `model_number` | text | 23 | Hard | Exact SKU — cannot guess |
-| `read_speed_mb_s` | numeric | 15 | **Impossible** | Never in product descriptions |
-| `write_speed_mb_s` | numeric | 10 | **Impossible** | Never in product descriptions |
-| `height_mm` | numeric | 13 | **Impossible** | Must retrieve from KB |
-| `width_mm` | numeric | 12 | **Impossible** | Must retrieve from KB |
-| **Total** | | **96** | | |
+**Metrics:**
+- *Standard accuracy*: substring match for text attributes, exact match for numeric (all KB values for the same cluster were verified to be identical across datasets, so no tolerance window is needed)
+- *CE eval*: CrossEncoder (`ms-marco-MiniLM-L-6-v2`) scores prediction vs ground truth, removing the self-evaluation bias that would arise from using the same LLM as judge
+- *UNKNOWN rate*: fraction of tasks where the model declined to predict, reported separately since accuracy and abstention must be read together
 
 ---
 
-## Approach: 5 Configurations
+## System Design
 
-Each configuration adds exactly one component. Same 96-task eval set used across all experiments.
+Each configuration is a pipeline of up to three stages:
 
-| Config | Description |
-|---|---|
-| **Exp 1 — LLM-only** | Llama 3.1 8B predicts from product title only. No KB access. Baseline. |
-| **Exp 2 — RAG-MiniLM** | MiniLM-L6 (384-dim) encodes KB + query. Top-3 by cosine similarity passed to Llama. |
-| **Exp 3 — MiniLM + Reranker** | MiniLM retrieves top-20. CrossEncoder reranks to top-5. RetClean-inspired two-stage pipeline. |
-| **Exp 4 — BGE + Reranker** | Replaces MiniLM with BGE-large-en-v1.5 (1024-dim, top MTEB). Adds description field. |
-| **Exp 5 — TE + Reranker** | Uses OpenAI text-embedding-3-large (3072-dim). Strongest embedding model tested. |
-
----
-
-## System Architecture
-
-**Saved to disk**
 ```
-KB 2,200 rows → BGE-large Encode → Dense Vectors (1024-dim) → Save bge_kb.pt
+Query Product
+    |
+    v
+[Bi-encoder] cosine similarity --> top-20 KB candidates
+    |
+    v
+[CrossEncoder] pairwise reranking --> top-5
+    |
+    v
+[LLM] match-then-extract prompt --> predicted value
 ```
 
-**Per Query**
-```
-Query Product → BGE-large Encode → Cosine Similarity (loads bge_kb.pt)
-→ Top-20 Candidates → CrossEncoder Re-rank → Top-5
-→ Few-shot Prompt → Llama 3.1 8B → VALUE:<answer> → Predicted Value
-```
+The LLM prompt follows a match-then-extract structure: the model first identifies the best matching reference product among the candidates, then copies the attribute value exactly. Where no confident match exists, it returns `VALUE:UNKNOWN`. Each of the seven target attributes has its own few-shot prompt with explicit field-confusion warnings (for example, the `write_speed_mb_s` prompt explicitly cautions against returning the read speed).
 
-**Prompting strategy:** Few-shot match-then-extract. The LLM is instructed to first identify the best matching reference product, then copy the attribute value exactly. Strict grounding instructions prevent the LLM from using its own knowledge. Uncertain cases return `VALUE:UNKNOWN`.
+**Embedding models compared:**
+- `all-MiniLM-L6-v2`: 384-dim, 22M params, fast baseline
+- `BAAI/bge-large-en-v1.5`: 1024-dim, 335M params, top MTEB retrieval model
+- OpenAI `text-embedding-3-large`: 3072-dim API model *(sends product text externally, breaking Scenario 3)*
 
----
+**Reranker:** `cross-encoder/ms-marco-MiniLM-L-6-v2` applied over top-20, producing top-5.
 
-## Evaluation
+**Prediction LLMs:** Llama 3.1 8B Instruct (local via Ollama, `temperature=0`, `seed=42`) and GPT-4o-mini / GPT-5.4-mini via OpenAI API.
 
-- **Standard accuracy** — exact match for numeric attributes (source variation confirmed 0% across all 96 tasks), substring match for text attributes
-- **CE eval** — CrossEncoder semantic evaluation for text attributes; exact match for numeric with ±10% tolerance classified as acceptable (removes self-evaluation bias of LLM-as-judge)
-- **UNKNOWN rate** — fraction of tasks where the model declined to predict
-- **Retrieval metrics** — Recall@K, Precision@K, NDCG@K computed across all embedding models
-
-> **Note on numeric evaluation:** We initially used ±10% tolerance for numeric attributes. After verifying empirically that all KB values for the same cluster are identical across all datasets (0% source variation, 50/50 consistent), we switched to exact match as the primary standard accuracy metric. The ±10% window is retained only as the "acceptable" threshold in CE eval.
+**Exp 7 - PyDI fusion:** Rather than passing 5 raw KB rows to the LLM, PyDI's `DataFusionEngine` first consolidates them into a single record using attribute-specific strategies (majority vote for text attributes, median for numeric, longest string for model numbers). The LLM then extracts from one clean record instead of noisy duplicates.
 
 ---
 
 ## Results
 
-| Config | Standard Acc | CE Eval | UNKNOWN Rate |
+### Progression across Llama configurations
+
+![Progressive improvement across configurations](figures_final/fig12_progressive.png)
+
+The steepest gain is at the reranking step, not the retrieval step. Adding CrossEncoder reranking on top of MiniLM retrieval (+32 points, from 36.5% to 68.8%) is roughly four times larger than upgrading the embedding model from MiniLM to BGE or OpenAI (+2-4 points).
+
+### Overall results (UNKNOWN permitted)
+
+![Overall accuracy, CE eval, and UNKNOWN rate](figures_final/fig1_overall_accuracy.png)
+
+| Configuration | Accuracy | UNKNOWN |
+|---|---|---|
+| Exp 1 - LLM-only (Llama) | 15.6% | 44.8% |
+| Exp 2 - RAG + MiniLM | 36.5% | 17.7% |
+| Exp 3 - MiniLM + Reranker | 68.8% | 8.3% |
+| Exp 4 - BGE + Reranker | 72.9% | 3.1% |
+| Exp 5 - TE + Reranker | **71.9%** | 2.1% |
+| Exp 6 - BGE + RR + GPT-4o-mini | 64.6% | 27.1% |
+| Exp 6 - BGE + RR + GPT-5.4-mini | 60.4% | 34.4% |
+| Exp 7 - TE + RR + PyDI fusion | 62.5% | 1.0% |
+| Exp 7 - TE + RR + GPT-4o-mini | 65.6% | 22.9% |
+| Exp 7 - TE + RR + GPT-5.4-mini | 63.5% | 27.1% |
+
+### Forced prediction (UNKNOWN disallowed)
+
+| Configuration | Accuracy |
+|---|---|
+| Exp 1 - LLM-only | 13.5% |
+| Exp 2 - RAG + MiniLM | 37.5% |
+| Exp 3 - MiniLM + Reranker | 66.7% |
+| Exp 4 - BGE + Reranker | 69.8% |
+| Exp 5 - TE + Reranker | 70.8% |
+| Exp 6 - BGE + RR + GPT-4o-mini | 75.0% |
+| Exp 6 - BGE + RR + GPT-5.4-mini | 76.0% |
+| Exp 7 - TE + RR + GPT-4o-mini | 75.0% |
+| Exp 7 - TE + RR + GPT-5.4-mini | **77.1%** |
+
+### Per-attribute breakdown
+
+![Per-attribute standard accuracy heatmap](figures_final/fig2_heatmap_standard.png)
+
+`height_mm` starts at 0.00 under LLM-only (no signal anywhere in product descriptions) and reaches 0.77 with TE+RR. `model_number` jumps from 0.22 to 0.65 at the reranking step, which is the exact result the CrossEncoder was designed for: separating near-identical SKUs that cosine similarity cannot distinguish.
+
+### Outcome breakdown per attribute
+
+![Prediction outcome breakdown (correct / CE-correct / wrong / UNKNOWN)](figures_final/fig4_outcome_stacked.png)
+
+### Retrieval quality
+
+![Retrieval quality: Recall@K for all three embedding models](figures_final/fig_retrieval_metrics.png)
+
+| Embedding model | Recall@5 | Recall@20 | NDCG@5 |
 |---|---|---|---|
-| LLM-only | 17.7% | 21.9% | 44.8% |
-| RAG-MiniLM | 41.7% | 44.8% | 17.7% |
-| MiniLM+RR | 74.0% | 76.0% | 8.3% |
-| BGE+RR | 76.0% | 78.1% | 3.1% |
-| **TE+RR** | **77.1%** | **83.3%** | **2.1%** |
+| MiniLM (384-dim) | 70.8% | 93.8% | 0.480 |
+| BGE-large (1024-dim) | 83.3% | 99.0% | 0.632 |
+| OpenAI TE-3-large (3072-dim) | 83.3% | **100%** | 0.710 |
 
-Key findings:
-- **4.4× improvement** from LLM-only to best RAG config
-- Numeric attributes: **0% → 70–90%** — impossible without KB, straightforward with retrieval
-- CrossEncoder reranking specifically fixes `model_number` (18% → 91% CE eval)
-- BGE+RR achieves lowest UNKNOWN rate (3.1%) among retrieval configs
-- Remaining failures: near-identical SKU confusion (~35%), cluster fragmentation (~20%), field confusion (~20%)
+MiniLM's 70.8% Recall@5 directly explains the Exp 2 vs Exp 3 gap: for roughly 30% of tasks the correct product never appears in the initial top-3, making recovery impossible regardless of LLM capability. OpenAI achieves perfect Recall@20 across all 96 tasks; BGE misses on roughly 1 in 100.
 
 ---
 
-## Setup
+## Key Findings
 
-### Requirements
-```bash
-pip install sentence-transformers pandas numpy torch matplotlib seaborn scikit-learn langchain-ollama openai --break-system-packages
-```
+**Re-ranking matters more than the embedding model.** Exp 2 to Exp 3 (adding CrossEncoder reranking, same MiniLM embedder) is a +32-point jump. Upgrading from MiniLM to BGE or OpenAI adds 2-4 points. Once the retrieval pool is wide enough, pairwise token-level scoring is what separates correct products from near-identical variants.
 
-### Ollama (LLM inference)
-```bash
-ollama pull llama3.1:8b
-```
+**Numeric attributes go from near-zero to competitive only with retrieval.** `height_mm` scores 0% under LLM-only since there is no signal in a product title for physical dimensions. With TE+RR it reaches 77%. This is the clearest case that retrieval is doing real work rather than amplifying something the LLM already knew.
 
-### On bwUniCluster 3.0
-```bash
-# Load modules
-module load cs/ollama/0.5.11
-module load devel/cuda/12.8
+**The GPT abstention gap is a calibration problem, not a capability gap.** Under permitted abstention, GPT-5.4-mini (BGE+RR) scores 60.4%, trailing every Llama config. Under forced prediction it scores 76.0%, matching the best Llama result. The uncertainty instruction was calibrated for Llama's decisive response style; GPT models treat it as permission to hedge on anything uncertain. The per-attribute delta under forced prediction is shown below.
 
-# Start Ollama on non-default port (avoids conflicts)
-OLLAMA_HOST=127.0.0.1:11435 ollama serve &
-sleep 15
+![GPT-5.4-mini vs Llama per-attribute accuracy delta under forced prediction](figures/fig_llm_delta.png)
 
-# Activate venv
-source /home/ma/ma_ma/ma_mpandya/RAG_Data_Cleaning/PyDI/venv/bin/activate
-```
+GPT-5.4-mini gains +30 points on `write_speed_mb_s` and +16.7 on `width_mm`, confirming that instruction-following fidelity on numeric field extraction, not retrieval quality, is the remaining bottleneck for those attributes. `bus_type` is the one exception where Llama is stronger (-23.1%), likely because GPT hedges more on ambiguous interface version variants.
 
-### SLURM batch job
-```bash
-sbatch run_experiment.sh
-```
+**PyDI fusion improves presentation quality but does not clear the retrieval ceiling.** The fused-record variant (Exp 7, Llama) has a much lower UNKNOWN rate (1.0%) and a smaller CE eval gap relative to standard accuracy, suggesting fusion helps the LLM read candidates more cleanly. Standard accuracy stays below the manual approach because fusion cannot compensate when the CrossEncoder surfaces the wrong near-duplicate in the first place.
 
-Partition: `gpu_a100_short` (30 min limit). All experiment scripts use checkpoint system — saves every 5 predictions, resumes automatically on timeout.
+**About 30% of failures are dataset quality issues.** Ground truth values like `ISS` or `220S` are internal codes that do not match how any retrieved product describes itself. These are annotation inconsistencies that no retrieval or extraction improvement can fix.
 
-### Running experiments
-
-**Step 1 — Always run first (builds eval set + embeddings):**
-```bash
-jupyter nbconvert --to notebook --execute exp_setup.ipynb
-```
-
-**Step 2 — Run individual experiments:**
-```bash
-python exp_runner_TE.py          # Exp 5: TE-large + CrossEncoder
-```
-
-**Step 3 — Error analysis and figures:**
-```bash
-jupyter nbconvert --to notebook --execute error_analysis_plots.ipynb
-```
-
----
-
-## Reproducibility
-
-The following measures are taken to maximise reproducibility:
-- `temperature=0` and `seed=42` for Ollama inference
-- Eval set saved to `eval_set.csv` once — all experiments reload the same 96 tasks
-- Embeddings saved as `.pt` files — same float tensors reused across all runs
-- Checkpoint system saves every 5 predictions — safe to resume after GPU timeout
-- Remaining non-determinism: GPU floating point rounding on A100 (unavoidable, ~5% variance across separate job submissions)
+**Fully privacy-preserving configuration:** BGE + CrossEncoder + Llama (Exp 4) at 76.0%. OpenAI embeddings and GPT models both send product data to external APIs.
 
 ---
 
 ## References
 
-- Naeem et al. (2024). *RetClean: Retrieval-Based Data Cleaning Using LLMs and Data Lakes*. PVLDB 17(12).
-- Lewis et al. (2020). *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks*. NeurIPS.
-- Xiao et al. (2023). *C-Pack: Packaged Resources To Advance General Chinese Embedding*. (BGE-large)
-- Narayan et al. (2022). *Can Foundation Models Wrangle Your Data?* PVLDB 16(4).
+- Naeem, Z. A., Ahmad, M. S., Eltabakh, M., Ouzzani, M., and Tang, N. (2024). RetClean: Retrieval-Based Data Cleaning Using LLMs and Data Lakes. *PVLDB*, 17(12), 4421-4424.
+- Lewis, P., Perez, E., Piktus, A., et al. (2020). Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. *NeurIPS 33*, 9459-9474.
+- Xiao, S., Liu, Z., Zhang, P., and Muennighoff, N. (2023). C-Pack: Packaged Resources to Advance General Chinese Embedding. *arXiv:2309.07597*.
+- Narayan, A., Chami, I., Orr, L., Arora, S., and Re, C. (2022). Can Foundation Models Wrangle Your Data? *PVLDB*, 16(4), 738-746.
+- Reimers, N. and Gurevych, I. (2019). Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks. *EMNLP 2019*, 3982-3992.
+- Nogueira, R. and Cho, K. (2019). Passage Re-ranking with BERT. *arXiv:1901.04085*.
+- Muennighoff, N., Tazi, N., Magne, L., and Reimers, N. (2023). MTEB: Massive Text Embedding Benchmark. *EACL 2023*, 2014-2037.
+- Karpukhin, V., Oguz, B., Min, S., et al. (2020). Dense Passage Retrieval for Open-Domain Question Answering. *EMNLP 2020*, 6769-6781.
+- Peeters, R. and Bizer, C. (2023). Using ChatGPT for Entity Matching. *ADBIS 2023*, 221-230.
+- Dubey, A., et al. (2024). The Llama 3 Herd of Models. *arXiv:2407.21783*.
+- Khattab, O. and Zaharia, M. (2020). ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT. *SIGIR 2020*, 39-48.
+- Izacard, G. and Grave, E. (2021). Leveraging Passage Retrieval with Generative Models for Open Domain Question Answering. *EACL 2021*, 874-880.
+- Rahm, E. and Do, H. H. (2000). Data Cleaning: Problems and Current Approaches. *IEEE Data Eng. Bulletin*, 23(4), 3-13.
+- Thakur, N., Reimers, N., Ruckle, A., Srivastava, A., and Gurevych, I. (2021). BEIR: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models. *NeurIPS Datasets and Benchmarks*.
+- Gao, Y., Xiong, Y., Gao, X., et al. (2023). Retrieval-Augmented Generation for Large Language Models: A Survey. *arXiv:2312.10997*.
