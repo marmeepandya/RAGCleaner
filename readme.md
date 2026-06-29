@@ -15,6 +15,36 @@ The setup follows RetClean's Scenario 3 (Naeem et al., VLDB 2024): local LLM inf
 
 ---
 
+## Tech Stack
+
+- **Languages:** Python
+- **LLMs:** Llama 3.1 8B Instruct (via Ollama), GPT-5.4-mini (OpenAI API)
+- **Embeddings:** sentence-transformers (`all-MiniLM-L6-v2`, `BAAI/bge-large-en-v1.5`), OpenAI `text-embedding-3-large`
+- **Retrieval & Reranking:** sentence-transformers cosine similarity, CrossEncoder (`ms-marco-MiniLM-L-6-v2`)
+- **Framework:** [PyDI](https://github.com/wbsg-uni-mannheim/PyDI) - Python Data Integration, University of Mannheim
+- **Evaluation:** Custom pipeline over [WDC Products](https://webdatacommons.org/largescaleproductcorpus/) benchmark
+
+---
+
+## Setup
+
+```bash
+pip install -r requirements.txt
+
+# pull the local LLM
+ollama pull llama3.1:8b
+
+# pre-compute and cache KB embeddings
+python embed_kb.py
+
+# run experiments (example: MiniLM + CrossEncoder reranker)
+python exp_runner_miniLM_reranker.py
+```
+
+Full experimental code, evaluation scripts, and results are publicly available at [github.com/marmeepandya/RAGCleaner](https://github.com/marmeepandya/RAGCleaner).
+
+---
+
 ## Problem Setup
 
 **Dataset:** Four product offer datasets from [WDC Products](https://webdatacommons.org/largescaleproductcorpus/) covering GPUs, SSDs, HDDs, and USB drives. Dataset 1 (812 rows) is the query set to clean; Datasets 2-4 (~2,200 rows combined) form the knowledge base. Products are linked across datasets by `cluster_id`.
@@ -72,7 +102,7 @@ The LLM prompt follows a match-then-extract structure: the model first identifie
 
 ### Prompt design
 
-Each attribute has its own few-shot prompt. All seven follow the same match-then-extract structure: identify the best-matching reference product, then copy the target field exactly. Below is the `model_number` prompt — the hardest attribute, with an extra caution for near-identical SKUs:
+Each attribute has its own few-shot prompt. All seven follow the same match-then-extract structure: identify the best-matching reference product, then copy the target field exactly. Below is the `model_number` prompt, the hardest attribute, with an extra caution for near-identical SKUs:
 
 ```
 You are a product data expert filling missing values in a product database.
@@ -205,7 +235,7 @@ GPT-5.4-mini gains +30 points on `write_speed_mb_s` and +16.7 on `width_mm`, con
 
 **About 30% of failures are dataset quality issues.** Ground truth values like `ISS` or `220S` are internal codes that do not match how any retrieved product describes itself. These are annotation inconsistencies that no retrieval or extraction improvement can fix.
 
-**Fully privacy-preserving configuration:** BGE + CrossEncoder + Llama (Exp 4) at 76.0%. OpenAI embeddings and GPT models both send product data to external APIs.
+**Fully privacy-preserving configuration:** BGE + CrossEncoder + Llama (Exp 4) at 72.9%. OpenAI embeddings and GPT models both send product data to external APIs.
 
 ---
 
@@ -213,13 +243,14 @@ GPT-5.4-mini gains +30 points on `write_speed_mb_s` and +16.7 on `width_mm`, con
 
 - Naeem, Z. A., Ahmad, M. S., Eltabakh, M., Ouzzani, M., and Tang, N. (2024). RetClean: Retrieval-Based Data Cleaning Using LLMs and Data Lakes. *PVLDB*, 17(12), 4421-4424.
 - Lewis, P., Perez, E., Piktus, A., et al. (2020). Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. *NeurIPS 33*, 9459-9474.
-- Xiao, S., Liu, Z., Zhang, P., and Muennighoff, N. (2023). C-Pack: Packaged Resources to Advance General Chinese Embedding. *arXiv:2309.07597*.
+- Xiao, S., Liu, Z., Zhang, P., Muennighoff, N., Lian, D., and Nie, J.-Y. (2023). C-Pack: Packaged Resources to Advance General Chinese Embedding. *arXiv:2309.07597*.
 - Narayan, A., Chami, I., Orr, L., Arora, S., and Re, C. (2022). Can Foundation Models Wrangle Your Data? *PVLDB*, 16(4), 738-746.
 - Reimers, N. and Gurevych, I. (2019). Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks. *EMNLP 2019*, 3982-3992.
 - Nogueira, R. and Cho, K. (2019). Passage Re-ranking with BERT. *arXiv:1901.04085*.
 - Muennighoff, N., Tazi, N., Magne, L., and Reimers, N. (2023). MTEB: Massive Text Embedding Benchmark. *EACL 2023*, 2014-2037.
 - Karpukhin, V., Oguz, B., Min, S., et al. (2020). Dense Passage Retrieval for Open-Domain Question Answering. *EMNLP 2020*, 6769-6781.
 - Peeters, R. and Bizer, C. (2023). Using ChatGPT for Entity Matching. *ADBIS 2023*, 221-230.
+- Peeters, R., Der, R. C., and Bizer, C. (2024). WDC Products: A Multi-Dimensional Entity Matching Benchmark. *EDBT 2024*.
 - Dubey, A., et al. (2024). The Llama 3 Herd of Models. *arXiv:2407.21783*.
 - Khattab, O. and Zaharia, M. (2020). ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT. *SIGIR 2020*, 39-48.
 - Izacard, G. and Grave, E. (2021). Leveraging Passage Retrieval with Generative Models for Open Domain Question Answering. *EACL 2021*, 874-880.
